@@ -1,0 +1,165 @@
+ [
+                {
+                    "id": 1, 
+                    "title": "Software Developer 4", 
+                    "locationID": 3, 
+                    "companyID": 2, 
+                    "languageID": 1, 
+                    "skillsetID": 5, 
+                    "description": "Responsibilities
+Design, configure, and implement our data systems and stream processing pipelines
+Code analytics jobs, web services, and other components
+Work with operations to build and configure maintainable, resource-efficient systems
+Work with data pipelines using Kafka, Cassandra, Spark
+Leverage Event processing technologies to deliver real time analytics features
+Develop a cloud service that would be processing billions of events a day
+Leverage fast data pipelines for real time analytics on various Oracle SaaS applications
+Contribute ideas for continually improving the team's productivity, job enjoyment, and code quality.
+Actively mentor junior developers to develop their technical expertise
+Have fun engineering software and scalable systems", 
+                    "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=90953"
+                },
+                {
+                    "id": 2, 
+                    "title": "Software Developer 2", 
+                    "locationID": 3, 
+                    "companyID": 2, 
+                    "languageID": 1, 
+                    "skillsetID": 4, 
+                    "description": "Are you interested in building Identity infrastructure for the cloud? Oracle’s Cloud Infrastructure team is building new Infrastructure-as-a-Service technologies that operate at high scale in a broadly distributed multi-tenant cloud environment. Our customers run their businesses on our cloud, and our mission is to provide them with best in class compute, storage, networking, database, security, and an ever expanding set of foundational cloud-based services.
+
+We’re looking for Software Developer with expertise and passion in solving difficult problems in distributed systems, virtualized infrastructure, and highly available services. If this is you, at Oracle you can design and build innovative new systems from the ground up. These are exciting times in our space - we are growing fast, still at an early stage, functioning like a startup and working on ambitious new initiatives. An engineer at any level can have significant technical and business impact.
+
+As a Software Developer, you will own and lead software architecture and development for Authentication and Authorization components of Oracle’s Cloud Identity Infrastructure.  You should be a distributed systems generalist, able to build broad systems interactions, while being very hands-on, able to dive deep into any part of the stack and lower level system interactions. You should value simplicity and scale, work comfortably in a collaborative, agile environment, and be excited to learn.", 
+                    "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=86141"
+                },
+                {
+                    "id": 3, 
+                    "title": "Software Developer 5", 
+                    "locationID": 2, 
+                    "companyID": 2, 
+                    "languageID": 2, 
+                    "skillsetID": 6, 
+                    "description": "Detailed Description and Job Requirements
+ 
+Design, develop, troubleshoot and debug software programs for databases, applications, tools, networks etc.
+
+As a member of the software engineering division, you will take an active role in the definition and evolution of standard practices and procedures. Define specifications for significant new projects and specify, design and develop software according to those specifications. You will perform professional software development tasks associated with the developing, designing and debugging of software applications or operating systems.
+
+Provide leadership and expertise in the development of new products/services/processes, frequently operating at the leading edge of technology. Recommends and justifies major changes to existing products/services/processes. BS or MS degree or equivalent experience relevant to functional area. 8 more years of software engineering or related experience." ,                  
+                    "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=60564"
+                },
+                {
+                    "id": 4, 
+                    "title": "Software Developer 3", 
+                    "locationID": 1, 
+                    "companyID": 2, 
+                    "languageID": 1, 
+                    "skillsetID": 1, 
+                    "description": "Detailed Description and Job Requirements
+ 
+Design, develop, troubleshoot and debug software programs for databases, applications, tools, networks etc.
+
+As a member of the software engineering division, you will assist in defining and developing software for tasks associated with the developing, debugging or designing of software applications or operating systems. Provide technical leadership to other software developers. Specify, design and implement modest changes to existing software architecture to meet changing needs.
+
+Duties and tasks are varied and complex needing independent judgment. Fully competent in own area of expertise. May have project lead role and or supervise lower level personnel. BS or MS degree or equivalent experience relevant to functional area. 4 years of software engineering or related experience." ,                  
+                    "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=46894"
+                },
+                {
+                    "id": 5, 
+                    "title": "Application Developer, Corporate Asset Management Engineering", 
+                    "locationID": 5, 
+                    "companyID": 1, 
+                    "languageID": 4, 
+                    "skillsetID": 4, 
+                    "description": "Responsibilities
+Build custom front-ends (web and mobile), back-end services, and third-party integrations to automate business processes.
+Propose, design, and implement business workflows to streamline asset management lifecycles.
+Maintain strong development practices including technical design and writing clean, modular, well tested and self-sustaining code.
+Collaborate with business analysts, program managers, end users and other internal teams to translate business requirements into technical solutions that work at Google scale.
+Integrate third-party products with Google’s internal systems as well as support and upgrade implemented systems." ,                  
+                    "link": "https://www.google.com/about/careers/search?src=Online/Job+Board/indeed&utm_source=indeed&utm_medium=jobaggr&utm_campaign=freeaggr#!t=jo&jid=94815001"
+                },
+                {
+                    "id": 6, 
+                    "title": "Systems Engineer, Site Reliability Engineering", 
+                    "locationID": 4, 
+                    "companyID": 1, 
+                    "languageID": 2, 
+                    "skillsetID": 3, 
+                    "description": "Responsibilities
+Design, write and deliver software to improve the availability, scalability, latency, and efficiency of Google's services.
+Solve problems relating to mission critical services and build automation to prevent problem recurrence; with the goal of automating response to all non-exceptional service conditions.
+Influence and create new designs, architectures, standards and methods for large-scale distributed systems.
+Engage in service capacity planning and demand forecasting, software performance analysis and system tuning.
+Conduct periodic on call duties using a follow-the-sun model." ,                  
+                    "link": "https://www.google.com/about/careers/search?src=Online/Job+Board/indeed&utm_source=indeed&utm_medium=jobaggr&utm_campaign=freeaggr#!t=jo&jid=83835001"
+                },
+                {
+                    "id": 7, 
+                    "title": "Software Development Engineer", 
+                    "locationID": 2, 
+                    "companyID": 3, 
+                    "languageID": 1, 
+                    "skillsetID": 1, 
+                    "description": "Responsibilities include:
+
+* Design, develop, test, troubleshoot, debug, deploy, maintain, document and deliver large-scale, highly distributed, real-time and management systems that are core to effectively managing the supply chain business.
+
+* Use Java, object-oriented (OO) design patterns, distributed Oracle databases, and data modeling techniques.
+
+* Gather and analyze business and functional requirements, and translate business requirements into technical design specifications.
+
+* Serve as a key technical resource in the full development cycle.
+
+* Produce comprehensive, usable software documentation.
+
+* Recommend changes in development, maintenance and system standards.
+
+* Work in an agile development environment, where you are always working on the most important stuff.
+
+* Hire, coach, and mentor individuals.
+" ,                  
+                    "link": "https://en-amazon.icims.com/jobs/219381/software-development-engineer/job?mode=job&iis=Indeed&iisn=Indeed+%28Free+Posting%29&mobile=false&width=884&height=1200&bga=true&needsRedirect=false"
+                },
+                {
+                    "id": 8, 
+                    "title": "Senior Software Engineer", 
+                    "locationID": 1, 
+                    "companyID": 3, 
+                    "languageID": 2, 
+                    "skillsetID": 6, 
+                    "description": "Prime Now is Amazon's newest benefit for Prime members offering one-hour delivery on tens of thousands of items through a new application. Our software accounts for a massive amount of constantly changing variables. We optimize route generation for every item, enabling customers to receive delivery in an hour or less, avoiding a trip to the store. 
+We are looking for a talented Sr. Software Engineer to design and build these new systems. The software will need to process thousands of transactions per second across massive data sets. This team handles real-time transportation constraints (weather, traffic and more), optimizes routing algorithms and utilizes machine learning. Are you up to this challenge?
+You will work on a V1 product and have the autonomy to deliver! " ,                  
+                    "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=86141"
+                },
+                {
+                    "id": 9, 
+                    "title": "Software Development Engineer - Mobile Demand Platform ( ios, Android)", 
+                    "locationID": 2, 
+                    "companyID": 3, 
+                    "languageID": 1, 
+                    "skillsetID": 2, 
+                    "description": "Do you want to help developers monetize and advertise their apps across mobile phones and tablets?
+
+We are looking for a software development engineer to build back-end services for the next generation Mobile Advertising Demand platform. This platform will extend frictionless advertising capabilities for digital and physical goods enabling our customers promote goods through a seamless experience. You will drive innovation on a number of technologies across campaign and image optimization techniques. You will work on a distributed system leveraging AWS that would manage campaigns to meet service level goals. This is a unique opportunity to learn about the advertising supply/demand dynamics and build software solutions to manage delivery of advertising budgets. You will work with partner teams that display ads across all mobile platforms e.g. iOS, Android, HTML5 as well as other advertising exchanges. As a key team member, you will own major deliverables through all aspects of the development cycle: scoping, design, implementation, testing on solutions delivered.
+
+You thrive in a start-up like environment where flexibility, teamwork, and delivering rock solid, customer focused solutions on short timelines is paramount. You enjoy working on complex system software, tackling tough challenges, and feel strongly not only about building good software but about making that software achieve its goals in operational reality. You show a strong sense of ownership, bias for action, agility, creativity, and ingenuity.
+
+Join our team and deliver game changing mobile advertising solutions that engage our customers." ,                  
+                    "link": "https://en-amazon.icims.com/jobs/261541/software-development-engineer---mobile-demand-platform-%28-ios%2c-android%29/job?mode=job&iis=Indeed&iisn=Indeed+%28Free+Posting%29"
+                },
+                {
+                    "id": 10, 
+                    "title": "Applications Developer 2", 
+                    "locationID": 1, 
+                    "companyID": 2, 
+                    "languageID": 1, 
+                    "skillsetID": 1, 
+                    "description": "Oracle America, Inc. has Applications Developer positions available in Austin, TX. Analyze, design, develop, troubleshoot and debug Oracle Retail Stores Applications. Perform detailed design based on provided high level architecture and design specification.andnbsp; Implement enhancements to the Oracle Retail Stores Applications. Write and execute unit tests.andnbsp; Build SQL queries and assist in system planning, scheduling and implementation. Review integration and regression test plans created by QA and interact with QA and Product Management about problems in the code.
+Employer will accept Master’s degree in Computer Science, Computer Engineering, or related technical field. Education or experience must include: 1. Object oriented languages, including Java, Objective C, C/C++; 2. UML and Design Patterns; 3. Designing and implementing new modulesandnbsp; using technologies, including webservices and JEE; 4. Writing SQL queries for Oracle and other databases using SQL and stored procedures; 5. Maintaining and creating new unit tests; 6. Understanding and complying with software development methodologies and processes; 7. Troubleshooting Application Servers deployment issues and security; 8. Mobile application design and development; and, 9. Eclipse and Netbeans or other IDE. Experience may be gained concurrently." ,                  
+                    "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=87689"
+                }
+
+]
