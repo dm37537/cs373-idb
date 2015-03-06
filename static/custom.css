@@ -1,15 +1,33 @@
 body {
-	padding-top: 30px;
+	padding-top: 50px;
 }
 
-.input-group-format {
-	max-width: 680px;
-	min-width: 100px;
-	float: none;
-	margin: 0 auto;
-}
-
-.jumbotron {
+.index-jumbotron {
+	padding-top: 100px;
 	color: black;
 	height: 400px;
+}
+
+.index-bubbles {
+	padding-right: 200px;
+	padding-left: 200px;
+}
+
+.locations-jumbotron {
+	padding-top: 50px;
+	color: black;
+	height: 250px;
+}
+
+.row-format {
+	padding-left: 65px;
+	padding-right: 65px;
+}
+
+.company-format {
+	padding-top: 40px;
+}
+
+.locations-format {
+	padding-top: 0px;
 }
