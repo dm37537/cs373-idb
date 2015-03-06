@@ -7,13 +7,15 @@ Company table:
 1 Google
 2 Oracle
 3 Amazon
+//covered
+
 4 Facebook
 5 Twitter
 6 Linkedin
 7 Tripadvisor
 8 Ebay
 9 Rackspace
-10 Indeed//covered
+10 Indeed
 
 Location table:
 1 Austin,TX
