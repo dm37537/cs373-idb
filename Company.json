@@ -21,5 +21,54 @@
                 "Company_description" : "Online shopping",
                 "Company_image" : "http://media.corporate-ir.net/media_files/IROL/97/97664/images/amazon_logo_RGB.jpg"
 
+            },{
+
+            	"Company_ID": 4,
+                "Company_Name": "Facebook",
+                "Company_description" : "Social Media",
+                "Company_image" : "https://www.facebook.com/images/fb_icon_325x325.png"
+
+            },{
+
+            	"Company_ID": 5,
+                "Company_Name": "Twitter",
+                "Company_description" : "Social Media",
+                "Company_image" : "http://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/1267px-Twitter_bird_logo_2012.svg.png"
+
+            },{
+
+            	"Company_ID": 6,
+                "Company_Name": "LinkedIn",
+                "Company_description" : "Online resume",
+                "Company_image" : "http://fontmeme.com/images/Linkedin-Logo.jpg"
+
+            },{
+
+            	"Company_ID": 7,
+                "Company_Name": "Tripadvisor",
+                "Company_description" : "Trip advisor",
+                "Company_image" : "http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/082012/tripavisor_logo.png"
+
+            },{
+
+            	"Company_ID": 8,
+                "Company_Name": "Ebay",
+                "Company_description" : "Online shopping",
+                "Company_image" : "http://mashable.com/2012/09/13/ebay-new-logo/"
+
+            },{
+
+            	"Company_ID": 9,
+                "Company_Name": "Rackspace",
+                "Company_description" : "Cloud server provider",
+                "Company_image" : "http://caa48e96f11ddd896e56-cbd62a0ad7e2d388825529106f960d1e.r78.cf2.rackcdn.com/RackspaceLogoManagedCloudLogo.jpg"
+
+            },{
+
+            	"Company_ID": 10,
+                "Company_Name": "Indeed",
+                "Company_description" : "Online yellow page for jobs",
+                "Company_image" : "http://theundercoverrecruiter.com/wp-content/uploads/2014/04/Indeed-Logo.jpg"
+
             }
     ]
