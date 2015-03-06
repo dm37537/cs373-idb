@@ -2,35 +2,35 @@
             {
                 "Location_ID" : 1,
                 "Location": "Austin, TX",
-                "Location_description" : "Austin is the capital of the US state of Texas and the seat of Travis County. Located in Central Texas, Austin is the 11th-most populous city in the United States and the fourth-most populous city in Texas.",
+                "Location_description" : "A great city to live in",
                 "Location_image" : "http://www.seesawaustin.com/wp-content/uploads/2014/07/Austin-jobs.jpg"
                 
             },{
 
                 "Location_ID" : 2,
                 "Location": "Seattle, WA",
-                "Location_description" : "Seattle is a coastal seaport city and the seat of King County, in the U.S. state of Washington. With an estimated 652,405 residents as of 2013, Seattle is the largest city in both the State of Washington ...",
+                "Location_description" : "A big city",
                 "Location_image" : "http://upload.wikimedia.org/wikipedia/commons/2/2f/Space_Needle002.jpg"
                 
             }, {
 
                 "Location_ID" : 3,
                 "Location": "San Francisco, CA",
-                "Location_description" : "San Francisco, officially the City and County of San Francisco, is the cultural, commercial and financial center of Northern California.",
+                "Location_description" : "Bay area",
                 "Location_image" : "http://s1.1zoom.net/big0/803/374490-svetik.jpg"
                 
             },{
 
                 "Location_ID" : 4,
                 "Location": "Los Angles, CA",
-                "Location_description" : "Los Angeles, officially the City of Los Angeles, often known by its initials L.A., is a major city in California's Southern California region, approximately 342 miles south of San Francisco.",
+                "Location_description" : "Art city",
                 "Location_image" : "http://s1.1zoom.net/big0/177/363344-admin.jpg"
                 
             },{
 
                 "Location_ID" : 5,
-                "Location": "New York City, NY",
-                "Location_description" : "New York – often called New York City or the City of New York to distinguish it from the State of New York, of which it is a part – is the most populous city in the United States and the center of the ...",
+                "Location": "New York, NY",
+                "Location_description" : "Expensive city",
                 "Location_image" : "http://s1.1zoom.net/big0/308/411063-svetik.jpg"
                 
             },{
