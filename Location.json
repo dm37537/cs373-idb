@@ -1,0 +1,38 @@
+[
+            {
+                "Location_ID" : 1,
+                "Location": "Austin, TX",
+                "Location_description" : "A great city to live in",
+                "Location_image" : "http://www.seesawaustin.com/wp-content/uploads/2014/07/Austin-jobs.jpg"
+                
+            },{
+
+                "Location_ID" : 2,
+                "Location": "Seattle, WA",
+                "Location_description" : "A big city",
+                "Location_image" : "http://upload.wikimedia.org/wikipedia/commons/2/2f/Space_Needle002.jpg"
+                
+            }, {
+
+                "Location_ID" : 3,
+                "Location": "San Francisco, CA",
+                "Location_description" : "Bay area",
+                "Location_image" : "http://s1.1zoom.net/big0/803/374490-svetik.jpg"
+                
+            },{
+
+                "Location_ID" : 4,
+                "Location": "Los Angles, CA",
+                "Location_description" : "Art city",
+                "Location_image" : "http://s1.1zoom.net/big0/177/363344-admin.jpg"
+                
+            },{
+
+                "Location_ID" : 5,
+                "Location": "New York, NY",
+                "Location_description" : "Expensive city",
+                "Location_image" : "http://s1.1zoom.net/big0/308/411063-svetik.jpg"
+                
+            }
+
+]
