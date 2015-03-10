@@ -32,6 +32,10 @@ body {
 	padding-top: 0px;
 }
 
+.language-format{
+	padding-top: 40px;
+}
+
 .image img {
     -webkit-transition: all 1s ease; /* Safari and Chrome */
     -moz-transition: all 1s ease; /* Firefox */
