@@ -2,36 +2,57 @@
             {
                 "Location_ID" : 1,
                 "Location": "Austin, TX",
-                "Location_description" : "A great city to live in",
+                "Location_description" : "Austin is the capital of the US state of Texas and the seat of Travis County. Located in Central Texas, Austin is the 11th-most populous city in the United States and the fourth-most populous city in Texas.",
                 "Location_image" : "http://www.seesawaustin.com/wp-content/uploads/2014/07/Austin-jobs.jpg"
                 
             },{
 
                 "Location_ID" : 2,
                 "Location": "Seattle, WA",
-                "Location_description" : "A big city",
+                "Location_description" : "Seattle is a coastal seaport city and the seat of King County, in the U.S. state of Washington. With an estimated 652,405 residents as of 2013, Seattle is the largest city in both the State of Washington ...",
                 "Location_image" : "http://upload.wikimedia.org/wikipedia/commons/2/2f/Space_Needle002.jpg"
                 
             }, {
 
                 "Location_ID" : 3,
                 "Location": "San Francisco, CA",
-                "Location_description" : "Bay area",
+                "Location_description" : "San Francisco, officially the City and County of San Francisco, is the cultural, commercial and financial center of Northern California.",
                 "Location_image" : "http://s1.1zoom.net/big0/803/374490-svetik.jpg"
                 
             },{
 
                 "Location_ID" : 4,
                 "Location": "Los Angles, CA",
-                "Location_description" : "Art city",
+                "Location_description" : "Los Angeles, officially the City of Los Angeles, often known by its initials L.A., is a major city in California's Southern California region, approximately 342 miles south of San Francisco.",
                 "Location_image" : "http://s1.1zoom.net/big0/177/363344-admin.jpg"
                 
             },{
 
                 "Location_ID" : 5,
-                "Location": "New York, NY",
-                "Location_description" : "Expensive city",
+                "Location": "New York City, NY",
+                "Location_description" : "New York – often called New York City or the City of New York to distinguish it from the State of New York, of which it is a part – is the most populous city in the United States and the center of the ...",
                 "Location_image" : "http://s1.1zoom.net/big0/308/411063-svetik.jpg"
+                
+            },{
+
+                "Location_ID" : 6,
+                "Location": "Boston, MA",
+                "Location_description" : "Boston is the capital and largest city of the Commonwealth of Massachusetts in the United States. Boston also serves as county seat of Suffolk County.",
+                "Location_image" : "http://www.dentons.com/~/media/Images/Website/Background%20Images/Offices/Boston/Boston_1.jpg"
+                
+            },{
+
+                "Location_ID" : 7,
+                "Location": "Dallas, TX",
+                "Location_description" : "Dallas is a major city in Texas and is the largest urban center of the fourth most populous metropolitan area in the United States. The city proper ranks ninth in the U.S. and third in Texas after Houston and San Antonio.",
+                "Location_image" : "http://doubletree3.hilton.com/resources/media/dt/DALVVDT/en_US/img/shared/full_page_image_gallery/main/dh_skyline_2_677x380_FitToBoxSmallDimension_Center.jpg"
+                
+            },{
+
+                "Location_ID" : 8,
+                "Location": "San Jose, CA",
+                "Location_description" : "San Jose is the third-largest city in California, the tenth-largest in the United States, and the county seat of Santa Clara County. San Jose is the largest city within the San Francisco Bay Area and the largest city in Northern California.",
+                "Location_image" : "http://www.latviansongfest2015.org/wp-content/uploads/2014/10/san-jose-usa-01.jpg"
                 
             }
 

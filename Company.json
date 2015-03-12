@@ -45,16 +45,16 @@
             },{
 
             	"Company_ID": 7,
-                "Company_Name": "Tripadvisor",
-                "Company_description" : "Trip advisor",
-                "Company_image" : "http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/082012/tripavisor_logo.png"
+                "Company_Name": "IBM",
+                "Company_description" : "computer",
+                "Company_image" : "http://www.dataversity.net/wp-content/uploads/2013/11/ib1.jpg"
 
             },{
 
             	"Company_ID": 8,
-                "Company_Name": "Ebay",
-                "Company_description" : "Online shopping",
-                "Company_image" : "http://mashable.com/2012/09/13/ebay-new-logo/"
+                "Company_Name": "Dropbox",
+                "Company_description" : "Cloud service",
+                "Company_image" : "http://2.bp.blogspot.com/-SBjTSn7XtSw/UuUFjuq_C6I/AAAAAAAABrQ/k-h3xYn-oTk/s1600/dropbox.png"
 
             },{
 

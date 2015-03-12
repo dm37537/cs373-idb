@@ -21,12 +21,10 @@ Location table:
 3 San Francisco
 4 Los angles
 5 New York
-//covered
-
 6 Boston
 7 Dallas
 8 Chicago
-9 San Jose
+9 San Jose//covered
 
 Language table:
 1 Java

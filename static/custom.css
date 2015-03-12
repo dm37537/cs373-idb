@@ -1,0 +1,91 @@
+body {
+	padding-top: 50px;
+}
+
+.index-jumbotron {
+	padding-top: 100px;
+	color: black;
+	height: 400px;
+}
+
+.index-bubbles {
+	padding-right: 200px;
+	padding-left: 200px;
+}
+
+.locations-jumbotron {
+	padding-top: 50px;
+	color: black;
+	height: 250px;
+}
+
+.row-format {
+	padding-left: 65px;
+	padding-right: 65px;
+}
+
+.company-format {
+	padding-top: 40px;
+}
+
+.locations-format {
+	padding-top: 0px;
+}
+
+.language-format{
+	padding-top: 40px;
+}
+
+.circularize {
+	background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+span.text-content {
+	background: rgba(0,0,0,0.5);
+	border-radius:50%;
+	margin-top: 20px;
+	margin-left: 45px;
+	color: white;
+	cursor: pointer;
+	display: table;
+	height: 300px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 300px;
+	opacity: 0;
+	-webkit-transition: opacity 500ms;
+	-moz-transition: opacity 500ms;
+	-o-transition: opacity 500ms;
+	transition: opacity 500ms;
+}
+ 
+span.text-content span {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.row.image-hover .col-md-4:hover span.text-content {
+	opacity: 1;
+}
+
+.image img {
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* IE 9 */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+}
+
+.image:hover img {
+    -webkit-transform:scale(1.25); /* Safari and Chrome */
+    -moz-transform:scale(1.25); /* Firefox */
+    -ms-transform:scale(1.25); /* IE 9 */
+    -o-transform:scale(1.25); /* Opera */
+     transform:scale(1.25);
+}

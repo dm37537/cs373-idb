@@ -23,6 +23,12 @@
                 "Language_description" : "simple Language",
                 "Language_image" : "http://static.topyaps.com/wp-content/uploads/2013/06/python.jpg"
                 
+            },{
+                "Language_ID" : 5,
+                "Language": "Javascript",
+                "Language_description" : "web Language",
+                "Language_image" : "http://static.topyaps.com/wp-content/uploads/2013/06/python.jpg"
+                
             }
 
 ]
