@@ -50,13 +50,6 @@
             },{
 
                 "Location_ID" : 8,
-                "Location": "Chicago, IL",
-                "Location_description" : "Chicago is the third most populous city in the United States, after New York City and Los Angeles. With 2.7 million residents, it is the most populous city in both the U.S. state of Illinois and the Midwestern United States.",
-                "Location_image" : "http://www.acbl.org/acbl-content/wp-content/uploads/2014/08/Chicago3.jpg"
-                
-            },{
-
-                "Location_ID" : 9,
                 "Location": "San Jose, CA",
                 "Location_description" : "San Jose is the third-largest city in California, the tenth-largest in the United States, and the county seat of Santa Clara County. San Jose is the largest city within the San Francisco Bay Area and the largest city in Northern California.",
                 "Location_image" : "http://www.latviansongfest2015.org/wp-content/uploads/2014/10/san-jose-usa-01.jpg"
