@@ -44,6 +44,36 @@ body {
     height: 100px;
 }
 
+span.text-content {
+	background: rgba(0,0,0,0.5);
+	border-radius:50%;
+	margin-top: 20px;
+	margin-left: 45px;
+	color: white;
+	cursor: pointer;
+	display: table;
+	height: 300px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 300px;
+	opacity: 0;
+	-webkit-transition: opacity 500ms;
+	-moz-transition: opacity 500ms;
+	-o-transition: opacity 500ms;
+	transition: opacity 500ms;
+}
+ 
+span.text-content span {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.row.image-hover .col-md-4:hover span.text-content {
+	opacity: 1;
+}
+
 .image img {
     -webkit-transition: all 1s ease; /* Safari and Chrome */
     -moz-transition: all 1s ease; /* Firefox */
