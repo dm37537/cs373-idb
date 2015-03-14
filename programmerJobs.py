@@ -39,19 +39,26 @@ def close_db(error):
 	if hasattr(g, 'sqlite_db'):
 		g.sqlite_db.close()
 """
-# Data structures to store info to be replaced with database
+# Loading JSON from files. To be replaced with database or model calls
 f = open('Job.json') 
 jobs = json.load(f)
 f.close()
 
-companies = [
-	{
-		'one':'This'
-	},
-	{
-		'two':'Works'
-	}
-]
+f = open('Company.json')
+companies = json.load(f)
+f.close()
+
+f = open('Location.json')
+locations = json.load(f)
+f.close()
+
+f = open('Language.json')
+languages = json.load(f)
+f.close()
+
+f = open('Skillset.json')
+skillsets = json.load(f)
+f.close()
 
 # The following are examples of different templates in action
 
@@ -62,7 +69,7 @@ def index():
 # API FUNCTIONALITY
 @app.route('/job', methods=['GET'])
 def get_tasks():
-	return jsonify({'Jobs': jobs})
+	return jsonify({'jobs': jobs})
 
 @app.route('/job/<int:job_id>', methods=['GET'])
 def get_job(job_id):
@@ -73,7 +80,7 @@ def get_job(job_id):
 
 @app.route('/company', methods=['GET'])
 def get_companies():
-    return jsonify({'Companies': companies})
+    return jsonify({'companies': companies})
 	    
 @app.route('/company/<int:company_id>', methods=['GET'])
 def company_job(company_id):

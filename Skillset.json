@@ -2,33 +2,26 @@
             {
                 "Skillset_ID" : 1,
                 "Skillset": "Spring, J2EE, Hibernate",
-                "Skillset_description" : "Spring, J2EE, Hibernate",
-                
+                "Skillset_description" : "Spring, J2EE, Hibernate"
             },{
                 "Skillset_ID" : 2,
                 "Skillset": "Mobile computing",
-                "Skillset_description" : "Mobile computing, IOS, Andriod",
-                
+                "Skillset_description" : "Mobile computing, IOS, Andriod"
             },{
                 "Skillset_ID" : 3,
                 "Skillset": "Network, Cloud",
-                "Skillset_description" : "Network",
-                
+                "Skillset_description" : "Network"
             },{
                 "Skillset_ID" : 4,
                 "Skillset": "Web, Html, javascript, CSS",
-                "Skillset_description" : "Web, Html, javascript, CSS",
-                
+                "Skillset_description" : "Web, Html, javascript, CSS"
             },{
                 "Skillset_ID" : 5,
                 "Skillset": "Hadoop, big data",
-                "Skillset_description" : "Hadoop, big data",
-                
+                "Skillset_description" : "Hadoop, big data"
             },{
                 "Skillset_ID" : 6,
                 "Skillset": "Database, SQL, NoSQL",
-                "Skillset_description" : "Database, SQL, NoSQL",
-                
+                "Skillset_description" : "Database, SQL, NoSQL"
             }
-]
 ]
