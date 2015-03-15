@@ -46,7 +46,8 @@ body {
 	padding-top: 5%;
 	background-image: url("images/jumbotron/locations_jumbotron.jpg");
 	background-size: cover;
-	background-position: 0% 100%;
+	background-position: -100px 340px;
+	background-attachment: fixed;
 	height: 100%;
 }
 
