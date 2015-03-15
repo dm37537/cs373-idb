@@ -1,16 +1,75 @@
 body {
 	padding-top: 50px;
 }
+@media(max-width: 900px) {
+	h1 {
+		font-size: 3em;
+	}
+	
+}
 
-.index-jumbotron {
+@media(max-width: 570px) {
+	h1 {
+		font-size: 2em
+	}
+}
+
+@media(max-width: 500px) {
+	h4 {
+		font-size: 1em;
+	}
+}
+
+@media(max-width: 400px) {
+	h1 {
+		font-size: 20px;
+	}
+}
+
+#index-jumbotron {
 	padding-top: 100px;
-	color: black;
-	height: 400px;
+	background-size: cover;
+	background-image: url('http://wildbit.com/blog/wp-content/uploads/2015/03/3025567-poster-p-1-how-to-fix-open-offices-bad-for-work.jpg');
+	background-position: center;
+	background-attachment: fixed;
+}
+
+#locations-jumbotron {
+	padding-top: 5%;
+	background-image: url('http://smoothvaporz.com/wp-content/uploads/2015/01/location1.jpg');
+	background-size: cover;
+	background-position: 0% 100%;
+	height: 100%;
+}
+
+#companies-jumbotron {
+	padding-top: 5%;
+	background-image: url('http://kkklick.com/kkklick.com/wp-content/uploads/2012/08/photo22.jpg');
+	background-size: cover;
+	background-position: 40% 40%;
+	height: 100%;
+	background-attachment: fixed;
+}
+
+.content-box {
+	background-color: rgba(0,0,0,0.4);
+	color: white;
+	width: 70%;
+	height: 100%;
+	border-radius: 10px;
+}
+
+.filter-blur {
+	filter: blur(2px);
+	-webkit-filter: blur(2px);
+	-moz-filter: blur(2px);
+	-o-filter: blur(2px);
+	-ms-filter: blur(2px);
 }
 
 .index-bubbles {
-	padding-right: 200px;
-	padding-left: 200px;
+	padding-right: 10%;
+	padding-left: 10%;
 }
 
 .locations-jumbotron {
@@ -25,11 +84,7 @@ body {
 }
 
 .company-format {
-	padding-top: 40px;
-}
-
-.locations-format {
-	padding-top: 0px;
+	padding-top: 30px;
 }
 
 .language-format{
