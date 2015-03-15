@@ -93,11 +93,25 @@ body {
     height: 100px;
 }
 
+img.img-cut {
+	width: 375px;
+	height:375px;
+}
+
 img.img-response {
 	width: 100%;
 	height: 100%;
 	max-height: 300px;
 	max-width: 300px;
+	position: relative;
+}
+
+img.img-response-location {
+	width: 100%;
+	height: 100%;
+	max-height: 375px;
+	max-width: 375px;
+	background-size: cover;
 	position: relative;
 }
 
