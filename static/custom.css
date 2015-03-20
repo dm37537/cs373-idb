@@ -60,6 +60,12 @@ body {
 	background-attachment: fixed;
 }
 
+#languages-jumbotron {
+	padding-top: 5%;
+	background-image: url("images/jumbotron/languages_jumbotron.png");
+	background-size: cover;
+}
+
 .content-box {
 	background-color: rgba(0,0,0,0.4);
 	color: white;
