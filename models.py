@@ -1,11 +1,10 @@
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db' #Change later
-db = SQLAlchemy(app)
+from programmerJobs import db
 
 class Job(db.Model):
+	__tablename__ = 'Job'
+
 	id = db.Column(db.Integer, primary_key=True)
 	title = db.Column(db.String(120))
 	locationID = db.Column(db.Integer)
@@ -28,6 +27,8 @@ class Job(db.Model):
 		return '<Job %r>' % self.title
 
 class Company(db.Model):
+	__tablename__ = 'Company'
+
 	Company_ID = db.Column(db.Integer, primary_key=True)
 	Company_Name = db.Column(db.String(120))
 	Company_description = db.Column(db.String(120))
@@ -42,6 +43,8 @@ class Company(db.Model):
 		return '<Company %r>' % self.Company_Name
 
 class Language(db.Model):
+	__tablename__ = 'Language'
+
 	Language_ID = db.Column(db.Integer, primary_key=True)
 	Language_Name = db.Column(db.String(120))
 	Language_Description = db.Column(db.String(120))
@@ -54,6 +57,8 @@ class Language(db.Model):
 		return '<Language %r>' % self.Language_Name
 
 class Location(db.Model):
+	__tablename__ = 'Location'
+
 	Location_ID = db.Column(db.Integer, primary_key=True)
 	Location = db.Column(db.String(120))
 	Location_description = db.Column(db.String(120))
@@ -68,6 +73,8 @@ class Location(db.Model):
 		return '<Location %r>' % self.Location
 
 class Skillset:
+	__tablename__ = 'Skillset'
+
 	Skillset_ID = db.Column(db.Integer, primary_key=True)
 	Skillset = db.Column(db.String(120))
 	Skillset_description = db.Column(db.String(120))
