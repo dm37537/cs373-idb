@@ -100,4 +100,127 @@
                     "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=87689"
                 }
 
+//Facebook is at home desktop
+
+{
+                    "id": 10, 
+                    "title": "Software Engineer - Machine Learning/Relevance (Seattle)", 
+                    "locationID": 2, 
+                    "companyID": 5, 
+                    "languageID": 2, 
+                    "skillsetID": 3, 
+                    "description": "You will work on cutting-edge problem and participate in the engineering life-cycle at Twitter, including designing distributed systems, writing production code, conducting code reviews and working alongside our infrastructure and reliability teams. You will be equally comfortable doing incremental quality work and also building brand new systems to enable future quality improvements. " ,                  
+                    "link": "https://about.twitter.com/careers/positions?jvi=op86Xfwk,Job&s=Indeed"
+                },
+                {
+                    "id": 10, 
+                    "title": "Software Engineer - Systems (Seattle)", 
+                    "locationID": 2, 
+                    "companyID": 5, 
+                    "languageID": 1, 
+                    "skillsetID": 5, 
+                    "description": "Our engineering teams are responsible for the services and infrastructure that connect hundreds of millions of active Twitter users to real-time information about what’s relevant in their lives and the world we live in. We work on some of the world’s largest distributed systems -- our core infrastructure receives hundreds of millions of tweets per day and serves tens of billions of API requests, all with an uptime in excess of 99.9%. Our other systems operate at a similarly staggering scale: we serve over 2+ billion search queries per day, render hundreds of millions of ad impressions, and process hundreds of terabytes of log and interaction data daily. As a software engineer at Twitter, you will help us build, scale and maintain these systems, all of which have a direct impact on the lives of our users and the success of our business. " ,                  
+                    "link": "https://about.twitter.com/careers/positions?jvi=o5ViZfw1,Job&s=Indeed"
+                },
+                {
+                    "id": 10, 
+                    "title": "Software Engineer - Product (Seattle)", 
+                    "locationID": 2, 
+                    "companyID": 5, 
+                    "languageID": 1, 
+                    "skillsetID": 5, 
+                    "description": "A Senior Developer ready to design and implement awesome new features through innovation and data-driven iterations at Twitter scale. Someone who wants to push limits of product innovation using the latest advancements in technology and methods - working closely with product managers, designers and other engineering teams. Someone that works best in an environment with a sense of urgency and can rapidly iterate on product/platform features." ,                  
+                    "link": "https://about.twitter.com/careers/positions?jvi=om76Xfwg,Job&s=Indeed"
+                },
+                {
+                    "id": 10, 
+                    "title": "Software Engineer - Corporate Productivity", 
+                    "locationID": 3, 
+                    "companyID": 5, 
+                    "languageID": 1, 
+                    "skillsetID": 4, 
+                    "description": "Brainstorm and implement products that improve the lives of all Twitter employees. Rapidly prototype new ideas with your teammates. Develop and maintain full stack web applications." ,                  
+                    "link": "https://about.twitter.com/careers/positions?jvi=ozXTZfw8,Job&s=Indeed"
+                },
+                {
+                    "id": 10, 
+                    "title": "Software Engineer - Engineering Effectiveness", 
+                    "locationID": 3, 
+                    "companyID": 5, 
+                    "languageID": 1, 
+                    "skillsetID": 3, 
+                    "description": "The Engineering Effectiveness team is empowered to build the engineering infrastructure, platform and tools to give Twitter this competitive edge. We design and develop the engineering infrastructure which is distributed, scalable, and enables fast iterations via continuous integration and reliable deployments.  Our contributions make Twitter Engineering an environment where developers thrive. This role will help shape Twitter’s future on tools, infrastructure and methodologies for the massive scale we are trying to achieve.  If you have empathy for developers, passion for engineering productivity, experience delivering scalable distributed systems - you will find this role liberating and challenging." ,           
+                    "link": "https://about.twitter.com/careers/positions?jvi=oQCqXfwz,Job&s=Indeed"
+                },
+                {
+                    "id": 10, 
+                    "title": "IT Applications Engineer", 
+                    "locationID": 3, 
+                    "companyID": 5, 
+                    "languageID": 4, 
+                    "skillsetID": 3, 
+                    "description": "To strengthen our growing team, we are looking for an experienced Salesforce Developer to design and build highly scalable business application solutions leveraging force.com, service cloud, sales cloud, and app exchange solutions. As an integral member of the IT business systems team, this position will be responsible for developing innovative solutions for business process automation. You will possess outstanding interpersonal skills and demonstrate yourself to be a great analytical thinker. You are team-oriented, and you thrive in a fast paced environment." ,           
+                    "link": "https://about.twitter.com/careers/positions?jvi=oONQZfwa,Job&s=Indeed"
+                },
+                {
+                    "id": 10, 
+                    "title": "Software Engineer - Monetization", 
+                    "locationID": 3, 
+                    "companyID": 5, 
+                    "languageID": 1, 
+                    "skillsetID": 3, 
+                    "description": "Twitter is looking for great engineers to design and build our next generation of revenue products. You will be joining a team that is making a huge impact on Twitter's business and providing an indispensable platform for marketers. We work in small teams and ship to production every day. We're driven by measurement and data to inform our decisions, learning about our users and their problems. Our culture emphasizes creative problem solving, fast iteration and execution. Join us in our mission to build the world’s highest-performing advertising platform that’s also delightful to Twitter users. " ,           
+                    "link": "https://about.twitter.com/careers/positions?jvi=oHAqXfwo,Job&s=Indeed"
+                },
+                {
+                    "id": 10, 
+                    "title": "QA Engineer-Vine", 
+                    "locationID": 5, 
+                    "companyID": 5, 
+                    "languageID": 1, 
+                    "skillsetID": 2, 
+                    "description": "Create automated test scripts for iOS, Android, and web. Work closely alongside the API, Infrastructure, and Mobile teams. Documenting test cases, bug reporting,test execution  and reporting test status. Assure resolution of issues by following through to the end of the testing process. Document and execute regression, functional, and integration tests. Ensure the best possible experience for the users of Vine" ,           
+                    "link": "https://about.twitter.com/careers/positions?jvi=oJCF0fwK,Job&s=Indeed"
+                },
+                {
+                    "id": 10, 
+                    "title": "Software Engineer, Architecture (Twitter Cortex)", 
+                    "locationID": 5, 
+                    "companyID": 5, 
+                    "languageID": 2, 
+                    "skillsetID": 6, 
+                    "description": "We are looking for a number of passionate, talented, entrepreneurial engineers to join the team in New York to help us build the foundations for our deep learning platform." ,           
+                    "link": "https://about.twitter.com/careers/positions?jvi=ottA0fwg,Job&s=Indeed"
+                },
+                {
+                    "id": 10, 
+                    "title": "Software Engineer, Systems (Twitter Cortex)", 
+                    "locationID": 5, 
+                    "companyID": 5, 
+                    "languageID": 1, 
+                    "skillsetID": 5, 
+                    "description": "Design, contribute and maintain efficient production code to an automated offline and online machine (deep) learning platform/service. Contribute to a mixed stack/full stack environment: the platform will include production backend code (scala), training jobs (lua, C, CUDA), web services and all the way to frontend code for live monitoring. Maintain a complex live system with production data dependencies, low-latency requirements. Work in a collaborative manner with team members in remote offices. Be awesome in developing JVM services (Scala, Java). Balance out your desire to ship code with your responsibility to get it right" ,
+                    "link": "https://about.twitter.com/careers/positions?jvi=ontA0fwa,Job&s=Indeed"
+                },
+                {
+                    "id": 10, 
+                    "title": "Fabric Support Engineer", 
+                    "locationID": 6, 
+                    "companyID": 5, 
+                    "languageID": 1, 
+                    "skillsetID": 2, 
+                    "description": "We’re looking for someone who shares our passion about cultivating and building an amazing user experience-- for all Fabric developers. Building relationships and maintaining the exceptional standard we have set as an organization is the focal point of the role. We pride ourselves that our ability to help our users is second to none." ,
+                    "link": "https://about.twitter.com/careers/positions?jvi=o8pQZfw6,Job&s=Indeed"
+                },
+                {
+                    "id": 10, 
+                    "title": "Full Stack - Software Engineer (Boston)", 
+                    "locationID": 6, 
+                    "companyID": 5, 
+                    "languageID": 1, 
+                    "skillsetID": 4, 
+                    "description": "You will build web applications for our users, partners, and team. Those applications can range from business-critical internal tools to the core architecture of Twitter.com and our mobile website, with opportunities to work with a variety of languages and technologies." ,
+                    "link": "https://about.twitter.com/careers/positions?jvi=otBqXfwb,Job&s=Indeed"
+                }
+
 ]
