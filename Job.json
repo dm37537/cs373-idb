@@ -98,12 +98,199 @@
                     "skillsetID": 1, 
                     "description": "Oracle America, Inc. has Applications Developer positions available in Austin, TX. Analyze, design, develop, troubleshoot and debug Oracle Retail Stores Applications. Perform detailed design based on provided high level architecture and design specification.andnbsp; Implement enhancements to the Oracle Retail Stores Applications. Write and execute unit tests.andnbsp; Build SQL queries and assist in system planning, scheduling and implementation. Review integration and regression test plans created by QA and interact with QA and Product Management about problems in the code./nEmployer will accept Master’s degree in Computer Science, Computer Engineering, or related technical field. Education or experience must include: 1. Object oriented languages, including Java, Objective C, C/C++; 2. UML and Design Patterns; 3. Designing and implementing new modulesandnbsp; using technologies, including webservices and JEE; 4. Writing SQL queries for Oracle and other databases using SQL and stored procedures; 5. Maintaining and creating new unit tests; 6. Understanding and complying with software development methodologies and processes; 7. Troubleshooting Application Servers deployment issues and security; 8. Mobile application design and development; and, 9. Eclipse and Netbeans or other IDE. Experience may be gained concurrently." ,                  
                     "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=87689"
-                }
-
-//Facebook is at home desktop
-
-{
-                    "id": 10, 
+                },
+                {
+                    "id": 11, 
+                    "title": "Software Engineer, Oculus", 
+                    "locationID": 2, 
+                    "companyID": 4, 
+                    "languageID": 2, 
+                    "skillsetID": 3, 
+                    "description": "As a software engineer at Oculus Research your job is to figure out what virtual reality looks like 5 years in the future. You'll be part of a multi-disciplinary team pushing on every aspect of the experience: haptics, audio, input, computer vision, optics, display technology, and whatever else we can dream up. Our mission is to keep advancing the VR platform; the work you do here will lay the foundation for VR experiences for years to come. Ideal candidates are exceptional C/C++ programmers who are comfortable working with new technologies at multiple levels in the software stack. We’re looking for adaptable coders who are used to owning and writing non-trivial software systems.", 
+                    "link": "https://www.facebook.com/careers/department?dept=engineering&req=a0IA000000G46DiMAJ"
+                },
+                {
+                    "id": 12, 
+                    "title": "Partner Engineer, Platform", 
+                    "locationID": 5, 
+                    "companyID": 4, 
+                    "languageID": 1, 
+                    "skillsetID": 4, 
+                    "description": "Partner Engineering is a highly technical team that works with our strategic partners to integrate Facebook and Instagram Platforms into their Web sites, applications, and devices. In this role, you will engage with some of the world's most influential companies and work closely with our world-class engineering and product teams. The ideal candidate will combine excellent technical and business skills to make our partners successful and improve the Facebook and Instagram Platforms. This position is based in our New York office.", 
+                    "link": "https://www.facebook.com/careers/department?dept=engineering&req=a0IA000000G3uvoMAB"
+                },
+                {
+                    "id": 13, 
+                    "title": "Software Engineer, Systems", 
+                    "locationID": 5, 
+                    "companyID": 4, 
+                    "languageID": 2, 
+                    "skillsetID": 3, 
+                    "description": "We’re looking for hardcore infrastructure engineers to join the Systems Engineering team. This infrastructure team builds the large, distributed systems that are the heart of Facebook, no easy task. Our code serves millions of requests per second, and it does so with sub-second latency and in a fault tolerant manner. We handle everything from distributed data storage, to synchronization and coordination of large server farms, to building a fast PHP virtual machine for our front end Facebook code. We are looking for candidates who posses a demonstrable, radiant energy towards tackling complexity and building platforms that can scale through multiple orders of magnitude to make the world more open and connected.", 
+                    "link": "https://www.facebook.com/careers/department?dept=engineering&req=a0IA0000006cQPOMA2"
+                },
+                {
+                    "id": 14, 
+                    "title": "Software Engineer, Search & Machine Learning", 
+                    "locationID": 5, 
+                    "companyID": 4, 
+                    "languageID": 4, 
+                    "skillsetID": 6, 
+                    "description": "We’re looking for data-driven engineers to join the Search and Machine Learning team. As a part of the larger Entities team, which is working to map and connect the high-quality social and entity graph on Facebook, the Search team is focused on building the best location dataset in the world for our location products (mobile Nearby, Graph Search, etc.) and 3rd party developers. The work is a mix of Crowdsourcing (PHP/front-end), Machine Learning (Python/ranking), and Search Features/Ranking (Python/ranking). We are looking for candidates who share a passion for tackling complexity and making sense out of massive datasets using text retrieval, NLP, machine learning and various other optimization techniques.", 
+                    "link": "https://www.facebook.com/careers/department?dept=engineering&req=a0IA0000006cPbyMAE"
+                },
+                {
+                    "id": 15, 
+                    "title": "Software Engineer, Products", 
+                    "locationID": 5, 
+                    "companyID": 4, 
+                    "languageID": 4, 
+                    "skillsetID": 4, 
+                    "description": "Want to create products that more than 1 billion people around the world use? Want to build new features and improve existing products like Photos, Video, Places, NewsFeed, Search, Mobile and Messaging? Want to solve unique, large scale, highly complex technical problems? Facebook is seeking an experienced Software Engineer to join the Products team. You can help build the next-generation systems behind Facebook's products, create web applications that reach millions of people, build high volume servers and be a part of a team that’s working to help people connect with each other around the globe. Join us! This position is full-time and is based in our New York office. ", 
+                    "link": "https://www.facebook.com/careers/department?dept=engineering&req=a0IA0000006cPKxMAM"
+                },
+                {
+                    "id": 16, 
+                    "title": "Solutions Engineer", 
+                    "locationID": 5, 
+                    "companyID": 4, 
+                    "languageID": 1, 
+                    "skillsetID": 3, 
+                    "description": "Our team is at the intersection of software engineering and digital advertising. This role is for engineers who love to build products and work with partners to realize the full potential of those products. As a Solutions Engineer, you are the engineering lead of your assigned set of partners and are responsible for developing their Facebook technology strategy and executing on it. You will spend 50% of your time working with product engineering teams and writing code. The other 50% you will spend working directly with partners. This is an engineering role with a high bar for problem solving and coding skills. This role is located in our New York, NY office.", 
+                    "link": "https://www.facebook.com/careers/department?dept=engineering&req=a0I1200000G4LyeEAF"
+                },
+                {
+                    "id": 17, 
+                    "title": "Software Engineer, Android", 
+                    "locationID": 5, 
+                    "companyID": 4, 
+                    "languageID": 1, 
+                    "skillsetID": 2, 
+                    "description": "We are looking for someone that has strong experience developing user interfaces for applications on Android using Android SDK. If you are interested in joining a world-class team of passionate people and industry veterans who like to work hard and play hard, we look forward to hearing from you soon!", 
+                    "link": "https://www.facebook.com/careers/department?dept=engineering&req=a0IA000000CvZ0LMAV"
+                },
+                {
+                    "id": 18, 
+                    "title": "Client Solutions Manager, Tech/Telco (NYC)", 
+                    "locationID": 5, 
+                    "companyID": 4, 
+                    "languageID": 4, 
+                    "skillsetID": 6, 
+                    "description": "The Client Solutions Manager for Facebook’s Global Marketing Solutions team is a strategic and enthusiastic solution-driver who puts our customers at the core of everything we do. This is an outstanding opportunity to build and manage key relationships, be a platform and product expert, and become an expert in media planning, strategy and measurement to our Fortune 500, multi-channel advertisers. With proven understanding of both online and traditional media, this role is responsible for partnering with the sales team to develop industry-specific relationships, drive revenue by negotiating and optimizing complex opportunities, and use data and analytics to build a consultative solution for our customers. The Client Solutions Manager will establish and strengthen key client relationships with a focus on driving revenue, advertiser education & advertiser satisfaction. Success in this position requires strong consultative sales, analytical, and technical skills, a focus on client service, and the ability to thrive in a dynamic, team-focused environment delivering against tight deadlines. This position is based in our NYC office.", 
+                    "link": "https://www.facebook.com/careers/department?dept=sales&req=a0I1200000G4WKMEA3"
+                },
+                {
+                    "id": 19, 
+                    "title": "Release Engineer", 
+                    "locationID": 5, 
+                    "companyID": 4, 
+                    "languageID": 4, 
+                    "skillsetID": 3, 
+                    "description": "Release Engineering plays an integral role in implementing and executing product release processes. The role supports Facebook's engineering by managing the source code management system, automating builds and regression testing, building tools and monitoring used in software deployments, and coordinating and pushing new releases to the production infrastructure. The Release Engineering team ensures that new software is released in a streamlined manner from development to production. The team establishes procedures and develops tools that are used by both the Engineering and Operations teams. As a Release Engineer you'll use your strong technical ability to drive product releases across many different systems and teams. You'll work hard to ensure that Facebook's products are delivered with a repeatable and scalable process.", 
+                    "link": "https://www.facebook.com/careers/department?dept=engineering&req=a0IA0000006cQOOMA2"
+                },
+                {
+                    "id": 20, 
+                    "title": "Software Engineer, Infrastructure", 
+                    "locationID": 6, 
+                    "companyID": 4, 
+                    "languageID": 1, 
+                    "skillsetID": 3, 
+                    "description": "Facebook is seeking an experienced Software Engineer to join our Infrastructure Engineering team in Boston. The position is full-time and is based in our Cambridge, MA office. There are minimal travel requirements for this position. Infrastructure Engineering builds large, distributed components that run Facebook. Our code serves millions of requests per second, and it does so with subsecond latency and in a fault tolerant manner. We handle everything from Facebook scale data storage, to synchronization and coordination of large server clusters, to providing a runtime environment for front end Facebook code. We are looking for candidates who share a passion for tackling complexity and building platforms that can scale through multiple orders of magnitude.", 
+                    "link": "https://www.facebook.com/careers/department?dept=engineering&req=a0IA000000CxO6SMAV"
+                },
+                {
+                    "id": 21, 
+                    "title": "Full Stack Web Developer- Tools, WhatsApp", 
+                    "locationID": 10, 
+                    "companyID": 4, 
+                    "languageID": 4, 
+                    "skillsetID": 4, 
+                    "description": "Full Stack Web Developer WhatsApp is the world’s largest and fastest growing communication company with over 600M Monthly active users globally. A Top 25 iOS app in more than 100 countries and an Android app with more than 500M installs on Google Play! Using your startup mindset and your experience developing native mobile apps, you will create new, awesome features used by 600+ Million current WhatsApp users. We are looking for Software Web Developer Downtown Mountain View, CA", 
+                    "link": "https://www.facebook.com/careers/department?dept=engineering&req=a0IA000000G41MfMAJ"
+                },
+                {
+                    "id": 22, 
+                    "title": "Computer Vision Engineer, Oculus", 
+                    "locationID": 10, 
+                    "companyID": 4, 
+                    "languageID": 2, 
+                    "skillsetID": 3, 
+                    "description": "Great virtual reality technology depends on advances in computer vision and tracking. As a computer vision engineer at Oculus, you'll be developing software for cutting edge vision applications that transform virtual reality from dream to reality. We're looking for a creative engineer to usher in the next era of human-computer interaction by integrating computer vision into everyday environments and practical products.", 
+                    "link": "https://www.facebook.com/careers/department?dept=engineering&req=a0I1200000G4WSQEA3"
+                },
+                {
+                    "id": 23, 
+                    "title": "Data Analyst, Small & Medium Business", 
+                    "locationID": 10, 
+                    "companyID": 4, 
+                    "languageID": 1, 
+                    "skillsetID": 6, 
+                    "description": "Facebook’s mission is to give people the power to share and make the world more open and connected. People use Facebook to stay connected with friends, family, & businesses, to discover what’s going on in the world, and to share and express what matters to them. The Small & Medium Business (SMB) team contributes directly to Facebook’s mission by connecting small businesses with their customers and helping them grow through solutions like pages and advertising. We succeed when we help our customers grow their business. The SMB team is seeking a data analyst who is passionate about using data and insights to drive business strategy, inform its execution, and improve efficiency. The analyst will focus on understanding the existing North America market and identifying future opportunities for growth. The ideal candidate is action-oriented and passionate about using data and analysis to evaluate success and inform efficiency in a fast-paced, dynamic environment. This is a full time position based in our Menlo Park HQ and will report to the Director of SMB North America.", 
+                    "link": "https://www.facebook.com/careers/department?dept=data&req=a0I1200000G4VqJEAV"
+                },
+                {
+                    "id": 24, 
+                    "title": "Client Tools (WhatsApp) Intern", 
+                    "locationID": 10, 
+                    "companyID": 4, 
+                    "languageID": 1, 
+                    "skillsetID": 4, 
+                    "description": "Client Tools - Intern Downtown Mountain View, CA WhatsApp is the world’s largest and fastest growing communications company with over 600M Monthly active users globally. A Top 25 iOS app in more than 100 countries and an Android app with more than 500M installs on Google Play! Using your startup mindset and your experience developing native mobile apps, you will create new, awesome features used by 600+ Million current WhatsApp users. We are looking for Mobile Software Developers for all our platforms: iOS, Android, Windows Phone, BlackBerry, and Nokia. We are seeking an intern to develop automations to capture screenshots from various WhatsApp applications to be published in our WhatsApp FAQ.", 
+                    "link": "https://www.facebook.com/careers/department?dept=engineering&req=a0I1200000G4V9MEAV"
+                },
+                {
+                    "id": 25, 
+                    "title": "Research Scientist, Speech Recognition/Acoustic Modeling", 
+                    "locationID": 10, 
+                    "companyID": 4, 
+                    "languageID": 4, 
+                    "skillsetID": 5, 
+                    "description": "Facebook is seeking a Speech Recognition Research Scientist to join our research team in Menlo Park. The ideal candidate will have research experience developing speech recognition systems in different languages. Individuals in this role should be experts in acoustic modeling, including discriminative training, neural networks, and machine learning, and have experience working on large quantities of data. The candidate will help Facebook conduct research that support naturally spoken input in more than 70 languages.", 
+                    "link": "https://www.facebook.com/careers/department?dept=engineering&req=a0IA000000G2gDLMAZ"
+                },
+                {
+                    "id": 26, 
+                    "title": "Data Scientist, Infrastructure", 
+                    "locationID": 10, 
+                    "companyID": 4, 
+                    "languageID": 4, 
+                    "skillsetID": 6, 
+                    "description": "How would Facebook scale to the next billion users? The Infrastructure Strategy group is responsible for the strategic analysis to support and enable the continued growth critical to Facebook’s infrastructure organization. The ideal candidate will be passionate about Facebook, highly analytical, have strong mathematical aptitude and has experience using data to drive cost effective decision making. This is a full-time position based in our headquarters in Menlo Park, CA.", 
+                    "link": "https://www.facebook.com/careers/department?dept=infrastructure&req=a0I1200000G4W3PEAV"
+                },
+                {
+                    "id": 27, 
+                    "title": "Sustainability Analyst", 
+                    "locationID": 10, 
+                    "companyID": 4, 
+                    "languageID": 4, 
+                    "skillsetID": 6, 
+                    "description": "Facebook is seeking an avid problem solver to join its infrastructure sustainability team to focus on data tracking and strategic analysis. The Sustainability Analyst will turn raw data into useful information, analyze operational impacts and contribute to strategic thinking about data impact and the projects it informs.", 
+                    "link": "https://www.facebook.com/careers/department?dept=infrastructure&req=a0I1200000G4WS1EAN"
+                },
+                {
+                    "id": 28, 
+                    "title": "Data Platform Engineer", 
+                    "locationID": 10, 
+                    "companyID": 4, 
+                    "languageID": 2, 
+                    "skillsetID": 6, 
+                    "description": "Do you like working with big data? Are you interested in working with some of the largest distributed distributed databases and data warehouses in the world? If yes, we want to talk to you. Facebook is seeking a Data Platform Engineer to join the Enterprise Data Infrastructure team to help our Facebook teams analyze multi-petabytes of data. You will help build and maintain solutions around the various Facebook distributed database technologies including HDFS/Hive, Presto, RocksDB, Scribe, and Vertica. The person should be creative and passionate about large scale, massively distributed, high performance distributed databases and data analysis tools. Their focus will enable the next generation of big data analysis platforms. This is a full time position at Facebook Menlo Park campus", 
+                    "link": "https://www.facebook.com/careers/department?dept=it&req=a0IA000000G42VUMAZ"
+                },
+                {
+                    "id": 29, 
+                    "title": "MySQL Database Engineer", 
+                    "locationID": 10, 
+                    "companyID": 4, 
+                    "languageID": 3, 
+                    "skillsetID": 6, 
+                    "description": "Facebook is seeking a MySQL Database Engineer. This position will be primarily responsible for managing and providing active support for all aspects of the Facebook MySQL data set while helping to facilitate its continuous evolution from today's best in class to that of tomorrow. Candidates should have extensive experience in writing efficient automation software and a visceral aversion to doing the same task twice. Some of the things we are working on can be seen at facebook.com/MySQLatFacebook.", 
+                    "link": "https://www.facebook.com/careers/department?dept=engineering&req=a0IA000000CxfUlMAJ"
+                },
+                {
+                    "id": 30, 
                     "title": "Software Engineer - Machine Learning/Relevance (Seattle)", 
                     "locationID": 2, 
                     "companyID": 5, 
@@ -113,7 +300,7 @@
                     "link": "https://about.twitter.com/careers/positions?jvi=op86Xfwk,Job&s=Indeed"
                 },
                 {
-                    "id": 10, 
+                    "id": 31, 
                     "title": "Software Engineer - Systems (Seattle)", 
                     "locationID": 2, 
                     "companyID": 5, 
@@ -123,7 +310,7 @@
                     "link": "https://about.twitter.com/careers/positions?jvi=o5ViZfw1,Job&s=Indeed"
                 },
                 {
-                    "id": 10, 
+                    "id": 32, 
                     "title": "Software Engineer - Product (Seattle)", 
                     "locationID": 2, 
                     "companyID": 5, 
@@ -133,7 +320,7 @@
                     "link": "https://about.twitter.com/careers/positions?jvi=om76Xfwg,Job&s=Indeed"
                 },
                 {
-                    "id": 10, 
+                    "id": 33, 
                     "title": "Software Engineer - Corporate Productivity", 
                     "locationID": 3, 
                     "companyID": 5, 
@@ -143,7 +330,7 @@
                     "link": "https://about.twitter.com/careers/positions?jvi=ozXTZfw8,Job&s=Indeed"
                 },
                 {
-                    "id": 10, 
+                    "id": 34, 
                     "title": "Software Engineer - Engineering Effectiveness", 
                     "locationID": 3, 
                     "companyID": 5, 
@@ -153,7 +340,7 @@
                     "link": "https://about.twitter.com/careers/positions?jvi=oQCqXfwz,Job&s=Indeed"
                 },
                 {
-                    "id": 10, 
+                    "id": 35, 
                     "title": "IT Applications Engineer", 
                     "locationID": 3, 
                     "companyID": 5, 
@@ -163,7 +350,7 @@
                     "link": "https://about.twitter.com/careers/positions?jvi=oONQZfwa,Job&s=Indeed"
                 },
                 {
-                    "id": 10, 
+                    "id": 36, 
                     "title": "Software Engineer - Monetization", 
                     "locationID": 3, 
                     "companyID": 5, 
@@ -173,7 +360,7 @@
                     "link": "https://about.twitter.com/careers/positions?jvi=oHAqXfwo,Job&s=Indeed"
                 },
                 {
-                    "id": 10, 
+                    "id": 37, 
                     "title": "QA Engineer-Vine", 
                     "locationID": 5, 
                     "companyID": 5, 
@@ -183,7 +370,7 @@
                     "link": "https://about.twitter.com/careers/positions?jvi=oJCF0fwK,Job&s=Indeed"
                 },
                 {
-                    "id": 10, 
+                    "id": 38, 
                     "title": "Software Engineer, Architecture (Twitter Cortex)", 
                     "locationID": 5, 
                     "companyID": 5, 
@@ -193,7 +380,7 @@
                     "link": "https://about.twitter.com/careers/positions?jvi=ottA0fwg,Job&s=Indeed"
                 },
                 {
-                    "id": 10, 
+                    "id": 39, 
                     "title": "Software Engineer, Systems (Twitter Cortex)", 
                     "locationID": 5, 
                     "companyID": 5, 
@@ -203,7 +390,7 @@
                     "link": "https://about.twitter.com/careers/positions?jvi=ontA0fwa,Job&s=Indeed"
                 },
                 {
-                    "id": 10, 
+                    "id": 40, 
                     "title": "Fabric Support Engineer", 
                     "locationID": 6, 
                     "companyID": 5, 
@@ -213,7 +400,7 @@
                     "link": "https://about.twitter.com/careers/positions?jvi=o8pQZfw6,Job&s=Indeed"
                 },
                 {
-                    "id": 10, 
+                    "id": 41, 
                     "title": "Full Stack - Software Engineer (Boston)", 
                     "locationID": 6, 
                     "companyID": 5, 
@@ -223,7 +410,7 @@
                     "link": "https://about.twitter.com/careers/positions?jvi=otBqXfwb,Job&s=Indeed"
                 },
                 {
-                    "id": 10, 
+                    "id": 42, 
                     "title": "Technical Consultant, Customer Success", 
                     "locationID": 5, 
                     "companyID": 6, 
@@ -233,7 +420,7 @@
                     "link": "http://www.ihispano.com/jobs/solutions-architect-technical-consulting?sk=1&id=8154e1e5666293a6af5a00116d&utm_source=Indeed&utm_medium=cpc&utm_campaign=Indeed&rx_campaign=Indeed08&rx_medium=cpc&rx_source=Indeed"
                 },
                 {
-                    "id": 10, 
+                    "id": 43, 
                     "title": "Engineering Intern", 
                     "locationID": 9, 
                     "companyID": 6, 
@@ -243,7 +430,7 @@
                     "link": "http://hire.jobvite.com/CompanyJobs/Careers.aspx?k=Job&c=q2XaVfwO&j=oInx0fwm&s=Indeed"
                 },
                 {
-                    "id": 10, 
+                    "id": 44, 
                     "title": "Principal Data Scientist, Consumer Analytics", 
                     "locationID": 9, 
                     "companyID": 6, 
@@ -253,7 +440,7 @@
                     "link": "http://hire.jobvite.com/CompanyJobs/Careers.aspx?k=Job&c=qOW9Vfwy&j=ozHI0fwI&s=Indeed"
                 },
                 {
-                    "id": 10, 
+                    "id": 45, 
                     "title": "Product Innovation Intern", 
                     "locationID": 9, 
                     "companyID": 6, 
@@ -263,7 +450,7 @@
                     "link": "http://hire.jobvite.com/CompanyJobs/Careers.aspx?k=Job&c=qOW9Vfwy&j=o1Cq0fwN&s=Indeed"
                 },
                 {
-                    "id": 10, 
+                    "id": 46, 
                     "title": "Product Analytics Intern", 
                     "locationID": 9, 
                     "companyID": 6, 
@@ -273,7 +460,7 @@
                     "link": "http://hire.jobvite.com/CompanyJobs/Careers.aspx?k=Job&c=qOW9Vfwy&j=owDq0fwj&s=Indeed"
                 },
                 {
-                    "id": 10, 
+                    "id": 47, 
                     "title": "Data Scientist, Growth Analytics", 
                     "locationID": 9, 
                     "companyID": 6, 

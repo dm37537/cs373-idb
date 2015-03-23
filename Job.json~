@@ -102,7 +102,7 @@
 
 //Facebook is at home desktop
 
-{
+		{
                     "id": 10, 
                     "title": "Software Engineer - Machine Learning/Relevance (Seattle)", 
                     "locationID": 2, 
@@ -221,6 +221,66 @@
                     "skillsetID": 4, 
                     "description": "You will build web applications for our users, partners, and team. Those applications can range from business-critical internal tools to the core architecture of Twitter.com and our mobile website, with opportunities to work with a variety of languages and technologies." ,
                     "link": "https://about.twitter.com/careers/positions?jvi=otBqXfwb,Job&s=Indeed"
+                },
+                {
+                    "id": 10, 
+                    "title": "Technical Consultant, Customer Success", 
+                    "locationID": 5, 
+                    "companyID": 6, 
+                    "languageID": 1, 
+                    "skillsetID": 4, 
+                    "description": "Lead technical customer pre-sales discussions/engagements as they relate to integration solutions with the LinkedIn Talent Solutions platform. Own and manage customer engagements through the entire implementation, delivery and support lifecycle. Manage technical partner relationships and continue to build on top of existing integrations and processes. Partner with different internal cross functional groups to communicate/escalate customer technical issues, help drive/influence product roadmap decisions based on customer/partner feedback, and implement internal tools/solutions to help demonstrate product value propositions. Develop and deliver on-going internal sales training and education of Talent Solutions products and services. Contribute to the development and sharing of best practices. Establish yourself as a Subject Matter Expert. Develop and maintain centralized content for customers, partners, and internal teams." ,
+                    "link": "http://www.ihispano.com/jobs/solutions-architect-technical-consulting?sk=1&id=8154e1e5666293a6af5a00116d&utm_source=Indeed&utm_medium=cpc&utm_campaign=Indeed&rx_campaign=Indeed08&rx_medium=cpc&rx_source=Indeed"
+                },
+                {
+                    "id": 10, 
+                    "title": "Engineering Intern", 
+                    "locationID": 9, 
+                    "companyID": 6, 
+                    "languageID": 1, 
+                    "skillsetID": 4, 
+                    "description": "As an Engineering Intern, you will join our SlideShare team in building a great site and excellent software. You will use Ruby and Puppet extensively but if you aren’t familiar with these programs, no worries, we’ll teach you! You will be responsible for dozens of code deployments per day which means you will ship code WHENEVER your feature is ready. Be prepared to ship on day one!" ,
+                    "link": "http://hire.jobvite.com/CompanyJobs/Careers.aspx?k=Job&c=q2XaVfwO&j=oInx0fwm&s=Indeed"
+                },
+                {
+                    "id": 10, 
+                    "title": "Principal Data Scientist, Consumer Analytics", 
+                    "locationID": 9, 
+                    "companyID": 6, 
+                    "languageID": 4, 
+                    "skillsetID": 5, 
+                    "description": "The Consumer Analytics team at LinkedIn works in close partnership with the Product team to identify opportunity to develop and enhance products and features that connect our Members with greater professional opportunity. We are looking for a Senior/Principal Data Scientist to join our team in developing innovative new technologies, features and products that will help further our mission of connecting the world’s professionals. You will be responsible for informing strategy and decisions as well as building, measuring, understanding and improving products. Ultimately, you will develop data-driven product solutions that will add value to our customers and improve the professional lives of our members." ,
+                    "link": "http://hire.jobvite.com/CompanyJobs/Careers.aspx?k=Job&c=qOW9Vfwy&j=ozHI0fwI&s=Indeed"
+                },
+                {
+                    "id": 10, 
+                    "title": "Product Innovation Intern", 
+                    "locationID": 9, 
+                    "companyID": 6, 
+                    "languageID": 3, 
+                    "skillsetID": 6, 
+                    "description": "Our goal is to build career navigation products that meets this challenge.  Our data at Linkedin is an embarrassment of riches.  Leveraging this data allows us to create experiences that allow members to explore, discover, understand and act upon ambitions and goals.  Above all, we seek to shift the world towards “optimistic, determinate.”" ,
+                    "link": "http://hire.jobvite.com/CompanyJobs/Careers.aspx?k=Job&c=qOW9Vfwy&j=o1Cq0fwN&s=Indeed"
+                },
+                {
+                    "id": 10, 
+                    "title": "Product Analytics Intern", 
+                    "locationID": 9, 
+                    "companyID": 6, 
+                    "languageID": 1, 
+                    "skillsetID": 6, 
+                    "description": "The Business Analytics team is looking for data junkies who love turning data into gold and who want to make an impact. You will have the opportunity to help build data products and own analytics in the area of Mobile, Social Advertising, Engagement, etc. You will be working closely with monetization product managers and engineers to drive the business. LinkedIn's reputable internship program is known for plentiful activities and a fun Intern Hackathon. Join us this summer!" ,
+                    "link": "http://hire.jobvite.com/CompanyJobs/Careers.aspx?k=Job&c=qOW9Vfwy&j=owDq0fwj&s=Indeed"
+                },
+                {
+                    "id": 10, 
+                    "title": "Data Scientist, Growth Analytics", 
+                    "locationID": 9, 
+                    "companyID": 6, 
+                    "languageID": 1, 
+                    "skillsetID": 6, 
+                    "description": "LinkedIn member data is amazingly rich and provides a fantastic opportunity for Data Scientists to explore and create, ultimately developing ways for members to improve their professional lives. You’ll have the opportunity to work with some of the best data people anywhere in an environment which truly values data-driven decisions." ,
+                    "link": "http://hire.jobvite.com/CompanyJobs/Careers.aspx?k=Job&c=qOW9Vfwy&j=oPRz0fwZ&s=Indeed"
                 }
 
 ]
