@@ -66,6 +66,13 @@ body {
 	background-size: cover;
 }
 
+#about-jumbotron {
+	padding-top: 5%;
+	background-image: url("http://www.youwall.com/papel/team_wallpaper_3f9c0.jpg");
+	background-position: 50% 30%;
+	background-size: cover;
+}
+
 .content-box {
 	background-color: rgba(0,0,0,0.4);
 	color: white;
