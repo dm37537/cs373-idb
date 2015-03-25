@@ -7,10 +7,9 @@ app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 db = SQLAlchemy(app)
 
-from models import Job, Company, Location, Language, Skillset
+#from models import Job, Company, Location, Language, Skillset
 
 app.config.update(dict(
-	DEBUG = False,
 	SECRET_KEY = 'development key',
 	USERNAME = 'admin',
 	PASSWORD = 'default'
@@ -41,7 +40,7 @@ f.close()
 # The following are examples of different templates in action
 @app.route('/')
 def index():
-	return render_template('index.html')
+	return send_from_directory('static', 'index.html')
 
 # API
 @app.route('/api/job', methods=['GET'])
