@@ -38,11 +38,11 @@ f.close()
 # The following are examples of different templates in action
 @app.route('/')
 def root():
-	return redirect('104.130.229.90:5000/index.html', code=302)
+	return redirect('http://104.130.229.90:5000/index.html', code=302)
 
 @app.route('/index.html')
 def index():
-	return send_from_directory('static', 'index.html')
+	return send_from_directory('.', 'index.html')
 
 # API
 @app.route('/api/job', methods=['GET'])
