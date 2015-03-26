@@ -51,7 +51,7 @@ def get_jobs():
 
 @app.route('/api/job/<int:job_id>', methods=['GET'])
 def get_job(job_id):
-	job = [job for job in jobs if job['id'] == job_id]
+	job = [job for job in jobs if job['job_ID'] == job_id]
 	if len(job) == 0:
 		abort(404)
 	return jsonify({'job': job[0]})
@@ -73,7 +73,7 @@ def get_locations():
 
 @app.route('/api/location/<int:location_id>', methods=['GET'])
 def get_location(location_id):
-	location = [location for location in locations if location['Location_ID'] == location_id]
+	location = [location for location in locations if location['location_ID'] == location_id]
 	if len(location) == 0:
 		abort(404)
 	return jsonify({'location': location[0]})
@@ -84,7 +84,7 @@ def get_languages():
 
 @app.route('/api/language/<int:language_id>', methods=['GET'])
 def get_language(language_id):
-	language = [language for language in languages if language['Language_ID'] == language_id]
+	language = [language for language in languages if language['language_ID'] == language_id]
 	if len(language) == 0:
 		abort(404)
 	return jsonify({'language': language[0]})
@@ -95,7 +95,7 @@ def get_skillsets():
 
 @app.route('/api/skillset/<int:skillset_id>', methods=['GET'])
 def get_skillset(skillset_id):
-	skillset = [skillset for skillset in skillsets if skillset['Skillset_ID'] == skillset_id]
+	skillset = [skillset for skillset in skillsets if skillset['skillset_ID'] == skillset_id]
 	if len(skillset) == 0:
 		abort(404)
 	return jsonify({'skillset': skillset[0]})
