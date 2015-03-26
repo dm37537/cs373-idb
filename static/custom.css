@@ -134,6 +134,14 @@ img.img-response {
 	position: relative;
 }
 
+img.img-response-profile{
+	width: 100%;
+	height: 100%;
+	/*max-height: 300px;*/
+	max-width: 200px;
+	position: relative;
+}
+
 img.img-response-language {
 	width: 100%;
 	height: 100%;
@@ -218,4 +226,8 @@ span:hover .hover-wrap{
     -ms-transform:scale(1.25); /* IE 9 */
     -o-transform:scale(1.25); /* Opera */
      transform:scale(1.25);
+}
+
+a:link {
+	text-decoration: none;
 }
