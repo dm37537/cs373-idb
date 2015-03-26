@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 db = SQLAlchemy(app)
 
-#from models import Job, Company, Location, Language, Skillset
+from models import Job, Company, Location, Language, Skillset
 
 app.config.update(dict(
 	SECRET_KEY = 'development key',
