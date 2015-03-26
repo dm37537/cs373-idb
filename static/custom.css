@@ -134,6 +134,14 @@ img.img-response {
 	position: relative;
 }
 
+img.img-response-language {
+	width: 100%;
+	height: 100%;
+	max-height: 250px;
+	max-width: 200px;
+	position: relative;
+}
+
 img.img-response-location {
 	width: 100%;
 	height: 100%;
