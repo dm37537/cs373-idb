@@ -1,0 +1,288 @@
+FORMAT: 1A
+HOST: http://www.indeed.com/need to come back and add valid host
+
+# Programmer Jobs
+Documentation for Programmer Jobs API
+
+<!--# Group Job-->
+<!--Jobs related fields. An job object has the following attributes:-->
+
+<!--*Id-->
+<!--*Tittle-->
+<!--*LocationID-->
+<!--*CompanyID-->
+<!--*LanguageID-->
+<!--*SkillsetID-->
+<!--*Description-->
+<!--*Link-->
+
+
+# Group Job
+## Jobs [/job]
+### List all jobs [GET]
+Returns a list of all jobs and their ids
++ Response 200 (application/json)
+    
+            [{
+
+                "id": 1, 
+                "title": "Web Developer", 
+                "locationID": 1, 
+                "companyID": 1, 
+                "languageID": 1, 
+                "skillsetID": 1, 
+                "description": 1, 
+                "link": "some link"
+                
+            },
+            {
+
+                "id": 2, 
+                "title": "Software Engineer", 
+                "locationID": 1, 
+                "companyID": 2, 
+                "languageID": 3, 
+                "skillsetID": 4, 
+                "description": 5, 
+                "link": "some link"
+            
+            }]
+
+
+## Job [/job/{id}]
++ Parameters
+    + id (required, integer, `1`) ... `id` of the Job to perform action with. 2.
+
+###Retrive a job [GET]
++ Response 200 (application/json)
+    
+    + Body
+
+            {
+                "id": 1, 
+                "title": "Web Developer", 
+                "locationID": 1, 
+                "companyID": 1, 
+                "languageID": 1, 
+                "skillsetID": 1, 
+                "description": 1, 
+                "link": "some link"
+            }
+   
+
++ Response 404
+
+    + Header
+    
+            Content-type: application/json
+
+    + Body
+    
+            {"error": "Item does not exist"}
+            
+
+
+# Group Location
+## Locations [/location]
+### List all Location [GET]
++ Response 200 (application/json)
+
+            [{
+                "Location_ID" : 1
+                "Location": "Austin, TX",
+                "Location_description" : "A great city to live in",
+                "Location_image" : "http://www.seesawaustin.com/wp-content/uploads/2014/07/Austin-jobs.jpg"
+                
+            },{
+
+                "Location_ID" : 2
+                "Location": "Seattle, WA",
+                "Location_description" : "A big city",
+                "Location_image" : "http://upload.wikimedia.org/wikipedia/commons/2/2f/Space_Needle002.jpg"
+                
+            }]
+
+
+## Location [/location/{id}]
++ Parameters
+    + id (required, integer, `1`) ... `id` of the location to perform action with.
+
+###Retrive a location [GET]
++ Response 200 (application/json)
+
+  
+    + Body
+        
+            {
+                "Location_ID" : 1
+                "Location": "Austin, TX",
+                "Location_description" : "A great city to live in",
+                "Location_image" : "http://www.seesawaustin.com/wp-content/uploads/2014/07/Austin-jobs.jpg"
+                
+            }
+        
++ Response 404
+
+    + Header
+    
+            Content-type: application/json
+    
+    + Body
+    
+            {"error" :  "Item does not exist."}
+
+
+# Group Language
+## Languages [/language]
+### List all Languages [GET]
++ Response 200 (application/json)
+            
+            [{
+                "Language_ID" : 1,
+                "Language_Name" : "java"
+                "Language_description" : "muti platform"
+            },{
+                "Language_ID" : 2,
+                "Language_Name" : "python"
+                "Language_description" : "snake"
+            }]
+
+
+## Language [/language/{id}]
++ Parameters
+    + id (required, integer, `1`) ... `id` of the language to perform action with.
+
+###Retrive a language [GET]
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "Language_ID" : 1,
+                "Language_Name" : "java"
+                "Language_description" : "muti platform"
+                
+            }
+        
++ Response 404
+
+    + Header
+    
+            Content-type: application/json
+
+    + Body
+    
+            {"error": "Item does not exist"}
+
+
+
+# Group Company
+## Companies [/company]
+### List all Companies [GET]
++ Response 200 (application/json)
+
+            [{
+
+                "Company_ID": 1,
+                "Company_Name": "Google",
+                "Company_description" : "Search engine"
+                "Company_image" : "http://www.google.com/doodle4google/images/splashes/featured.png"
+                
+            },{
+
+                "Company_ID": 2,
+                "Company_Name": "Oracle",
+                "Company_description" : "Database"
+                "Company_image" : "http://192.95.57.65/wp-content/uploads/2014/07/logo-oracle.jpg"
+                
+            }]
+        
+        
+
+## Company [/company/{id}]
++ Parameters
+    + id (required, integer, `1`) ... `id` of the Company to perform action with.
+
+###Retrive a company [GET]
++ Response 200 (application/json)
+    
+    + Body
+
+            {
+                "Company_ID": 1,
+                "Company_Name": "Google",
+                "Company_description" : "Search engine"
+                "Company_image" : "http://www.google.com/doodle4google/images/splashes/featured.png"
+            
+            }
+
++ Response 404
+
+    + Header
+    
+            Content-type: application/json
+
+    + Body
+    
+            {"error": "Item does not exist"}
+
+
+
+# Group Skillet
+## Skillsets [/skillset]
+### List all skills [GET]
+Returns a list of all jobs and their ids
++ Response 200 (application/json)
+        
+            [{
+                "Skillset_ID" : 1,
+                "Skillset": "Spring, J2EE, Hibernate",
+                "Skillset_description" : "Spring, J2EE, Hibernate",
+                
+            },{
+                "Skillset_ID" : 2,
+                "Skillset": "Mobile computing",
+                "Skillset_description" : "Mobile computing, IOS, Andriod",
+                
+            }]
+
+## Skillset [/skillset/{id}]
++ Parameters
+    + id (required, integer, `1`) ... `id` of the Skillset to perform action with. 
+
+###Retrive a skillset [GET]
++ Response 200 (application/json)
+    
+    + Body
+
+            {
+                "Skillset_ID" : 1,
+                "Skillset": "Spring, J2EE, Hibernate",
+                "Skillset_description" : "Spring, J2EE, Hibernate",
+            }
+
++ Response 404
+
+    + Header
+    
+            Content-type: application/json
+
+    + Body
+    
+            {"error": "Item does not exist"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
