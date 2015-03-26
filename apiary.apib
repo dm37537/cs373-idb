@@ -135,15 +135,15 @@ Returns a list of all jobs and their ids
 + Response 200 (application/json)
             
             [{
-                "Language_ID" : 1,
-                "Language_Name" : "java",
-                "Language_description" : "muti platform",
-                "Language_image" : "link"
+                "language_ID" : 1,
+                "language_Name" : "java",
+                "language_description" : "muti platform",
+                "language_image" : "link"
             },{
-                "Language_ID" : 2,
-                "Language_Name" : "python"
-                "Language_description" : "snake",
-                "Language_image" : "link"
+                "language_ID" : 2,
+                "language_Name" : "python"
+                "language_description" : "snake",
+                "language_image" : "link"
             }]
 
 
@@ -157,10 +157,10 @@ Returns a list of all jobs and their ids
     + Body
     
             {
-                "Language_ID" : 1,
-                "Language_Name" : "java",
-                "Language_description" : "muti platform",
-                "Language_image" : "link"
+                "language_ID" : 1,
+                "language_Name" : "java",
+                "language_description" : "muti platform",
+                "language_image" : "link"
             }
         
 + Response 404
@@ -181,16 +181,16 @@ Returns a list of all jobs and their ids
 + Response 200 (application/json)
 
             [{
-                "Company_ID": 1,
-                "Company_Name": "Google",
-                "Company_description" : "Search engine",
-                "Company_image" : "http://www.google.com/doodle4google/images/splashes/featured.png"
+                "company_ID": 1,
+                "company_Name": "Google",
+                "company_description" : "Search engine",
+                "company_image" : "http://www.google.com/doodle4google/images/splashes/featured.png"
                 
             },{
-                "Company_ID": 2,
-                "Company_Name": "Oracle",
-                "Company_description" : "Database",
-                "Company_image" : "http://192.95.57.65/wp-content/uploads/2014/07/logo-oracle.jpg"
+                "company_ID": 2,
+                "company_Name": "Oracle",
+                "company_description" : "Database",
+                "company_image" : "http://192.95.57.65/wp-content/uploads/2014/07/logo-oracle.jpg"
                 
             }]
         
@@ -206,10 +206,10 @@ Returns a list of all jobs and their ids
     + Body
 
             {
-                "Company_ID": 1,
-                "Company_Name": "Google",
-                "Company_description" : "Search engine",
-                "Company_image" : "http://www.google.com/doodle4google/images/splashes/featured.png"
+                "company_ID": 1,
+                "company_Name": "Google",
+                "company_description" : "Search engine",
+                "company_image" : "http://www.google.com/doodle4google/images/splashes/featured.png"
             
             }
 
@@ -232,14 +232,14 @@ Returns a list of all jobs and their ids
 + Response 200 (application/json)
         
             [{
-                "Skillset_ID" : 1,
-                "Skillset": "Spring, J2EE, Hibernate",
-                "Skillset_description" : "Spring, J2EE, Hibernate",
+                "skillset_ID" : 1,
+                "skillset": "Spring, J2EE, Hibernate",
+                "skillset_description" : "Spring, J2EE, Hibernate",
                 
             },{
-                "Skillset_ID" : 2,
-                "Skillset": "Mobile computing",
-                "Skillset_description" : "Mobile computing, IOS, Andriod",
+                "skillset_ID" : 2,
+                "skillset": "Mobile computing",
+                "skillset_description" : "Mobile computing, IOS, Andriod",
             }]
 
 ## Skillset [/skillset/{id}]
@@ -252,9 +252,9 @@ Returns a list of all jobs and their ids
     + Body
 
             {
-                "Skillset_ID" : 1,
-                "Skillset": "Spring, J2EE, Hibernate",
-                "Skillset_description" : "Spring, J2EE, Hibernate",
+                "skillset_ID" : 1,
+                "skillset": "Spring, J2EE, Hibernate",
+                "skillset_description" : "Spring, J2EE, Hibernate",
             }
 
 + Response 404
