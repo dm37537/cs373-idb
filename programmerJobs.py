@@ -62,7 +62,7 @@ def get_companies():
 	    
 @app.route('/api/company/<int:company_id>', methods=['GET'])
 def get_company(company_id):
-	company = [company for company in companies if company['Company_ID'] == company_id]
+	company = [company for company in companies if company['company_ID'] == company_id]
 	if len(company) == 0:
 		abort(404)
 	return jsonify({'company': company[0]})
