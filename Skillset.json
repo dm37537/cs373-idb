@@ -1,27 +1,27 @@
 [
             {
-                "Skillset_ID" : 1,
-                "Skillset": "Web app, Back-end",
-                "Skillset_description" : "Spring, J2EE, Hibernate"
+                "skillset_ID" : 1,
+                "skillset_name": "Web app, Back-end",
+                "skillset_description" : "Spring, J2EE, Hibernate"
             },{
-                "Skillset_ID" : 2,
-                "Skillset": "Mobile computing",
-                "Skillset_description" : "Mobile computing, IOS, Andriod"
+                "skillset_ID" : 2,
+                "skillset_name": "Mobile computing",
+                "skillset_description" : "Mobile computing, IOS, Andriod"
             },{
-                "Skillset_ID" : 3,
-                "Skillset": "Network",
-                "Skillset_description" : "Network administration, Cloud computing"
+                "skillset_ID" : 3,
+                "skillset_name": "Network",
+                "skillset_description" : "Network administration, Cloud computing"
             },{
-                "Skillset_ID" : 4,
-                "Skillset": "Web Front-end ",
-                "Skillset_description" : "Html, javascript, CSS"
+                "skillset_ID" : 4,
+                "skillset_name": "Web Front-end ",
+                "skillset_description" : "Html, javascript, CSS"
             },{
-                "Skillset_ID" : 5,
-                "Skillset": "Big data",
-                "Skillset_description" : "Hadoop, big data"
+                "skillset_ID" : 5,
+                "skillset_name": "Big data",
+                "skillset_description" : "Hadoop, big data"
             },{
-                "Skillset_ID" : 6,
-                "Skillset": "Database",
-                "Skillset_description" : "MySQL, NoSQL, MongoDB"
+                "skillset_ID" : 6,
+                "skillset_name": "Database",
+                "skillset_description" : "MySQL, NoSQL, MongoDB"
             }
 ]

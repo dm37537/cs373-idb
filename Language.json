@@ -1,33 +1,33 @@
 [
             {
-                "Language_ID" : 1,
-                "Language": "Java",
-                "Language_description" : "Muti platiform Language",
-                "Language_image" : "http://1.bp.blogspot.com/-p7EVk3HnwGw/UCJuX-7mWpI/AAAAAAAAAb0/rTwwhrgC3Dc/s1600/di-logo-java-orange.png"
+                "language_ID" : 1,
+                "language_name": "Java",
+                "language_description" : "Muti platiform Language",
+                "language_image" : "http://1.bp.blogspot.com/-p7EVk3HnwGw/UCJuX-7mWpI/AAAAAAAAAb0/rTwwhrgC3Dc/s1600/di-logo-java-orange.png"
                 
             },{
-                "Language_ID" : 2,
-                "Language": "C/C++",
-                "Language_description" : "great Language",
-                "Language_image" : "https://isocpp.org/images/uploads/logo-sun.jpg"
+                "language_ID" : 2,
+                "language_name": "C/C++",
+                "language_description" : "great Language",
+                "language_image" : "https://isocpp.org/images/uploads/logo-sun.jpg"
                 
             },{
-                "Language_ID" : 3,
-                "Language": "PHP",
-                "Language_description" : "Web Language",
-                "Language_image" : "http://blog.joefallon.net/wp-content/uploads/2014/07/php5.4-300x300.jpg"
+                "language_ID" : 3,
+                "language_name": "PHP",
+                "language_description" : "Web Language",
+                "language_image" : "http://blog.joefallon.net/wp-content/uploads/2014/07/php5.4-300x300.jpg"
                 
             },{
-                "Language_ID" : 4,
-                "Language": "Python",
-                "Language_description" : "simple Language",
-                "Language_image" : "http://static.topyaps.com/wp-content/uploads/2013/06/python.jpg"
+                "language_ID" : 4,
+                "language_name": "Python",
+                "language_description" : "simple Language",
+                "language_image" : "http://static.topyaps.com/wp-content/uploads/2013/06/python.jpg"
                 
             },{
-                "Language_ID" : 5,
-                "Language": "Javascript",
-                "Language_description" : "web Language",
-                "Language_image" : "http://static.topyaps.com/wp-content/uploads/2013/06/python.jpg"
+                "language_ID" : 5,
+                "language_name": "Javascript",
+                "language_description" : "web Language",
+                "language_image" : "http://static.topyaps.com/wp-content/uploads/2013/06/python.jpg"
                 
             }
 

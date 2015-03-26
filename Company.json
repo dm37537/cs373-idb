@@ -1,74 +1,74 @@
 	[
               {
 
-                "Company_ID": 1,
-                "Company_Name": "Google",
-                "Company_description" : "Search engine",
-                "Company_image": "http://www.google.com/doodle4google/images/splashes/featured.png"
+                "company_ID": 1,
+                "company_name": "Google",
+                "company_description" : "Search engine",
+                "company_image": "http://www.google.com/doodle4google/images/splashes/featured.png"
                 
             },{
 
-                "Company_ID": 2,
-                "Company_Name": "Oracle",
-                "Company_description" : "Database",
-                "Company_image" : "http://192.95.57.65/wp-content/uploads/2014/07/logo-oracle.jpg"
+                "company_ID": 2,
+                "company_name": "Oracle",
+                "company_description" : "Database",
+                "company_image" : "http://192.95.57.65/wp-content/uploads/2014/07/logo-oracle.jpg"
                 
             
             },{
 
-            	"Company_ID": 3,
-                "Company_Name": "Amazon",
-                "Company_description" : "Online shopping",
-                "Company_image" : "http://media.corporate-ir.net/media_files/IROL/97/97664/images/amazon_logo_RGB.jpg"
+            	"company_ID": 3,
+                "company_name": "Amazon",
+                "company_description" : "Online shopping",
+                "company_image" : "http://media.corporate-ir.net/media_files/IROL/97/97664/images/amazon_logo_RGB.jpg"
 
             },{
 
-            	"Company_ID": 4,
-                "Company_Name": "Facebook",
-                "Company_description" : "Social Media",
-                "Company_image" : "https://www.facebook.com/images/fb_icon_325x325.png"
+            	"company_ID": 4,
+                "company_name": "Facebook",
+                "company_description" : "Social Media",
+                "company_image" : "https://www.facebook.com/images/fb_icon_325x325.png"
 
             },{
 
-            	"Company_ID": 5,
-                "Company_Name": "Twitter",
-                "Company_description" : "Social Media",
-                "Company_image" : "http://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/1267px-Twitter_bird_logo_2012.svg.png"
+            	"company_ID": 5,
+                "company_name": "Twitter",
+                "company_description" : "Social Media",
+                "company_image" : "http://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/1267px-Twitter_bird_logo_2012.svg.png"
 
             },{
 
-            	"Company_ID": 6,
-                "Company_Name": "LinkedIn",
-                "Company_description" : "Online resume",
-                "Company_image" : "http://fontmeme.com/images/Linkedin-Logo.jpg"
+            	"company_ID": 6,
+                "company_name": "LinkedIn",
+                "company_description" : "Online resume",
+                "company_image" : "http://fontmeme.com/images/Linkedin-Logo.jpg"
 
             },{
 
-            	"Company_ID": 7,
-                "Company_Name": "IBM",
-                "Company_description" : "computer",
-                "Company_image" : "http://www.dataversity.net/wp-content/uploads/2013/11/ib1.jpg"
+            	"company_ID": 7,
+                "company_name": "IBM",
+                "company_description" : "computer",
+                "company_image" : "http://www.dataversity.net/wp-content/uploads/2013/11/ib1.jpg"
 
             },{
 
-            	"Company_ID": 8,
-                "Company_Name": "Dropbox",
-                "Company_description" : "Cloud service",
-                "Company_image" : "http://2.bp.blogspot.com/-SBjTSn7XtSw/UuUFjuq_C6I/AAAAAAAABrQ/k-h3xYn-oTk/s1600/dropbox.png"
+            	"company_ID": 8,
+                "company_name": "Dropbox",
+                "company_description" : "Cloud service",
+                "company_image" : "http://2.bp.blogspot.com/-SBjTSn7XtSw/UuUFjuq_C6I/AAAAAAAABrQ/k-h3xYn-oTk/s1600/dropbox.png"
 
             },{
 
-            	"Company_ID": 9,
-                "Company_Name": "Rackspace",
-                "Company_description" : "Cloud server provider",
-                "Company_image" : "http://caa48e96f11ddd896e56-cbd62a0ad7e2d388825529106f960d1e.r78.cf2.rackcdn.com/RackspaceLogoManagedCloudLogo.jpg"
+            	"company_ID": 9,
+                "company_name": "Rackspace",
+                "company_description" : "Cloud server provider",
+                "company_image" : "http://caa48e96f11ddd896e56-cbd62a0ad7e2d388825529106f960d1e.r78.cf2.rackcdn.com/RackspaceLogoManagedCloudLogo.jpg"
 
             },{
 
-            	"Company_ID": 10,
-                "Company_Name": "Indeed",
-                "Company_description" : "Online yellow page for jobs",
-                "Company_image" : "http://theundercoverrecruiter.com/wp-content/uploads/2014/04/Indeed-Logo.jpg"
+            	"company_ID": 10,
+                "company_name": "Indeed",
+                "company_description" : "Online yellow page for jobs",
+                "company_image" : "http://theundercoverrecruiter.com/wp-content/uploads/2014/04/Indeed-Logo.jpg"
 
             }
     ]
