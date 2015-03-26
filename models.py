@@ -37,7 +37,7 @@ class Company(db.Model):
 	def __init__(self, Company_Name, Company_description, Company_image):
 		self.Company_Name = Company_Name
 		self.Company_description = Company_description
-		self.image = Company_image
+		self.Company_image = Company_image
 	
 	def __repr__(self):
 		return '<Company %r>' % self.Company_Name
@@ -46,12 +46,14 @@ class Language(db.Model):
 	__tablename__ = 'Language'
 
 	Language_ID = db.Column(db.Integer, primary_key=True)
-	Language_Name = db.Column(db.String(120))
-	Language_Description = db.Column(db.String(120))
+	Language_Name = db.Column(db.String(4000))
+	Language_Description = db.Column(db.String(4000))
+	Language_Image = db.Column(db.String(4000))
 
-	def __init__(self, Language_Name, Language_Description):
+	def __init__(self, Language_Name, Language_Description, Language_Image):
 		self.Language_Name = Language_Name
 		self.Language_Description = Language_Description
+		self.Language_Image = Language_Image
 	
 	def __repr__(self):
 		return '<Language %r>' % self.Language_Name
@@ -62,7 +64,7 @@ class Location(db.Model):
 	Location_ID = db.Column(db.Integer, primary_key=True)
 	Location = db.Column(db.String(120))
 	Location_description = db.Column(db.String(120))
-	location_image = db.Column(db.String(120))
+	Location_image = db.Column(db.String(120))
 
 	def __init__(self, Location, Location_description, Location_image):
 		self.Location = Location
