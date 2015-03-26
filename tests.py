@@ -32,21 +32,21 @@ class ProgrammerJobsTestCase(unittest.TestCase):
 		assert job.link == 'www.vir.us'
 
     def testModifyingJob2(self):
-        job = Job('Software Developer', 1, 1, 1, 1, 'Clickity-Clackity', 'www.google.com')
-        job.title = 'CEO'
-        job.locationid = 0
-        job.companyid = 0
-        job.languageid = 0
-        job.skillsetid = 0
-        job.description = 'Top dog'
-        job.link = 'www.google.com'
-        assert job.title == 'CEO'
-        assert job.locationid == 0
-        assert job.companyid == 0
-        assert job.languageid == 0
-        assert job.skillsetid == 0
-        assert job.description == 'Top dog'
-        assert job.link == 'www.google.com'
+	        job = Job('Software Developer', 1, 1, 1, 1, 'Clickity-Clackity', 'www.google.com')
+	        job.title = 'CEO'
+	        job.locationid = 0
+	        job.companyid = 0
+	        job.languageid = 0
+	        job.skillsetid = 0
+	        job.description = 'Top dog'
+	        job.link = 'www.google.com'
+	        assert job.title == 'CEO'
+	        assert job.locationid == 0
+	        assert job.companyid == 0
+	        assert job.languageid == 0
+	        assert job.skillsetid == 0
+	        assert job.description == 'Top dog'
+	        assert job.link == 'www.google.com'
 
 	def testCreatingCompany(self):
 		company = Company('elgooG', 'enigne hcraeS', 'gpj.elgooG')
@@ -64,13 +64,13 @@ class ProgrammerJobsTestCase(unittest.TestCase):
 		assert company.Company_image == 'bell.png'
 
     def testModifyingCompany2(self):
-        company = Company('elgooG', 'enigne hcraeS', 'gpj.elgooG')
-        company.Company_Name = 'facebook'
-        company.Company_description = 'social network'
-        company.Company_image = 'blue.png'
-        assert company.Company_Name == 'facebook'
-        assert company.Company_description == 'social network'
-        assert company.Company_image == 'blue.png'
+	        company = Company('elgooG', 'enigne hcraeS', 'gpj.elgooG')
+	        company.Company_Name = 'facebook'
+	        company.Company_description = 'social network'
+	        company.Company_image = 'blue.png'
+	        assert company.Company_Name == 'facebook'
+	        assert company.Company_description == 'social network'
+	        assert company.Company_image == 'blue.png'
 
 	def testCreatingLocation(self):
 		location = Location('Austin, TX', 'Live music capital of the world', 'austin.jpg')
@@ -88,13 +88,13 @@ class ProgrammerJobsTestCase(unittest.TestCase):
 		assert location.Location_image == 'newyork.jpg'
 
     def testModifyingLocation2(self):
-        location = Location('Austin, TX', 'Live music capital of the world', 'austin.jpg')
-        location.Location = 'San Francisco, CA'
-        location.Location_description = 'I\'ve been there'
-        location.Location_image = 'goldengatebridge.jpg'
-        assert location.Location == 'San Francisco, CA'
-        assert location.Location_description == 'I\'ve been there'
-        assert location.Location_image == 'goldengatebridge.jpg'
+	        location = Location('Austin, TX', 'Live music capital of the world', 'austin.jpg')
+	        location.Location = 'San Francisco, CA'
+	        location.Location_description = 'I\'ve been there'
+	        location.Location_image = 'goldengatebridge.jpg'
+	        assert location.Location == 'San Francisco, CA'
+	        assert location.Location_description == 'I\'ve been there'
+	        assert location.Location_image == 'goldengatebridge.jpg'
 
 	def testCreatingLanguage(self):
 		language = Language('Spanish', 'taco, burrito, ...', 'sombrero.png')
@@ -112,13 +112,13 @@ class ProgrammerJobsTestCase(unittest.TestCase):
 		assert language.Language_Image == 'crepe.jpg'
 	
     def testModifyingLanguage2(self):
-        language = Language('Spanish', 'taco, burrito, ...', 'sombrero.png')
-        language.Language_Name = 'English'
-        language.Language_Description = 'Spoken in the USA'
-        language.Language_Image = 'merica.jpg'
-        assert language.Language_Name == 'English'
-        assert language.Language_Description == 'Spoken in the USA'
-        assert language.Language_Image == 'merica.jpg'
+	        language = Language('Spanish', 'taco, burrito, ...', 'sombrero.png')
+	        language.Language_Name = 'English'
+	        language.Language_Description = 'Spoken in the USA'
+	        language.Language_Image = 'merica.jpg'
+	        assert language.Language_Name == 'English'
+	        assert language.Language_Description == 'Spoken in the USA'
+	        assert language.Language_Image == 'merica.jpg'
 
 	def testCreatingSkillset(self):
 		skillset = Skillset('Mobile Computing', 'walking computers')
@@ -133,11 +133,11 @@ class ProgrammerJobsTestCase(unittest.TestCase):
 		assert skillset.Skillset_description == 'Lollipop'
 
     def testModifyingSkillset2(self):
-        skillset = Skillset('Mobile Computing', 'walking computers')
-        skillset.Skillset = 'IOS'
-        skillset.Skillset_description = 'ipad'
-        assert skillset.Skillset == 'IOS'
-        assert skillset.Skillset_description == 'ipad'
+	        skillset = Skillset('Mobile Computing', 'walking computers')
+	        skillset.Skillset = 'IOS'
+	        skillset.Skillset_description = 'ipad'
+	        assert skillset.Skillset == 'IOS'
+	        assert skillset.Skillset_description == 'ipad'
 
 '''
 if __name__ == '__main__':
