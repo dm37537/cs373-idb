@@ -47,7 +47,7 @@ def index():
 
 @app.route('/test')
 def test():
-	return send_from_directory('.', 'runTest.html')
+	return send_from_directory('.', 'runTest.php')
 
 # API
 @app.route('/api/job', methods=['GET'])
