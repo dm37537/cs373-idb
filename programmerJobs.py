@@ -1,13 +1,11 @@
 import os
-from flask import Flask, jsonify, abort, render_template
+from flask import Flask, jsonify, abort, render_template, redirect
 from flask.ext.sqlalchemy import SQLAlchemy
 import json
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 db = SQLAlchemy(app)
-
-from models import Job, Company, Location, Language, Skillset
 
 app.config.update(dict(
 	SECRET_KEY = 'development key',
@@ -39,6 +37,10 @@ f.close()
 
 # The following are examples of different templates in action
 @app.route('/')
+def root():
+	return redirect('104.130.229.90:5000/index.html', code=302)
+
+@app.route('/index.html')
 def index():
 	return send_from_directory('static', 'index.html')
 
