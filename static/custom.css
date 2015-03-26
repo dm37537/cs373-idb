@@ -227,3 +227,7 @@ span:hover .hover-wrap{
     -o-transform:scale(1.25); /* Opera */
      transform:scale(1.25);
 }
+
+a:link {
+	text-decoration: none;
+};
