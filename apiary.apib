@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: http://www.indeed.com/need to come back and add valid host
+HOST: 104.130.229.90:5000/api
 
 # Programmer Jobs
 Documentation for Programmer Jobs API
@@ -49,7 +49,7 @@ Returns a list of all jobs and their ids
 
 ## Job [/job/{id}]
 + Parameters
-    + id (required, integer, `1`) ... `id` of the Job to perform action with. 2.
+    + id (required, number, `1`) ... `id` of the Job to perform action with. 2.
 
 ###Retrive a job [GET]
 + Response 200 (application/json)
@@ -102,7 +102,7 @@ Returns a list of all jobs and their ids
 
 ## Location [/location/{id}]
 + Parameters
-    + id (required, integer, `1`) ... `id` of the location to perform action with.
+    + id (required, number, `1`) ... `id` of the location to perform action with.
 
 ###Retrive a location [GET]
 + Response 200 (application/json)
@@ -149,7 +149,7 @@ Returns a list of all jobs and their ids
 
 ## Language [/language/{id}]
 + Parameters
-    + id (required, integer, `1`) ... `id` of the language to perform action with.
+    + id (required, number, `1`) ... `id` of the language to perform action with.
 
 ###Retrive a language [GET]
 + Response 200 (application/json)
@@ -198,7 +198,7 @@ Returns a list of all jobs and their ids
 
 ## Company [/company/{id}]
 + Parameters
-    + id (required, integer, `1`) ... `id` of the Company to perform action with.
+    + id (required, number, `1`) ... `id` of the Company to perform action with.
 
 ###Retrive a company [GET]
 + Response 200 (application/json)
@@ -244,7 +244,7 @@ Returns a list of all jobs and their ids
 
 ## Skillset [/skillset/{id}]
 + Parameters
-    + id (required, integer, `1`) ... `id` of the Skillset to perform action with. 
+    + id (required, number, `1`) ... `id` of the Skillset to perform action with. 
 
 ###Retrive a skillset [GET]
 + Response 200 (application/json)
