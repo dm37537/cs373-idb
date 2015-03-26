@@ -2,6 +2,7 @@ import os
 from flask import Flask, jsonify, abort, render_template, redirect, send_from_directory
 from flask.ext.sqlalchemy import SQLAlchemy
 import json
+#import tests
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
@@ -43,6 +44,10 @@ def root():
 @app.route('/index.html')
 def index():
 	return send_from_directory('.', 'index.html')
+
+@app.route('/test')
+def test():
+	return send_from_directory('.', 'runTest.php')
 
 # API
 @app.route('/api/job', methods=['GET'])
