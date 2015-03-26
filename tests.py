@@ -46,7 +46,7 @@ class ProgrammerJobsTestCase(unittest.TestCase):
 		assert job.languageid == 0
 		assert job.skillsetid == 0
 		assert job.description == 'Top dog'
-	    assert job.link == 'www.google.com'
+		assert job.link == 'www.google.com'
 
 	def testCreatingCompany(self):
 		company = Company('elgooG', 'enigne hcraeS', 'gpj.elgooG')
