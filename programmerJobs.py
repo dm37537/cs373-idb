@@ -5,7 +5,7 @@ import json
 #import tests
 
 app = Flask(__name__)
-app.config.from_object(os.environ['APP_SETTINGS'])
+#app.config.from_object(os.environ['APP_SETTINGS'])
 db = SQLAlchemy(app)
 
 app.config.update(dict(

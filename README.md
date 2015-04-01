@@ -46,3 +46,15 @@ Skillset table:
 5 Hadoop, big data
 6 Database, SQL, NoSQL
 //covered
+
+Setting up the project locally:
+
+1. Install virtualenv if not already installed with "pip install virtualenv". This should be done outside the repo.
+2. Create a virtual environment with "virtualenv name" where name is the name of the environment.
+3. run ". name/bin/activate". This is done everytime you want to work on the project locally.
+4. Run "python setup.py develop". This will install all dependecies needed to lauch project.
+5. Run "python programmerJobs.py". This launches the project.
+6. In your browser, visit http://localhost:5000
+7. To exit the virtual environment, just type "deactivate".
+
+Let me know if there is anything missing or unclear -Kevin
