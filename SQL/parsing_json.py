@@ -2,18 +2,16 @@
 import sys
 import json 
 
-data_list = json.load(open('Job.json', 'r'))
-
 def main(w):
-	data_list = json.load(open('Job.json', 'r'))
+	data_list = json.load(open('../Job.json', 'r'))
 	parse("INSERT INTO Job (" , data_list, w)
-	data_list = json.load(open('Company.json', 'r'))
+	data_list = json.load(open('../Company.json', 'r'))
 	parse("INSERT INTO Company (" , data_list, w)
-	data_list = json.load(open('Language.json', 'r'))
+	data_list = json.load(open('../Language.json', 'r'))
 	parse("INSERT INTO Language (" , data_list, w)
-	data_list = json.load(open('Location.json', 'r'))
+	data_list = json.load(open('../Location.json', 'r'))
 	parse("INSERT INTO Location (" , data_list, w)
-	data_list = json.load(open('Skillset.json', 'r'))
+	data_list = json.load(open('../Skillset.json', 'r'))
 	parse("INSERT INTO Skillset (" , data_list , w)
 	'''
 	data_list = json.load(open('Job_Require_Language.json', 'r'))
