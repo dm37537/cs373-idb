@@ -1,0 +1,62 @@
+[
+	{
+		"rank_ID": 1,
+		"language_name": "C",
+		"language_ID": 2,
+		"link": "languages/language_c.html"
+	},
+	{
+		"rank_ID": 2,
+		"language_name": "Java",
+		"language_ID": 1,
+		"link": "languages/language_java.html"
+	},
+	{
+		"rank_ID": 3,
+		"language_name": "Objective-C",
+		"language_ID": -1,
+		"link": "#"
+	},
+	{
+		"rank_ID": 4,
+		"language_name": "C++",
+		"language_ID": 2,
+		"link": "languages/language_c.html"
+	},
+	{
+		"rank_ID": 5,
+		"language_name": "C#",
+		"language_ID": -1,
+		"link": "#"
+	},
+	{
+		"rank_ID": 6,
+		"language_name": "PHP",
+		"language_ID": 3,
+		"link": "languages/language_php.html"
+	},
+	{
+		"rank_ID": 7,
+		"language_name": "Javascript",
+		"language_ID": 5,
+		"link": "#"
+	},
+	{
+		"rank_ID": 8,
+		"language_name": "Python",
+		"language_ID": 4,
+		"link": "languages/language_python.html"
+	},
+	{
+		"rank_ID": 9,
+		"language_name": "Visual Basic.NET",
+		"language_ID": -1,
+		"link": "#"
+	},
+	{
+		"rank_ID": 10,
+		"language_name": "Visual Basic",
+		"language_ID": -1,
+		"link": "#"
+	}
+]
