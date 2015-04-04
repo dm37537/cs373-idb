@@ -3,31 +3,36 @@
                 "language_ID" : 1,
                 "language_name": "Java",
                 "language_description" : "Muti platiform Language",
-                "language_image" : "http://1.bp.blogspot.com/-p7EVk3HnwGw/UCJuX-7mWpI/AAAAAAAAAb0/rTwwhrgC3Dc/s1600/di-logo-java-orange.png"
+                "language_image_small" : "images/language_icon/java_icon_small.png",
+                "language_image_large" : "images/language_icon/java_icon_large.png"
                 
             },{
                 "language_ID" : 2,
                 "language_name": "C/C++",
                 "language_description" : "great Language",
-                "language_image" : "https://isocpp.org/images/uploads/logo-sun.jpg"
+                "language_image_small" : "images/language_icon/cpp_icon_small.png",
+                "language_image_large" : "images/language_icon/cpp_icon_large.png"
                 
             },{
                 "language_ID" : 3,
                 "language_name": "PHP",
                 "language_description" : "Web Language",
-                "language_image" : "http://blog.joefallon.net/wp-content/uploads/2014/07/php5.4-300x300.jpg"
+                "language_image_small" : "images/language_icon/php_icon_small.png",
+                "language_image_large" : "images/language_icon/php_icon_large.png"
                 
             },{
                 "language_ID" : 4,
                 "language_name": "Python",
                 "language_description" : "simple Language",
-                "language_image" : "http://static.topyaps.com/wp-content/uploads/2013/06/python.jpg"
+                "language_image_small" : "images/language_icon/python_icon_small.png",
+                "language_image_large" : "images/language_icon/python_icon_large.png"
                 
             },{
                 "language_ID" : 5,
                 "language_name": "Javascript",
                 "language_description" : "web Language",
-                "language_image" : "http://static.topyaps.com/wp-content/uploads/2013/06/python.jpg"
+                "language_image_small" : "images/language_icon/javascript_icon_small.png",
+                "language_image_large" : "images/language_icon/javascript_icon_large.png"
                 
             }
 
