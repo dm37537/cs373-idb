@@ -3,13 +3,13 @@
 		"rank_ID": 1,
 		"language_name": "C",
 		"language_ID": 2,
-		"link": "languages/language_c.html"
+		"link": "language/c&c++"
 	},
 	{
 		"rank_ID": 2,
 		"language_name": "Java",
 		"language_ID": 1,
-		"link": "languages/language_java.html"
+		"link": "language/java"
 	},
 	{
 		"rank_ID": 3,
@@ -21,7 +21,7 @@
 		"rank_ID": 4,
 		"language_name": "C++",
 		"language_ID": 2,
-		"link": "languages/language_c.html"
+		"link": "language/c&c++"
 	},
 	{
 		"rank_ID": 5,
@@ -33,7 +33,7 @@
 		"rank_ID": 6,
 		"language_name": "PHP",
 		"language_ID": 3,
-		"link": "languages/language_php.html"
+		"link": "language/php"
 	},
 	{
 		"rank_ID": 7,
@@ -45,7 +45,7 @@
 		"rank_ID": 8,
 		"language_name": "Python",
 		"language_ID": 4,
-		"link": "languages/language_python.html"
+		"link": "language/python"
 	},
 	{
 		"rank_ID": 9,
