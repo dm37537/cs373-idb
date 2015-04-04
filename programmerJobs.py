@@ -36,10 +36,14 @@ f = open('Skillset.json')
 skillsets = json.load(f)
 f.close()
 
+f = open('Rank.json')
+rank = json.load(f)
+f.close()
+
 # The following are examples of different templates in action
 @app.route('/')
 def root():
-	return redirect('http://104.130.229.90:5000/index.html', code=302)
+	return redirect('http://127.0.0.1:5000/index.html', code=302)
 
 @app.route('/index.html')
 def index():
@@ -83,6 +87,11 @@ def get_location(location_id):
 		abort(404)
 	return jsonify({'location': location[0]})
 
+#Rank
+@app.route('/api/rank', methods=['GET'])
+def get_language_rank():
+	return jsonify({'rank': rank})
+
 @app.route('/api/language', methods=['GET'])
 def get_languages():
     return jsonify({'languages': languages})
@@ -104,6 +113,22 @@ def get_skillset(skillset_id):
 	if len(skillset) == 0:
 		abort(404)
 	return jsonify({'skillset': skillset[0]})
+
+@app.route('/language')
+def get_language_home_page():
+	return render_template('language_home.html')
+
+@app.route('/language/<name>')
+def get_language_page(name=None):
+	if(name == "java") :
+		print("getting java")
+		language = [language for language in languages if language['language_ID'] == 1]
+	elif(name == "c&c++") :
+		print("getting c/c++")
+		language = [language for language in languages if language['language_ID'] == 2]
+		
+	language=language[0]
+	return render_template('language.html', langName=language['language_name'], langId=language['language_ID'])
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0')
