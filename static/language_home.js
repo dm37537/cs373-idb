@@ -68,7 +68,7 @@ $.getJSON("/api/language", function(result){
 
 		switch(name){
 			case "C/C++":
-				name = "c";
+				name = "c&c++";
 				break;
 			case "Java":
 				name = "java";
@@ -87,7 +87,7 @@ $.getJSON("/api/language", function(result){
 		}
 		var htmlCode = "<div class = \"image\">";
 		htmlCode += "<div class=\"col-md-2\" >";
-		htmlCode += "<a href=\"languages/language_" + name + ".html\">";
+		htmlCode += "<a href=language/" + name + ">";
 		htmlCode += "<img src=\"static/" + imgSrc + "\" class=\"img-rounded\" style=\"margin: 30px\">";
 		htmlCode += "</a></div></div>";
 		// alert(htmlCode);

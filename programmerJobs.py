@@ -120,13 +120,17 @@ def get_language_home_page():
 
 @app.route('/language/<name>')
 def get_language_page(name=None):
+	#lang id's are hardcoded. 
 	if(name == "java") :
-		print("getting java")
 		language = [language for language in languages if language['language_ID'] == 1]
 	elif(name == "c&c++") :
-		print("getting c/c++")
 		language = [language for language in languages if language['language_ID'] == 2]
-		
+	elif(name == "php") :
+		language = [language for language in languages if language['language_ID'] == 3]
+	elif(name == "python") :
+		language = [language for language in languages if language['language_ID'] == 4]
+	elif(name == "javascript") :
+		language = [language for language in languages if language['language_ID'] == 5]
 	language=language[0]
 	return render_template('language.html', langName=language['language_name'], langId=language['language_ID'])
 
