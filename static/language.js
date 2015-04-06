@@ -6,6 +6,7 @@
 */
 
 var langId = document.getElementById("param").getAttribute("langId");
+//redirect c to c++
 
 var apiPath = "/api/language/" + langId;
 var jobApiPath = "/api/job";
@@ -29,7 +30,10 @@ var jobCounter = 0;
 
 while(i < jobLen){
 	var dict = jobData[i];
-	if(String(dict["language_ID"]) == String(langId)){
+	var targetId = langId;
+	if(langId == 10)
+		targetId = 2;	//redirect to c++ 
+	if(String(dict["language_ID"]) == String(targetId)){
 		selectedJson += ("<p>" + JSON.stringify(dict) + "</p>");
 		cPanel += generateCollapsiblePanel(jobCounter, dict["job_title"], dict["link"], dict["company_ID"], dict["location_ID"], dict["job_description"], dict["skillset_ID"]);
 		jobCounter++;
@@ -44,7 +48,7 @@ jobLen = jobData.length;
 
 $.getJSON(apiPath, function(result){
 	var data = result["language"];
-	var imgSrc = data["language_image_small"];
+	var imgSrc = data["language_image"]; //small
 	var description = data["language_wiki_description"];
 	var wikiLink = data["language_wiki_link"];
 
@@ -54,7 +58,7 @@ $.getJSON(apiPath, function(result){
 function generateDescription(imageSrc, wikiDescription, wikiLink){	
 	var descriptionHtml;
 	descriptionHtml = "<div class=\"col-md-4\"><div style='padding-top: 50px';>";
-	descriptionHtml += "<img src=../static/" + imageSrc + " alt=\"Responsive image\" class=\"img-rounded img-response-language\" style='padding-bottom:50px'>";
+	descriptionHtml += "<img height=\"250\" src=../static/" + imageSrc + " alt=\"Responsive image\" class=\"img-rounded img-response-language\" style='padding-bottom:50px'>";
 	descriptionHtml += "<div class=\"panel panel-default\"><div class=\"panel-heading\"><h4 class=\"panel-title\">Description</h4></div><div class=\"panel-body\">";
 	descriptionHtml += wikiDescription;
 	descriptionHtml += "<br><br>";

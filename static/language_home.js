@@ -13,12 +13,7 @@ $.getJSON("/api/rank", function(result){
 		var link = dict['link'];
 		
 		//display rank
-		if(link == "#"){
-			document.getElementById(rank_holder + rankId).innerHTML = name;
-		}
-		else{
-			document.getElementById(rank_holder + rankId).innerHTML = "<a href=" + link + " >" + name + "</a>";
-		}
+		document.getElementById(rank_holder + rankId).innerHTML = "<a href=" + link + " >" + name + "</a>";
     }
 
     //build table
@@ -33,22 +28,20 @@ $.getJSON("/api/language", function(result){
 	for(var i = 0; i < dataLen; ++i){
 		var dict = data[i];
 		var name = dict['language_name'];
-		var imgSrc = dict['language_image_small'];
-		if(name == "C++" || name == "C"){
-			name = "c&c++";
-		}
-		else if(name == "C#"){
-			name = "csharp"
+		var imgSrc = dict['language_image'];
+
+		if(name == "C#"){
+			name = "Csharp"
 		}
 		else{
-			name = name.toLowerCase();
+			// name = name.toLowerCase();
 			name = name.replace(" ", "");
 		}
 
 		htmlCode += "<div class = \"image\">";
 		htmlCode += "<div class=\"col-md-2\" >";
 		htmlCode += "<a href=language/" + name + ">";
-		htmlCode += "<img width=\"150\" src=\"static/" + imgSrc + "\" class=\"img-rounded\" style=\"margin: 30px\">";
+		htmlCode += "<img height=\"150\" src=\"static/" + imgSrc + "\" class=\"img-rounded\" style=\"margin: 30px\">";
 		htmlCode += "</a></div></div>";
 		if(i == 4){
 			htmlCode += "</div><div class=\"col-md-12 col-md-offset-1\">";
