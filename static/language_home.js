@@ -1,6 +1,6 @@
 $.getJSON("/api/rank", function(result){
 	var data = result["rank"];
-	var len = data.length;
+	gvar len = data.length;
 
     //display rank
     var rank_holder = "rank_";
@@ -8,7 +8,6 @@ $.getJSON("/api/rank", function(result){
 
     for(var i = 0; i<len; i++){
     	var dict = data[i];
-		// var id = dict["language_ID"];
 		var rankId = dict['rank_ID'];
 		var name = dict['language_name'];
 		var link = dict['link'];
