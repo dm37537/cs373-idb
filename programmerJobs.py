@@ -130,17 +130,30 @@ def get_language_home_page():
 
 @app.route('/language/<name>')
 def get_language_page(name=None):
-	#lang id's are hardcoded. 
+@app.route('/language/<name>')
+def get_language_page(name=None):
+	#it's kinda stupid to have all this ugly if statements, I will see if I can remove this later with better way - John
+	targetID = -1
 	if(name == "java") :
-		language = [language for language in languages if language['language_ID'] == 1]
+		targetID = 1
 	elif(name == "c&c++") :
-		language = [language for language in languages if language['language_ID'] == 2]
+		targetID = 2
 	elif(name == "php") :
-		language = [language for language in languages if language['language_ID'] == 3]
+		targetID = 3
 	elif(name == "python") :
-		language = [language for language in languages if language['language_ID'] == 4]
+		targetID = 4
 	elif(name == "javascript") :
-		language = [language for language in languages if language['language_ID'] == 5]
+		targetID = 5
+	elif(name == "objective-c") :
+		targetID = 6
+	elif(name == "csharp") :
+		targetID = 7
+	elif(name == "visualbasic.net") :
+		targetID = 8
+	elif(name == "visualbasic") :
+		targetID = 9
+				
+	language = [language for language in languages if language['language_ID'] == targetID]
 	language=language[0]
 	return render_template('language.html', langName=language['language_name'], langId=language['language_ID'])
 
