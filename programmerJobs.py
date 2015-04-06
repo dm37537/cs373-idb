@@ -5,7 +5,7 @@ import json
 #import tests
 
 app = Flask(__name__)
-#app.config.from_object(os.environ['APP_SETTINGS'])
+app.config.from_object(os.environ['APP_SETTINGS'])
 db = SQLAlchemy(app)
 
 app.config.update(dict(
@@ -13,7 +13,17 @@ app.config.update(dict(
 	USERNAME = 'admin',
 	PASSWORD = 'default'
 ))
-app.config.from_envvar('PROJECT_SETTINGS', silent=True)
+#app.config.from_envvar('PROJECT_SETTINGS', silent=True)
+
+def init_db():
+	db.drop_all()
+	db.create_all()
+	#with app.open_resource('schema.sql', mode='r') as f:
+	#	db.cursor().executescript(f.read())
+
+def populate_db():
+	with app.open_resource('insert.sql', mode='r') as f:
+		db.cursor().execute(f.read)
 
 # Loading JSON from files. To be replaced with database or model calls
 f = open('Job.json') 

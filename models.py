@@ -3,6 +3,17 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy.schema import ForeignKey
 from programmerJobs import db
 
+
+job_languages = db.Table('job_language',
+	db.Column('job_id', db.Integer, db.ForeignKey('job.id')),
+	db.Column('language_id', db.Integer, db.ForeignKey('language.id'))
+)
+
+job_skillsets = db.Table('job_skillset',
+	db.Column('job_id', db.Integer, db.ForeignKey('job.id')),
+	db.Column('skillset_id', db.Integer, db.ForeignKey('skillset.id'))
+)
+
 class Job(db.Model):
 	""" 
 	This is the Job model and has the following attributes:
@@ -16,22 +27,22 @@ class Job(db.Model):
 	languageid (Integer) - Identifier for the programming language
 	"""
 	__tablename__ = 'job'
-	__table_args__ = {'useexisting': True}
-	id = db.Column(db.Integer, primary_key=True, nullable=False)
-	title = db.Column(db.Text, nullable=False)
+	#__table_args__ = {'useexisting': True}
+	id = db.Column(db.Integer, primary_key=True)
+	title = db.Column(db.Text)
 	description = db.Column(db.Text)
 	link = db.Column(db.Text)
 	locationid = db.Column(db.Integer, ForeignKey('location.id'))
 	companyid = db.Column(db.Integer, ForeignKey('company.id'))
-	languageid = db.Column(db.Integer, ForeignKey('language.id'))
-	skillsetid = db.Column(db.Integer, ForeignKey('skillset.id'))
+	#languageid = db.Column(db.Integer, ForeignKey('language.id'))
+	#skillsetid = db.Column(db.Integer, ForeignKey('skillset.id'))
+	languages = db.relationship('Language', secondary=job_languages, backref='job', lazy='dynamic')
+	skillsets = db.relationship('Skillset', secondary=job_skillsets, backref='job', lazy='dynamic')
 
-	def __init__(self, title, locationID, companyID, languageID, skillsetID, description, link):
+	def __init__(self, title, locationID, companyID, description, link):
 		self.title = title
 		self.locationid = locationID
 		self.companyid = companyID
-		self.languageid = languageID
-		self.skillsetid = skillsetID
 		self.description = description
 		self.link = link
 	
@@ -47,7 +58,7 @@ class Company(db.Model):
 	Company_image (Text) - URL for company image
 	"""
 	__tablename__ = 'company'
-	__table_args__ = {'useexisting': True}	
+	#__table_args__ = {'useexisting': True}	
 	
 	Company_ID = db.Column(db.Integer, primary_key=True)
 	Company_Name = db.Column(db.Text)
@@ -71,7 +82,7 @@ class Language(db.Model):
 	Language_Image (Text) - URL for the image of the programming language
 	"""
 	__tablename__ = 'language'        
-	__table_args__ = {'useexisting': True}
+	#__table_args__ = {'useexisting': True}
 
 	Language_ID = db.Column(db.Integer, primary_key=True)
 	Language_Name = db.Column(db.Text)
@@ -95,12 +106,12 @@ class Location(db.Model):
 	Location_image (Text) - URL for the location image
 	"""
 	__tablename__ = 'location'
-	__table_args__ = {'useexisting': True}
+	#__table_args__ = {'useexisting': True}
 
 	Location_ID = db.Column(db.Integer, primary_key=True)
-	Location = db.Column(db.String(120))
-	Location_description = db.Column(db.String(120))
-	Location_image = db.Column(db.String(120))
+	Location = db.Column(db.Text)
+	Location_description = db.Column(db.Text)
+	Location_image = db.Column(db.Text)
 
 	def __init__(self, Location, Location_description, Location_image):
 		self.Location = Location
@@ -118,11 +129,11 @@ class Skillset:
 	Skillset_description (Text) - Description of the skillset
 	"""
 	__tablename__ = 'skillset'
-	__table_args__ = {'useexisting': True}
+	#__table_args__ = {'useexisting': True}
 
 	Skillset_ID = db.Column(db.Integer, primary_key=True)
-	Skillset = db.Column(db.String(120))
-	Skillset_description = db.Column(db.String(120))
+	Skillset = db.Column(db.Text)
+	Skillset_description = db.Column(db.Text)
 
 	def __init__(self, Skillset, Skillset_description):
 		self.Skillset = Skillset

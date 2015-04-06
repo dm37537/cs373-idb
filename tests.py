@@ -62,11 +62,7 @@ class ProgrammerJobsTestCase(unittest.TestCase):
 		assert company.Company_Name == 'bing'
 		assert company.Company_description == 'not google'
 		assert company.Company_image == 'bell.png'
-<<<<<<< HEAD
 	
-=======
-
->>>>>>> 2e91813658692c4dfa47a356acb67bb71ff06df3
 	def testModifyingCompany2(self):
 		company = Company('elgooG', 'enigne hcraeS', 'gpj.elgooG')
 		company.Company_Name = 'facebook'
@@ -99,11 +95,7 @@ class ProgrammerJobsTestCase(unittest.TestCase):
 		assert location.Location == 'San Francisco, CA'
 		assert location.Location_description == 'I\'ve been there'
 		assert location.Location_image == 'goldengatebridge.jpg'
-<<<<<<< HEAD
 	
-=======
-
->>>>>>> 2e91813658692c4dfa47a356acb67bb71ff06df3
 	def testCreatingLanguage(self):
 		language = Language('Spanish', 'taco, burrito, ...', 'sombrero.png')
 		assert language.Language_Name == 'Spanish'
@@ -118,11 +110,7 @@ class ProgrammerJobsTestCase(unittest.TestCase):
 		assert language.Language_Name == 'French'
 		assert language.Language_Description == 'Croissant'
 		assert language.Language_Image == 'crepe.jpg'
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> 2e91813658692c4dfa47a356acb67bb71ff06df3
 	def testModifyingLanguage2(self):
 		language = Language('Spanish', 'taco, burrito, ...', 'sombrero.png')
 		language.Language_Name = 'English'
