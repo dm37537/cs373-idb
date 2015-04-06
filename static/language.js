@@ -96,7 +96,7 @@ function generateCollapsiblePanel(counter, jobName, jobLink, cmpyID, locID, desc
 	});
 
 	var locName = locDict["location_name"];
-	alert("locName = " + locName);
+	// alert("locName = " + locName);
 	var locLink = "location/";
 	var locSplit = locName.split(',');
 	locSplit = locSplit[0].replace(" ", "");

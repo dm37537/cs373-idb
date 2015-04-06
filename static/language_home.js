@@ -28,38 +28,37 @@ $.getJSON("/api/language", function(result){
 	var data = result["languages"];
 	//display icons
 	var dataLen = data.length;
+	var htmlCode = "<div class=\"col-md-12 col-md-offset-1\">";
+
 	for(var i = 0; i < dataLen; ++i){
 		var dict = data[i];
 		var name = dict['language_name'];
 		var imgSrc = dict['language_image_small'];
-
-		switch(name){
-			case "C/C++":
-				name = "c&c++";
-				break;
-			case "Java":
-				name = "java";
-				break;
-			case "PHP":
-				name = "php";
-				break;
-			case "Python":
-				name = "python";
-				break;
-			case "Javascript":
-				name = "javascript";
-				break;
-			default:
-				break;
+		if(name == "C++" || name == "C"){
+			name = "c&c++";
 		}
-		var htmlCode = "<div class = \"image\">";
+		else if(name == "C#"){
+			name = "csharp"
+		}
+		else{
+			name = name.toLowerCase();
+			name = name.replace(" ", "");
+		}
+
+		htmlCode += "<div class = \"image\">";
 		htmlCode += "<div class=\"col-md-2\" >";
 		htmlCode += "<a href=language/" + name + ">";
-		htmlCode += "<img src=\"static/" + imgSrc + "\" class=\"img-rounded\" style=\"margin: 30px\">";
+		htmlCode += "<img width=\"150\" src=\"static/" + imgSrc + "\" class=\"img-rounded\" style=\"margin: 30px\">";
 		htmlCode += "</a></div></div>";
+		if(i == 4){
+			htmlCode += "</div><div class=\"col-md-12 col-md-offset-1\">";
+		}
 
-		var icon_holder = "image_" + name;
-		document.getElementById("image_" + name).innerHTML = htmlCode;
+		// var icon_holder = "image_" + name;
+		// document.getElementById("image_" + name).innerHTML = htmlCode;
 	}
+	htmlCode += "</div>";
+
+	document.getElementById("lang_image_icon").innerHTML = htmlCode;
 });
 

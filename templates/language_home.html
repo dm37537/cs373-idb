@@ -9,16 +9,6 @@
     <!-- Bootstrap -->
     <link href="static/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="static/custom.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-
-    <script id="param" langId="1" src="static/language_home.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
   </head>
   <body>
@@ -37,10 +27,7 @@
           <ul class="nav navbar-nav navbar-left">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Languages<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="languages/language_java.html">Java</a></li>
-                <li><a href="languages/language_c.html">C/C++</a></li>
-                <li><a href="languages/language_php.html">PHP</a></li>
+              <ul id="langMenu" class="dropdown-menu">
               </ul>
             </li>
             <li class="dropdown">
@@ -87,14 +74,14 @@
             </div>
             <div class="panel-body" >
                 <table align="center" class="table table-bordered table-striped">
+                    <!-- Rank is fixed with 10 langauges -->
                     <tr>
                         <td>Rank</td>
                         <td>Programming Language</td>
                     </tr>
                     <tr>
                         <td>#1</td>
-                        <td id = "rank_1">
-                        </td>
+                        <td id="rank_1"></td>
                     </tr>
                     <tr>
                         <td>#2</td>
@@ -102,7 +89,7 @@
                     </tr>
                     <tr>
                         <td>#3</td>
-                        <td id="rank_3"></a></td>
+                        <td id="rank_3"></td>
                     </tr>
                     <tr>
                         <td>#4</td>
@@ -122,7 +109,7 @@
                     </tr>
                     <tr>
                         <td>#8</td>
-                        <td  id="rank_8" ></td>
+                        <td id="rank_8"></td>
                     </tr>
                     <tr>
                         <td>#9</td>
@@ -147,23 +134,8 @@
     <div class="container">
       <div class="row text-center">
         <!-- first row. Showing only three for now. move to center. -->
-        <div class="col-md-12 col-md-offset-1">
-          <!-- C/C++ -->
-          <div id = "image_c&c++" >
-          </div>
-          <!-- Java -->
-          <div id="image_java">
-          </div>
-          <!-- php -->
-          <div id="image_php">
-          </div>
-          <!-- Python -->
-          <div id="image_python">
-          </div>
-          <!-- Javascript -->
-          <div id="image_javascript">
-          </div>
-        </div>
+        <div id="lang_image_icon"></div>
+
       </div>
     </div>
 
@@ -179,7 +151,10 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script id="navbarParam" state="0" src="../static/navbar.js"></script>
+<!--     // <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script> -->
+    <script id="param" langId="1" src="../static/language_home.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
   </body>
 </html>

@@ -32,10 +32,10 @@
           <ul class="nav navbar-nav navbar-left">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Languages<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="java">Java</a></li>
+              <ul id="langMenu" class="dropdown-menu">
+<!--                 <li><a href="java">Java</a></li>
                 <li><a href="c&c++">C/C++</a></li>
-                <li><a href="php">PHP</a></li>
+                <li><a href="php">PHP</a></li> -->
               </ul>
             </li>
             <li class="dropdown">
@@ -64,7 +64,7 @@
       <!-- Description -->
       <div id="description"></div>
       <div class="container col-md-8 company-format">
-        <h3>{{LangName}} Job Listings</h3>
+        <h3>Job Listings</h3>
           <!-- Job listing -->
           <div id="cPanel"></div>
         </div>
@@ -82,8 +82,8 @@
 
     
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" id="param" langId="{{langId}}" src="../static/language.js">
-    </script>
+    <script id="param" langId="{{langId}}" src="../static/language.js"></script>
+    <script id="navbarParam" state="1" src="../static/navbar.js"></script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
