@@ -26,12 +26,16 @@ function genLangMenu(){
 	for(i = 0; i<len; i++){
 		var dict = langJson[i];
 		var langName = dict["language_name"];
-		var langAddr;
-		if(langName == "C/C++")
-			langAddr = "c&c++";
-		else
-			langAddr = langName.toLowerCase();
+		var langAddr = langName.replace(" ", "");
 		retHTML += "<li><a href="+linkPrefix+langAddr+">"+langName+"</a></li>"
 	}
 	return retHTML;
+}
+
+function genCmpyMenu(){
+
+}
+
+function genLocMenu(){
+	
 }
