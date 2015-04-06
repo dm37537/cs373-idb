@@ -24,25 +24,25 @@ Returns a list of all jobs and their ids
 + Response 200 (application/json)
     
             [{
-                "id": 1, 
-                "title": "Web Developer", 
-                "locationID": 1, 
-                "companyID": 1, 
-                "languageID": 1, 
-                "skillsetID": 1, 
-                "description": "something", 
-                "link": "some link"
+                "job_ID": 1, 
+                "job_title": "Software Developer 4", 
+                "location_ID": 3, 
+                "company_ID": 2, 
+                "language_ID": 1, 
+                "skillset_ID": 5, 
+                "job_description": "Design, configure, and implement our data systems and stream processing pipelines/nCode analytics jobs, web services, and other components/nWork with operations to build and configure maintainable, resource-efficient systems/nWork with data pipelines using Kafka, Cassandra, Spark/nLeverage Event processing technologies to deliver real time analytics features/nDevelop a cloud service that would be processing billions of events a day/nLeverage fast data pipelines for real time analytics on various Oracle SaaS applications/nContribute ideas for continually improving the team's productivity, job enjoyment, and code quality./nActively mentor junior developers to develop their technical expertise/nHave fun engineering software and scalable systems", 
+                "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=90953"
                 
             },
             {
-                "id": 2, 
-                "title": "Software Engineer", 
-                "locationID": 1, 
-                "companyID": 2, 
-                "languageID": 3, 
-                "skillsetID": 4, 
-                "description": "something", 
-                "link": "some link"
+                "job_ID": 2, 
+                "job_title": "Software Developer 2", 
+                "location_ID": 3, 
+                "company_ID": 2, 
+                "language_ID": 1, 
+                "skillset_ID": 4, 
+                "job_description": "Are you interested in building Identity infrastructure for the cloud? Oracle's Cloud Infrastructure team is building new Infrastructure-as-a-Service technologies that operate at high scale in a broadly distributed multi-tenant cloud environment. Our customers run their businesses on our cloud, and our mission is to provide them with best in class compute, storage, networking, database, security, and an ever expanding set of foundational cloud-based services./n/nWe're looking for Software Developer with expertise and passion in solving difficult problems in distributed systems, virtualized infrastructure, and highly available services. If this is you, at Oracle you can design and build innovative new systems from the ground up. These are exciting times in our space - we are growing fast, still at an early stage, functioning like a startup and working on ambitious new initiatives. An engineer at any level can have significant technical and business impact./n/nAs a Software Developer, you will own and lead software architecture and development for Authentication and Authorization components of Oracle's Cloud Identity Infrastructure.  You should be a distributed systems generalist, able to build broad systems interactions, while being very hands-on, able to dive deep into any part of the stack and lower level system interactions. You should value simplicity and scale, work comfortably in a collaborative, agile environment, and be excited to learn.", 
+                "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=86141"
             
             }]
 
@@ -57,14 +57,14 @@ Returns a list of all jobs and their ids
     + Body
 
             {
-                "id": 1, 
-                "title": "Web Developer", 
-                "locationID": 1, 
-                "companyID": 1, 
-                "languageID": 1, 
-                "skillsetID": 1, 
-                "description": "something", 
-                "link": "some link"
+                "job_ID": 1, 
+                "job_title": "Software Developer 4", 
+                "location_ID": 3, 
+                "company_ID": 2, 
+                "language_ID": 1, 
+                "skillset_ID": 5, 
+                "job_description": "Design, configure, and implement our data systems and stream processing pipelines/nCode analytics jobs, web services, and other components/nWork with operations to build and configure maintainable, resource-efficient systems/nWork with data pipelines using Kafka, Cassandra, Spark/nLeverage Event processing technologies to deliver real time analytics features/nDevelop a cloud service that would be processing billions of events a day/nLeverage fast data pipelines for real time analytics on various Oracle SaaS applications/nContribute ideas for continually improving the team's productivity, job enjoyment, and code quality./nActively mentor junior developers to develop their technical expertise/nHave fun engineering software and scalable systems", 
+                "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=90953"
             }
    
 
@@ -86,16 +86,16 @@ Returns a list of all jobs and their ids
 + Response 200 (application/json)
 
             [{
-                "location_ID" : 1
-                "location": "Austin, TX",
-                "location_description" : "A great city to live in",
+                "location_ID" : 1,
+                "location_name": "Austin, TX",
+                "location_description" : "Austin is the capital of the US state of Texas and the seat of Travis County. Located in Central Texas, Austin is the 11th-most populous city in the United States and the fourth-most populous city in Texas.",
                 "location_image" : "http://www.seesawaustin.com/wp-content/uploads/2014/07/Austin-jobs.jpg"
                 
             },{
-                "location_ID" : 2
-                "location": "Seattle, WA",
-                "location_description" : "A big city",
-                "location_image" : "link"
+                "location_ID" : 2,
+                "location_name": "Seattle, WA",
+                "location_description" : "Seattle is a coastal seaport city and the seat of King County, in the U.S. state of Washington. With an estimated 652,405 residents as of 2013, Seattle is the largest city in both the State of Washington ...",
+                "location_image" : "http://upload.wikimedia.org/wikipedia/commons/2/2f/Space_Needle002.jpg"
                 
             }]
 
@@ -111,11 +111,10 @@ Returns a list of all jobs and their ids
     + Body
         
             {
-                "location_ID" : 1
-                "location": "Austin, TX",
-                "location_description" : "A great city to live in",
+                "location_ID" : 1,
+                "location_name": "Austin, TX",
+                "location_description" : "Austin is the capital of the US state of Texas and the seat of Travis County. Located in Central Texas, Austin is the 11th-most populous city in the United States and the fourth-most populous city in Texas.",
                 "location_image" : "http://www.seesawaustin.com/wp-content/uploads/2014/07/Austin-jobs.jpg"
-                
             }
         
 + Response 404
@@ -136,14 +135,16 @@ Returns a list of all jobs and their ids
             
             [{
                 "language_ID" : 1,
-                "language_Name" : "java",
-                "language_description" : "muti platform",
-                "language_image" : "link"
+                "language_name": "Java",
+                "language_description" : "Muti platiform Language",
+                "language_image_small" : "images/language_icon/java_icon_small.png",
+                "language_image_large" : "images/language_icon/java_icon_large.png"
             },{
                 "language_ID" : 2,
-                "language_Name" : "python"
-                "language_description" : "snake",
-                "language_image" : "link"
+                "language_name": "C/C++",
+                "language_description" : "great Language",
+                "language_image_small" : "images/language_icon/cpp_icon_small.png",
+                "language_image_large" : "images/language_icon/cpp_icon_large.png"
             }]
 
 
@@ -158,9 +159,10 @@ Returns a list of all jobs and their ids
     
             {
                 "language_ID" : 1,
-                "language_Name" : "java",
-                "language_description" : "muti platform",
-                "language_image" : "link"
+                "language_name": "Java",
+                "language_description" : "Muti platiform Language",
+                "language_image_small" : "images/language_icon/java_icon_small.png",
+                "language_image_large" : "images/language_icon/java_icon_large.png"
             }
         
 + Response 404
@@ -182,13 +184,13 @@ Returns a list of all jobs and their ids
 
             [{
                 "company_ID": 1,
-                "company_Name": "Google",
+                "company_name": "Google",
                 "company_description" : "Search engine",
-                "company_image" : "http://www.google.com/doodle4google/images/splashes/featured.png"
+                "company_image": "http://www.google.com/doodle4google/images/splashes/featured.png"
                 
             },{
                 "company_ID": 2,
-                "company_Name": "Oracle",
+                "company_name": "Oracle",
                 "company_description" : "Database",
                 "company_image" : "http://192.95.57.65/wp-content/uploads/2014/07/logo-oracle.jpg"
                 
@@ -207,9 +209,9 @@ Returns a list of all jobs and their ids
 
             {
                 "company_ID": 1,
-                "company_Name": "Google",
+                "company_name": "Google",
                 "company_description" : "Search engine",
-                "company_image" : "http://www.google.com/doodle4google/images/splashes/featured.png"
+                "company_image": "http://www.google.com/doodle4google/images/splashes/featured.png"
             
             }
 
@@ -233,13 +235,13 @@ Returns a list of all jobs and their ids
         
             [{
                 "skillset_ID" : 1,
-                "skillset": "Spring, J2EE, Hibernate",
-                "skillset_description" : "Spring, J2EE, Hibernate",
+                "skillset_name": "Web app, Back-end",
+                "skillset_description" : "Spring, J2EE, Hibernate"
                 
             },{
                 "skillset_ID" : 2,
-                "skillset": "Mobile computing",
-                "skillset_description" : "Mobile computing, IOS, Andriod",
+                "skillset_name": "Mobile computing",
+                "skillset_description" : "Mobile computing, IOS, Andriod"
             }]
 
 ## Skillset [/skillset/{id}]
@@ -253,8 +255,8 @@ Returns a list of all jobs and their ids
 
             {
                 "skillset_ID" : 1,
-                "skillset": "Spring, J2EE, Hibernate",
-                "skillset_description" : "Spring, J2EE, Hibernate",
+                "skillset_name": "Web app, Back-end",
+                "skillset_description" : "Spring, J2EE, Hibernate"
             }
 
 + Response 404
