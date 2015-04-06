@@ -1,6 +1,6 @@
 $.getJSON("/api/rank", function(result){
 	var data = result["rank"];
-	gvar len = data.length;
+	var len = data.length;
 
     //display rank
     var rank_holder = "rank_";
@@ -19,12 +19,14 @@ $.getJSON("/api/rank", function(result){
 		else{
 			document.getElementById(rank_holder + rankId).innerHTML = "<a href=" + link + " >" + name + "</a>";
 		}
+    }
 
-	}
+    //build table
 });
 
 $.getJSON("/api/language", function(result){
 	var data = result["languages"];
+	//display icons
 	var dataLen = data.length;
 	for(var i = 0; i < dataLen; ++i){
 		var dict = data[i];
