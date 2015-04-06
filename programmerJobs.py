@@ -131,9 +131,14 @@ def get_language_home_page():
 @app.route('/language/<name>')
 def get_language_page(name=None):
 	name = name.replace(" ", "");
+	#need name redirection
 	if(name == "C#") :
 		name = "Csharp"
-				
+	elif(name == "VisualBasic") :
+		name = "Visual Basic"
+	elif(name == "VisualBasic.NET") :
+		name = "Visual Basic.NET"
+
 	language = [language for language in languages if language['language_name'] == name]
 	language=language[0]
 	return render_template('language.html', langName=language['language_name'], langId=language['language_ID'])

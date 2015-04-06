@@ -37,7 +37,7 @@ $.getJSON("/api/language", function(result){
 			// name = name.toLowerCase();
 			name = name.replace(" ", "");
 		}
-
+		// alert(name);
 		htmlCode += "<div class = \"image\">";
 		htmlCode += "<div class=\"col-md-2\" >";
 		htmlCode += "<a href=language/" + name + ">";
