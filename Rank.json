@@ -14,8 +14,8 @@
 	{
 		"rank_ID": 3,
 		"language_name": "Objective-C",
-		"language_ID": -1,
-		"link": "#"
+		"language_ID": 6,
+		"link": "language/objective-c"
 	},
 	{
 		"rank_ID": 4,
@@ -26,8 +26,8 @@
 	{
 		"rank_ID": 5,
 		"language_name": "C#",
-		"language_ID": -1,
-		"link": "#"
+		"language_ID": 7,
+		"link": "language/csharp"
 	},
 	{
 		"rank_ID": 6,
@@ -50,13 +50,13 @@
 	{
 		"rank_ID": 9,
 		"language_name": "Visual Basic.NET",
-		"language_ID": -1,
-		"link": "#"
+		"language_ID": 8,
+		"link": "language/visualbasic.net"
 	},
 	{
 		"rank_ID": 10,
 		"language_name": "Visual Basic",
-		"language_ID": -1,
-		"link": "#"
+		"language_ID": 9,
+		"link": "language/visualbasic"
 	}
 ]
