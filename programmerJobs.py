@@ -130,30 +130,11 @@ def get_language_home_page():
 
 @app.route('/language/<name>')
 def get_language_page(name=None):
-@app.route('/language/<name>')
-def get_language_page(name=None):
-	#it's kinda stupid to have all this ugly if statements, I will see if I can remove this later with better way - John
-	targetID = -1
-	if(name == "java") :
-		targetID = 1
-	elif(name == "c&c++") :
-		targetID = 2
-	elif(name == "php") :
-		targetID = 3
-	elif(name == "python") :
-		targetID = 4
-	elif(name == "javascript") :
-		targetID = 5
-	elif(name == "objective-c") :
-		targetID = 6
-	elif(name == "csharp") :
-		targetID = 7
-	elif(name == "visualbasic.net") :
-		targetID = 8
-	elif(name == "visualbasic") :
-		targetID = 9
+	name = name.replace(" ", "");
+	if(name == "C#") :
+		name = "Csharp"
 				
-	language = [language for language in languages if language['language_ID'] == targetID]
+	language = [language for language in languages if language['language_name'] == name]
 	language=language[0]
 	return render_template('language.html', langName=language['language_name'], langId=language['language_ID'])
 
