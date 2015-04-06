@@ -50,6 +50,10 @@ f = open('Rank.json')
 rank = json.load(f)
 f.close()
 
+f = open('Member.json')
+member = json.load(f)
+f.close()
+
 # The following are examples of different templates in action
 @app.route('/')
 def root():
@@ -101,6 +105,11 @@ def get_location(location_id):
 @app.route('/api/rank', methods=['GET'])
 def get_language_rank():
 	return jsonify({'rank': rank})
+	
+#Member
+@app.route('/api/member', methods=['GET'])
+def get_team_member():
+	return jsonify({'members': member})
 
 @app.route('/api/language', methods=['GET'])
 def get_languages():
