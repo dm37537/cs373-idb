@@ -54,6 +54,20 @@
                 "location_description" : "San Jose is the third-largest city in California, the tenth-largest in the United States, and the county seat of Santa Clara County. San Jose is the largest city within the San Francisco Bay Area and the largest city in Northern California.",
                 "location_image" : "http://www.latviansongfest2015.org/wp-content/uploads/2014/10/san-jose-usa-01.jpg"
                 
+            },{
+
+                "location_ID" : 9,
+                "location_name": "Mountain View, CA",
+                "location_description" : "Mountain View is a city in Santa Clara County, in the Bay Area of California.",
+                "location_image" : "http://upload.wikimedia.org/wikipedia/commons/8/84/2008_05_01_8.jpg"
+                
+            },{
+
+                "location_ID" : 10,
+                "location_name": "Menlo Park, CA",
+                "location_description" : "Menlo Park is an affluent city at the eastern edge of San Mateo County, in the San Francisco Bay Area of California, in the United States.",
+                "location_image" : "http://upload.wikimedia.org/wikipedia/commons/9/9f/Downtown_Menlo_Park_California.jpg"
+                
             }
 
 ]
