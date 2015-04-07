@@ -2,6 +2,7 @@ import os
 from flask import Flask, jsonify, abort, render_template, redirect, send_from_directory
 from flask.ext.sqlalchemy import SQLAlchemy
 import json
+from models import Job, Company, Location, Language, Skillset
 #import tests
 
 app = Flask(__name__)
@@ -67,6 +68,7 @@ def index():
 def test():
 	return send_from_directory('.', 'runTest.php')
 
+'''
 # API
 @app.route('/api/job', methods=['GET'])
 def get_jobs():
@@ -100,6 +102,46 @@ def get_location(location_id):
 	if len(location) == 0:
 		abort(404)
 	return jsonify({'location': location[0]})
+'''
+# API
+@app.route('/api/job', methods=['GET'])
+def get_jobs():
+	jobs = Job.query.all()
+	return jsonify({'jobs': jobs})
+
+@app.route('/api/job/<int:job_id>', methods=['GET'])
+def get_job(job_id):
+	job = Job.query.get(job_id)
+	if len(job) == 0:
+		abort(404)
+	return jsonify({'job': job[0]})
+
+@app.route('/api/company', methods=['GET'])
+def get_companies():
+	companies = Company.query.all()
+    return jsonify({'companies': companies})
+	    
+@app.route('/api/company/<int:company_id>', methods=['GET'])
+def get_company(company_id):
+	company = Company.query.get(company_id)
+	if len(company) == 0:
+		abort(404)
+	return jsonify({'company': company[0]})
+
+@app.route('/api/location', methods=['GET'])
+def get_locations():
+	locations = Location.query.all()
+    return jsonify({'locations': locations})
+
+@app.route('/api/location/<int:location_id>', methods=['GET'])
+def get_location(location_id):
+	location = Location.query.get(location_id)
+	if len(location) == 0:
+		abort(404)
+	return jsonify({'location': location[0]})
+
+
+
 
 #Rank
 @app.route('/api/rank', methods=['GET'])
