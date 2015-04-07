@@ -63,6 +63,7 @@ def root():
 @app.route('/index.html')
 def index():
 	return send_from_directory('.', 'index.html')
+	# return render_template('index.html', langJson=languages, cmpyJson=companies, locJson=locations)
 
 @app.route('/test')
 def test():
@@ -203,10 +204,9 @@ def get_skillset(skillset_id):
 
 
 #Dynamic pages
-
 @app.route('/language')
-def get_language_home_page():
-	return render_template('language_home.html', langJson=languages)
+def get_languages_page():
+	return render_template('languages.html', langJson=languages)
 
 @app.route('/language/<name>')
 def get_language_page(name=None):
