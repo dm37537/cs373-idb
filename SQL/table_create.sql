@@ -1,10 +1,11 @@
+drop table if exists Job_Require_Language;
+drop table if exists Job_Require_Skillset;
+drop table if exists Job;
 drop table if exists Company;
 drop table if exists Location;
 drop table if exists Language;
 drop table if exists Skillset;
-drop table if exists Job;
-drop table if exists Job_Require_Language;
-drop table if exists Job_Require_Skillset;
+
 
 
 CREATE TABLE Company(
@@ -29,6 +30,8 @@ CREATE TABLE Language(
 	language_name VARCHAR(30),
 	language_description TEXT,
 	language_image TEXT,
+	language_wiki_description TEXT,
+	language_wiki_link TEXT,
 	PRIMARY KEY (language_ID)
 );
 
@@ -37,7 +40,6 @@ CREATE TABLE Skillset(
 	skillset_ID INTEGER,
 	skillset_name VARCHAR(30),
 	skillset_description TEXT,
-	skillset_image TEXT,
 	PRIMARY KEY (skillset_ID)
 );
 
