@@ -56,6 +56,7 @@ class Company(db.Model):
 	Company_Name (Text) - Name of the company
 	Company_description (Text) - Description of the company 
 	Company_image (Text) - URL for company image
+	Company_site (Text) - URL for company
 	"""
 	__tablename__ = 'company'
 	#__table_args__ = {'useexisting': True}	
@@ -64,11 +65,13 @@ class Company(db.Model):
 	Company_Name = db.Column(db.Text)
 	Company_description = db.Column(db.Text)
 	Company_image = db.Column(db.Text)
+	Company_site = db.Column(db.Text)
 
-	def __init__(self, Company_Name, Company_description, Company_image):
+	def __init__(self, Company_Name, Company_description, Company_image, Company_site):
 		self.Company_Name = Company_Name
 		self.Company_description = Company_description
 		self.Company_image = Company_image
+		self.Company_site = Company_site
 	
 	def __repr__(self):
 		return '<company %r>' % self.Company_Name
