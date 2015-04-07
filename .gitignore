@@ -1,5 +1,6 @@
 .DS_store
 programmerjobs_debug.py
+*.pyc
 models.pyc
 config.pyc
 programmerJobs.pyc
