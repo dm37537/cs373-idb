@@ -50,12 +50,8 @@ f = open('Skillset.json')
 skillsets = json.load(f)
 f.close()
 
-f = open('Rank.json')
-rank = json.load(f)
-f.close()
-
 f = open('Member.json')
-member = json.load(f)
+members = json.load(f)
 f.close()
 
 # The following are examples of different templates in action
@@ -106,12 +102,6 @@ def get_location(location_id):
 	if len(location) == 0:
 		abort(404)
 	return jsonify({'location': location[0]})
-
-
-#Rank
-@app.route('/api/rank', methods=['GET'])
-def get_language_rank():
-	return jsonify({'rank': rank})
 	
 #Member
 @app.route('/api/member', methods=['GET'])
@@ -177,11 +167,6 @@ def get_location(location_id):
 	if len(location) == 0:
 		abort(404)
 	return jsonify(location)
-
-#Rank
-@app.route('/api/rank', methods=['GET'])
-def get_language_rank():
-	return jsonify(rank)
 	
 #Member
 @app.route('/api/member', methods=['GET'])
@@ -221,7 +206,7 @@ def get_skillset(skillset_id):
 
 @app.route('/language')
 def get_language_home_page():
-	return render_template('language_home.html')
+	return render_template('language_home.html', langJson=languages)
 
 @app.route('/language/<name>')
 def get_language_page(name=None):
@@ -233,10 +218,13 @@ def get_language_page(name=None):
 		name = "Visual Basic"
 	elif(name == "VisualBasic.NET") :
 		name = "Visual Basic.NET"
-
 	language = [language for language in languages if language['language_name'] == name]
 	language=language[0]
-	return render_template('language.html', langName=language['language_name'], langId=language['language_ID'])
+	return render_template('language.html', langJson=language, langsJson=languages, cmpyJson=companies, jobJson=jobs, locJson=locations, skillsetJson=skillsets)
+
+@app.route('/about')
+def get_about_page():
+	return render_template('about.html', memJson=members)
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0')
