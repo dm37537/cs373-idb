@@ -9,13 +9,6 @@
     <!-- Bootstrap -->
     <link href="static/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="static/custom.css">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
   <body>
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -80,15 +73,64 @@
         <a  class = "image" href="https://github.com/dm37537/cs373-idb" target="_blank">
           <img src="static/images/github_logo.jpg" style="height: 140px; width: 140px; margin: 20px" align = "center">
         </a>
-        <div id="teamStat"></div>
+        <h3><b/>Team Stats</h3>
+        <h5/>{{memJson|sum(attribute='member_commit')}} Commits
+        <br>{{memJson|sum(attribute='member_issue')}} Issues
+        <br>{{memJson|sum(attribute='member_unittest')}} Uniitests
+        <!-- <div id="teamStat"></div> -->
       </div>
     </div>
     <!-- Apiary & GitHub ends -->
 
     <!-- leaders -->
-    <div id="leaders"></div>
+    <!-- <div id="leaders"></div> -->
+    <div class="col-md-12">
+      <hr>
+      <div align = "center">
+        <h2> Group Leaders </h2>
+        {% set leaderNum = 1 %}
+        {% for memDict in memJson|sort(attribute='member_leader') %}
+          {% set isLeader = memDict.member_leader %}
+          <!-- the dict is sorted with member_leader in ascending order -->
+          {% if isLeader != 0 %}
+          <h3>
+            {{leaderNum}}. {{memDict.member_name}}
+            {% set leaderNum = leaderNum + 1 %}
+          </h3>
+          {% endif %}
+        {% endfor %}
+
+      </div>
+      <br><br><br>
+      <hr><br>
+    </div>
     <!-- members -->
-    <div id="members"></div>
+    {% for memDict in memJson %}
+    <div class="row row-format" align="center">
+      <div class="col-md-7 col-md-offest-10">
+        <img src="{{memDict.member_image}}" alt="Responsive image" class="img-rounded img-response-profile">
+      </div>
+      <div class="col-md-4 col-md-offest-2">
+        <div align="left">
+          <h1><b/>{{memDict.member_name}}</h1>
+          <br>
+          <h4><b/>Bio<br></h4>
+          <h5>
+            {{memDict.member_bio}}
+          </h5>
+          <h4><b/>Major Responsibilities<br></h4>
+          <h5>
+            {{memDict.member_major_responsibility}}
+          </h5>
+          <h4/><b/>Stats
+          <h5/>{{memDict.member_commit}} commit(s)
+          <h5/>{{memDict.member_issue}} commit(s)<br>
+          <h5/>{{memDict.member_unittest}} commit(s)<br>
+        </div>
+      </div>
+    </div>
+    <hr>
+    {% endfor %}
 
     <!-- Footer -->
     <div class="container">
@@ -99,7 +141,6 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="static/about.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="static/js/bootstrap.min.js"></script>
   </body>
