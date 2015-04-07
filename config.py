@@ -6,7 +6,7 @@ class Config(object):
 	CSRF_ENABLED = True
 	SECRET_KEY = 'this-really-needs-to-be-changed'
 	#SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
-	SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://kvalle:apple@104.130.229.90:5432/production'
+	SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://kvalle@104.130.229.90:5432/production'
 
 class ProductionConfig(Config):
 	DEBUG = False

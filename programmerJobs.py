@@ -2,14 +2,15 @@ import os
 from flask import Flask, jsonify, abort, render_template, redirect, send_from_directory
 from flask.ext.sqlalchemy import SQLAlchemy
 import json
-from models import db, Job, Company, Language, Skillset, Location
+#from models import *
+#from models import db, Job, Company, Language, Skillset, Location
 #import tests
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
-#db = SQLAlchemy(app)
-db.init_app(app)
-
+db = SQLAlchemy(app)
+#db.init_app(app)
+from models import *
 app.config.update(dict(
 	SECRET_KEY = 'development key',
 	USERNAME = 'admin',
@@ -18,6 +19,7 @@ app.config.update(dict(
 #app.config.from_envvar('PROJECT_SETTINGS', silent=True)
 
 def init_db():
+	#db.init_app(app)
 	db.drop_all()
 	db.create_all()
 	#with app.open_resource('schema.sql', mode='r') as f:

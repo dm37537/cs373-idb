@@ -1,15 +1,14 @@
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy.schema import ForeignKey
+from programmerJobs import db
 
-
-db = SQLAlchemy()
+#db = SQLAlchemy()
 
 job_languages = db.Table('job_language',
 	db.Column('job_id', db.Integer, db.ForeignKey('job.id')),
 	db.Column('language_id', db.Integer, db.ForeignKey('language.Language_ID'))
 )
-
 job_skillsets = db.Table('job_skillset',
 	db.Column('job_id', db.Integer, db.ForeignKey('job.id')),
 	db.Column('skillset_id', db.Integer, db.ForeignKey('skillset.Skillset_ID'))
