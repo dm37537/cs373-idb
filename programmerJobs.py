@@ -223,6 +223,23 @@ def get_language_page(name=None):
 	language=language[0]
 	return render_template('language.html', langJson=language, langsJson=languages, cmpyJson=companies, jobJson=jobs, locJson=locations, skillsetJson=skillsets)
 
+@app.route('/location')
+def get_locations_page():
+	return render_template('locations.html', langJson=languages, cmpyJson=companies, locJson=locations)
+
+@app.route('/location/<name>')
+def get_location_page(name=None):
+	location = [location for location in locations if location['location_name'] == name]
+	location = location[0]
+	return render_template('location.html', locJson = location, langJson=languages, cmpyJson=companies, locsJson=locations, jobJson=jobs, skillsetJson=skillsets)
+
+@app.route('/skillset/<name>')
+def get_skillset_page(name=None):
+	print("\""+name+"\"")
+	skillset = [skillset for skillset in skillsets if skillset['skillset_name'] == name]
+	skillset = skillset[0]
+	return render_template('skillset.html')
+
 @app.route('/about')
 def get_about_page():
 	return render_template('about.html', memJson=members)
