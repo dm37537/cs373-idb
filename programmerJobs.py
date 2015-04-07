@@ -141,72 +141,72 @@ def get_skillset(skillset_id):
 @app.route('/api/job', methods=['GET'])
 def get_jobs():
 	jobs = Job.query.all()
-	return jsonify({'jobs': jobs})
+	return jsonify(jobs)
 
 @app.route('/api/job/<int:job_id>', methods=['GET'])
 def get_job(job_id):
 	job = Job.query.get(job_id)
 	if len(job) == 0:
 		abort(404)
-	return jsonify({'job': job[0]})
+	return jsonify(job)
 
 @app.route('/api/company', methods=['GET'])
 def get_companies():
 	companies = Company.query.all()
-    return jsonify({'companies': companies})
+    return jsonify(companies)
 	    
 @app.route('/api/company/<int:company_id>', methods=['GET'])
 def get_company(company_id):
 	company = Company.query.get(company_id)
 	if len(company) == 0:
 		abort(404)
-	return jsonify({'company': company[0]})
+	return jsonify(company)
 
 @app.route('/api/location', methods=['GET'])
 def get_locations():
 	locations = Location.query.all()
-    return jsonify({'locations': locations})
+    return jsonify(locations)
 
 @app.route('/api/location/<int:location_id>', methods=['GET'])
 def get_location(location_id):
 	location = Location.query.get(location_id)
 	if len(location) == 0:
 		abort(404)
-	return jsonify({'location': location[0]})
+	return jsonify(location)
 
 #Rank
 @app.route('/api/rank', methods=['GET'])
 def get_language_rank():
-	return jsonify({'rank': rank})
+	return jsonify(rank)
 	
 #Member
 @app.route('/api/member', methods=['GET'])
 def get_team_member():
-	return jsonify({'members': member})
+	return jsonify(member)
 
 @app.route('/api/language', methods=['GET'])
 def get_languages():
 	languages = Language.query.all()
-    return jsonify({'languages': languages})
+    return jsonify(languages)
 
 @app.route('/api/language/<int:language_id>', methods=['GET'])
 def get_language(language_id):
 	language = Language.query.get(language_id)
 	if len(language) == 0:
 		abort(404)
-	return jsonify({'language': language[0]})
+	return jsonify(language)
 
 @app.route('/api/skillset', methods=['GET'])
 def get_skillsets():
 	skillsets = Skillset.query.all()
-    return jsonify({'skillsets': skillsets})
+    return jsonify(skillsets)
 
 @app.route('/api/skillset/<int:skillset_id>', methods=['GET'])
 def get_skillset(skillset_id):
 	skillset = Skillset.query.get(skillset_id)
 	if len(skillset) == 0:
 		abort(404)
-	return jsonify({'skillset': skillset[0]})
+	return jsonify({skillset)
 
 
 
