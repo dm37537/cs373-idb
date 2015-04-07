@@ -7,8 +7,8 @@
     <title>Programming Jobs</title>
 
     <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../custom.css">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../static/custom.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -61,29 +61,27 @@
       </div>
     </div>
     <div class="container">
-      <h1 class="text-center">Application Developer, Corporate Asset Management Engineering</h1>
+      <h1 class="text-center">{{jobJson.job_title}}</h1>
       <h3 class="text-center">
-        <a href="../companies/company_google.html">
-          Google
+        {% set jobCmpyID = jobJson.company_ID - 1 %}
+        <a href="../company/{{cmpyJson[jobCmpyID].company_name}}">
+          {{cmpyJson[jobCmpyID].company_name}}
         </a>
         //  
-        <a href="#">
-          New York City, NY
+        {% set jobLocID = jobJson.location_ID - 1 %}
+        <a href="../location/{{locJson[jobLocID].location_name}}">
+          {{locJson[jobLocID].location_name}}
         </a>
       </h3>
       <hr>
       <h2 class="text-center">Description</h2>
       <div class="container">
         <ul>
-          <li>Build custom front-ends (web and mobile), back-end services, and third-party integrations to automate business processes.</li>
-          <li>Propose, design, and implement business workflows to streamline asset management lifecycles.</li>
-          <li>Maintain strong development practices including technical design and writing clean, modular, well tested and self-sustaining code.</li>
-          <li>Collaborate with business analysts, program managers, end users and other internal teams to translate business requirements into technical solutions that work at Google scale.</li>
-          <li>Integrate third-party products with Google’s internal systems as well as support and upgrade implemented systems.</li>
+          {{jobJson.job_description}}
         </ul>
         <br><br>
         <div class="text-center">
-          <a href="https://www.google.com/about/careers/search?src=Online/Job+Board/indeed&utm_source=indeed&utm_medium=jobaggr&utm_campaign=freeaggr#!t=jo&jid=94815001" target="_blank">
+          <a href="{{jobJson.link}}" target="_blank">
             <button type="button" class="btn btn-primary">Apply here!</button>
           </a>
         </div>
@@ -92,44 +90,78 @@
       <div class="row">
         <div class="col-md-3">
           <h3 class="text-center">
-            <a href="../skillsets/Web_front_end.html">
-              Web Front-end
+            {% set jobSkillsetID = jobJson.skillset_ID - 1 %}
+            <a href="../skillset/{{skillsetJson[jobSkillsetID].skillset_name}}">
+              {{skillsetJson[jobSkillsetID].skillset_name}}
             </a>
           </h3>
           <div class="list-group">
-            <a href="job_software_developer_2.html" class="list-group-item">
-              Software Developer 2
-            </a>
+            {% for simSkillsetJobDict in jobsJson %}
+              {% if simSkillsetJobDict.skillset_ID == jobSkillsetID + 1 %}
+                {% if simSkillsetJobDict.job_title != jobJson.job_title %}
+                  <a href="../job/{{simSkillsetJobDict.job_title}}" class="list-group-item">
+                    {{simSkillsetJobDict.job_title}}
+                  </a>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
           </div>
         </div>
         <div class="col-md-3">
           <h3 class="text-center">
-            <a href="#">
-              Python
+            {% set jobLangID = jobJson.language_ID - 1 %}
+            <a href="../language/{{langJson[jobLangID].language_name}}">
+              {{langJson[jobLangID].language_name}}
             </a>
           </h3>
           <div class="list-group">
+            {% for simLangJobDict in jobsJson %}
+              {% if simLangJobDict.language_ID == jobLangID + 1 %}
+                {% if simLangJobDict.job_title != jobJson.job_title %}
+                  <a href="../job/{{simLangJobDict.job_title}}" class="list-group-item">
+                    {{simLangJobDict.job_title}}
+                  </a>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
           </div>
         </div>
         <div class="col-md-3">
           <h3 class="text-center">
-            <a href="../companies/company_google.html">
-              Google
+            {% set jobCmpyID = jobJson.company_ID - 1 %}
+            <a href="../company/{{cmpyJson[jobCmpyID].company_name}}">
+              {{cmpyJson[jobCmpyID].company_name}}
             </a>
           </h3>
           <div class="list-group">
-            <a href="job_systems_engineer.html" class="list-group-item">
-              Systems Engineer
-            </a>
+            {% for simCmpyJobDict in jobsJson %}
+              {% if simCmpyJobDict.company_ID == jobCmpyID + 1 %}
+                {% if simCmpyJobDict.job_title != jobJson.job_title %}
+                  <a href="../job/{{simCmpyJobDict.job_title}}" class="list-group-item">
+                    {{simCmpyJobDict.job_title}}
+                  </a>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
           </div>
         </div>
         <div class="col-md-3">
           <h3 class="text-center">
-            <a href="#">
-              New York City, NY
+            {% set jobLocID = jobJson.location_ID - 1 %}
+            <a href="../location/{{locJson[jobLocID].location_name}}">
+              {{locJson[jobLocID].location_name}}
             </a>
           </h3>
           <div class="list-group">
+            {% for simLocJobDict in jobsJson %}
+              {% if simLocJobDict.location_ID == jobLocID + 1 %}
+                {% if simLocJobDict.job_title != jobJson.job_title %}
+                  <a href="../job/{{simLocJobDict.job_title}}" class="list-group-item">
+                    {{simLocJobDict.job_title}}
+                  </a>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -146,6 +178,6 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
   </body>
 </html>

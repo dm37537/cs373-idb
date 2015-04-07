@@ -204,11 +204,6 @@ def get_skillset(skillset_id):
 
 
 #Dynamic pages
-@app.route('/index.html')
-def get_home():
-	print("home?")
-	return render_template('index.html')
-
 @app.route('/language')
 def get_languages_page():
 	return render_template('languages.html', langJson=languages)
@@ -240,10 +235,15 @@ def get_location_page(name=None):
 
 @app.route('/skillset/<name>')
 def get_skillset_page(name=None):
-	print("\""+name+"\"")
 	skillset = [skillset for skillset in skillsets if skillset['skillset_name'] == name]
 	skillset = skillset[0]
 	return render_template('skillset.html', skillsetJson=skillset, jobJson=jobs, locJson=locations, cmpyJson=companies, langJson=languages)
+
+@app.route('/job/<name>')
+def get_job_page(name=None):
+	job = [job for job in jobs if job['job_title'] == name]
+	job = job[0]
+	return render_template('job.html', jobsJson=jobs,  jobJson=job, cmpyJson=companies, langJson=languages, locJson=locations, skillsetJson=skillsets)
 
 @app.route('/about')
 def get_about_page():
