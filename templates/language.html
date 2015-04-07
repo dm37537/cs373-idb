@@ -32,15 +32,22 @@
           <ul class="nav navbar-nav navbar-left">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Languages<b class="caret"></b></a>
-              <ul id="langMenu" class="dropdown-menu"></ul>
+              <ul class="dropdown-menu">
+              {% for langDict in langsJson %}
+                <li>
+                  <a href="{{langDict.language_name}}">{{langDict.language_name}}</a>
+                </li>
+              {% endfor %}
+              </ul>
+              <!-- <ul id="langMenu" class="dropdown-menu"></ul> -->
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Companies<b class="caret"></b></a>
-              <ul id="cmpyMenu" class="dropdown-menu"></ul>
+              <!-- <ul id="cmpyMenu" class="dropdown-menu"></ul> -->
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Location<b class="caret"></b></a>
-              <ul id="locMenu" class="dropdown-menu"></ul>
+              <!-- <ul id="locMenu" class="dropdown-menu"></ul> -->
             </li>
             <li><a href="/about">About</a></li>
           </ul>
@@ -51,14 +58,83 @@
     <div class="row row-format text-center">
       <!-- Description -->
       <div id="description"></div>
+      <div class="col-md-4">
+        <div style='padding-top: 50px';>
+          <img height="250" src=../static/{{langJson.language_image}} alt="Responsive image" class="img-rounded img-response-language" style='padding-bottom:50px'>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">Description</h4>
+            </div>
+            <div class="panel-body">
+              {{langJson.language_wiki_description}}
+              <br><hr><br>
+              <a href={{langJson.language_wiki_link}} target="_blank">
+                <button type="button" class="btn btn-default">Read more</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="container col-md-8 company-format">
-        <h3>{{ langName }} Job Listings</h3>
+        <h3>{{ langJson.language_name }} Job Listings</h3>
           <!-- Job listing -->
-          <div id="cPanel"></div>
+          <!-- <div id="cPanel"></div> -->
+          <div class="panel-group" id="accordion">
+            {% set panelCounter = 0 %}
+            {% for jobDict in jobJson %}
+              {% set jobID = jobDict.job_ID %}
+              {% set jobLangID = jobDict.language_ID %}
+              {% if jobLangID == langJson.language_ID %}
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{panelCounter}}">
+                        {{ jobDict.job_title }}
+                      </a>
+                    </h4>
+                  </div>
+                  {% if panelCounter == 0 %}
+                    <div id="collapse{{panelCounter}}" class="panel-collapse collapse in">
+                  {% else %}
+                    <div id="collapse{{panelCounter}}" class="panel-collapse collapse">
+                  {% endif %}
+                  {% set panelCounter = panelCounter + 1 %}
+                      <div class="panel-body">
+                        <h2>
+                          {% set cmpyID = jobDict.company_ID %}
+                          {% set cmpyID = cmpyID - 1 %}
+                          <a href="../company/{{cmpyJson[cmpyID].company_name}}">{{cmpyJson[cmpyID].company_name}}</a>
+                          <small>
+                            {% set locID = jobDict.location_ID %}
+                            {% set locID = locID - 1 %}
+                            <a href="#">{{locJson[locID].location_name}}</a>
+                          </small>
+                        </h2>
+                        <hr>
+                        <h4>Job Description</h4>
+                        <h5>{{jobDict.job_description}}</h5>
+                        <hr>
+                        <h4>Required Skill(s)</h4>
+                        <h5>
+                            {% set skillsetID = jobDict.skillset_ID - 1 %}
+                          <a href="/skillset/{{skillsetJson[skillsetID].skillset_name}}">
+                            <button type="button" class="btn btn-default">{{skillsetJson[skillsetID].skillset_name}}</button>
+                          </a>
+                        </h5>
+                        <hr>
+                        <a href="{{jobDict.link}}" target="_blank">
+                          <button type="button" class="btn btn-default">Show More</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+              {% endif %}
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div>
-
     <hr>
 
     <!-- Footer -->
@@ -70,8 +146,8 @@
 
     
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script id="param" langId="{{langId}}" src="../static/language.js"></script>
-    <script id="navbarParam" state="1" src="../static/navbar.js"></script>
+    <!-- // <script id="param" langId="{{langId}}" src="../static/language.js"></script> -->
+    <!-- // <script id="navbarParam" state="1" src="../static/navbar.js"></script> -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

@@ -50,7 +50,7 @@
       </div>
 
       <!-- 2015 top 10 prog lang -->
-      <div align="center">
+<!--       <div align="center">
         <div class="col-md-8 col-md-offset-2" >
           <div class="panel panelnel-default">
             <div class="panel-heading">
@@ -60,63 +60,53 @@
             </div>
             <div class="panel-body" >
                 <table align="center" class="table table-bordered table-striped">
-                    <!-- Rank is fixed with 10 langauges -->
                     <tr>
                         <td>Rank</td>
                         <td>Programming Language</td>
                     </tr>
-                    <tr>
-                        <td>#1</td>
-                        <td id="rank_1"></td>
-                    </tr>
-                    <tr>
-                        <td>#2</td>
-                        <td id="rank_2"></td>
-                    </tr>
-                    <tr>
-                        <td>#3</td>
-                        <td id="rank_3"></td>
-                    </tr>
-                    <tr>
-                        <td>#4</td>
-                        <td id="rank_4"></td>
-                    </tr>
-                    <tr>
-                        <td>#5</td>
-                        <td id="rank_5"></td>
-                    </tr>
-                    <tr>
-                        <td>#6</td>
-                        <td id="rank_6"></td>
-                    </tr>
-                    <tr>
-                        <td>#7</td>
-                        <td id="rank_7"></td>
-                    </tr>
-                    <tr>
-                        <td>#8</td>
-                        <td id="rank_8"></td>
-                    </tr>
-                    <tr>
-                        <td>#9</td>
-                        <td id="rank_9"></td>
-                    </tr>
-                    <tr>
-                        <td>#10</td>
-                        <td id="rank_10"></td>
-                    </tr>
+                    {% for dict in rankJson %}
+                      <tr>
+                        <td>#{{dict.rank_ID}}</td>
+                        <td><a href={{dict.link}}>{{dict.language_name}}</td>
+                      </tr>
+                    {% endfor %}
                 </table>
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
 
-    <hr>
+    <!-- <hr> -->
     <!-- images -->
     <div class="container">
       <div class="row text-center">
-        <div id="lang_image_icon"></div>
+        <div class="col=md=12 col-md-offset-1 row">
+          <!-- {% set count = 1 %} -->
+          {% for n in range(0, 5) %}
+            <!-- {{count}} -->
+            <div class="image">
+              <div class="col-md-2">
+                <a href="language/{{langJson[n].language_name}}">
+                  <img height="150" src="static/{{langJson[n].language_image}}" class="img-rounded" style="margin: 30px">
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="col=md=12 col-md-offset-1 row">
+          <!-- {% set count = 1 %} -->
+          {% for n in range(5, 10) %}
+            <!-- {{count}} -->
+            <div class="image">
+              <div class="col-md-2">
+                <a href="language/{{langJson[n].language_name}}">
+                  <img height="150" src="static/{{langJson[n].language_image}}" class="img-rounded" style="margin: 30px">
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
     <hr>
@@ -131,9 +121,9 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script id="navbarParam" state="0" src="../static/navbar.js"></script>
+    <!-- // <script id="navbarParam" state="0" src="../static/navbar.js"></script> -->
 <!--     // <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script> -->
-    <script id="param" langId="1" src="../static/language_home.js"></script>
+    <!-- // <script id="param" langId="1" src="../static/language_home.js"></script> -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="static/js/bootstrap.min.js"></script>
   </body>
