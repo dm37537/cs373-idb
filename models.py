@@ -1,8 +1,9 @@
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy.schema import ForeignKey
-from programmerJobs import *
 
+
+db = SQLAlchemy()
 
 job_languages = db.Table('job_language',
 	db.Column('job_id', db.Integer, db.ForeignKey('job.id')),
