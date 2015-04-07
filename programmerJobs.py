@@ -57,8 +57,8 @@ f.close()
 # The following are examples of different templates in action
 @app.route('/')
 def root():
-	return redirect('http://104.130.229.90:5000/index.html', code=302)
-	# return redirect('http://127.0.0.1:5000/index.html', code=302)
+	# return redirect('http://104.130.229.90:5000/index.html', code=302)
+	return redirect('http://127.0.0.1:5000/index.html', code=302)
 
 @app.route('/index.html')
 def index():
