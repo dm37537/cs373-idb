@@ -749,5 +749,23 @@
                     "skillset_ID": 3, 
                     "job_description": "Requirements: Extensive experience with Java or a similar language Superb knowledge of algorithms and data structures. Excellent programming skills A track record of successful delivery of new applications and services A degree in Computer Science or equivalent experience Passion for solving hard problems that matter Nice to Have: A deep understanding of the many ways systems can fail Knowledge of how to build systems resilient to failure Good taste and an intuition for balanced, simple solutions Strong knowledge of operating system behaviors, especially regarding stability, performance, and correctness Expertise in building platforms used by other developers to build new products Experience with service-oriented architectures Academic or real-world experience building distributed systems, including distributed consensus protocols like Paxos or Raft. Experience with distributed data stores like Dynamo, Cassandra, HDFS, and ZooKeeper. The ability to clearly and cogently describe complex ideas The ability to write automated tests to ensure the correctness of complex systems A watch that measures time in milliseconds, microseconds, and nanoseconds" ,                  
                     "link": "http://www.indeed.com/viewjob?jk=dd410c2fe0a82d75&q=company%3Aindeed+developer&tk=19gt0blmp19vi389"
+                },{
+                    "job_ID": 78, 
+                    "job_title": "Software Developer - Amazon Web Services", 
+                    "location_ID": 2, 
+                    "company_ID": 3, 
+                    "language_ID": 6, 
+                    "skillset_ID": 2, 
+                    "job_description": "Amazon Web Services (AWS) in Seattle is actively seeking a Senior Software Developer to help create a brand new service. This is an excellent opportunity to join a cutting edge team developing customer focused products. Relocation assistance is available. Join AWS to help mobile developers build great cloud-backed apps! As a member of the AWS Mobile team, you will develop services which cater to the needs of mobile developers who build apps for iOS, Android, Kindle, and the mobile web.We believe that cloud-backed mobile and device applications are a big deal, and our customers are developers who think likewise. We are driven to support our customers in their endeavors, providing software and services to help them use AWS as the foundation for their apps. This is a unique opportunity to influence the mobile app development community in a big way.This role will be responsible for building web service APIs that interact with mobile applications.", 
+                    "link": "http://www.amazon.jobs/jobs/295855/software-developer-amazon-web-services-new-mobile-service"
+                },{
+                    "job_ID": 79, 
+                    "job_title": "Senior iOS Developer", 
+                    "location_ID": 3, 
+                    "company_ID": 3, 
+                    "language_ID": 6, 
+                    "skillset_ID": 2, 
+                    "job_description": "We’re looking for product-aware engineers who are thoughtful, responsible and passionate builders who appreciate user experience. We’re looking for someone who is not only well versed in iOS development, but also has a strong understanding of good UX and isn’t afraid to get their hands dirty in backend code. We believe that great product people use lots of products, so if you’re an active user of Goodreads, we are listening. Come to join us to shape the future how people find their next favorite book.", 
+                    "link": "http://www.amazon.jobs/jobs/303634/senior-ios-developer"
                 }
 ]
