@@ -146,7 +146,7 @@
                     "company_ID": 4, 
                     "language_ID": 4, 
                     "skillset_ID": 4, 
-                    "job_description": "Want to create products that more than 1 billion people around the world use? Want to build new features and improve existing products like Photos, Video, Places, NewsFeed, Search, Mobile and Messaging? Want to solve unique, large scale, highly complex technical problems? Facebook is seeking an experienced Software Engineer to join the Products team. You can help build the next-generation systems behind Facebook's products, create web applications that reach millions of people, build high volume servers and be a part of a team that's working to help people connect with each other around the globe. Join us! This position is full-time and is based in our New York office. ", 
+                    "job_description": "Want to create products that more than 1 billion people around the world use? Want to build new features and improve existing products like Photos, Video, Places, NewsFeed, Search, Mobile and Messaging? Want to solve unique, large scale, highly complex technical problems? Facebook is seeking an experienced Software Engineer to join the Products team. You can help build the next-generation systems behind Facebook's products, create web applications that reach millions of people, build high volume servers and be a part of a team that's working to help people connect with each other around the globe. Join us! This position is full-time and is based in our New York office.", 
                     "link": "https://www.facebook.com/careers/department?dept=engineering&req=a0IA0000006cPKxMAM"
                 },
                 {
@@ -471,7 +471,7 @@
                 },
                 {
                     "job_ID": 48, 
-                    "job_title": "Software Developer ", 
+                    "job_title": "Software Developer", 
                     "location_ID": 1, 
                     "company_ID": 7, 
                     "language_ID": 2, 
@@ -511,7 +511,7 @@
                 },
                 {
                     "job_ID": 52, 
-                    "job_title": "Software Developer ", 
+                    "job_title": "Software Developer", 
                     "location_ID": 3, 
                     "company_ID": 7, 
                     "language_ID": 1, 
@@ -531,7 +531,7 @@
                 },
                 {
                     "job_ID": 54, 
-                    "job_title": "Spark Kernel Developer / Committer ", 
+                    "job_title": "Spark Kernel Developer / Committer", 
                     "location_ID": 8, 
                     "company_ID": 7, 
                     "language_ID": 1, 
@@ -551,7 +551,7 @@
                 },
                 {
                     "job_ID": 56, 
-                    "job_title": "Information Technology Services - Developer ", 
+                    "job_title": "Information Technology Services - Developer", 
                     "location_ID": 7, 
                     "company_ID": 7, 
                     "language_ID": 2, 
@@ -561,7 +561,7 @@
                 },
                 {
                     "job_ID": 57, 
-                    "job_title": "SoftLayer Software Engineer - Networking ", 
+                    "job_title": "SoftLayer Software Engineer - Networking", 
                     "location_ID": 7, 
                     "company_ID": 7, 
                     "language_ID": 1, 
@@ -706,7 +706,7 @@
                     "link": "https://uscareers-rackspace.icims.com/jobs/11872/senior-javascript-developer/job?mode=job&iis=Job+Board+-+Indeed.com&iisn=Indeed.com"
                 },{
                     "job_ID": 73, 
-                    "job_title": "Front End Software Engineer - Search ", 
+                    "job_title": "Front End Software Engineer - Search", 
                     "location_ID": 1, 
                     "company_ID": 10, 
                     "language_ID": 5, 
@@ -715,7 +715,7 @@
                     "link": "http://www.indeed.com/viewjob?jk=8134cd20bc82db8b&q=company%3Aindeed+developer&tk=19gsvnbuv19vi04t"
                 },{
                     "job_ID": 74, 
-                    "job_title": "DevOps Engineer ", 
+                    "job_title": "DevOps Engineer", 
                     "location_ID": 1, 
                     "company_ID": 10, 
                     "language_ID": 1, 
@@ -724,7 +724,7 @@
                     "link": "http://www.indeed.com/viewjob?jk=13dd311f0f636f63&q=company%3Aindeed+developer&tk=19gsvnbuv19vi04t"
                 },{
                     "job_ID": 75, 
-                    "job_title": "Software Engineer, Client Implementation - Mobile Apply ", 
+                    "job_title": "Software Engineer, Client Implementation - Mobile Apply", 
                     "location_ID": 1, 
                     "company_ID": 10, 
                     "language_ID": 5, 
@@ -733,7 +733,7 @@
                     "link": "http://www.indeed.com/viewjob?jk=097acafd3b9251cc&q=company%3Aindeed+developer&tk=19gsvnbuv19vi04t"
                 },{
                     "job_ID": 76, 
-                    "job_title": "Front End Software Engineer ", 
+                    "job_title": "Front End Software Engineer", 
                     "location_ID": 3, 
                     "company_ID": 10, 
                     "language_ID": 5, 
@@ -742,7 +742,7 @@
                     "link": "http://www.indeed.com/viewjob?jk=7bbe53a5ad085229&q=company%3Aindeed+developer&tk=19gt0971d19vi7fu"
                 },{
                     "job_ID": 77, 
-                    "job_title": "Senior Software Engineer - Scalable Systems ", 
+                    "job_title": "Senior Software Engineer - Scalable Systems", 
                     "location_ID": 2, 
                     "company_ID": 10, 
                     "language_ID": 1, 
