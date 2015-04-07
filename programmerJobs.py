@@ -102,7 +102,41 @@ def get_location(location_id):
 	if len(location) == 0:
 		abort(404)
 	return jsonify({'location': location[0]})
+
+
+#Rank
+@app.route('/api/rank', methods=['GET'])
+def get_language_rank():
+	return jsonify({'rank': rank})
+	
+#Member
+@app.route('/api/member', methods=['GET'])
+def get_team_member():
+	return jsonify({'members': member})
+
+@app.route('/api/language', methods=['GET'])
+def get_languages():
+    return jsonify({'languages': languages})
+
+@app.route('/api/language/<int:language_id>', methods=['GET'])
+def get_language(language_id):
+	language = [language for language in languages if language['language_ID'] == language_id]
+	if len(language) == 0:
+		abort(404)
+	return jsonify({'language': language[0]})
+
+@app.route('/api/skillset', methods=['GET'])
+def get_skillsets():
+    return jsonify({'skillsets': skillsets})
+
+@app.route('/api/skillset/<int:skillset_id>', methods=['GET'])
+def get_skillset(skillset_id):
+	skillset = [skillset for skillset in skillsets if skillset['skillset_ID'] == skillset_id]
+	if len(skillset) == 0:
+		abort(404)
+	return jsonify({'skillset': skillset[0]})
 '''
+
 # API
 @app.route('/api/job', methods=['GET'])
 def get_jobs():
@@ -140,9 +174,6 @@ def get_location(location_id):
 		abort(404)
 	return jsonify({'location': location[0]})
 
-
-
-
 #Rank
 @app.route('/api/rank', methods=['GET'])
 def get_language_rank():
@@ -155,25 +186,34 @@ def get_team_member():
 
 @app.route('/api/language', methods=['GET'])
 def get_languages():
+	languages = Language.query.all()
     return jsonify({'languages': languages})
 
 @app.route('/api/language/<int:language_id>', methods=['GET'])
 def get_language(language_id):
-	language = [language for language in languages if language['language_ID'] == language_id]
+	language = Language.query.get(language_id)
 	if len(language) == 0:
 		abort(404)
 	return jsonify({'language': language[0]})
 
 @app.route('/api/skillset', methods=['GET'])
 def get_skillsets():
+	skillsets = Skillset.query.all()
     return jsonify({'skillsets': skillsets})
 
 @app.route('/api/skillset/<int:skillset_id>', methods=['GET'])
 def get_skillset(skillset_id):
-	skillset = [skillset for skillset in skillsets if skillset['skillset_ID'] == skillset_id]
+	skillset = Skillset.query.get(skillset_id)
 	if len(skillset) == 0:
 		abort(404)
 	return jsonify({'skillset': skillset[0]})
+
+
+
+
+
+
+#Dynamic pages
 
 @app.route('/language')
 def get_language_home_page():
