@@ -56,7 +56,7 @@
               <ul class="dropdown-menu">
               {% for locDict in locJson %}
                 <li>
-                  <a href="location/{{locDict.location_name|replace(", ", "")|replace(" ", "")}}">{{locDict.location_name}}</a>
+                  <a href="location/{{locDict.location_name}}">{{locDict.location_name}}</a>
                 </li>
               {% endfor %}
               </ul>
