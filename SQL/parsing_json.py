@@ -4,7 +4,7 @@ import json
 
 def main(w):
 	data_list = json.load(open('../Job.json', 'r'))
-	#parse("INSERT INTO Job (" , data_list, w)
+	parse("INSERT INTO Job (" , data_list, w)
 	data_list = json.load(open('../Company.json', 'r'))
 	parse("INSERT INTO Company (" , data_list, w)
 	data_list = json.load(open('../Language.json', 'r'))

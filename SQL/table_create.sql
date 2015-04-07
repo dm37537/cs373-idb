@@ -46,7 +46,7 @@ CREATE TABLE Skillset(
 
 CREATE TABLE Job(
 	job_ID INTEGER,
-	job_tittle VARCHAR(30),
+	job_title TEXT,
 	location_ID INTEGER NOT NULL,
 	company_ID INTEGER NOT NULL,
 	job_description TEXT,
