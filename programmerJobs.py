@@ -218,6 +218,7 @@ def get_language_page(name=None):
 		name = "Visual Basic"
 	elif(name == "VisualBasic.NET") :
 		name = "Visual Basic.NET"
+	#language = Language.query.filterBy('language_name' == name)
 	language = [language for language in languages if language['language_name'] == name]
 	language=language[0]
 	return render_template('language.html', langJson=language, langsJson=languages, cmpyJson=companies, jobJson=jobs, locJson=locations, skillsetJson=skillsets)
