@@ -39,15 +39,26 @@
                 </li>
               {% endfor %}
               </ul>
-              <!-- <ul id="langMenu" class="dropdown-menu"></ul> -->
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Companies<b class="caret"></b></a>
-              <!-- <ul id="cmpyMenu" class="dropdown-menu"></ul> -->
+              <ul class="dropdown-menu">
+              {% for cmpyDict in cmpyJson %}
+                <li>
+                  <a href="{{cmpyDict.company_name}}">{{cmpyDict.company_name}}</a>
+                </li>
+              {% endfor %}
+              </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Location<b class="caret"></b></a>
-              <!-- <ul id="locMenu" class="dropdown-menu"></ul> -->
+              <ul class="dropdown-menu">
+              {% for locDict in locJson %}
+                <li>
+                  <a href="../location/{{locDict.location_name}}">{{locDict.location_name}}</a>
+                </li>
+              {% endfor %}
+              </ul>
             </li>
             <li><a href="/about">About</a></li>
           </ul>
@@ -85,7 +96,12 @@
             {% for jobDict in jobJson %}
               {% set jobID = jobDict.job_ID %}
               {% set jobLangID = jobDict.language_ID %}
-              {% if jobLangID == langJson.language_ID %}
+              {% set langID = langJson.language_ID %}
+              <!-- redirect c jobs to c++ jobs -->
+              {% if langID == 10 %}
+                {% set langID = 2 %}
+              {% endif %}
+              {% if jobLangID == langID %}
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">

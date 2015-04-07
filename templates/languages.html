@@ -12,25 +12,48 @@
 
   </head>
   <body>
-    <!-- nav bar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a class="navbar-brand" href="/">Programmer Jobs</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-left">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Languages<b class="caret"></b></a>
-              <ul id="langMenu" class="dropdown-menu"></ul>
+              <ul class="dropdown-menu">
+              {% for langDict in langJson %}
+                <li>
+                  <a href="language/{{langDict.language_name}}">{{langDict.language_name}}</a>
+                </li>
+              {% endfor %}
+              </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Companies<b class="caret"></b></a>
-              <ul id="cmpyMenu" class="dropdown-menu"></ul>
+              <ul class="dropdown-menu">
+              {% for cmpyDict in cmpyJson %}
+                <li>
+                  <a href="company/{{cmpyDict.company_name}}">{{cmpyDict.company_name}}</a>
+                </li>
+              {% endfor %}
+              </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Location<b class="caret"></b></a>
-              <ul id="locMenu" class="dropdown-menu"></ul>
+              <ul class="dropdown-menu">
+              {% for locDict in locJson %}
+                <li>
+                  <a href="location/{{locDict.location_name}}">{{locDict.location_name}}</a>
+                </li>
+              {% endfor %}
+              </ul>
             </li>
             <li><a href="/about">About</a></li>
           </ul>
