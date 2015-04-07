@@ -2,7 +2,7 @@ import os
 from flask import Flask, jsonify, abort, render_template, redirect, send_from_directory
 from flask.ext.sqlalchemy import SQLAlchemy
 import json
-from models import Job, Company, Location, Language, Skillset
+from models import *
 #import tests
 
 app = Flask(__name__)
@@ -58,7 +58,8 @@ f.close()
 # The following are examples of different templates in action
 @app.route('/')
 def root():
-	return redirect('http://127.0.0.1:5000/index.html', code=302)
+	return redirect('http://104.130.229.90:5000/index.html', code=302)
+	# return redirect('http://127.0.0.1:5000/index.html', code=302)
 
 @app.route('/index.html')
 def index():
