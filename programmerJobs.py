@@ -204,6 +204,11 @@ def get_skillset(skillset_id):
 
 
 #Dynamic pages
+@app.route('/index.html')
+def get_home():
+	print("home?")
+	return render_template('index.html')
+
 @app.route('/language')
 def get_languages_page():
 	return render_template('languages.html', langJson=languages)
@@ -218,7 +223,7 @@ def get_language_page(name=None):
 		name = "Visual Basic"
 	elif(name == "VisualBasic.NET") :
 		name = "Visual Basic.NET"
-	#language = Language.query.filterBy('language_name' == name)
+	# language = Language.query.filterBy('language_name' == name)
 	language = [language for language in languages if language['language_name'] == name]
 	language=language[0]
 	return render_template('language.html', langJson=language, langsJson=languages, cmpyJson=companies, jobJson=jobs, locJson=locations, skillsetJson=skillsets)
@@ -238,7 +243,7 @@ def get_skillset_page(name=None):
 	print("\""+name+"\"")
 	skillset = [skillset for skillset in skillsets if skillset['skillset_name'] == name]
 	skillset = skillset[0]
-	return render_template('skillset.html')
+	return render_template('skillset.html', skillsetJson=skillset, jobJson=jobs, locJson=locations, cmpyJson=companies, langJson=languages)
 
 @app.route('/about')
 def get_about_page():
