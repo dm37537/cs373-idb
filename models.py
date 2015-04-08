@@ -140,3 +140,42 @@ class Skillset(db.Model):
 	
 	def __repr__(self):
 		return '<Skillset %r>' % self.skillset_name
+
+class Member(db.Model):
+	"""
+	This is the Member model and has the following attributes:
+	member_ID (Integer) - Unique identifier
+	member_name (Text) - Name of a member
+	member_bio (Text) - Biography for a member
+	member_major_responsibility (Text) - Major responsibity for a member
+	member_commit (Integer) - Number of commit 
+	member_issue (Integer) - Number of issue
+	member_unittest (Integer) - Number of unittest
+	member_image (Text) - Image directory
+	member_leader (Integer) - Number of leader
+	"""
+
+	__tablename__ = 'member'
+
+	member_ID = db.Column(db.Integer, primary_key=True)
+	member_name = db.Column(db.Text)
+	member_bio = db.Column(db.Text)
+	member_major_responsibility = db.Column(db.Text)
+	member_commit = db.Column(db.Integer)
+	member_issue = db.Column(db.Integer)
+	member_unittest = db.Column(db.Integer)
+	member_image = db.Column(db.Text)
+	member_leader = db.Column(db.Integer)
+
+	def __init__(self, Member_name, Member_bio, Member_major_responsibilit, Member_commit, Member_issue, Member_unittest, Member_image, Member_leader):
+		self.member_name = Member_name
+		self.member_bio = Member_bio
+		self.member_major_responsibility = Member_major_responsibilit
+		self.member_commit = Member_commit
+		self.member_issue = Member_issue
+		self.member_unittest = Member_unittest
+		self.member_image = Member_image
+		self.member_leader = Member_leader
+
+	def __repr__(self):
+		return '<Member %r>' % self.member_name
