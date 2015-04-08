@@ -137,14 +137,16 @@ Returns a list of all jobs and their ids
                 "language_ID" : 1,
                 "language_name": "Java",
                 "language_description" : "Muti platiform Language",
-                "language_image_small" : "images/language_icon/java_icon_small.png",
-                "language_image_large" : "images/language_icon/java_icon_large.png"
+                "language_image" : "images/language_icon/java_icon.png",
+                "language_wiki_description" : "Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers \"write once, run anywhere\" (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers. Java was originally developed by James Gosling at Sun Microsystems (which has since merged into Oracle Corporation) and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them.",
+                "language_wiki_link" : "http://en.wikipedia.org/wiki/Java_%28programming_language%29"
             },{
                 "language_ID" : 2,
-                "language_name": "C/C++",
+                "language_name": "C++",
                 "language_description" : "great Language",
-                "language_image_small" : "images/language_icon/cpp_icon_small.png",
-                "language_image_large" : "images/language_icon/cpp_icon_large.png"
+                "language_image" : "images/language_icon/cpp_icon.png",
+                "language_wiki_description" : "C++ is a general-purpose programming language. It has imperative, object-oriented and generic programming features, while also providing the facilities for low-level memory manipulation.",
+                "language_wiki_link" : "http://en.wikipedia.org/wiki/C%2B%2B"
             }]
 
 
@@ -161,8 +163,9 @@ Returns a list of all jobs and their ids
                 "language_ID" : 1,
                 "language_name": "Java",
                 "language_description" : "Muti platiform Language",
-                "language_image_small" : "images/language_icon/java_icon_small.png",
-                "language_image_large" : "images/language_icon/java_icon_large.png"
+                "language_image" : "images/language_icon/java_icon.png",
+                "language_wiki_description" : "Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers \"write once, run anywhere\" (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers. Java was originally developed by James Gosling at Sun Microsystems (which has since merged into Oracle Corporation) and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them.",
+                "language_wiki_link" : "http://en.wikipedia.org/wiki/Java_%28programming_language%29"
             }
         
 + Response 404
@@ -186,14 +189,14 @@ Returns a list of all jobs and their ids
                 "company_ID": 1,
                 "company_name": "Google",
                 "company_description" : "Search engine",
-                "company_image": "http://www.google.com/doodle4google/images/splashes/featured.png"
-                
+                "company_image": "http://www.google.com/doodle4google/images/splashes/featured.png",
+                "company_site": "www.google.com"
             },{
                 "company_ID": 2,
                 "company_name": "Oracle",
                 "company_description" : "Database",
-                "company_image" : "http://192.95.57.65/wp-content/uploads/2014/07/logo-oracle.jpg"
-                
+                "company_image" : "http://192.95.57.65/wp-content/uploads/2014/07/logo-oracle.jpg",
+                "company_site": "www.oracle.com"
             }]
         
         
@@ -211,8 +214,8 @@ Returns a list of all jobs and their ids
                 "company_ID": 1,
                 "company_name": "Google",
                 "company_description" : "Search engine",
-                "company_image": "http://www.google.com/doodle4google/images/splashes/featured.png"
-            
+                "company_image": "http://www.google.com/doodle4google/images/splashes/featured.png",
+                "company_site": "www.google.com"
             }
 
 + Response 404
@@ -236,12 +239,17 @@ Returns a list of all jobs and their ids
             [{
                 "skillset_ID" : 1,
                 "skillset_name": "Web app, Back-end",
-                "skillset_description" : "Spring, J2EE, Hibernate"
-                
+                "skillset_description" : "Spring, J2EE, Hibernate",
+                "skillset_wiki_description" : "A web application or web app is any software that runs in a web browser. It is created in a browser-supported programming language (such as the combination of JavaScript, HTML and CSS) and relies on a web browser to render the application.",
+                "skillset_wiki_link" : "http://en.wikipedia.org/wiki/Front_and_back_ends",
+                "skillset_image" : "static/images/skillset_icon/web_app_backend_icon.png"
             },{
                 "skillset_ID" : 2,
                 "skillset_name": "Mobile computing",
-                "skillset_description" : "Mobile computing, IOS, Andriod"
+                "skillset_description" : "Mobile computing, IOS, Andriod",
+                "skillset_wiki_description" :"Mobile computing is human computer interaction by which a computer is expected to be transported during normal usage. Mobile computing involves mobile communication, mobile hardware, and mobile software. Communication issues include ad hoc and infrastructure networks as well as communication properties, protocols, data formats and concrete technologies. Hardware includes mobile devices or device components. Mobile software deals with the characteristics and requirements of mobile applications." ,
+                "skillset_wiki_link" : "http://en.wikipedia.org/wiki/Mobile_computing",
+                "skillset_image" : "static/images/skillset_icon/mobile_computing_icon.png"
             }]
 
 ## Skillset [/skillset/{id}]
@@ -256,7 +264,10 @@ Returns a list of all jobs and their ids
             {
                 "skillset_ID" : 1,
                 "skillset_name": "Web app, Back-end",
-                "skillset_description" : "Spring, J2EE, Hibernate"
+                "skillset_description" : "Spring, J2EE, Hibernate",
+                "skillset_wiki_description" : "A web application or web app is any software that runs in a web browser. It is created in a browser-supported programming language (such as the combination of JavaScript, HTML and CSS) and relies on a web browser to render the application.",
+                "skillset_wiki_link" : "http://en.wikipedia.org/wiki/Front_and_back_ends",
+                "skillset_image" : "static/images/skillset_icon/web_app_backend_icon.png"
             }
 
 + Response 404
