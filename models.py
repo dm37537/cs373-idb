@@ -30,8 +30,8 @@ class Job(db.Model):
 	job_title = db.Column(db.Text)
 	job_description = db.Column(db.Text)
 	link = db.Column(db.Text)
-	location_ID = db.Column(db.Integer, ForeignKey('location.Location_ID'))
-	company_ID = db.Column(db.Integer, ForeignKey('company.Company_ID'))
+	location_ID = db.Column(db.Integer, ForeignKey('location.location_ID'))
+	company_ID = db.Column(db.Integer, ForeignKey('company.company_ID'))
 	
 	languages = db.relationship('Language', secondary=job_languages, backref='job', lazy='dynamic')
 	skillsets = db.relationship('Skillset', secondary=job_skillsets, backref='job', lazy='dynamic')
