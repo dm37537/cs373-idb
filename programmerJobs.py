@@ -247,7 +247,13 @@ def get_job_page(name=None):
 
 @app.route('/company')
 def get_companies_page():
-	return render_template('companies.html', cmpyJson=companies)
+	return render_template('companies.html',langJson=languages, cmpyJson=companies, locJson=locations)
+
+@app.route('/company/<name>')
+def get_company_page(name=None):
+	company = [company for company in companies if company['company_name'] == name]
+	company = company[0]
+	return render_template('company.html', locJson = locations, langJson=languages, cmpyJson=companies, locsJson=locations, jobJson=jobs, skillsetJson=skillsets)
 
 @app.route('/about')
 def get_about_page():
