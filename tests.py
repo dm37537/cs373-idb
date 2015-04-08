@@ -139,12 +139,5 @@ class ProgrammerJobsTestCase(unittest.TestCase):
 		assert skillset.Skillset == 'IOS'
 		assert skillset.Skillset_description == 'ipad'
 
-'''
 if __name__ == '__main__':
 	unittest.main()
-'''
-
-def run():
-	unittest.main()
-
-run()

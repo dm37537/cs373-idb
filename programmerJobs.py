@@ -2,8 +2,6 @@ import os
 from flask import Flask, jsonify, abort, render_template, redirect, send_from_directory
 from flask.ext.sqlalchemy import SQLAlchemy
 import json
-#from models import *
-#from models import db, Job, Company, Language, Skillset, Location
 #import tests
 
 app = Flask(__name__)
