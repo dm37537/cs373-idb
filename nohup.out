@@ -315,3 +315,9 @@ error: [Errno 32] Broken pipe
 128.62.59.14 - - [07/Apr/2015 23:49:03] "GET /static/images/company_icon.png HTTP/1.1" 304 -
 128.62.59.14 - - [07/Apr/2015 23:49:03] "GET /static/images/jumbotron/splash_jumbotron.jpg HTTP/1.1" 304 -
 128.62.59.14 - - [07/Apr/2015 23:49:03] "GET /static/images/location_icon.png HTTP/1.1" 304 -
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+146.6.193.137 - - [08/Apr/2015 20:08:21] "GET /index HTTP/1.1" 404 -
+146.6.193.137 - - [08/Apr/2015 20:08:26] "GET / HTTP/1.1" 302 -
+146.6.193.137 - - [08/Apr/2015 20:08:26] "GET / HTTP/1.1" 302 -
+146.6.193.137 - - [08/Apr/2015 20:08:32] "GET / HTTP/1.1" 302 -
+146.6.193.137 - - [08/Apr/2015 20:08:32] "GET / HTTP/1.1" 302 -
