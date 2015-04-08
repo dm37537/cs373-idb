@@ -13,6 +13,7 @@ CREATE TABLE Company(
 	company_name VARCHAR(30),
 	company_description TEXT,
 	company_image TEXT,
+	company_site TEXT,
 	PRIMARY KEY (company_ID)
 );
 
@@ -40,6 +41,9 @@ CREATE TABLE Skillset(
 	skillset_ID INTEGER,
 	skillset_name VARCHAR(30),
 	skillset_description TEXT,
+	skillset_image TEXT,
+	skillset_wiki_description TEXT,
+	skillset_wiki_link TEXT,
 	PRIMARY KEY (skillset_ID)
 );
 
