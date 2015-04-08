@@ -147,7 +147,7 @@ class ProgrammerJobsTestCase(unittest.TestCase):
 class LanguageApiTest(unittest.TestCase):
 
 	# assuming we add our api onto our server
-	url =  "http://  **put_our_URL_here**   /api/"
+	url =  "http://104.130.229.90:5000/api/"
 
 	# testing the whole set of Language data.
 	def test_lang(self):
@@ -175,7 +175,7 @@ class LanguageApiTest(unittest.TestCase):
 class CompanyApiTest(unittest.TestCase):
 
 	# assuming we add our api onto our server
-	url =  "http://  **put_our_URL_here**   /api/"
+	url =  "http://104.130.229.90:5000/api/"
 
 	# testing the whole set of companies data.
 	def test_company(self):
@@ -203,7 +203,7 @@ class CompanyApiTest(unittest.TestCase):
 class LocationApiTest(unittest.TestCase):
 
 	# assuming we add our api onto our server
-	url =  "http://  **put_our_URL_here**   /api/"
+	url =  "http://104.130.229.90:5000/api/"
 
 	# testing the whole set of locations data.
 	def test_location(self):
