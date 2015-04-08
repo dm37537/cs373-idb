@@ -9,11 +9,12 @@
 {% endblock %}
 {% block content %}
 	Running unit tests...
-	<script language="javascript">
-	    window.location.href = '/result'
-	</script>
+    <hr>
 {% endblock %}
 {% block footer %}
   {{super()}}
     <script src="../static/js/bootstrap.min.js"></script>
+    <script language="javascript">
+	    window.location.href = '/result'
+	</script>
 {% endblock %}
