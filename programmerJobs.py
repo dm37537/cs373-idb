@@ -1,4 +1,5 @@
 import os
+import subprocess
 from flask import Flask, jsonify, abort, render_template, redirect, send_from_directory
 from flask.ext.sqlalchemy import SQLAlchemy
 import json
@@ -59,15 +60,29 @@ f.close()
 @app.route('/')
 def root():
 	# return redirect('http://104.130.229.90:5000/index.html', code=302)
-	return redirect('http://127.0.0.1:5000/index.html', code=302)
+	return redirect('http://127.0.0.1:5000/index', code=302)
 
-@app.route('/index.html')
+@app.route('/index')
 def index():
 	return render_template('index.html')
 
-@app.route('/test')
+@app.route('/tests')
 def test():
-	return send_from_directory('.', 'runTest.php')
+	# tests.run()
+	return render_template('tests.html')
+	# return send_from_directory('.', 'runTest.php
+
+@app.route('/result')
+def result():
+	with open('testresult.txt', 'w') as output:
+	    p = subprocess.Popen(['python', 'tests.py'], stderr=output)
+	    p.communicate()[0]
+	output.close()
+
+	with open('testresult.txt', 'r') as output:
+	    outputStr = output.readlines()
+
+	return render_template('result.html', result=outputStr)
 
 '''
 # API
