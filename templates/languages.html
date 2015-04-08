@@ -1,66 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Programming Jobs</title>
-
-    <!-- Bootstrap -->
-    <link href="static/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="static/custom.css">
-
-  </head>
-  <body>
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">Programmer Jobs</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-left">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Languages<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-              {% for langDict in langJson %}
-                <li>
-                  <a href="language/{{langDict.language_name}}">{{langDict.language_name}}</a>
-                </li>
-              {% endfor %}
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Companies<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-              {% for cmpyDict in cmpyJson %}
-                <li>
-                  <a href="company/{{cmpyDict.company_name}}">{{cmpyDict.company_name}}</a>
-                </li>
-              {% endfor %}
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Location<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-              {% for locDict in locJson %}
-                <li>
-                  <a href="location/{{locDict.location_name}}">{{locDict.location_name}}</a>
-                </li>
-              {% endfor %}
-              </ul>
-            </li>
-            <li><a href="/about">About</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
+{% extends "base.html" %}
+{% block head %}
+  {{super()}}
+{% endblock %}
+{% block navbar %}
+  {{super()}}
+{% endblock %}
+{% block content %}
     <div class="container locations-format">
       <!-- Header -->
       <div class="jumbotron languages-jumbotron vertical-center text-center" id="languages-jumbotron">
@@ -71,37 +16,7 @@
           <hr>
         </div>
       </div>
-
-      <!-- 2015 top 10 prog lang -->
-<!--       <div align="center">
-        <div class="col-md-8 col-md-offset-2" >
-          <div class="panel panelnel-default">
-            <div class="panel-heading">
-              <h2>
-                2015 Top 10 Programming Languages
-              </h2>
-            </div>
-            <div class="panel-body" >
-                <table align="center" class="table table-bordered table-striped">
-                    <tr>
-                        <td>Rank</td>
-                        <td>Programming Language</td>
-                    </tr>
-                    {% for dict in rankJson %}
-                      <tr>
-                        <td>#{{dict.rank_ID}}</td>
-                        <td><a href={{dict.link}}>{{dict.language_name}}</td>
-                      </tr>
-                    {% endfor %}
-                </table>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </div>
-
-    <!-- <hr> -->
-    <!-- images -->
     <div class="container">
       <div class="row text-center">
         <div class="col=md=12 col-md-offset-1 row">
@@ -133,21 +48,7 @@
       </div>
     </div>
     <hr>
-
-    <!-- Footer -->
-    <div class="container">
-      <div class="text">
-        <p>© 2015 Team Programmer Jobs</p>
-      </div>
-    </div>
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- // <script id="navbarParam" state="0" src="../static/navbar.js"></script> -->
-<!--     // <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script> -->
-    <!-- // <script id="param" langId="1" src="../static/language_home.js"></script> -->
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="static/js/bootstrap.min.js"></script>
-  </body>
-</html>
+{% endblock %}
+{% block footer %}
+  {{super()}}
+{% endblock %}

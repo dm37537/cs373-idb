@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block head %}
+  {{super()}}
+{% endblock %}
+{% block navbar %}
+  {{super()}}
+{% endblock %}
+{% block content %}
+      <!-- Jumbotron -->
+    <div class="jumbotron vertical-center text-center" id="index-jumbotron">
+      <div class="container content-box"> 
+        <hr>
+        <h1>Search for jobs</h1>
+        <h4>Look no further. Your dream programming job starts here.</h4>
+        <hr>
+      </div>
+    </div>
+    <div class="container text-center index-bubbles">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Languages</h3>
+          <a href="language">
+            <img src="static/images/language_icon.png" style="height: 120px; width: 120px">
+          </a>
+        </div>
+        <div class="col-md-4">
+          <h3>Companies</h3>
+          <a href="company">
+            <img src="static/images/company_icon.png" style="height: 120px; width: 120px">
+          </a>
+        </div>
+        <div class="col-md-4">
+          <h3>Locations</h3>
+          <a href="location">
+            <img src="static/images/location_icon.png" style="height: 120px; width: 120px">
+          </a>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+{% block footer %}
+  {{super()}}
+{% endblock %}
