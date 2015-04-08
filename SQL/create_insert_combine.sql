@@ -10,7 +10,7 @@ drop table if exists Skillset;
 
 CREATE TABLE Company(
 	company_ID INTEGER,
-	company_name VARCHAR(30),
+	company_name TEXT,
 	company_description TEXT,
 	company_image TEXT,
 	company_site TEXT,
@@ -19,7 +19,7 @@ CREATE TABLE Company(
 
 CREATE TABLE Location(
 	location_ID INTEGER,
-	location_name VARCHAR(30),
+	location_name TEXT,
 	location_description TEXT,
 	location_image TEXT,
 	PRIMARY KEY (location_ID)
@@ -28,7 +28,7 @@ CREATE TABLE Location(
 
 CREATE TABLE Language(
 	language_ID INTEGER,
-	language_name VARCHAR(30),
+	language_name TEXT,
 	language_description TEXT,
 	language_image TEXT,
 	language_wiki_description TEXT,
@@ -39,7 +39,7 @@ CREATE TABLE Language(
 
 CREATE TABLE Skillset(
 	skillset_ID INTEGER,
-	skillset_name VARCHAR(30),
+	skillset_name TEXT,
 	skillset_description TEXT,
 	skillset_image TEXT,
 	skillset_wiki_description TEXT,

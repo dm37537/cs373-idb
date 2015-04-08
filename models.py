@@ -78,22 +78,24 @@ class Language(db.Model):
 	language_ID (Integer) - Unique identifier
 	language_name (Text) - Name of the programming language
 	language_description (Text) - Description of the programming language
-	language_image_small (Text) - URL for the smaller image of the programming language
-	language_image_large (Text) - URL for the larger image of the programming language
+	language_wiki_description (Text) - URL for the smaller image of the programming language
+	language_wiki_link (Text) - URL for the larger image of the programming language
 	"""
 	__tablename__ = 'language'        
 
 	language_ID = db.Column(db.Integer, primary_key=True)
 	language_name = db.Column(db.Text)
+	language_image = db.Column(db.Text)
 	language_description = db.Column(db.Text)
-	language_image_small = db.Column(db.Text)
-	language_image_large = db.Column(db.Text)
+	language_wiki_description = db.Column(db.Text)
+	language_wiki_link = db.Column(db.Text)
 
-	def __init__(self, Language_Name, Language_Description, Language_Image_Small, Language_Image_Large):
+	def __init__(self, Language_Name, Language_Image, Language_Description, language_Wiki_Description, language_Wiki_link):
 		self.language_name = Language_Name
+		self.language_image = Language_Image
 		self.language_description = Language_Description
-		self.language_image_small = Language_Image_Small
-		self.language_image_large = Language_Image_Large
+		self.language_wiki_description = Language_Wiki_Description
+		self.language_wiki_link = Language_Wiki_Link
 	
 	def __repr__(self):
 		return '<Language %r>' % self.language_name
@@ -133,10 +135,17 @@ class Skillset(db.Model):
 	skillset_ID = db.Column(db.Integer, primary_key=True)
 	skillset_name = db.Column(db.Text)
 	skillset_description = db.Column(db.Text)
+	skillset_image = db.Column(db.Text)
+	skillset_wiki_description = db.Column(db.Text)
+	skillset_wiki_link = db.Column(db.Text)
 
-	def __init__(self, Skillset, Skillset_description):
+	def __init__(self, Skillset, Skillset_description, Skillset_image, Skillset_wiki_description, Skillset_wiki_link):
 		self.skillset_name = Skillset
 		self.skillset_description = Skillset_description
+		self.skillset_image = Skillset_image
+		self.skillset_wiki_description = Skillset_wiki_description
+		self.skillset_wiki_link = Skillset_wiki_link
+
 	
 	def __repr__(self):
 		return '<Skillset %r>' % self.skillset_name
