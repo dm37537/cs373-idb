@@ -5,7 +5,7 @@ drop table if exists Company;
 drop table if exists Location;
 drop table if exists Language;
 drop table if exists Skillset;
-
+drop table if exists Member;
 
 
 CREATE TABLE Company(
@@ -45,6 +45,19 @@ CREATE TABLE Skillset(
 	skillset_wiki_description TEXT,
 	skillset_wiki_link TEXT,
 	PRIMARY KEY (skillset_ID)
+);
+
+CREATE TABLE Member(
+	member_ID INTEGER,
+	member_name VARCHAR(30),
+	member_bio TEXT,
+	member_major_responsibility TEXT,
+	member_commit INTEGER,
+	member_issue INTEGER,
+	member_unittest INTEGER,
+	member_image TEXT,
+	member_leader INTEGER,
+	PRIMARY KEY (member_ID)
 );
 
 

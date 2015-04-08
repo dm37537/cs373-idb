@@ -264,5 +264,9 @@ def get_job_page(name=None):
 def get_about_page():
 	return render_template('about.html', memJson=members)
 
+@app.route('/modeldoc')
+def get_model_doc_page():
+	return send_from_directory('.', 'models.html')
+
 if __name__ == '__main__':
 	app.run(host='0.0.0.0')
