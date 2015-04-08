@@ -10,7 +10,7 @@
                 "skillset_ID" : 2,
                 "skillset_name": "Mobile computing",
                 "skillset_description" : "Mobile computing, IOS, Andriod",
-                "skillset_wiki_description" :"Mobile computing is human–computer interaction by which a computer is expected to be transported during normal usage. Mobile computing involves mobile communication, mobile hardware, and mobile software. Communication issues include ad hoc and infrastructure networks as well as communication properties, protocols, data formats and concrete technologies. Hardware includes mobile devices or device components. Mobile software deals with the characteristics and requirements of mobile applications." ,
+                "skillset_wiki_description" :"Mobile computing is human computer interaction by which a computer is expected to be transported during normal usage. Mobile computing involves mobile communication, mobile hardware, and mobile software. Communication issues include ad hoc and infrastructure networks as well as communication properties, protocols, data formats and concrete technologies. Hardware includes mobile devices or device components. Mobile software deals with the characteristics and requirements of mobile applications." ,
                 "skillset_wiki_link" : "http://en.wikipedia.org/wiki/Mobile_computing",
                 "skillset_image" : "static/images/skillset_icon/mobile_computing_icon.png"
             },{
