@@ -2,8 +2,6 @@ import os
 from flask import Flask, jsonify, abort, render_template, redirect, send_from_directory
 from flask.ext.sqlalchemy import SQLAlchemy
 import json
-#from models import *
-#from models import db, Job, Company, Language, Skillset, Location
 #import tests
 
 app = Flask(__name__)
@@ -19,15 +17,18 @@ app.config.update(dict(
 #app.config.from_envvar('PROJECT_SETTINGS', silent=True)
 
 def init_db():
-	#db.init_app(app)
 	db.drop_all()
 	db.create_all()
-	#with app.open_resource('schema.sql', mode='r') as f:
-	#	db.cursor().executescript(f.read())
 
 def populate_db():
-	with app.open_resource('insert.sql', mode='r') as f:
-		db.cursor().execute(f.read)
+	#with app.open_resource('SQL/category_data_insert.sql', mode='r') as f:
+	#	db.get_engine(app).execute(f.read)
+	#with app.open_resource('SQL/job_data_insert.sql', mode='r') as f:
+	#	db.get_engine(app).execute(f.read)
+	f = open('SQL/category_data_insert.sql', 'r')
+	for line in f:
+		db.get_engine(app).execute(line)
+	f.close()
 
 # Loading JSON from files. To be replaced with database or model calls
 f = open('Job.json') 
@@ -62,8 +63,7 @@ def root():
 
 @app.route('/index.html')
 def index():
-	return send_from_directory('.', 'index.html')
-	# return render_template('index.html', langJson=languages, cmpyJson=companies, locJson=locations)
+	return render_template('index.html')
 
 @app.route('/test')
 def test():

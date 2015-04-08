@@ -3,144 +3,140 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy.schema import ForeignKey
 from programmerJobs import db
 
-#db = SQLAlchemy()
-
 job_languages = db.Table('job_language',
-	db.Column('job_id', db.Integer, db.ForeignKey('job.id')),
-	db.Column('language_id', db.Integer, db.ForeignKey('language.Language_ID'))
+	db.Column('job_ID', db.Integer, db.ForeignKey('job.job_ID')),
+	db.Column('language_ID', db.Integer, db.ForeignKey('language.language_ID'))
 )
 job_skillsets = db.Table('job_skillset',
-	db.Column('job_id', db.Integer, db.ForeignKey('job.id')),
-	db.Column('skillset_id', db.Integer, db.ForeignKey('skillset.Skillset_ID'))
+	db.Column('job_ID', db.Integer, db.ForeignKey('job.job_ID')),
+	db.Column('skillset_ID', db.Integer, db.ForeignKey('skillset.skillset_ID'))
 )
 
 class Job(db.Model):
 	""" 
 	This is the Job model and has the following attributes:
-	id (Integer) - A unique indentifier  
-	title (Text) - Job title
-	description (Text) - Job description
+	job_ID (Integer) - A unique indentifier  
+	job_title (Text) - Job title
+	job_description (Text) - Job description
 	link (Text) - URL of the job posting on the company's website
 	locationid (Integer) - Identifier for the location of the job
 	companyid (Integer) - Identifer for the company
-	skillsetid (Integer) - Identifier for the skillset
-	languageid (Integer) - Identifier for the programming language
+	skillsets (Iterable) - Iterable of skillsets needed for job
+	languages (Iterable) - Iterable of languages needed for job
 	"""
 	__tablename__ = 'job'
-	#__table_args__ = {'useexisting': True}
-	id = db.Column(db.Integer, primary_key=True)
-	title = db.Column(db.Text)
-	description = db.Column(db.Text)
+	
+	job_ID = db.Column(db.Integer, primary_key=True)
+	job_title = db.Column(db.Text)
+	job_description = db.Column(db.Text)
 	link = db.Column(db.Text)
-	locationid = db.Column(db.Integer, ForeignKey('location.id'))
-	companyid = db.Column(db.Integer, ForeignKey('company.id'))
-	#languageid = db.Column(db.Integer, ForeignKey('language.id'))
-	#skillsetid = db.Column(db.Integer, ForeignKey('skillset.id'))
+	location_ID = db.Column(db.Integer, ForeignKey('location.location_ID'))
+	company_ID = db.Column(db.Integer, ForeignKey('company.company_ID'))
+	
 	languages = db.relationship('Language', secondary=job_languages, backref='job', lazy='dynamic')
 	skillsets = db.relationship('Skillset', secondary=job_skillsets, backref='job', lazy='dynamic')
 
 	def __init__(self, title, locationID, companyID, description, link):
-		self.title = title
-		self.locationid = locationID
-		self.companyid = companyID
-		self.description = description
+		self.job_title = title
+		self.location_ID = locationID
+		self.company_ID = companyID
+		self.job_description = description
 		self.link = link
 	
 	def __repr__(self):
-		return '<Job %r>' % self.title
+		return '<Job %r>' % self.job_title
 
 class Company(db.Model):
 	"""
 	This is the Company model and has the following attributes:
-	Company_ID (Integer) - Unique identifier
-	Company_Name (Text) - Name of the company
-	Company_description (Text) - Description of the company 
-	Company_image (Text) - URL for company image
-	Company_site (Text) - URL for company
+	company_ID (Integer) - Unique identifier
+	company_name (Text) - Name of the company
+	company_description (Text) - Description of the company 
+	company_image (Text) - URL for company image
+	company_site (Text) - URL for company
 	"""
 	__tablename__ = 'company'
-	#__table_args__ = {'useexisting': True}	
 	
-	Company_ID = db.Column(db.Integer, primary_key=True)
-	Company_Name = db.Column(db.Text)
-	Company_description = db.Column(db.Text)
-	Company_image = db.Column(db.Text)
-	Company_site = db.Column(db.Text)
+	company_ID = db.Column(db.Integer, primary_key=True)
+	company_name = db.Column(db.Text)
+	company_description = db.Column(db.Text)
+	company_image = db.Column(db.Text)
+	company_site = db.Column(db.Text)
 
 	def __init__(self, Company_Name, Company_description, Company_image, Company_site):
-		self.Company_Name = Company_Name
-		self.Company_description = Company_description
-		self.Company_image = Company_image
-		self.Company_site = Company_site
+		self.company_name = Company_Name
+		self.company_description = Company_description
+		self.company_image = Company_image
+		self.company_site = Company_site
 	
 	def __repr__(self):
-		return '<company %r>' % self.Company_Name
+		return '<company %r>' % self.company_name
 
 class Language(db.Model):
 	"""
 	This is the Language model and has the following attributes:
-	Language_ID (Integer) - Unique identifier
-	Language_Name (Text) - Name of the programming language
-	Language_Description (Text) - Description of the programming language
-	Language_Image (Text) - URL for the image of the programming language
+	language_ID (Integer) - Unique identifier
+	language_name (Text) - Name of the programming language
+	language_description (Text) - Description of the programming language
+	language_image_small (Text) - URL for the smaller image of the programming language
+	language_image_large (Text) - URL for the larger image of the programming language
 	"""
 	__tablename__ = 'language'        
-	#__table_args__ = {'useexisting': True}
 
-	Language_ID = db.Column(db.Integer, primary_key=True)
-	Language_Name = db.Column(db.Text)
-	Language_Description = db.Column(db.Text)
-	Language_Image = db.Column(db.Text)
+	language_ID = db.Column(db.Integer, primary_key=True)
+	language_name = db.Column(db.Text)
+	language_description = db.Column(db.Text)
+	language_image_small = db.Column(db.Text)
+	language_image_large = db.Column(db.Text)
 
-	def __init__(self, Language_Name, Language_Description, Language_Image):
-		self.Language_Name = Language_Name
-		self.Language_Description = Language_Description
-		self.Language_Image = Language_Image
+	def __init__(self, Language_Name, Language_Description, Language_Image_Small, Language_Image_Large):
+		self.language_name = Language_Name
+		self.language_description = Language_Description
+		self.language_image_small = Language_Image_Small
+		self.language_image_large = Language_Image_Large
 	
 	def __repr__(self):
-		return '<Language %r>' % self.Language_Name
+		return '<Language %r>' % self.language_name
 
 class Location(db.Model):
 	"""
 	This is the Location model and has the following attributes:
-	Location_ID (Integer) - Unique Identifier
-	Location (Text) - Name of the location
-	Location_description (Text) - Description of the location
-	Location_image (Text) - URL for the location image
+	location_ID (Integer) - Unique Identifier
+	location_name (Text) - Name of the location
+	location_description (Text) - Description of the location
+	location_image (Text) - URL for the location image
 	"""
 	__tablename__ = 'location'
-	#__table_args__ = {'useexisting': True}
 
-	Location_ID = db.Column(db.Integer, primary_key=True)
-	Location = db.Column(db.Text)
-	Location_description = db.Column(db.Text)
-	Location_image = db.Column(db.Text)
+	location_ID = db.Column(db.Integer, primary_key=True)
+	location_name = db.Column(db.Text)
+	location_description = db.Column(db.Text)
+	location_image = db.Column(db.Text)
 
 	def __init__(self, Location, Location_description, Location_image):
-		self.Location = Location
-		self.Location_description = Location_description
-		self.Location_image = Location_image
+		self.location_name = Location
+		self.location_description = Location_description
+		self.location_image = Location_image
 
 	def __repr__(self):
-		return '<Location %r>' % self.Location
+		return '<Location %r>' % self.location_name
 
 class Skillset(db.Model):
 	"""
 	This is the Skillset model and has the following attributes:
-	Skillset_ID (Integer)  - Unique identifier
-	Skillset (Text) - Name of the skillset
-	Skillset_description (Text) - Description of the skillset
+	skillset_ID (Integer)  - Unique identifier
+	skillset_name (Text) - Name of the skillset
+	skillset_description (Text) - Description of the skillset
 	"""
 	__tablename__ = 'skillset'
-	#__table_args__ = {'useexisting': True}
 
-	Skillset_ID = db.Column(db.Integer, primary_key=True)
-	Skillset = db.Column(db.Text)
-	Skillset_description = db.Column(db.Text)
+	skillset_ID = db.Column(db.Integer, primary_key=True)
+	skillset_name = db.Column(db.Text)
+	skillset_description = db.Column(db.Text)
 
 	def __init__(self, Skillset, Skillset_description):
-		self.Skillset = Skillset
-		self.Skillset_description = Skillset_description
+		self.skillset_name = Skillset
+		self.skillset_description = Skillset_description
 	
 	def __repr__(self):
-		return '<Skillset %r>' % self.Skillset
+		return '<Skillset %r>' % self.skillset_name

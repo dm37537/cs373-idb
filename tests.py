@@ -5,146 +5,139 @@ from models import Job, Company, Location, Language, Skillset
 class ProgrammerJobsTestCase(unittest.TestCase):
 	
 	def testCreatingJob(self):
-		job = Job('Software Developer', 1, 1, 1, 1, 'Clickity-Clackity', 'www.google.com')
-		assert job.title == 'Software Developer'
-		assert job.locationid == 1
-		assert job.companyid == 1
-		assert job.languageid == 1
-		assert job.skillsetid == 1
-		assert job.description == 'Clickity-Clackity'
+		job = Job('Software Developer', 1, 1, 'Clickity-Clackity', 'www.google.com')
+		assert job.job_title == 'Software Developer'
+		assert job.location_ID == 1
+		assert job.company_ID == 1
+		assert job.job_description == 'Clickity-Clackity'
 		assert job.link == 'www.google.com'
 
 	def testModifyingJob(self):
-		job = Job('Software Developer', 1, 1, 1, 1, 'Clickity-Clackity', 'www.google.com')
-		job.title = 'Security Engineer'
-		job.locationid = 0
-		job.companyid = 0
-		job.languageid = 0
-		job.skillsetid = 0
-		job.description = 'leet h4xxor'
+		job = Job('Software Developer', 1, 1, 'Clickity-Clackity', 'www.google.com')
+		job.job_title = 'Security Engineer'
+		job.location_ID = 0
+		job.company_ID = 0
+		job.job_description = 'leet h4xxor'
 		job.link = 'www.vir.us'
-		assert job.title == 'Security Engineer'
-		assert job.locationid == 0
-		assert job.companyid == 0
-		assert job.languageid == 0
-		assert job.skillsetid == 0
-		assert job.description == 'leet h4xxor'
+		assert job.job_title == 'Security Engineer'
+		assert job.location_ID == 0
+		assert job.company_ID == 0
+		assert job.job_description == 'leet h4xxor'
 		assert job.link == 'www.vir.us'
 
 	def testModifyingJob2(self):
-		job = Job('Software Developer', 1, 1, 1, 1, 'Clickity-Clackity', 'www.google.com')
-		job.title = 'CEO'
-		job.locationid = 0
-		job.companyid = 0
-		job.languageid = 0
-		job.skillsetid = 0
-		job.description = 'Top dog'
+		job = Job('Software Developer', 1, 1, 'Clickity-Clackity', 'www.google.com')
+		job.job_title = 'CEO'
+		job.location_ID = 0
+		job.company_ID = 0
+		job.job_description = 'Top dog'
 		job.link = 'www.google.com'
-		assert job.title == 'CEO'
-		assert job.locationid == 0
-		assert job.companyid == 0
-		assert job.languageid == 0
-		assert job.skillsetid == 0
-		assert job.description == 'Top dog'
+		assert job.job_title == 'CEO'
+		assert job.location_ID == 0
+		assert job.company_ID == 0
+		assert job.job_description == 'Top dog'
 		assert job.link == 'www.google.com'
 
 	def testCreatingCompany(self):
-		company = Company('elgooG', 'enigne hcraeS', 'gpj.elgooG')
-		assert company.Company_Name == 'elgooG'
-		assert company.Company_description == 'enigne hcraeS'
-		assert company.Company_image == 'gpj.elgooG'
+		company = Company('elgooG', 'enigne hcraeS', 'gpj.elgooG', 'www.elgoog.com')
+		assert company.company_name == 'elgooG'
+		assert company.company_description == 'enigne hcraeS'
+		assert company.company_image == 'gpj.elgooG'
+		assert company.company_site == 'www.elgoog.com'
 
 	def testModifyingCompany(self):
-		company = Company('elgooG', 'enigne hcraeS', 'gpj.elgooG')
-		company.Company_Name = 'bing'
-		company.Company_description = 'not google'
-		company.Company_image = 'bell.png'
-		assert company.Company_Name == 'bing'
-		assert company.Company_description == 'not google'
-		assert company.Company_image == 'bell.png'
+		company = Company('elgooG', 'enigne hcraeS', 'gpj.elgooG', 'www.elgoog.com')
+		company.company_name = 'bing'
+		company.company_description = 'not google'
+		company.company_image = 'bell.png'
+		company.company_site = 'www.bing.com'
+		assert company.company_name == 'bing'
+		assert company.company_description == 'not google'
+		assert company.company_image == 'bell.png'
+		assert company.company_site == 'www.bing.com'
 	
 	def testModifyingCompany2(self):
-		company = Company('elgooG', 'enigne hcraeS', 'gpj.elgooG')
-		company.Company_Name = 'facebook'
-		company.Company_description = 'social network'
-		company.Company_image = 'blue.png'
-		assert company.Company_Name == 'facebook'
-		assert company.Company_description == 'social network'
-		assert company.Company_image == 'blue.png'
+		company = Company('elgooG', 'enigne hcraeS', 'gpj.elgooG', 'www.elgoog.com')
+		company.company_name = 'facebook'
+		company.company_description = 'social network'
+		company.company_image = 'blue.png'
+		company.company_site = 'www.facebook.com'
+		assert company.company_name == 'facebook'
+		assert company.company_description == 'social network'
+		assert company.company_image == 'blue.png'
+		assert company.company_site == 'www.facebook.com'
 
 	def testCreatingLocation(self):
 		location = Location('Austin, TX', 'Live music capital of the world', 'austin.jpg')
-		assert location.Location == 'Austin, TX'
-		assert location.Location_description == 'Live music capital of the world'
-		assert location.Location_image == 'austin.jpg'
+		assert location.location_name == 'Austin, TX'
+		assert location.location_description == 'Live music capital of the world'
+		assert location.location_image == 'austin.jpg'
 
 	def testModifyingLocation(self):
 		location = Location('Austin', 'Live music capital of the world', 'austin.jpg')
-		location.Location = 'New York, New York'
-		location.Location_description = 'City that never sleeps'
-		location.Location_image = 'newyork.jpg'
-		assert location.Location == 'New York, New York'
-		assert location.Location_description == 'City that never sleeps'
-		assert location.Location_image == 'newyork.jpg'
+		location.location_name = 'New York, New York'
+		location.location_description = 'City that never sleeps'
+		location.location_image = 'newyork.jpg'
+		assert location.location_name == 'New York, New York'
+		assert location.location_description == 'City that never sleeps'
+		assert location.location_image == 'newyork.jpg'
 
 	def testModifyingLocation2(self):
 		location = Location('Austin, TX', 'Live music capital of the world', 'austin.jpg')
-		location.Location = 'San Francisco, CA'
-		location.Location_description = 'I\'ve been there'
-		location.Location_image = 'goldengatebridge.jpg'
-		assert location.Location == 'San Francisco, CA'
-		assert location.Location_description == 'I\'ve been there'
-		assert location.Location_image == 'goldengatebridge.jpg'
+		location.location_name = 'San Francisco, CA'
+		location.location_description = 'I\'ve been there'
+		location.location_image = 'goldengatebridge.jpg'
+		assert location.location_name == 'San Francisco, CA'
+		assert location.location_description == 'I\'ve been there'
+		assert location.location_image == 'goldengatebridge.jpg'
 	
 	def testCreatingLanguage(self):
-		language = Language('Spanish', 'taco, burrito, ...', 'sombrero.png')
-		assert language.Language_Name == 'Spanish'
-		assert language.Language_Description == 'taco, burrito, ...'
-		assert language.Language_Image == 'sombrero.png'
+		language = Language('Spanish', 'taco, burrito, ...', 'sombrero.png', 'large_sombrero.png')
+		assert language.language_name == 'Spanish'
+		assert language.language_description == 'taco, burrito, ...'
+		assert language.language_image_small == 'sombrero.png'
+		assert language.language_image_large == 'large_sombrero.png'
 
 	def testModifyingLanguage(self):
-		language = Language('Spanish', 'taco, burrito, ...', 'sombrero.png')
-		language.Language_Name = 'French'
-		language.Language_Description = 'Croissant'
-		language.Language_Image = 'crepe.jpg'
-		assert language.Language_Name == 'French'
-		assert language.Language_Description == 'Croissant'
-		assert language.Language_Image == 'crepe.jpg'
+		language = Language('Spanish', 'taco, burrito, ...', 'sombrero.png','large_sombrero.png')
+		language.language_name = 'French'
+		language.language_description = 'Croissant'
+		language.language_image_small = 'crepe.jpg'
+		language.language_image_large = 'large_crepe.jpg'
+		assert language.language_name == 'French'
+		assert language.language_description == 'Croissant'
+		assert language.language_image_small == 'crepe.jpg'
+		assert language.language_image_large == 'large_crepe.jpg'
 
 	def testModifyingLanguage2(self):
-		language = Language('Spanish', 'taco, burrito, ...', 'sombrero.png')
-		language.Language_Name = 'English'
-		language.Language_Description = 'Spoken in the USA'
-		language.Language_Image = 'merica.jpg'
-		assert language.Language_Name == 'English'
-		assert language.Language_Description == 'Spoken in the USA'
-		assert language.Language_Image == 'merica.jpg'
+		language = Language('Spanish', 'taco, burrito, ...', 'sombrero.png', 'large_sombrero.png')
+		language.language_name = 'English'
+		language.language_description = 'Spoken in the USA'
+		language.language_image_small = 'merica.jpg'
+		language.language_image_large = 'large_merica.jpg'
+		assert language.language_name == 'English'
+		assert language.language_description == 'Spoken in the USA'
+		assert language.language_image_small == 'merica.jpg'
+		assert language.language_image_large == 'large_merica.jpg'
 
 	def testCreatingSkillset(self):
 		skillset = Skillset('Mobile Computing', 'walking computers')
-		assert skillset.Skillset == 'Mobile Computing'
-		assert skillset.Skillset_description == 'walking computers'
+		assert skillset.skillset_name == 'Mobile Computing'
+		assert skillset.skillset_description == 'walking computers'
 
 	def testModifyingSkillset(self):
 		skillset = Skillset('Mobile Computing', 'walking computers')
-		skillset.Skillset = 'Android'
-		skillset.Skillset_description = 'Lollipop'
-		assert skillset.Skillset == 'Android'
-		assert skillset.Skillset_description == 'Lollipop'
+		skillset.skillset_name = 'Android'
+		skillset.skillset_description = 'Lollipop'
+		assert skillset.skillset_name == 'Android'
+		assert skillset.skillset_description == 'Lollipop'
 
 	def testModifyingSkillset2(self):
 		skillset = Skillset('Mobile Computing', 'walking computers')
-		skillset.Skillset = 'IOS'
-		skillset.Skillset_description = 'ipad'
-		assert skillset.Skillset == 'IOS'
-		assert skillset.Skillset_description == 'ipad'
+		skillset.skillset_name = 'IOS'
+		skillset.skillset_description = 'ipad'
+		assert skillset.skillset_name == 'IOS'
+		assert skillset.skillset_description == 'ipad'
 
-'''
 if __name__ == '__main__':
 	unittest.main()
-'''
-
-def run():
-	unittest.main()
-
-run()
