@@ -43,6 +43,17 @@ class Job(db.Model):
 		self.company_id = companyID
 		self.job_description = description
 		self.link = link
+
+	def serialize(self):
+		#return dict
+		return {
+			'job_id' : self.job_id,
+			'job_title' : self.job_title,
+			'location_id' : self.location_id,
+			'company_id' : self.company_id,
+			'job_description' : self.job_description,
+			'link' : self.link
+			}
 	
 	def __repr__(self):
 		return '<Job %r>' % self.job_title
@@ -70,6 +81,16 @@ class Company(db.Model):
 		self.company_description = Company_description
 		self.company_image = Company_image
 		self.company_site = Company_site
+
+	def serialize(self):
+		#return dict
+		return {
+			'company_id' : self.company_id,
+			'company_name' : self.company_name,
+			'company_image' : self.company_image,
+			'company_description' : self.company_description,
+			'company_site' : self.company_site
+			}
 	
 	def __repr__(self):
 		return '<company %r>' % self.company_name
@@ -103,7 +124,7 @@ class Language(db.Model):
 	def serialize(self):
 		#return dict
 		return {
-			'language_id' : self.language_ID,
+			'language_id' : self.language_id,
 			'language_name' : self.language_name,
 			'language_image' : self.language_image,
 			'language_wiki_description' : self.language_wiki_description,
@@ -135,6 +156,15 @@ class Location(db.Model):
 		self.location_description = Location_description
 		self.location_image = Location_image
 
+	def serialize(self):
+		#return dict
+		return {
+			'location_id' : self.location_id,
+			'location_name' : self.location_name,
+			'location_description' : self.location_description,
+			'location_image' : self.location_image
+			}
+
 	def __repr__(self):
 		return '<Location %r>' % self.location_name
 
@@ -161,6 +191,17 @@ class Skillset(db.Model):
 		self.skillset_image = Skillset_image
 		self.skillset_wiki_description = Skillset_wiki_description
 		self.skillset_wiki_link = Skillset_wiki_link
+
+	def serialize(self):
+		#return dict
+		return {
+			'skillset_id' : self.skillset_id,
+			'skillset_name' : self.skillset_name,
+			'skillset_description' : self.skillset_description,
+			'skillset_image' : self.skillset_image,
+			'skillset_wiki_description' : self.skillset_wiki_description,
+			'skillset_wiki_link' : skillset_wiki_link
+			}
 
 	
 	def __repr__(self):
@@ -202,6 +243,20 @@ class Member(db.Model):
 		self.member_unittest = Member_unittest
 		self.member_image = Member_image
 		self.member_leader = Member_leader
+
+	def serialize(self):
+		#return dict
+		return {
+			'member_id' : self.member_id,
+			'member_name' : self.member_name,
+			'member_bio' : self.member_bio,
+			'member_major_responsibility' : self.member_major_responsibility,
+			'member_commit' : self.member_commit,
+			'member_issue' : member_issue,
+			'member_unittest' : self.member_unittest,
+			'member_image' : self.member_image,
+			'member_leader' : self.member_leader
+			}
 
 	def __repr__(self):
 		return '<Member %r>' % self.member_name
