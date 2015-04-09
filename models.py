@@ -96,6 +96,7 @@ class Language(db.Model):
 		self.language_wiki_link = Language_Wiki_Link
 	
 	def serialize(self):
+		#return dict
 		return {
 			'language_ID' : self.language_ID,
 			'language_name' : self.language_name,
