@@ -23,28 +23,26 @@ Documentation for Programmer Jobs API
 Returns a list of all jobs and their ids
 + Response 200 (application/json)
     
-            [{
-                "job_ID": 1, 
-                "job_title": "Software Developer 4", 
-                "location_ID": 3, 
-                "company_ID": 2, 
-                "language_ID": 1, 
-                "skillset_ID": 5, 
-                "job_description": "Design, configure, and implement our data systems and stream processing pipelines/nCode analytics jobs, web services, and other components/nWork with operations to build and configure maintainable, resource-efficient systems/nWork with data pipelines using Kafka, Cassandra, Spark/nLeverage Event processing technologies to deliver real time analytics features/nDevelop a cloud service that would be processing billions of events a day/nLeverage fast data pipelines for real time analytics on various Oracle SaaS applications/nContribute ideas for continually improving the team's productivity, job enjoyment, and code quality./nActively mentor junior developers to develop their technical expertise/nHave fun engineering software and scalable systems", 
-                "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=90953"
-                
-            },
+        {
+          "Jobs": [
             {
-                "job_ID": 2, 
-                "job_title": "Software Developer 2", 
-                "location_ID": 3, 
-                "company_ID": 2, 
-                "language_ID": 1, 
-                "skillset_ID": 4, 
-                "job_description": "Are you interested in building Identity infrastructure for the cloud? Oracle's Cloud Infrastructure team is building new Infrastructure-as-a-Service technologies that operate at high scale in a broadly distributed multi-tenant cloud environment. Our customers run their businesses on our cloud, and our mission is to provide them with best in class compute, storage, networking, database, security, and an ever expanding set of foundational cloud-based services./n/nWe're looking for Software Developer with expertise and passion in solving difficult problems in distributed systems, virtualized infrastructure, and highly available services. If this is you, at Oracle you can design and build innovative new systems from the ground up. These are exciting times in our space - we are growing fast, still at an early stage, functioning like a startup and working on ambitious new initiatives. An engineer at any level can have significant technical and business impact./n/nAs a Software Developer, you will own and lead software architecture and development for Authentication and Authorization components of Oracle's Cloud Identity Infrastructure.  You should be a distributed systems generalist, able to build broad systems interactions, while being very hands-on, able to dive deep into any part of the stack and lower level system interactions. You should value simplicity and scale, work comfortably in a collaborative, agile environment, and be excited to learn.", 
-                "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=86141"
-            
-            }]
+              "company_id": 2, 
+              "job_description": "Design, configure, and implement our data systems and stream processing pipelines/nCode analytics jobs, web services, and other components/nWork with operations to build and configure maintainable, resource-efficient systems/nWork with data pipelines using Kafka, Cassandra, Spark/nLeverage Event processing technologies to deliver real time analytics features/nDevelop a cloud service that would be processing billions of events a day/nLeverage fast data pipelines for real time analytics on various Oracle SaaS applications/nContribute ideas for continually improving the team s productivity, job enjoyment, and code quality./nActively mentor junior developers to develop their technical expertise/nHave fun engineering software and scalable systems", 
+              "job_id": 1, 
+              "job_title": "Software Developer 4", 
+              "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=90953", 
+              "location_id": 3
+            }, 
+            {
+              "company_id": 2, 
+              "job_description": "Are you interested in building Identity infrastructure for the cloud? Oracle s Cloud Infrastructure team is building new Infrastructure-as-a-Service technologies that operate at high scale in a broadly distributed multi-tenant cloud environment. Our customers run their businesses on our cloud, and our mission is to provide them with best in class compute, storage, networking, database, security, and an ever expanding set of foundational cloud-based services./n/nWe re looking for Software Developer with expertise and passion in solving difficult problems in distributed systems, virtualized infrastructure, and highly available services. If this is you, at Oracle you can design and build innovative new systems from the ground up. These are exciting times in our space - we are growing fast, still at an early stage, functioning like a startup and working on ambitious new initiatives. An engineer at any level can have significant technical and business impact./n/nAs a Software Developer, you will own and lead software architecture and development for Authentication and Authorization components of Oracle s Cloud Identity Infrastructure.  You should be a distributed systems generalist, able to build broad systems interactions, while being very hands-on, able to dive deep into any part of the stack and lower level system interactions. You should value simplicity and scale, work comfortably in a collaborative, agile environment, and be excited to learn.", 
+              "job_id": 2, 
+              "job_title": "Software Developer 2", 
+              "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=86141", 
+              "location_id": 3
+            }, 
+            ...
+        }
 
 
 ## Job [/job/{id}]
