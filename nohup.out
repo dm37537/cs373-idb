@@ -4260,3 +4260,1077 @@ AttributeError: 'NoneType' object has no attribute 'serialize'
 128.62.59.195 - - [09/Apr/2015 20:40:17] "GET /api/language HTTP/1.1" 200 -
 128.62.59.195 - - [09/Apr/2015 20:40:29] "GET /api/language HTTP/1.1" 200 -
 128.62.59.195 - - [09/Apr/2015 20:42:17] "GET /index HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+128.62.59.195 - - [09/Apr/2015 21:18:20] "GET / HTTP/1.1" 302 -
+128.62.59.195 - - [09/Apr/2015 21:18:20] "GET /index HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:18:25] "GET / HTTP/1.1" 302 -
+128.62.63.3 - - [09/Apr/2015 21:18:25] "GET /index HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:18:25] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:18:25] "GET /static/custom.css HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:18:25] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:18:25] "GET /static/images/language_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:18:25] "GET /static/images/company_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:18:25] "GET /static/images/location_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:18:25] "GET /static/images/jumbotron/splash_jumbotron.jpg HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:18:26] "GET / HTTP/1.1" 302 -
+128.62.59.195 - - [09/Apr/2015 21:18:26] "GET /index HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:18:28] "GET /api/language HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 198, in get_languages
+    return jsonify(langsResult = [langEle.serialize() for langEle in languages])
+  File "/home/kvalle/cs373-idb/models.py", line 106, in serialize
+    'language_id' : self.language_ID,
+AttributeError: 'Language' object has no attribute 'language_ID'
+128.62.63.3 - - [09/Apr/2015 21:18:28] "GET /api/language HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 198, in get_languages
+    return jsonify(langsResult = [langEle.serialize() for langEle in languages])
+  File "/home/kvalle/cs373-idb/models.py", line 106, in serialize
+    'language_id' : self.language_ID,
+AttributeError: 'Language' object has no attribute 'language_ID'
+128.62.63.3 - - [09/Apr/2015 21:18:28] "GET /api/language?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:18:28] "GET /api/language?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:18:28] "GET /api/language?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:18:28] "GET /api/language?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:18:28] "GET /api/language?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:18:28] "GET /api/language?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:18:28] "GET /api/language?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:18:29] "GET /api/language?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:18:29] "GET /api/language?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:18:29] "GET /api/language?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:18:29] "GET /api/language?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:18:29] "GET /api/language?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:18:29] "GET /api/language?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:18:29] "GET /api/language?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:18:50] "GET /api HTTP/1.1" 404 -
+128.62.57.90 - - [09/Apr/2015 21:18:55] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 169, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+128.62.57.90 - - [09/Apr/2015 21:18:55] "GET /api/company?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:18:55] "GET /api/company?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:18:55] "GET /api/company?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:18:55] "GET /api/company?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:18:55] "GET /api/company?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:18:55] "GET /api/company?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/home/kvalle/cs373-idb/models.py', reloading
+ * Restarting with stat
+128.62.63.3 - - [09/Apr/2015 21:19:04] "GET /api/language HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:19:37] "GET /index HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:19:38] "GET /favicon.ico HTTP/1.1" 404 -
+128.62.53.106 - - [09/Apr/2015 21:19:41] "GET /tests HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:19:41] "GET /result HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:19:46] "GET /api/language HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:19:49] "GET /company HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:19:49] "GET /static/images/jumbotron/companies_jumbotron.jpg HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:19:57] "GET /language HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:19:57] "GET /static/images/language_icon/java_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:19:57] "GET /static/images/language_icon/cpp_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:19:57] "GET /static/images/language_icon/php_icon.png HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 21:19:57] "GET /api/language/1 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 206, in get_language
+    if len(langResult) == 0:
+TypeError: object of type 'Response' has no len()
+128.62.63.3 - - [09/Apr/2015 21:19:57] "GET /static/images/language_icon/python_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:19:57] "GET /static/images/language_icon/javascript_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:19:57] "GET /static/images/language_icon/objective-c_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:19:57] "GET /static/images/jumbotron/languages_jumbotron.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:19:57] "GET /static/images/language_icon/csharp_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:19:57] "GET /static/images/language_icon/vbnet_icon.png HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 21:19:58] "GET /api/language/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:19:58] "GET /static/images/language_icon/vb_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:19:58] "GET /static/images/language_icon/c_icon.png HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 21:19:58] "GET /api/language/1?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:19:58] "GET /api/language/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:19:58] "GET /api/language/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:19:58] "GET /api/language/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:19:58] "GET /api/language/1?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:19:58] "GET /company/Amazon HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:19:59] "GET /company/static/css/bootstrap.min.css HTTP/1.1" 404 -
+128.62.53.106 - - [09/Apr/2015 21:19:59] "GET /company/static/custom.css HTTP/1.1" 404 -
+128.62.53.106 - - [09/Apr/2015 21:19:59] "GET /company/static/js/bootstrap.min.js HTTP/1.1" 404 -
+128.62.53.106 - - [09/Apr/2015 21:20:20] "GET /index HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:20:22] "GET /modeldoc HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:20:27] "GET /tests HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:20:34] "GET /company HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:20:34] "GET /result HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:20:43] "GET /company HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:20:43] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.53.106 - - [09/Apr/2015 21:20:43] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.53.106 - - [09/Apr/2015 21:20:43] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.53.106 - - [09/Apr/2015 21:20:43] "GET /static/images/jumbotron/companies_jumbotron.jpg HTTP/1.1" 304 -
+128.62.53.106 - - [09/Apr/2015 21:20:46] "GET /about HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:20:47] "GET /static/images/apiary_logo.png HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:20:47] "GET /static/images/github_logo.jpg HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:20:47] "GET /static/images/member/Da_Meng.jpg HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:20:47] "GET /static/images/member/Jin_Ho_Kim.jpg HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:20:47] "GET /static/images/member/Kevin_Valle.jpg HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:20:47] "GET /static/images/member/Chan_Hee_Park.jpg HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:20:47] "GET /static/images/member/Seung_Youp_Baek.png HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:20:50] "GET /company HTTP/1.1" 200 -
+64.125.188.25 - - [09/Apr/2015 21:21:09] "GET /tests HTTP/1.1" 200 -
+64.125.188.25 - - [09/Apr/2015 21:21:09] "GET /result HTTP/1.1" 200 -
+64.125.188.25 - - [09/Apr/2015 21:21:09] "GET /company/static/js/bootstrap.min.js HTTP/1.1" 404 -
+64.125.188.25 - - [09/Apr/2015 21:21:09] "GET /company/static/css/bootstrap.min.css HTTP/1.1" 404 -
+64.125.188.25 - - [09/Apr/2015 21:21:09] "GET /company/Amazon HTTP/1.1" 200 -
+64.125.188.25 - - [09/Apr/2015 21:21:09] "GET /company/static/custom.css HTTP/1.1" 404 -
+64.125.188.25 - - [09/Apr/2015 21:21:33] "GET /modeldoc HTTP/1.1" 200 -
+64.125.188.25 - - [09/Apr/2015 21:21:33] "GET /tests HTTP/1.1" 200 -
+ * Detected change in '/home/kvalle/cs373-idb/programmerJobs.py', reloading
+<class 'models.Language'>
+<class 'flask.wrappers.Response'>
+ * Restarting with stat
+128.62.63.3 - - [09/Apr/2015 21:21:55] "GET /api/language HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 198, in get_languages
+    return jsonify([langEle.serialize() for langEle in languages])
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+ValueError: dictionary update sequence element #0 has length 6; 2 is required
+128.62.63.3 - - [09/Apr/2015 21:21:55] "GET /api/language?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:21:55] "GET /api/language?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:21:55] "GET /api/language?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:21:55] "GET /api/language?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:21:55] "GET /api/language?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:21:55] "GET /api/language?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:21:56] "GET /api/language?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+64.125.188.25 - - [09/Apr/2015 21:22:06] "GET /about HTTP/1.1" 200 -
+64.125.188.25 - - [09/Apr/2015 21:22:06] "GET /static/images/github_logo.jpg HTTP/1.1" 200 -
+64.125.188.25 - - [09/Apr/2015 21:22:06] "GET /static/images/member/Da_Meng.jpg HTTP/1.1" 200 -
+64.125.188.25 - - [09/Apr/2015 21:22:06] "GET /static/images/member/Jin_Ho_Kim.jpg HTTP/1.1" 200 -
+64.125.188.25 - - [09/Apr/2015 21:22:06] "GET /static/images/member/Kevin_Valle.jpg HTTP/1.1" 200 -
+64.125.188.25 - - [09/Apr/2015 21:22:06] "GET /static/images/member/Chan_Hee_Park.jpg HTTP/1.1" 200 -
+64.125.188.25 - - [09/Apr/2015 21:22:06] "GET /static/images/member/Seung_Youp_Baek.png HTTP/1.1" 200 -
+64.125.188.25 - - [09/Apr/2015 21:22:06] "GET /modeldoc HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:22:17] "GET /company HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:22:18] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.53.106 - - [09/Apr/2015 21:22:18] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.53.106 - - [09/Apr/2015 21:22:18] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.53.106 - - [09/Apr/2015 21:22:18] "GET /static/images/jumbotron/companies_jumbotron.jpg HTTP/1.1" 304 -
+128.62.53.106 - - [09/Apr/2015 21:22:20] "GET /about HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:22:22] "GET /index HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:22:24] "GET /language HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:22:26] "GET /index HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:22:27] "GET /company HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:22:35] "GET /index HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:22:48] "GET /location HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:22:52] "GET /location/Seattle,%20WA HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:22:52] "GET /location/static/css/bootstrap.min.css HTTP/1.1" 404 -
+128.62.53.106 - - [09/Apr/2015 21:22:52] "GET /location/static/custom.css HTTP/1.1" 404 -
+128.62.53.106 - - [09/Apr/2015 21:22:52] "GET /location/static/js/bootstrap.min.js HTTP/1.1" 404 -
+128.62.53.106 - - [09/Apr/2015 21:23:00] "GET /location/Menlo%20Park,%20CA HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:23:00] "GET /location/static/css/bootstrap.min.css HTTP/1.1" 404 -
+128.62.53.106 - - [09/Apr/2015 21:23:00] "GET /location/static/custom.css HTTP/1.1" 404 -
+128.62.53.106 - - [09/Apr/2015 21:23:00] "GET /location/static/js/bootstrap.min.js HTTP/1.1" 404 -
+128.62.53.106 - - [09/Apr/2015 21:23:14] "GET /location HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:23:16] "GET /company HTTP/1.1" 200 -
+ * Detected change in '/home/kvalle/cs373-idb/programmerJobs.py', reloading
+ * Restarting with stat
+64.125.188.25 - - [09/Apr/2015 21:24:16] "GET /location/static/custom.css HTTP/1.1" 404 -
+64.125.188.25 - - [09/Apr/2015 21:24:16] "GET /location/static/css/bootstrap.min.css HTTP/1.1" 404 -
+64.125.188.25 - - [09/Apr/2015 21:24:16] "GET /location/Seattle,%20WA HTTP/1.1" 200 -
+64.125.188.25 - - [09/Apr/2015 21:24:16] "GET /location/static/js/bootstrap.min.js HTTP/1.1" 404 -
+64.125.188.25 - - [09/Apr/2015 21:24:16] "GET /location/static/css/bootstrap.min.css HTTP/1.1" 404 -
+64.125.188.25 - - [09/Apr/2015 21:24:16] "GET /location/static/custom.css HTTP/1.1" 404 -
+64.125.188.25 - - [09/Apr/2015 21:24:16] "GET /location/Menlo%20Park,%20CA HTTP/1.1" 200 -
+64.125.188.25 - - [09/Apr/2015 21:24:16] "GET /location/static/js/bootstrap.min.js HTTP/1.1" 404 -
+128.62.53.106 - - [09/Apr/2015 21:25:24] "GET /index HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:25:26] "GET /location HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:25:30] "GET /index HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:25:32] "GET /company HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:25:56] "GET /company HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:25:56] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.53.106 - - [09/Apr/2015 21:25:56] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.53.106 - - [09/Apr/2015 21:25:56] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.53.106 - - [09/Apr/2015 21:25:57] "GET /static/images/jumbotron/companies_jumbotron.jpg HTTP/1.1" 304 -
+128.62.53.106 - - [09/Apr/2015 21:25:59] "GET /company HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:25:59] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:25:59] "GET /static/custom.css HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:25:59] "GET /static/js/bootstrap.min.js HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:26:00] "GET /static/images/jumbotron/companies_jumbotron.jpg HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:26:01] "GET /favicon.ico HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:26:12] "GET /language HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:26:12] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:26:12] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:26:12] "GET /static/images/language_icon/java_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:26:12] "GET /static/images/language_icon/cpp_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:26:12] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:26:12] "GET /static/images/language_icon/php_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:26:12] "GET /static/images/language_icon/python_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:26:12] "GET /static/images/language_icon/javascript_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:26:12] "GET /static/images/language_icon/objective-c_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:26:13] "GET /static/images/jumbotron/languages_jumbotron.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:26:13] "GET /static/images/language_icon/csharp_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:26:13] "GET /static/images/language_icon/vbnet_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:26:13] "GET /static/images/language_icon/vb_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:26:13] "GET /static/images/language_icon/c_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:27:12] "GET /language HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:27:12] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:27:12] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:27:12] "GET /static/images/language_icon/java_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:27:12] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:27:12] "GET /static/images/language_icon/cpp_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:27:12] "GET /static/images/language_icon/php_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:27:12] "GET /static/images/language_icon/python_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:27:12] "GET /static/images/language_icon/javascript_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:27:12] "GET /static/images/language_icon/objective-c_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:27:12] "GET /static/images/language_icon/csharp_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:27:12] "GET /static/images/jumbotron/languages_jumbotron.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:27:12] "GET /static/images/language_icon/c_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:27:12] "GET /static/images/language_icon/vbnet_icon.png HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:27:12] "GET /static/images/language_icon/vb_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:28:14] "GET /api/location/1 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 186, in get_location
+    if len(location) == 0:
+TypeError: object of type 'Location' has no len()
+128.62.59.195 - - [09/Apr/2015 21:28:14] "GET /api/location/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:28:14] "GET /api/location/1?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:28:14] "GET /api/location/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:28:14] "GET /api/location/1?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:28:14] "GET /api/location/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:28:14] "GET /api/location/1?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:28:14] "GET /api/location/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:28:30] "GET /index HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:28:55] "GET /api/language/1 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 204, in get_language
+    if len(langResult) == 0:
+TypeError: object of type 'Response' has no len()
+128.62.57.90 - - [09/Apr/2015 21:28:55] "GET /api/language/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:28:55] "GET /api/language/1?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:28:55] "GET /api/language/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:28:55] "GET /api/language/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:28:55] "GET /api/language/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:28:55] "GET /api/language/1?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:29:02] "GET /api/language/ HTTP/1.1" 404 -
+128.62.57.90 - - [09/Apr/2015 21:29:06] "GET /api/language HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:29:10] "GET /api/language/1 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 204, in get_language
+    if len(langResult) == 0:
+TypeError: object of type 'Response' has no len()
+128.62.57.90 - - [09/Apr/2015 21:29:10] "GET /api/language/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:29:10] "GET /api/language/1?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:29:10] "GET /api/language/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:29:10] "GET /api/language/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:29:10] "GET /api/language/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:29:10] "GET /api/language/1?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:29:23] "GET /api/language/2 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 204, in get_language
+    if len(langResult) == 0:
+TypeError: object of type 'Response' has no len()
+128.62.57.90 - - [09/Apr/2015 21:29:23] "GET /api/language/2?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:29:23] "GET /api/language/2?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:29:23] "GET /api/language/2?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:29:23] "GET /api/language/2?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:29:23] "GET /api/language/2?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:29:23] "GET /api/language/2?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:29:55] "GET /index HTTP/1.1" 200 -
+128.62.53.106 - - [09/Apr/2015 21:29:55] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.53.106 - - [09/Apr/2015 21:29:55] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.53.106 - - [09/Apr/2015 21:29:55] "GET /static/images/language_icon.png HTTP/1.1" 304 -
+128.62.53.106 - - [09/Apr/2015 21:29:55] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.53.106 - - [09/Apr/2015 21:29:55] "GET /static/images/company_icon.png HTTP/1.1" 304 -
+128.62.53.106 - - [09/Apr/2015 21:29:55] "GET /static/images/location_icon.png HTTP/1.1" 304 -
+128.62.53.106 - - [09/Apr/2015 21:29:55] "GET /static/images/jumbotron/splash_jumbotron.jpg HTTP/1.1" 304 -
+ * Detected change in '/home/kvalle/cs373-idb/programmerJobs.py', reloading
+ * Restarting with stat
+128.62.57.90 - - [09/Apr/2015 21:30:05] "GET /api/language/2 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 204, in get_language
+    if len(language) == 0:
+TypeError: object of type 'Language' has no len()
+128.62.57.90 - - [09/Apr/2015 21:30:05] "GET /api/language/2?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:30:05] "GET /api/language/2?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:30:05] "GET /api/language/2?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:30:05] "GET /api/language/2?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:30:05] "GET /api/language/2?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:30:05] "GET /api/language/2?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:30:06] "GET /api/language/2 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 204, in get_language
+    if len(language) == 0:
+TypeError: object of type 'Language' has no len()
+128.62.57.90 - - [09/Apr/2015 21:30:06] "GET /api/language/2?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:30:06] "GET /api/language/2?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:30:07] "GET /api/language/2?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:30:07] "GET /api/language/2?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:30:07] "GET /api/language/2?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:30:07] "GET /api/language/2?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:30:08] "GET /api/language/2 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 204, in get_language
+    if len(language) == 0:
+TypeError: object of type 'Language' has no len()
+128.62.57.90 - - [09/Apr/2015 21:30:08] "GET /api/language/2?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:30:08] "GET /api/language/2?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:30:08] "GET /api/language/2?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:30:08] "GET /api/language/2?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:30:08] "GET /api/language/2?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:30:08] "GET /api/language/2?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+ * Detected change in '/home/kvalle/cs373-idb/programmerJobs.py', reloading
+Exception in thread Thread-1 (most likely raised during interpreter shutdown):
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/threading.py", line 810, in __bootstrap_inner
+  File "/usr/lib/python2.7/threading.py", line 763, in run
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/local/lib/python2.7/site-packages/werkzeug/serving.py", line 602, in inner
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/local/lib/python2.7/site-packages/werkzeug/serving.py", line 462, in serve_forever
+  File "/usr/lib/python2.7/SocketServer.py", line 241, in serve_forever
+  File "/usr/lib/python2.7/threading.py", line 585, in set
+  File "/usr/lib/python2.7/threading.py", line 406, in notifyAll
+<type 'exceptions.TypeError'>: 'NoneType' object is not callable
+ * Restarting with stat
+  File "programmerJobs.py", line 204
+    if !language:
+       ^
+SyntaxError: invalid syntax
+  File "programmerJobs.py", line 204
+    if !language:
+       ^
+SyntaxError: invalid syntax
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+128.62.57.90 - - [09/Apr/2015 21:32:56] "GET /api/language HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:33:01] "GET /api/language/1 HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:33:05] "GET /api/language/2 HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:33:09] "GET /api/language HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:33:23] "GET /api/location/1 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 186, in get_location
+    if len(location) == 0:
+TypeError: object of type 'Location' has no len()
+128.62.59.195 - - [09/Apr/2015 21:33:23] "GET /api/location/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:33:23] "GET /api/location/1?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:33:23] "GET /api/location/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:33:23] "GET /api/location/1?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:33:23] "GET /api/location/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:33:23] "GET /api/location/1?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:33:25] "GET / HTTP/1.1" 302 -
+128.62.59.195 - - [09/Apr/2015 21:33:26] "GET /index HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:33:29] "GET /api/language HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:33:30] "GET /api/language/1 HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:34:05] "GET / HTTP/1.1" 302 -
+128.62.59.195 - - [09/Apr/2015 21:34:05] "GET /index HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:34:08] "GET /language HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:34:08] "GET /static/images/language_icon/java_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:34:08] "GET /static/images/language_icon/php_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:34:08] "GET /static/images/language_icon/cpp_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:34:08] "GET /static/images/language_icon/javascript_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:34:08] "GET /static/images/language_icon/python_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:34:08] "GET /static/images/language_icon/objective-c_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:34:08] "GET /static/images/language_icon/csharp_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:34:08] "GET /static/images/jumbotron/languages_jumbotron.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:34:08] "GET /static/images/language_icon/vb_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:34:08] "GET /static/images/language_icon/c_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:34:08] "GET /static/images/language_icon/vbnet_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:34:09] "GET /language/Visual%20Basic HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:34:10] "GET /language/static/css/bootstrap.min.css HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:34:10] "GET /language/static/custom.css HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:34:10] "GET /language/static/js/bootstrap.min.js HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:34:11] "GET /language/Javascript HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:34:11] "GET /language/static/css/bootstrap.min.css HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:34:11] "GET /language/static/custom.css HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:34:12] "GET /language/static/js/bootstrap.min.js HTTP/1.1" 404 -
+ * Detected change in '/home/kvalle/cs373-idb/programmerJobs.py', reloading
+ * Restarting with stat
+128.62.57.90 - - [09/Apr/2015 21:36:00] "GET /api/language/null HTTP/1.1" 404 -
+128.62.57.90 - - [09/Apr/2015 21:36:23] "GET / HTTP/1.1" 302 -
+128.62.57.90 - - [09/Apr/2015 21:36:23] "GET /index HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:36:25] "GET /tests HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:36:25] "GET /result HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:36:31] "GET /result HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:36:31] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 21:36:31] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 21:36:31] "GET /static/custom.css HTTP/1.1" 304 -
+ * Detected change in '/home/kvalle/cs373-idb/programmerJobs.py', reloading
+ * Restarting with stat
+128.62.63.3 - - [09/Apr/2015 21:40:24] "GET /language/C HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 234, in get_language_page
+    language = Language.query.filter_by('language_name' == name).first()
+TypeError: filter_by() takes exactly 1 argument (2 given)
+128.62.63.3 - - [09/Apr/2015 21:40:25] "GET /language/C?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:40:25] "GET /language/C?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:40:25] "GET /language/C?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:40:25] "GET /language/C?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:40:25] "GET /language/C?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:40:25] "GET /language/C?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:40:25] "GET /language/C?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/home/kvalle/cs373-idb/programmerJobs.py', reloading
+ * Restarting with stat
+128.62.63.3 - - [09/Apr/2015 21:41:38] "GET /language/C HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:41:38] "GET /language/static/css/bootstrap.min.css HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:41:38] "GET /language/static/custom.css HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:41:39] "GET /language/static/js/bootstrap.min.js HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:41:56] "GET /language/Java HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:41:56] "GET /static/ HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:41:57] "GET /language/static/css/bootstrap.min.css HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:41:57] "GET /language/static/custom.css HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:41:57] "GET /static/ HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:41:57] "GET /language/static/js/bootstrap.min.js HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:42:01] "GET /language/Java HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:42:01] "GET /language/static/css/bootstrap.min.css HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:42:01] "GET /language/static/custom.css HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:42:01] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:42:01] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.63.3 - - [09/Apr/2015 21:42:01] "GET /static/ HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:42:01] "GET /language/static/js/bootstrap.min.js HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:42:01] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+ * Detected change in '/home/kvalle/cs373-idb/programmerJobs.py', reloading
+ * Restarting with stat
+128.62.59.195 - - [09/Apr/2015 21:49:57] "GET /language/1 HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:49:58] "GET /language/static/css/bootstrap.min.css HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:49:58] "GET /language/static/custom.css HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:49:58] "GET /language/static/js/bootstrap.min.js HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:49:58] "GET /static/ HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:51:50] "GET /language/1 HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:51:51] "GET /language/static/css/bootstrap.min.css HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:51:51] "GET /language/static/custom.css HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:51:51] "GET /static/ HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:51:51] "GET /language/static/js/bootstrap.min.js HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:51:51] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:51:51] "GET /static/custom.css HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:51:51] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:51:52] "GET /index HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:51:54] "GET /language HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 229, in get_languages_page
+    return render_template('languages.html', langJson=languages)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/cs373-idb/templates/languages.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/kvalle/cs373-idb/templates/base.html", line 47, in top-level template code
+    {% block content %}
+  File "/home/kvalle/cs373-idb/templates/languages.html", line 28, in block "content"
+    <a href="language/{{languages[n].language_id}}">
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/jinja2/environment.py", line 378, in getitem
+    return obj[argument]
+UndefinedError: 'languages' is undefined
+128.62.59.195 - - [09/Apr/2015 21:51:54] "GET /language?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:51:54] "GET /language?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:51:54] "GET /language?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:51:54] "GET /language?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:51:55] "GET /language?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:51:55] "GET /language?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:51:55] "GET /language?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:52:46] "GET /language HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:52:47] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:52:47] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:52:47] "GET /static/images/language_icon/java_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:52:47] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:52:47] "GET /static/images/language_icon/cpp_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:52:47] "GET /static/images/language_icon/php_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:52:47] "GET /static/images/language_icon/python_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:52:47] "GET /static/images/language_icon/csharp_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:52:47] "GET /static/images/language_icon/javascript_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:52:47] "GET /static/images/language_icon/objective-c_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:52:47] "GET /static/images/language_icon/vbnet_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:52:47] "GET /static/images/language_icon/vb_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:52:47] "GET /static/images/language_icon/c_icon.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:52:47] "GET /static/images/jumbotron/languages_jumbotron.png HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:52:48] "GET /language/2 HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:52:48] "GET /language/static/css/bootstrap.min.css HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:52:48] "GET /language/static/custom.css HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:52:48] "GET /static/ HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:52:48] "GET /language/static/js/bootstrap.min.js HTTP/1.1" 404 -
+128.62.57.90 - - [09/Apr/2015 21:53:43] "GET /api/language HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:53:50] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 169, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+128.62.57.90 - - [09/Apr/2015 21:53:50] "GET /api/company?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:53:50] "GET /api/company?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:53:50] "GET /api/company?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:53:50] "GET /api/company?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:53:51] "GET /api/company?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:53:51] "GET /api/company?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:53:56] "GET /api/job HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 157, in get_jobs
+    return jsonify(jobs)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+128.62.57.90 - - [09/Apr/2015 21:53:56] "GET /api/job?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:53:56] "GET /api/job?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:53:56] "GET /api/job?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:53:56] "GET /api/job?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:53:56] "GET /api/job?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:53:57] "GET /api/job?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:54:07] "GET /api/location HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 181, in get_locations
+    return jsonify(locations)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+128.62.57.90 - - [09/Apr/2015 21:54:07] "GET /api/location?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:54:07] "GET /api/location?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:54:07] "GET /api/location?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:54:07] "GET /api/location?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:54:07] "GET /api/location?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:54:07] "GET /api/location?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:54:13] "GET /api/skill HTTP/1.1" 404 -
+128.62.57.90 - - [09/Apr/2015 21:54:17] "GET /api/language HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:55:40] "GET /api/language/1 HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:55:47] "GET /location HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:55:47] "GET /static/images/location_icon/austin.jpg HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:55:47] "GET /static/images/location_icon/seattle.jpg HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:55:47] "GET /static/images/location_icon/san_francisco.jpg HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:55:47] "GET /static/images/location_icon/los_anglos.jpg HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:55:47] "GET /static/images/location_icon/boston.jpg HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:55:47] "GET /static/images/location_icon/new_york_city.jpg HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:55:47] "GET /static/images/jumbotron/locations_jumbotron.jpg HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:55:47] "GET /static/images/location_icon/san_jose.jpg HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:55:47] "GET /static/images/location_icon/menlo_park.jpg HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:55:47] "GET /static/images/location_icon/dallas.jpg HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:55:47] "GET /static/images/location_icon/mountain_view.jpg HTTP/1.1" 304 -
+128.62.59.195 - - [09/Apr/2015 21:55:51] "GET /location/ HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:55:55] "GET /location/ HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:55:56] "GET /location/ HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:56:01] "GET /location/1 HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 254, in get_location_page
+    location = location[0]
+IndexError: list index out of range
+128.62.59.195 - - [09/Apr/2015 21:56:02] "GET /location/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:56:02] "GET /location/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:56:02] "GET /location/1?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:56:02] "GET /location/1?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:56:02] "GET /location/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:56:02] "GET /location/1?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:56:02] "GET /location/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/home/kvalle/cs373-idb/programmerJobs.py', reloading
+ * Restarting with stat
+128.62.63.3 - - [09/Apr/2015 21:56:32] "GET /language/ HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:56:38] "GET /languages HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:56:41] "GET /languages HTTP/1.1" 404 -
+128.62.59.195 - - [09/Apr/2015 21:56:42] "GET /location HTTP/1.1" 200 -
+128.62.59.195 - - [09/Apr/2015 21:56:45] "GET /location/ HTTP/1.1" 404 -
+128.62.57.90 - - [09/Apr/2015 21:56:50] "GET /api/companies HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:56:51] "GET /api/language HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:56:51] "GET / HTTP/1.1" 302 -
+128.62.63.3 - - [09/Apr/2015 21:56:51] "GET /index HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:56:54] "GET /language HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:56:56] "GET /language/1 HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:56:56] "GET /language/static/css/bootstrap.min.css HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:56:56] "GET /language/static/custom.css HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:56:56] "GET /language/static/js/bootstrap.min.js HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:57:06] "GET /language/3 HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:57:06] "GET /language/static/css/bootstrap.min.css HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:57:06] "GET /language/static/custom.css HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:57:06] "GET /language/static/js/bootstrap.min.js HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:57:09] "GET /language/2 HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:57:09] "GET /language/static/css/bootstrap.min.css HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:57:09] "GET /language/static/custom.css HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:57:09] "GET /language/static/js/bootstrap.min.js HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:57:17] "GET /language/5 HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:57:17] "GET /language/static/css/bootstrap.min.css HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:57:17] "GET /language/static/custom.css HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:57:17] "GET /language/static/js/bootstrap.min.js HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:57:28] "GET /language/1 HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:57:28] "GET /language/static/css/bootstrap.min.css HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:57:28] "GET /language/static/custom.css HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:57:28] "GET /language/static/js/bootstrap.min.js HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:57:36] "GET /language/1 HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 21:57:36] "GET /language/static/css/bootstrap.min.css HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:57:36] "GET /language/static/custom.css HTTP/1.1" 404 -
+128.62.63.3 - - [09/Apr/2015 21:57:36] "GET /language/static/js/bootstrap.min.js HTTP/1.1" 404 -
+128.62.3.95 - - [09/Apr/2015 21:58:58] "GET /api/location HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 179, in get_locations
+    return jsonify(locations)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+128.62.3.95 - - [09/Apr/2015 21:58:58] "GET /api/location?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 21:58:59] "GET /api/location?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 21:58:59] "GET /api/location?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 21:59:02] "GET /api/location?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 21:59:19] "GET /api/location?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 21:59:19] "GET /api/location?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:59:32] "GET / HTTP/1.1" 302 -
+128.62.57.90 - - [09/Apr/2015 21:59:32] "GET /index HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:59:43] "GET /tests HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 21:59:43] "GET /result HTTP/1.1" 200 -
+ * Detected change in '/home/kvalle/cs373-idb/programmerJobs.py', reloading
+ * Restarting with stat
+128.62.63.3 - - [09/Apr/2015 22:01:26] "GET /index HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 22:01:36] "GET /about HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 22:01:36] "GET /static/images/apiary_logo.png HTTP/1.1" 200 -
+128.62.63.3 - - [09/Apr/2015 22:01:36] "GET /static/images/github_logo.jpg HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:01:58] "GET /api/member HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 191, in get_team_member
+    return jsonify(member)
+NameError: global name 'member' is not defined
+128.62.3.95 - - [09/Apr/2015 22:01:59] "GET /api/member?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:01:59] "GET /api/member?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:02:00] "GET /api/member?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:02:02] "GET /api/member?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:02:03] "GET /api/member?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:02:03] "GET /api/member?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:02:05] "GET /api/member?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:02:11] "GET /about HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:02:11] "GET /static/images/apiary_logo.png HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:02:11] "GET /static/images/github_logo.jpg HTTP/1.1" 304 -
+ * Detected change in '/home/kvalle/cs373-idb/programmerJobs.py', reloading
+ * Restarting with stat
+ * Detected change in '/home/kvalle/cs373-idb/programmerJobs.py', reloading
+ * Restarting with stat
+128.62.57.90 - - [09/Apr/2015 22:04:56] "GET /result HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 22:04:56] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:04:56] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:04:56] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:04:59] "GET /result HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 22:04:59] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:04:59] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:04:59] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:00] "GET /about HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:05:00] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:00] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:00] "GET /static/images/apiary_logo.png HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:00] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:00] "GET /static/images/github_logo.jpg HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:00] "GET /static/images/member/Da_Meng.jpg HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:00] "GET /static/images/member/Jin_Ho_Kim.jpg HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:00] "GET /static/images/member/Kevin_Valle.jpg HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:00] "GET /static/images/member/Chan_Hee_Park.jpg HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:00] "GET /static/images/member/Seung_Youp_Baek.png HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:01] "GET /result HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 22:05:01] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:01] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:01] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:02] "GET /result HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 22:05:02] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:02] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:02] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:05] "GET /result HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:05:05] "GET /about HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:05:05] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:06] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:06] "GET /static/images/apiary_logo.png HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:06] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:06] "GET /static/images/github_logo.jpg HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:06] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:06] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:06] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:06] "GET /result HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:05:06] "GET /static/images/member/Da_Meng.jpg HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:06] "GET /static/images/member/Kevin_Valle.jpg HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:06] "GET /static/images/member/Seung_Youp_Baek.png HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:06] "GET /static/images/member/Jin_Ho_Kim.jpg HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:06] "GET /static/images/member/Chan_Hee_Park.jpg HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:06] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:06] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:06] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:08] "GET /result HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 22:05:08] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:08] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:08] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:09] "GET /result HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 22:05:09] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:09] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:09] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:11] "GET /result HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 22:05:11] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:11] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:11] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:19] "GET /result HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 22:05:19] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:19] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:19] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:21] "GET /result HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 22:05:21] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:21] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:21] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:22] "GET /result HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 22:05:22] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:22] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:22] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:23] "GET /result HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 22:05:23] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:23] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:23] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:25] "GET /result HTTP/1.1" 200 -
+128.62.57.90 - - [09/Apr/2015 22:05:25] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:25] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.57.90 - - [09/Apr/2015 22:05:25] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:34] "GET /about HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:05:34] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:42] "GET / HTTP/1.1" 302 -
+128.62.3.95 - - [09/Apr/2015 22:05:42] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:42] "GET /static/custom.css HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:42] "GET /static/images/apiary_logo.png HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:42] "GET / HTTP/1.1" 302 -
+128.62.3.95 - - [09/Apr/2015 22:05:43] "GET /static/images/github_logo.jpg HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:43] "GET /index HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:05:43] "GET /static/images/member/Da_Meng.jpg HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:43] "GET /static/images/member/Jin_Ho_Kim.jpg HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:43] "GET /static/images/member/Kevin_Valle.jpg HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:43] "GET /static/images/member/Chan_Hee_Park.jpg HTTP/1.1" 304 -
+128.62.3.95 - - [09/Apr/2015 22:05:44] "GET /about HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:05:45] "GET /static/images/member/Da_Meng.jpg HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:05:46] "GET /static/images/member/Jin_Ho_Kim.jpg HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:05:55] "GET /static/images/member/Kevin_Valle.jpg HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:05:55] "GET /static/images/member/Chan_Hee_Park.jpg HTTP/1.1" 200 -
+128.62.3.95 - - [09/Apr/2015 22:05:55] "GET /static/images/member/Seung_Youp_Baek.png HTTP/1.1" 200 -
+ * Detected change in '/home/kvalle/cs373-idb/tests.py', reloading
+ * Restarting with stat
+  File "programmerJobs.py", line 167
+    return jsonify([comEle.serialize() for comEle in companies)
+                                                              ^
+SyntaxError: invalid syntax
