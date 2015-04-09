@@ -71,9 +71,7 @@ def index():
 
 @app.route('/tests')
 def test():
-	# tests.run()
 	return render_template('tests.html')
-	# return send_from_directory('.', 'runTest.php
 
 @app.route('/result')
 def result():
@@ -197,15 +195,13 @@ def get_team_member():
 @app.route('/api/language', methods=['GET'])
 def get_languages():
 	languages = Language.query.all()
-	return jsonify([langEle.serialize() for langEle in languages])
+	return jsonify(languages = [langEle.serialize() for langEle in languages])
 
 @app.route('/api/language/<int:language_id>', methods=['GET'])
 def get_language(language_id):
 	language = Language.query.get(language_id)
-	#print(type(language))
-	langResult = jsonify([language.serialize()])
-	#print(type(langResult))
-	if len(langResult) == 0:
+	langResult = jsonify(langResult = [language.serialize()])
+	if not language:
 		abort(404)
 	return langResult
 
@@ -225,25 +221,26 @@ def get_skillset(skillset_id):
 
 
 
-
 #Dynamic pages
 @app.route('/language')
 def get_languages_page():
+	languages = Language.query.all()
 	return render_template('languages.html', langJson=languages)
 
-@app.route('/language/<name>')
-def get_language_page(name=None):
-	name = name.replace(" ", "");
+@app.route('/language/<id>')
+def get_language_page(id=None):
+	#name = name.replace(" ", "");
+	language = Language.query.get(id)
 	#need name redirection
-	if(name == "C#") :
-		name = "Csharp"
-	elif(name == "VisualBasic") :
-		name = "Visual Basic"
-	elif(name == "VisualBasic.NET") :
-		name = "Visual Basic.NET"
+	#if(name == "C#") :
+	#	name = "Csharp"
+	#elif(name == "VisualBasic") :
+	#	name = "Visual Basic"
+	#elif(name == "VisualBasic.NET") :
+	#	name = "Visual Basic.NET"
 	# language = Language.query.filterBy('language_name' == name)
-	language = [language for language in languages if language['language_name'] == name]
-	language=language[0]
+	#language = [language for language in languages if language['language_name'] == name]
+	#language=language[0]
 	return render_template('language.html', langJson=language, langsJson=languages, cmpyJson=companies, jobJson=jobs, locJson=locations, skillsetJson=skillsets)
 
 @app.route('/location')
