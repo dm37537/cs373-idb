@@ -23,14 +23,17 @@ def init_db():
 	db.create_all()
 
 def populate_db():
-	f = open('SQL/category_data_insert.sql', 'r')
+	session = db.create_scoped_session()
+	f = open('SQL/insert_all.sql', 'r')
 	for line in f:
-		db.get_engine(app).execute(line)
+		session.execute(line)
 	f.close()
-	f = open('SQL/job_data_insert.sql', 'r')
-	for line in f:
-		db.get_engine(app).execute(line)
-	f.close()
+	session.commit()
+	#f = open('SQL/job_data_insert.sql', 'r')
+	#for line in f:
+	#	session.execute(line)
+	#f.close()
+	#session.commit()
 
 # Loading JSON from files. To be replaced with database or model calls
 f = open('Job.json') 
@@ -61,7 +64,6 @@ f.close()
 @app.route('/')
 def root():
 	return redirect('http://104.130.229.90:5000/index', code=302)
-	# return redirect('http://127.0.0.1:5000/index', code=302)
 
 @app.route('/index')
 def index():
@@ -193,14 +195,17 @@ def get_team_member():
 @app.route('/api/language', methods=['GET'])
 def get_languages():
 	languages = Language.query.all()
-	return jsonify(langResult = [langEle.serialize() for langEle in languages])
+	return jsonify(langsResult = [langEle.serialize() for langEle in languages])
 
 @app.route('/api/language/<int:language_id>', methods=['GET'])
 def get_language(language_id):
 	language = Language.query.get(language_id)
-	if len(language) == 0:
+	print(type(language))
+	langResult = jsonify(langResult = [language.serialize()])
+	print(type(langResult))
+	if len(langResult) == 0:
 		abort(404)
-	return jsonify(language)
+	return langResult
 
 @app.route('/api/skillset', methods=['GET'])
 def get_skillsets():
