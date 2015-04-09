@@ -11,6 +11,7 @@ db = SQLAlchemy(app)
 #db.init_app(app)
 from models import *
 app.config.update(dict(
+	DEBUG=True,
 	SECRET_KEY = 'development key',
 	USERNAME = 'admin',
 	PASSWORD = 'default'
