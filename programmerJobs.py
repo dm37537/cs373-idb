@@ -86,113 +86,50 @@ def result():
 
 	return render_template('result.html', result=outputStr)
 
-'''
-# API
-@app.route('/api/job', methods=['GET'])
-def get_jobs():
-	return jsonify({'jobs': jobs})
-
-@app.route('/api/job/<int:job_id>', methods=['GET'])
-def get_job(job_id):
-	job = [job for job in jobs if job['job_ID'] == job_id]
-	if len(job) == 0:
-		abort(404)
-	return jsonify({'job': job[0]})
-
-@app.route('/api/company', methods=['GET'])
-def get_companies():
-	return jsonify({'companies': companies})
-		
-@app.route('/api/company/<int:company_id>', methods=['GET'])
-def get_company(company_id):
-	company = [company for company in companies if company['company_ID'] == company_id]
-	if len(company) == 0:
-		abort(404)
-	return jsonify({'company': company[0]})
-
-@app.route('/api/location', methods=['GET'])
-def get_locations():
-	return jsonify({'locations': locations})
-
-@app.route('/api/location/<int:location_id>', methods=['GET'])
-def get_location(location_id):
-	location = [location for location in locations if location['location_ID'] == location_id]
-	if len(location) == 0:
-		abort(404)
-	return jsonify({'location': location[0]})
-	
-#Member
-@app.route('/api/member', methods=['GET'])
-def get_team_member():
-	return jsonify({'members': member})
-
-@app.route('/api/language', methods=['GET'])
-def get_languages():
-	return jsonify({'languages': languages})
-
-@app.route('/api/language/<int:language_id>', methods=['GET'])
-def get_language(language_id):
-	language = [language for language in languages if language['language_ID'] == language_id]
-	if len(language) == 0:
-		abort(404)
-	return jsonify({'language': language[0]})
-
-@app.route('/api/skillset', methods=['GET'])
-def get_skillsets():
-	return jsonify({'skillsets': skillsets})
-
-@app.route('/api/skillset/<int:skillset_id>', methods=['GET'])
-def get_skillset(skillset_id):
-	skillset = [skillset for skillset in skillsets if skillset['skillset_ID'] == skillset_id]
-	if len(skillset) == 0:
-		abort(404)
-	return jsonify({'skillset': skillset[0]})
-'''
 
 # API
 @app.route('/api/job', methods=['GET'])
 def get_jobs():
 	jobs = Job.query.all()
-	return jsonify(jobs)
+	return jsonify(Jobs = [job.serialize() for job in jobs])
 
 @app.route('/api/job/<int:job_id>', methods=['GET'])
 def get_job(job_id):
 	job = Job.query.get(job_id)
-	if len(job) == 0:
-		abort(404)
-	return jsonify(job)
+	if not job:
+		abort(jsonify({"error": "Item does not exist"}))
+	return jsonify(job.serialize())
 
 @app.route('/api/company', methods=['GET'])
 def get_companies():
 	companies = Company.query.all()
-	return jsonify([comEle.serialize() for comEle in companies])
+	return jsonify(Companies = [comEle.serialize() for comEle in companies])
 		
 @app.route('/api/company/<int:company_id>', methods=['GET'])
 def get_company(company_id):
 	company = Company.query.get(company_id)
-	Result = jsonify([company.serialize()])
-	if len(company) == 0:
-		abort(404)
-	return Result
+	if not company:
+		abort(jsonify({"error": "Item does not exist"}))
+	return jsonify(company.serialize())
 
 @app.route('/api/location', methods=['GET'])
 def get_locations():
 	locations = Location.query.all()
-	return jsonify([locEle.serialize() for locEle in locations])
+	return jsonify(locations = [locEle.serialize() for locEle in locations])
 
 @app.route('/api/location/<int:location_id>', methods=['GET'])
 def get_location(location_id):
 	location = Location.query.get(location_id)
-	Result = jsonify(location.serialize())
-	if len(Result) == 0:
-		abort(404)
-	return Result
+	if not location:
+		abort(jsonify({"error": "Item does not exist"}))
+	return jsonify(location.serialize())
 	
 #Member
 @app.route('/api/member', methods=['GET'])
 def get_team_member():
-	member = ''
-	return jsonify(member)
+	member = Member.query.all()
+	return jsonify(Members = [memEle.serialize() for memEle in member])
+	
 
 @app.route('/api/language', methods=['GET'])
 def get_languages():
@@ -202,22 +139,21 @@ def get_languages():
 @app.route('/api/language/<int:language_id>', methods=['GET'])
 def get_language(language_id):
 	language = Language.query.get(language_id)
-	langResult =jsonify(language.serialize())
 	if not language:
-		abort(404)
-	return langResult
+		abort(jsonify({"error": "Item does not exist"}))
+	return jsonify(language.serialize())
 
 @app.route('/api/skillset', methods=['GET'])
 def get_skillsets():
 	skillsets = Skillset.query.all()
-	return jsonify(skillsets)
+	return jsonify(Skillsets = [skillset.serialize() for skillset in skillsets])
 
 @app.route('/api/skillset/<int:skillset_id>', methods=['GET'])
 def get_skillset(skillset_id):
 	skillset = Skillset.query.get(skillset_id)
-	if len(skillset) == 0:
-		abort(404)
-	return jsonify(skillset)
+	if not skillset :
+		abort(jsonify({"error": "Item does not exist"}))
+	return jsonify(skillset.serialize())
 
 
 
@@ -247,12 +183,14 @@ def get_language_page(id=None):
 
 @app.route('/location')
 def get_locations_page():
+	locations = Location.query.all()
 	return render_template('locations.html', langJson=languages, cmpyJson=companies, locJson=locations)
 
 @app.route('/location/<name>')
-def get_location_page(name=None):
-	location = [location for location in locations if location['location_name'] == name]
-	location = location[0]
+def get_location_page(langId=None):
+	#location = [location for location in locations if location['location_name'] == name]
+	#location = location[0]
+	location = Location.query.get(langID)
 	return render_template('location.html', locJson = location, langJson=languages, cmpyJson=companies, locsJson=locations, jobJson=jobs, skillsetJson=skillsets)
 
 @app.route('/skillset/<name>')

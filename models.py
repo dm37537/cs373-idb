@@ -200,7 +200,7 @@ class Skillset(db.Model):
 			'skillset_description' : self.skillset_description,
 			'skillset_image' : self.skillset_image,
 			'skillset_wiki_description' : self.skillset_wiki_description,
-			'skillset_wiki_link' : skillset_wiki_link
+			'skillset_wiki_link' : self.skillset_wiki_link
 			}
 
 	
