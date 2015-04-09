@@ -152,46 +152,46 @@ def get_skillset(skillset_id):
 @app.route('/api/job', methods=['GET'])
 def get_jobs():
 	jobs = Job.query.all()
-	return jsonify(jobs)
+	return jsonify(Jobs = [job.serialize() for job in jobs])
 
 @app.route('/api/job/<int:job_id>', methods=['GET'])
 def get_job(job_id):
 	job = Job.query.get(job_id)
 	if len(job) == 0:
 		abort(404)
-	return jsonify(job)
+	return jsonify(job.serialize())
 
 @app.route('/api/company', methods=['GET'])
 def get_companies():
 	companies = Company.query.all()
-	return jsonify([comEle.serialize() for comEle in companies])
+	return jsonify(Companies = [comEle.serialize() for comEle in companies])
 		
 @app.route('/api/company/<int:company_id>', methods=['GET'])
 def get_company(company_id):
 	company = Company.query.get(company_id)
-	Result = jsonify([company.serialize()])
-	if len(company) == 0:
+	Result = jsonify(company.serialize())
+	if not company == 0:
 		abort(404)
 	return Result
 
 @app.route('/api/location', methods=['GET'])
 def get_locations():
 	locations = Location.query.all()
-	return jsonify([locEle.serialize() for locEle in locations])
+	return jsonify(locations = [locEle.serialize() for locEle in locations])
 
 @app.route('/api/location/<int:location_id>', methods=['GET'])
 def get_location(location_id):
 	location = Location.query.get(location_id)
 	Result = jsonify(location.serialize())
-	if len(Result) == 0:
+	if not location:
 		abort(404)
 	return Result
 	
 #Member
 @app.route('/api/member', methods=['GET'])
 def get_team_member():
-	member = ''
-	return jsonify(member)
+	member = Member.query.all()
+	return jsonify(Members = [memEle.serialize() for memEle in member])
 
 @app.route('/api/language', methods=['GET'])
 def get_languages():
@@ -209,14 +209,14 @@ def get_language(language_id):
 @app.route('/api/skillset', methods=['GET'])
 def get_skillsets():
 	skillsets = Skillset.query.all()
-	return jsonify(skillsets)
+	return jsonify(Skillsets = [skillset.serialize() for skillset in skillsets])
 
 @app.route('/api/skillset/<int:skillset_id>', methods=['GET'])
 def get_skillset(skillset_id):
 	skillset = Skillset.query.get(skillset_id)
-	if len(skillset) == 0:
+	if not skillset :
 		abort(404)
-	return jsonify(skillset)
+	return jsonify(skillset.serialize())
 
 
 
