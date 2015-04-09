@@ -868,3 +868,827 @@ TypeError: cannot convert dictionary update sequence element #0 to a sequence
 72.177.49.135 - - [09/Apr/2015 08:18:25] "GET /index HTTP/1.1" 200 -
 72.177.49.135 - - [09/Apr/2015 08:18:25] "GET /api/company?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
 72.177.49.135 - - [09/Apr/2015 08:18:29] "GET /language HTTP/1.1" 200 -
+70.114.196.229 - - [09/Apr/2015 08:23:25] "GET /api HTTP/1.1" 404 -
+70.114.196.229 - - [09/Apr/2015 08:23:36] "GET /company HTTP/1.1" 404 -
+70.114.196.229 - - [09/Apr/2015 08:23:50] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+70.114.196.229 - - [09/Apr/2015 08:23:50] "GET /api/company?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+70.114.196.229 - - [09/Apr/2015 08:23:50] "GET /api/company?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+70.114.196.229 - - [09/Apr/2015 08:23:50] "GET /api/company?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+70.114.196.229 - - [09/Apr/2015 08:23:50] "GET /api/company?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+70.114.196.229 - - [09/Apr/2015 08:23:50] "GET /api/company?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+70.114.196.229 - - [09/Apr/2015 08:23:50] "GET /api/company?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+70.114.196.229 - - [09/Apr/2015 08:23:51] "GET /api/company?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+70.114.196.229 - - [09/Apr/2015 08:24:25] "GET /api/companies HTTP/1.1" 404 -
+70.114.196.229 - - [09/Apr/2015 08:24:29] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+70.114.196.229 - - [09/Apr/2015 08:24:29] "GET /api/company?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+70.114.196.229 - - [09/Apr/2015 08:24:29] "GET /api/company?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+70.114.196.229 - - [09/Apr/2015 08:24:29] "GET /api/company?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+70.114.196.229 - - [09/Apr/2015 08:24:30] "GET /api/company?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+70.114.196.229 - - [09/Apr/2015 08:24:30] "GET /api/company?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+70.114.196.229 - - [09/Apr/2015 08:24:30] "GET /api/company?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+54.80.218.236 - - [09/Apr/2015 08:25:57] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.196.48.29 - - [09/Apr/2015 08:25:57] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.196.48.29 - - [09/Apr/2015 08:25:59] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.196.48.29 - - [09/Apr/2015 08:26:06] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.80.218.236 - - [09/Apr/2015 08:26:06] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+70.114.196.229 - - [09/Apr/2015 08:26:07] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+70.114.196.229 - - [09/Apr/2015 08:26:08] "GET /api/company?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+70.114.196.229 - - [09/Apr/2015 08:26:08] "GET /api/company?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+70.114.196.229 - - [09/Apr/2015 08:26:08] "GET /api/company?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+70.114.196.229 - - [09/Apr/2015 08:26:08] "GET /api/company?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+70.114.196.229 - - [09/Apr/2015 08:26:08] "GET /api/company?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+70.114.196.229 - - [09/Apr/2015 08:26:08] "GET /api/company?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+54.196.48.29 - - [09/Apr/2015 08:26:43] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.80.218.236 - - [09/Apr/2015 08:26:45] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.196.48.29 - - [09/Apr/2015 08:26:45] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.196.48.29 - - [09/Apr/2015 08:26:47] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.80.218.236 - - [09/Apr/2015 08:26:58] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.196.48.29 - - [09/Apr/2015 08:27:01] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.80.218.236 - - [09/Apr/2015 08:27:02] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.80.218.236 - - [09/Apr/2015 08:27:03] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.196.48.29 - - [09/Apr/2015 08:29:43] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.80.218.236 - - [09/Apr/2015 08:29:43] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.80.218.236 - - [09/Apr/2015 08:29:58] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+ * Detected change in '/home/kvalle/cs373-idb/programmerJobs.py', reloading
+ * Restarting with stat
+ * Detected change in '/home/kvalle/cs373-idb/programmerJobs.py', reloading
+ * Restarting with stat
+54.80.218.236 - - [09/Apr/2015 08:38:25] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.196.48.29 - - [09/Apr/2015 08:38:26] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.80.218.236 - - [09/Apr/2015 08:38:26] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.80.218.236 - - [09/Apr/2015 08:38:52] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.196.48.29 - - [09/Apr/2015 08:38:53] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.80.218.236 - - [09/Apr/2015 08:49:07] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.80.218.236 - - [09/Apr/2015 08:49:08] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.196.48.29 - - [09/Apr/2015 08:49:09] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.80.218.236 - - [09/Apr/2015 08:49:10] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.196.48.29 - - [09/Apr/2015 08:49:10] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.196.48.29 - - [09/Apr/2015 08:49:11] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+72.177.49.135 - - [09/Apr/2015 09:10:27] "GET / HTTP/1.1" 302 -
+72.177.49.135 - - [09/Apr/2015 09:10:27] "GET /index HTTP/1.1" 200 -
+72.177.49.135 - - [09/Apr/2015 09:10:46] "GET /index HTTP/1.1" 200 -
+72.177.49.135 - - [09/Apr/2015 09:10:47] "GET /static/custom.css HTTP/1.1" 304 -
+72.177.49.135 - - [09/Apr/2015 09:10:47] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+72.177.49.135 - - [09/Apr/2015 09:10:47] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+72.177.49.135 - - [09/Apr/2015 09:10:47] "GET /static/images/language_icon.png HTTP/1.1" 304 -
+72.177.49.135 - - [09/Apr/2015 09:10:47] "GET /static/images/jumbotron/splash_jumbotron.jpg HTTP/1.1" 304 -
+72.177.49.135 - - [09/Apr/2015 09:10:47] "GET /static/images/company_icon.png HTTP/1.1" 304 -
+72.177.49.135 - - [09/Apr/2015 09:10:47] "GET /static/images/location_icon.png HTTP/1.1" 304 -
+72.177.49.135 - - [09/Apr/2015 09:20:47] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+72.177.49.135 - - [09/Apr/2015 09:20:48] "GET /api/company?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+72.177.49.135 - - [09/Apr/2015 09:20:48] "GET /api/company?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+72.177.49.135 - - [09/Apr/2015 09:20:48] "GET /api/company?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+72.177.49.135 - - [09/Apr/2015 09:20:48] "GET /api/company?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+72.177.49.135 - - [09/Apr/2015 09:20:48] "GET /api/company?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+72.177.49.135 - - [09/Apr/2015 09:20:48] "GET /api/company?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+72.177.49.135 - - [09/Apr/2015 09:20:48] "GET /api/company?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+54.80.218.236 - - [09/Apr/2015 09:50:54] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+54.80.218.236 - - [09/Apr/2015 09:50:54] "GET /api/company HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kvalle/cs373-idb/programmerJobs.py", line 167, in get_companies
+    return jsonify(companies)
+  File "/home/kvalle/.virtualenvs/virtualEnvironment/lib/python2.7/site-packages/flask/json.py", line 237, in jsonify
+    return current_app.response_class(dumps(dict(*args, **kwargs),
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+ * Detected change in '/home/kvalle/cs373-idb/programmerJobs.py', reloading
+ * Restarting with stat
+66.102.7.149 - - [09/Apr/2015 10:02:57] "GET /api/job HTTP/1.1" 200 -
+72.177.49.135 - - [09/Apr/2015 10:37:15] "GET /index HTTP/1.1" 200 -
+72.177.49.135 - - [09/Apr/2015 10:37:15] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+72.177.49.135 - - [09/Apr/2015 10:37:15] "GET /static/custom.css HTTP/1.1" 304 -
+72.177.49.135 - - [09/Apr/2015 10:37:15] "GET /static/images/language_icon.png HTTP/1.1" 304 -
+72.177.49.135 - - [09/Apr/2015 10:37:15] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+72.177.49.135 - - [09/Apr/2015 10:37:15] "GET /static/images/company_icon.png HTTP/1.1" 304 -
+72.177.49.135 - - [09/Apr/2015 10:37:16] "GET /static/images/jumbotron/splash_jumbotron.jpg HTTP/1.1" 304 -
+72.177.49.135 - - [09/Apr/2015 10:37:16] "GET /static/images/location_icon.png HTTP/1.1" 304 -
+66.102.7.149 - - [09/Apr/2015 12:30:42] "GET / HTTP/1.1" 302 -
+66.102.7.156 - - [09/Apr/2015 12:30:42] "GET /index HTTP/1.1" 200 -
+66.102.7.156 - - [09/Apr/2015 12:30:42] "GET /favicon.ico HTTP/1.1" 404 -
+72.177.49.135 - - [09/Apr/2015 13:11:10] "GET /index HTTP/1.1" 200 -
+72.177.49.135 - - [09/Apr/2015 13:11:10] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+72.177.49.135 - - [09/Apr/2015 13:11:10] "GET /static/custom.css HTTP/1.1" 304 -
+72.177.49.135 - - [09/Apr/2015 13:11:10] "GET /static/images/language_icon.png HTTP/1.1" 304 -
+72.177.49.135 - - [09/Apr/2015 13:11:10] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+72.177.49.135 - - [09/Apr/2015 13:11:10] "GET /static/images/company_icon.png HTTP/1.1" 304 -
+72.177.49.135 - - [09/Apr/2015 13:11:10] "GET /static/images/jumbotron/splash_jumbotron.jpg HTTP/1.1" 304 -
+72.177.49.135 - - [09/Apr/2015 13:11:10] "GET /static/images/location_icon.png HTTP/1.1" 304 -

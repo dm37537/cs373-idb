@@ -8,8 +8,8 @@ import json
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 db = SQLAlchemy(app)
-#db.init_app(app)
 from models import *
+
 app.config.update(dict(
 	DEBUG=True,
 	SECRET_KEY = 'development key',
@@ -23,11 +23,11 @@ def init_db():
 	db.create_all()
 
 def populate_db():
-	#with app.open_resource('SQL/category_data_insert.sql', mode='r') as f:
-	#	db.get_engine(app).execute(f.read)
-	#with app.open_resource('SQL/job_data_insert.sql', mode='r') as f:
-	#	db.get_engine(app).execute(f.read)
 	f = open('SQL/category_data_insert.sql', 'r')
+	for line in f:
+		db.get_engine(app).execute(line)
+	f.close()
+	f = open('SQL/job_data_insert.sql', 'r')
 	for line in f:
 		db.get_engine(app).execute(line)
 	f.close()
