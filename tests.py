@@ -162,6 +162,10 @@ class ProgrammerJobsTestCase(unittest.TestCase):
 		assert skillset.skillset_name == 'IOS'
 		assert skillset.skillset_description == 'ipad'
 
+# change path in programmerjobs.py to 
+# 	return redirect('http://127.0.0.1:5000/index', code=302)
+
+
 # Test languages
 class LanguageApiTest(unittest.TestCase):
 
