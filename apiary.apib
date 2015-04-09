@@ -23,28 +23,26 @@ Documentation for Programmer Jobs API
 Returns a list of all jobs and their ids
 + Response 200 (application/json)
     
-            [{
-                "job_ID": 1, 
-                "job_title": "Software Developer 4", 
-                "location_ID": 3, 
-                "company_ID": 2, 
-                "language_ID": 1, 
-                "skillset_ID": 5, 
-                "job_description": "Design, configure, and implement our data systems and stream processing pipelines/nCode analytics jobs, web services, and other components/nWork with operations to build and configure maintainable, resource-efficient systems/nWork with data pipelines using Kafka, Cassandra, Spark/nLeverage Event processing technologies to deliver real time analytics features/nDevelop a cloud service that would be processing billions of events a day/nLeverage fast data pipelines for real time analytics on various Oracle SaaS applications/nContribute ideas for continually improving the team's productivity, job enjoyment, and code quality./nActively mentor junior developers to develop their technical expertise/nHave fun engineering software and scalable systems", 
-                "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=90953"
-                
-            },
+        {
+          "Jobs": [
             {
-                "job_ID": 2, 
-                "job_title": "Software Developer 2", 
-                "location_ID": 3, 
-                "company_ID": 2, 
-                "language_ID": 1, 
-                "skillset_ID": 4, 
-                "job_description": "Are you interested in building Identity infrastructure for the cloud? Oracle's Cloud Infrastructure team is building new Infrastructure-as-a-Service technologies that operate at high scale in a broadly distributed multi-tenant cloud environment. Our customers run their businesses on our cloud, and our mission is to provide them with best in class compute, storage, networking, database, security, and an ever expanding set of foundational cloud-based services./n/nWe're looking for Software Developer with expertise and passion in solving difficult problems in distributed systems, virtualized infrastructure, and highly available services. If this is you, at Oracle you can design and build innovative new systems from the ground up. These are exciting times in our space - we are growing fast, still at an early stage, functioning like a startup and working on ambitious new initiatives. An engineer at any level can have significant technical and business impact./n/nAs a Software Developer, you will own and lead software architecture and development for Authentication and Authorization components of Oracle's Cloud Identity Infrastructure.  You should be a distributed systems generalist, able to build broad systems interactions, while being very hands-on, able to dive deep into any part of the stack and lower level system interactions. You should value simplicity and scale, work comfortably in a collaborative, agile environment, and be excited to learn.", 
-                "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=86141"
-            
-            }]
+              "company_id": 2, 
+              "job_description": "Design, configure, and implement our data systems and stream processing pipelines/nCode analytics jobs, web services, and other components/nWork with operations to build and configure maintainable, resource-efficient systems/nWork with data pipelines using Kafka, Cassandra, Spark/nLeverage Event processing technologies to deliver real time analytics features/nDevelop a cloud service that would be processing billions of events a day/nLeverage fast data pipelines for real time analytics on various Oracle SaaS applications/nContribute ideas for continually improving the team s productivity, job enjoyment, and code quality./nActively mentor junior developers to develop their technical expertise/nHave fun engineering software and scalable systems", 
+              "job_id": 1, 
+              "job_title": "Software Developer 4", 
+              "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=90953", 
+              "location_id": 3
+            }, 
+            {
+              "company_id": 2, 
+              "job_description": "Are you interested in building Identity infrastructure for the cloud? Oracle s Cloud Infrastructure team is building new Infrastructure-as-a-Service technologies that operate at high scale in a broadly distributed multi-tenant cloud environment. Our customers run their businesses on our cloud, and our mission is to provide them with best in class compute, storage, networking, database, security, and an ever expanding set of foundational cloud-based services./n/nWe re looking for Software Developer with expertise and passion in solving difficult problems in distributed systems, virtualized infrastructure, and highly available services. If this is you, at Oracle you can design and build innovative new systems from the ground up. These are exciting times in our space - we are growing fast, still at an early stage, functioning like a startup and working on ambitious new initiatives. An engineer at any level can have significant technical and business impact./n/nAs a Software Developer, you will own and lead software architecture and development for Authentication and Authorization components of Oracle s Cloud Identity Infrastructure.  You should be a distributed systems generalist, able to build broad systems interactions, while being very hands-on, able to dive deep into any part of the stack and lower level system interactions. You should value simplicity and scale, work comfortably in a collaborative, agile environment, and be excited to learn.", 
+              "job_id": 2, 
+              "job_title": "Software Developer 2", 
+              "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=86141", 
+              "location_id": 3
+            }, 
+            ...
+        ]}
 
 
 ## Job [/job/{id}]
@@ -57,14 +55,12 @@ Returns a list of all jobs and their ids
     + Body
 
             {
-                "job_ID": 1, 
-                "job_title": "Software Developer 4", 
-                "location_ID": 3, 
-                "company_ID": 2, 
-                "language_ID": 1, 
-                "skillset_ID": 5, 
-                "job_description": "Design, configure, and implement our data systems and stream processing pipelines/nCode analytics jobs, web services, and other components/nWork with operations to build and configure maintainable, resource-efficient systems/nWork with data pipelines using Kafka, Cassandra, Spark/nLeverage Event processing technologies to deliver real time analytics features/nDevelop a cloud service that would be processing billions of events a day/nLeverage fast data pipelines for real time analytics on various Oracle SaaS applications/nContribute ideas for continually improving the team's productivity, job enjoyment, and code quality./nActively mentor junior developers to develop their technical expertise/nHave fun engineering software and scalable systems", 
-                "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=90953"
+              "company_id": 2, 
+              "job_description": "Design, configure, and implement our data systems and stream processing pipelines/nCode analytics jobs, web services, and other components/nWork with operations to build and configure maintainable, resource-efficient systems/nWork with data pipelines using Kafka, Cassandra, Spark/nLeverage Event processing technologies to deliver real time analytics features/nDevelop a cloud service that would be processing billions of events a day/nLeverage fast data pipelines for real time analytics on various Oracle SaaS applications/nContribute ideas for continually improving the team s productivity, job enjoyment, and code quality./nActively mentor junior developers to develop their technical expertise/nHave fun engineering software and scalable systems", 
+              "job_id": 1, 
+              "job_title": "Software Developer 4", 
+              "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=90953", 
+              "location_id": 3
             }
    
 
@@ -85,19 +81,22 @@ Returns a list of all jobs and their ids
 ### List all Location [GET]
 + Response 200 (application/json)
 
-            [{
-                "location_ID" : 1,
-                "location_name": "Austin, TX",
-                "location_description" : "Austin is the capital of the US state of Texas and the seat of Travis County. Located in Central Texas, Austin is the 11th-most populous city in the United States and the fourth-most populous city in Texas.",
-                "location_image" : "http://www.seesawaustin.com/wp-content/uploads/2014/07/Austin-jobs.jpg"
-                
-            },{
-                "location_ID" : 2,
-                "location_name": "Seattle, WA",
-                "location_description" : "Seattle is a coastal seaport city and the seat of King County, in the U.S. state of Washington. With an estimated 652,405 residents as of 2013, Seattle is the largest city in both the State of Washington ...",
-                "location_image" : "http://upload.wikimedia.org/wikipedia/commons/2/2f/Space_Needle002.jpg"
-                
-            }]
+            {
+              "locations": [
+                {
+                  "location_description": "Austin is the capital of the US state of Texas and the seat of Travis County. Located in Central Texas, Austin is the 11th-most populous city in the United States and the fourth-most populous city in Texas.", 
+                  "location_id": 1, 
+                  "location_image": "static/images/location_icon/austin.jpg", 
+                  "location_name": "Austin, TX"
+                }, 
+                {
+                  "location_description": "Seattle is a coastal seaport city and the seat of King County, in the U.S. state of Washington. With an estimated 652,405 residents as of 2013, Seattle is the largest city in both the State of Washington ...", 
+                  "location_id": 2, 
+                  "location_image": "static/images/location_icon/seattle.jpg", 
+                  "location_name": "Seattle, WA"
+                }, 
+                ...
+            ]}
 
 
 ## Location [/location/{id}]
@@ -111,10 +110,10 @@ Returns a list of all jobs and their ids
     + Body
         
             {
-                "location_ID" : 1,
-                "location_name": "Austin, TX",
-                "location_description" : "Austin is the capital of the US state of Texas and the seat of Travis County. Located in Central Texas, Austin is the 11th-most populous city in the United States and the fourth-most populous city in Texas.",
-                "location_image" : "http://www.seesawaustin.com/wp-content/uploads/2014/07/Austin-jobs.jpg"
+              "location_description": "Austin is the capital of the US state of Texas and the seat of Travis County. Located in Central Texas, Austin is the 11th-most populous city in the United States and the fourth-most populous city in Texas.", 
+              "location_id": 1, 
+              "location_image": "static/images/location_icon/austin.jpg", 
+              "location_name": "Austin, TX"
             }
         
 + Response 404
@@ -133,21 +132,26 @@ Returns a list of all jobs and their ids
 ### List all Languages [GET]
 + Response 200 (application/json)
             
-            [{
-                "language_ID" : 1,
-                "language_name": "Java",
-                "language_description" : "Muti platiform Language",
-                "language_image" : "images/language_icon/java_icon.png",
-                "language_wiki_description" : "Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers \"write once, run anywhere\" (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers. Java was originally developed by James Gosling at Sun Microsystems (which has since merged into Oracle Corporation) and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them.",
-                "language_wiki_link" : "http://en.wikipedia.org/wiki/Java_%28programming_language%29"
-            },{
-                "language_ID" : 2,
-                "language_name": "C++",
-                "language_description" : "great Language",
-                "language_image" : "images/language_icon/cpp_icon.png",
-                "language_wiki_description" : "C++ is a general-purpose programming language. It has imperative, object-oriented and generic programming features, while also providing the facilities for low-level memory manipulation.",
-                "language_wiki_link" : "http://en.wikipedia.org/wiki/C%2B%2B"
-            }]
+            {
+              "languages": [
+                {
+                  "language_description": "Muti platiform Language", 
+                  "language_id": 1, 
+                  "language_image": "images/language_icon/java_icon.png", 
+                  "language_name": "Java", 
+                  "language_wiki_description": "Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers  write once, run anywhere  (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers. Java was originally developed by James Gosling at Sun Microsystems (which has since merged into Oracle Corporation) and released in 1995 as a core component of Sun Microsystems  Java platform. The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them.", 
+                  "language_wiki_link": "http://en.wikipedia.org/wiki/Java_%28programming_language%29"
+                }, 
+                {
+                  "language_description": "great Language", 
+                  "language_id": 2, 
+                  "language_image": "images/language_icon/cpp_icon.png", 
+                  "language_name": "C++", 
+                  "language_wiki_description": "C++ is a general-purpose programming language. It has imperative, object-oriented and generic programming features, while also providing the facilities for low-level memory manipulation.", 
+                  "language_wiki_link": "http://en.wikipedia.org/wiki/C%2B%2B"
+                }, 
+                ...
+            ]}
 
 
 ## Language [/language/{id}]
@@ -160,12 +164,12 @@ Returns a list of all jobs and their ids
     + Body
     
             {
-                "language_ID" : 1,
-                "language_name": "Java",
-                "language_description" : "Muti platiform Language",
-                "language_image" : "images/language_icon/java_icon.png",
-                "language_wiki_description" : "Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers \"write once, run anywhere\" (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers. Java was originally developed by James Gosling at Sun Microsystems (which has since merged into Oracle Corporation) and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them.",
-                "language_wiki_link" : "http://en.wikipedia.org/wiki/Java_%28programming_language%29"
+              "language_description": "Muti platiform Language", 
+              "language_id": 1, 
+              "language_image": "images/language_icon/java_icon.png", 
+              "language_name": "Java", 
+              "language_wiki_description": "Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers  write once, run anywhere  (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers. Java was originally developed by James Gosling at Sun Microsystems (which has since merged into Oracle Corporation) and released in 1995 as a core component of Sun Microsystems  Java platform. The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them.", 
+              "language_wiki_link": "http://en.wikipedia.org/wiki/Java_%28programming_language%29"
             }
         
 + Response 404
@@ -185,19 +189,24 @@ Returns a list of all jobs and their ids
 ### List all Companies [GET]
 + Response 200 (application/json)
 
-            [{
-                "company_ID": 1,
-                "company_name": "Google",
-                "company_description" : "Search engine",
-                "company_image": "http://www.google.com/doodle4google/images/splashes/featured.png",
-                "company_site": "www.google.com"
-            },{
-                "company_ID": 2,
-                "company_name": "Oracle",
-                "company_description" : "Database",
-                "company_image" : "http://192.95.57.65/wp-content/uploads/2014/07/logo-oracle.jpg",
-                "company_site": "www.oracle.com"
-            }]
+            {
+              "Companies": [
+                {
+                  "company_description": "Search engine", 
+                  "company_id": 1, 
+                  "company_image": "http://www.google.com/doodle4google/images/splashes/featured.png", 
+                  "company_name": "Google", 
+                  "company_site": "www.google.com"
+                }, 
+                {
+                  "company_description": "Database", 
+                  "company_id": 2, 
+                  "company_image": "http://192.95.57.65/wp-content/uploads/2014/07/logo-oracle.jpg", 
+                  "company_name": "Oracle", 
+                  "company_site": "www.oracle.com"
+                }, 
+                ...
+            ]}
         
         
 
@@ -211,11 +220,11 @@ Returns a list of all jobs and their ids
     + Body
 
             {
-                "company_ID": 1,
-                "company_name": "Google",
-                "company_description" : "Search engine",
-                "company_image": "http://www.google.com/doodle4google/images/splashes/featured.png",
-                "company_site": "www.google.com"
+              "company_description": "Search engine", 
+              "company_id": 1, 
+              "company_image": "http://www.google.com/doodle4google/images/splashes/featured.png", 
+              "company_name": "Google", 
+              "company_site": "www.google.com"
             }
 
 + Response 404
@@ -236,21 +245,26 @@ Returns a list of all jobs and their ids
 Returns a list of all jobs and their ids
 + Response 200 (application/json)
         
-            [{
-                "skillset_ID" : 1,
-                "skillset_name": "Web app, Back-end",
-                "skillset_description" : "Spring, J2EE, Hibernate",
-                "skillset_wiki_description" : "A web application or web app is any software that runs in a web browser. It is created in a browser-supported programming language (such as the combination of JavaScript, HTML and CSS) and relies on a web browser to render the application.",
-                "skillset_wiki_link" : "http://en.wikipedia.org/wiki/Front_and_back_ends",
-                "skillset_image" : "static/images/skillset_icon/web_app_backend_icon.png"
-            },{
-                "skillset_ID" : 2,
-                "skillset_name": "Mobile computing",
-                "skillset_description" : "Mobile computing, IOS, Andriod",
-                "skillset_wiki_description" :"Mobile computing is human computer interaction by which a computer is expected to be transported during normal usage. Mobile computing involves mobile communication, mobile hardware, and mobile software. Communication issues include ad hoc and infrastructure networks as well as communication properties, protocols, data formats and concrete technologies. Hardware includes mobile devices or device components. Mobile software deals with the characteristics and requirements of mobile applications." ,
-                "skillset_wiki_link" : "http://en.wikipedia.org/wiki/Mobile_computing",
-                "skillset_image" : "static/images/skillset_icon/mobile_computing_icon.png"
-            }]
+            {
+              "Skillsets": [
+                {
+                  "skillset_description": "Spring, J2EE, Hibernate", 
+                  "skillset_id": 1, 
+                  "skillset_image": "static/images/skillset_icon/web_app_backend_icon.png", 
+                  "skillset_name": "Web app, Back-end", 
+                  "skillset_wiki_description": "A web application or web app is any software that runs in a web browser. It is created in a browser-supported programming language (such as the combination of JavaScript, HTML and CSS) and relies on a web browser to render the application.", 
+                  "skillset_wiki_link": "http://en.wikipedia.org/wiki/Front_and_back_ends"
+                }, 
+                {
+                  "skillset_description": "Mobile computing, IOS, Andriod", 
+                  "skillset_id": 2, 
+                  "skillset_image": "static/images/skillset_icon/mobile_computing_icon.png", 
+                  "skillset_name": "Mobile computing", 
+                  "skillset_wiki_description": "Mobile computing is human computer interaction by which a computer is expected to be transported during normal usage. Mobile computing involves mobile communication, mobile hardware, and mobile software. Communication issues include ad hoc and infrastructure networks as well as communication properties, protocols, data formats and concrete technologies. Hardware includes mobile devices or device components. Mobile software deals with the characteristics and requirements of mobile applications.", 
+                  "skillset_wiki_link": "http://en.wikipedia.org/wiki/Mobile_computing"
+                }, 
+                ...
+            ]}
 
 ## Skillset [/skillset/{id}]
 + Parameters
@@ -262,12 +276,12 @@ Returns a list of all jobs and their ids
     + Body
 
             {
-                "skillset_ID" : 1,
-                "skillset_name": "Web app, Back-end",
-                "skillset_description" : "Spring, J2EE, Hibernate",
-                "skillset_wiki_description" : "A web application or web app is any software that runs in a web browser. It is created in a browser-supported programming language (such as the combination of JavaScript, HTML and CSS) and relies on a web browser to render the application.",
-                "skillset_wiki_link" : "http://en.wikipedia.org/wiki/Front_and_back_ends",
-                "skillset_image" : "static/images/skillset_icon/web_app_backend_icon.png"
+              "skillset_description": "Spring, J2EE, Hibernate", 
+              "skillset_id": 1, 
+              "skillset_image": "static/images/skillset_icon/web_app_backend_icon.png", 
+              "skillset_name": "Web app, Back-end", 
+              "skillset_wiki_description": "A web application or web app is any software that runs in a web browser. It is created in a browser-supported programming language (such as the combination of JavaScript, HTML and CSS) and relies on a web browser to render the application.", 
+              "skillset_wiki_link": "http://en.wikipedia.org/wiki/Front_and_back_ends"
             }
 
 + Response 404
