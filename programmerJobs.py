@@ -60,12 +60,8 @@ f.close()
 # The following are examples of different templates in action
 @app.route('/')
 def root():
-	# return redirect('http://104.130.229.90:5000/index.html', code=302)
-<<<<<<< Updated upstream
 	return redirect('http://104.130.229.90:5000/index', code=302)
-=======
-	return redirect('http://127.0.0.1:5000/index.html', code=302)
->>>>>>> Stashed changes
+	# return redirect('http://127.0.0.1:5000/index', code=302)
 
 @app.route('/index')
 def index():
@@ -197,7 +193,7 @@ def get_team_member():
 @app.route('/api/language', methods=['GET'])
 def get_languages():
 	languages = Language.query.all()
-	return jsonify(languages)
+	return jsonify(langResult = [langEle.serialize() for langEle in languages])
 
 @app.route('/api/language/<int:language_id>', methods=['GET'])
 def get_language(language_id):

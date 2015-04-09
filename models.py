@@ -95,6 +95,16 @@ class Language(db.Model):
 		self.language_description = Language_Description
 		self.language_wiki_link = Language_Wiki_Link
 	
+	def serialize(self):
+		#return dict
+		return {
+			'language_ID' : self.language_ID,
+			'language_name' : self.language_name,
+			'language_image' : self.language_image,
+			'language_description' : self.language_description,
+			'language_wiki_link' : self.language_wiki_link
+			}
+
 	def __repr__(self):
 		return '<Language %r>' % self.language_name
 
