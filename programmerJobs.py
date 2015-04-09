@@ -107,10 +107,9 @@ def get_companies():
 @app.route('/api/company/<int:company_id>', methods=['GET'])
 def get_company(company_id):
 	company = Company.query.get(company_id)
-	Result = jsonify(company.serialize())
 	if not company:
 		abort(jsonify({"error": "Item does not exist"}))
-	return Result
+	return jsonify(company.serialize())
 
 @app.route('/api/location', methods=['GET'])
 def get_locations():
@@ -120,16 +119,16 @@ def get_locations():
 @app.route('/api/location/<int:location_id>', methods=['GET'])
 def get_location(location_id):
 	location = Location.query.get(location_id)
-	Result = jsonify(location.serialize())
 	if not location:
 		abort(jsonify({"error": "Item does not exist"}))
-	return Result
+	return jsonify(location.serialize())
 	
 #Member
 @app.route('/api/member', methods=['GET'])
 def get_team_member():
 	member = Member.query.all()
 	return jsonify(Members = [memEle.serialize() for memEle in member])
+	
 
 @app.route('/api/language', methods=['GET'])
 def get_languages():
@@ -139,10 +138,9 @@ def get_languages():
 @app.route('/api/language/<int:language_id>', methods=['GET'])
 def get_language(language_id):
 	language = Language.query.get(language_id)
-	langResult =jsonify(language.serialize())
 	if not language:
 		abort(jsonify({"error": "Item does not exist"}))
-	return langResult
+	return jsonify(language.serialize())
 
 @app.route('/api/skillset', methods=['GET'])
 def get_skillsets():
