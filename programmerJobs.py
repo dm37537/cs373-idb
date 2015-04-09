@@ -253,7 +253,7 @@ def get_companies_page():
 def get_company_page(name=None):
 	company = [company for company in companies if company['company_name'] == name]
 	company = company[0]
-	return render_template('company.html', locJson = locations, langJson=languages, cmpyJson=companies, locsJson=locations, jobJson=jobs, skillsetJson=skillsets)
+	return render_template('company.html', cmpyJson = company, langJson=languages, cmpysJson=companies, locsJson=locations, jobJson=jobs, skillsetJson=skillsets)
 
 @app.route('/about')
 def get_about_page():
