@@ -193,7 +193,7 @@ def get_team_member():
 @app.route('/api/language', methods=['GET'])
 def get_languages():
 	languages = Language.query.all()
-	return jsonify(languages)
+	return jsonify(langResult = [langEle.serialize() for langEle in languages])
 
 @app.route('/api/language/<int:language_id>', methods=['GET'])
 def get_language(language_id):
