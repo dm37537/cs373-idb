@@ -5,7 +5,7 @@
                 "company_name": "Google",
                 "company_description" : "Search engine",
                 "company_image": "http://www.google.com/doodle4google/images/splashes/featured.png",
-		"company_site": "www.google.com"
+		        "company_site": "www.google.com"
                 
             },{
 
@@ -29,7 +29,7 @@
                 "company_name": "Facebook",
                 "company_description" : "Social Media",
                 "company_image" : "https://www.facebook.com/images/fb_icon_325x325.png",
-		"company_site": "www.facebook.com"
+		        "company_site": "www.facebook.com"
 
             },{
 
@@ -37,7 +37,7 @@
                 "company_name": "Twitter",
                 "company_description" : "Social Media",
                 "company_image" : "http://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/1267px-Twitter_bird_logo_2012.svg.png",
-		"company_site": "www.twitter.com"
+		        "company_site": "www.twitter.com"
 
             },{
 
@@ -45,7 +45,7 @@
                 "company_name": "LinkedIn",
                 "company_description" : "Online resume",
                 "company_image" : "http://fontmeme.com/images/Linkedin-Logo.jpg",
-		"company_site": "www.linkedin.com"
+		        "company_site": "www.linkedin.com"
 
             },{
 
@@ -53,7 +53,7 @@
                 "company_name": "IBM",
                 "company_description" : "computer",
                 "company_image" : "http://www.dataversity.net/wp-content/uploads/2013/11/ib1.jpg",
-		"company_site": "www.ibm.com"
+		        "company_site": "www.ibm.com"
 
             },{
 
@@ -61,7 +61,7 @@
                 "company_name": "Dropbox",
                 "company_description" : "Cloud service",
                 "company_image" : "http://2.bp.blogspot.com/-SBjTSn7XtSw/UuUFjuq_C6I/AAAAAAAABrQ/k-h3xYn-oTk/s1600/dropbox.png",
-		"company_site": "www.dropbox.com"
+		        "company_site": "www.dropbox.com"
 
             },{
 
@@ -69,7 +69,7 @@
                 "company_name": "Rackspace",
                 "company_description" : "Cloud server provider",
                 "company_image" : "http://caa48e96f11ddd896e56-cbd62a0ad7e2d388825529106f960d1e.r78.cf2.rackcdn.com/RackspaceLogoManagedCloudLogo.jpg",
-		"company_site": "www.rackspace.com"
+		        "company_site": "www.rackspace.com"
 
             },{
 
@@ -77,7 +77,7 @@
                 "company_name": "Indeed",
                 "company_description" : "Online yellow page for jobs",
                 "company_image" : "http://theundercoverrecruiter.com/wp-content/uploads/2014/04/Indeed-Logo.jpg",
-		"company_site": "www.indeed.com"
+		        "company_site": "www.indeed.com"
 
             }
     ]

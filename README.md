@@ -57,4 +57,19 @@ Setting up the project locally:
 6. In your browser, visit http://localhost:5000
 7. To exit the virtual environment, just type "deactivate".
 
+Accessing the remote server:
+
+1. Go to http://www.rackspace.com/knowledge_center/article/connecting-to-a-server-using-ssh-on-linux-or-mac-os and follow the instruction under "Generate a new SSH key pair"
+2. Email your id_rsa.pub file to kevinosvaldovalle@gmail.com (If you have security concerns, don't worry. There is a reason it's called a public key)
+3. Once i've added the key to the server, you should be able to access the server via ssh through "ssh kvalle@104.130.229.90" (We can just use my account as everything is already set up there)
+4. You should be prompted for a password, enter "redApple"
+5. To work on the project run "workon virtualEnvironment"
+
+Restarting the serving process on the server:
+1. In the virtual environment run "ps -C python"
+2. A process should return with a pid, usually this is a 3-5 digit number
+3. Run "kill pid" where pid is the pid from above
+4. Run "nohup python programmerJobs.py &"
+5. You can control-c and exit the server now. 
+
 Let me know if there is anything missing or unclear -Kevin

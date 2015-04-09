@@ -13,6 +13,8 @@ def main(w):
 	parse("INSERT INTO Location (" , data_list, w)
 	data_list = json.load(open('../Skillset.json', 'r'))
 	parse("INSERT INTO Skillset (" , data_list , w)
+	data_list = json.load(open('../Member.json', 'r'))
+	parse("INSERT INTO Member (" , data_list , w)
 	data_list = json.load(open('../Job_Require_Language.json', 'r'))
 	parse("INSERT INTO Job_Require_Language (" , data_list, w)
 	data_list = json.load(open('../Job_Require_Skillset.json', 'r'))
