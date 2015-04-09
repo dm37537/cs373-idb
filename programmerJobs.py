@@ -158,7 +158,7 @@ def get_jobs():
 def get_job(job_id):
 	job = Job.query.get(job_id)
 	if not job:
-		abort(404)
+		abort(jsonify({"error": "Item does not exist"}))
 	return jsonify(job.serialize())
 
 @app.route('/api/company', methods=['GET'])
