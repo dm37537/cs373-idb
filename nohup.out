@@ -5328,3 +5328,9 @@ NameError: global name 'member' is not defined
 128.62.3.95 - - [09/Apr/2015 22:05:55] "GET /static/images/member/Kevin_Valle.jpg HTTP/1.1" 200 -
 128.62.3.95 - - [09/Apr/2015 22:05:55] "GET /static/images/member/Chan_Hee_Park.jpg HTTP/1.1" 200 -
 128.62.3.95 - - [09/Apr/2015 22:05:55] "GET /static/images/member/Seung_Youp_Baek.png HTTP/1.1" 200 -
+ * Detected change in '/home/kvalle/cs373-idb/tests.py', reloading
+ * Restarting with stat
+  File "programmerJobs.py", line 167
+    return jsonify([comEle.serialize() for comEle in companies)
+                                                              ^
+SyntaxError: invalid syntax

@@ -164,26 +164,28 @@ def get_job(job_id):
 @app.route('/api/company', methods=['GET'])
 def get_companies():
 	companies = Company.query.all()
-	return jsonify(companies)
+	return jsonify([comEle.serialize() for comEle in companies)
 		
 @app.route('/api/company/<int:company_id>', methods=['GET'])
 def get_company(company_id):
 	company = Company.query.get(company_id)
+	Result = jsonify([company.serialize()])
 	if len(company) == 0:
 		abort(404)
-	return jsonify(company)
+	return Result
 
 @app.route('/api/location', methods=['GET'])
 def get_locations():
 	locations = Location.query.all()
-	return jsonify(locations)
+	return jsonify(locEle.serialize() for locEle in locations)
 
 @app.route('/api/location/<int:location_id>', methods=['GET'])
 def get_location(location_id):
 	location = Location.query.get(location_id)
-	if len(location) == 0:
+	Result = jsonify(location.serialize())
+	if len(Result) == 0:
 		abort(404)
-	return jsonify(location)
+	return Result
 	
 #Member
 @app.route('/api/member', methods=['GET'])
