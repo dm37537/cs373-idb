@@ -166,7 +166,7 @@ def get_job(job_id):
 @app.route('/api/company', methods=['GET'])
 def get_companies():
 	companies = Company.query.all()
-	return jsonify([comEle.serialize() for comEle in companies)
+	return jsonify([comEle.serialize() for comEle in companies])
 		
 @app.route('/api/company/<int:company_id>', methods=['GET'])
 def get_company(company_id):
@@ -179,7 +179,7 @@ def get_company(company_id):
 @app.route('/api/location', methods=['GET'])
 def get_locations():
 	locations = Location.query.all()
-	return jsonify(locEle.serialize() for locEle in locations)
+	return jsonify([locEle.serialize() for locEle in locations])
 
 @app.route('/api/location/<int:location_id>', methods=['GET'])
 def get_location(location_id):
