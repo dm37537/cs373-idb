@@ -103,7 +103,7 @@ class Language(db.Model):
 	def serialize(self):
 		#return dict
 		return {
-			'language_id' : self.language_ID,
+			'language_id' : self.language_id,
 			'language_name' : self.language_name,
 			'language_image' : self.language_image,
 			'language_wiki_description' : self.language_wiki_description,
