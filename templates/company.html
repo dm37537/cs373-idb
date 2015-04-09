@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block head %}
+  {{super()}}
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../static/custom.css">
+{% endblock %}
+{% block navbar %}
+  {{super()}}
+  
+{% endblock %}
+{% block content %}
+<div class="row row-format text-center">
+  <div class="container-fluid col-md-4 company-format">
+    <a href="../../{{cmpyJson.company_site}}" target="_blank">
+      <img class="company-logo" src="{{cmpyJson.company_image}}">
+    </a>
+    <h1>{{cmpyJson.company_name}}</h1>
+    <a href="{{cmpyJson.company_site}}" target="_blank">{{cmpyJson.company_site}}</a>
+    <hr>
+    <h3>Description</h3>
+    <p>{{cmpyJson.company_description}}</p>
+    <hr>
+  </div>
+  <div class="container col-md-8 company-format">
+    <h3>{{cmpyJson.company_name}} Job Listings</h3>
+    <div class="panel-group" id="accordion">
+      <!-- job panel starts -->
+      {% set panelCounter = 0 %}
+        {% for jobDict in jobJson %}
+        {% set jobID = jobDict.job_id %}
+        {% set jobCmpyID = jobDict.company_ID %}
+        {% set cmpyID = cmpyJson.company_ID %}
+        {% if jobCmpyID == cmpyID %}
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{panelCounter}}">
+              {{jobDict.job_title}}
+            </a>
+          </h4>
+        </div>
+        {% if panelCounter == 0 %}
+        <div id="collapse{{panelCounter}}" class="panel-collapse collapse in">
+        {% else %}
+        <div id="collapse{{panelCounter}}" class="panel-collapse collapse">
+        {% endif %}
+          {% set panelCounter = panelCounter + 1 %}
+          <div class="panel-body">
+            <h2>
+              {% set cmpyID = jobDict.company_ID %}
+              {% set cmpyID = cmpyID - 1 %}
+              <a href="../company/{{cmpyJson.company_name}}">{{cmpyJson.company_name}}</a>
+              <small>
+                {% set locID = jobDict.location_ID %}
+                {% set locID = locID - 1 %}
+                <a href="{{cmpyJson.company_site}}">{{locsJson[locID].location_name}}</a>
+              </small>
+            </h2>
+            <hr>
+            <h4>Job Description</h4>
+            <h5>
+              {{jobDict.job_description}}
+            </h5>
+            <hr>
+            <div class="row">
+              <div class="col-md-6">
+                <h4>Required Skill(s)</h4>
+                <h5>
+                  {% set skillsetID = jobDict.skillset_ID - 1 %}
+                  <a href="/skillset/{{skillsetJson[skillsetID].skillset_name}}">
+                    <button type="button" class="btn btn-default">{{skillsetJson[skillsetID].skillset_name}}</button>
+                  </a>
+                </h5>
+              </div>
+              <div class="col-md-6">
+                <h4>Required Language(s)</h4>
+                <h5>
+                {% set langID = jobDict.language_ID - 1 %}
+                  <a href="../language/{{langJson[langID].language_name}}">
+                    <button type="button" class="btn btn-default">
+                      {{langJson[langID].language_name}}
+                    </button>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            <hr>
+            <a href="../job/{{jobDict.job_title}}" target="_blank">
+              <button type="button" class="btn btn-default">Show More</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+</div>
+<hr>
+
+{% endblock %}
+{% block footer %}
+{{super()}}
+<script src="../static/js/bootstrap.min.js"></script>
+{% endblock %}

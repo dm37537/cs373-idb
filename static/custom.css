@@ -23,9 +23,14 @@ body {
 	}
 }
 
+img.centered-image {
+	text-align: center;
+	display: block;
+}
+
 .company-logo {
-	width: 100px;
-	height: 100px;
+	max-width: 100px;
+	max-height: 100px;
 }
 
 .company-image {

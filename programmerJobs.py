@@ -61,7 +61,11 @@ f.close()
 @app.route('/')
 def root():
 	# return redirect('http://104.130.229.90:5000/index.html', code=302)
+<<<<<<< Updated upstream
 	return redirect('http://104.130.229.90:5000/index', code=302)
+=======
+	return redirect('http://127.0.0.1:5000/index.html', code=302)
+>>>>>>> Stashed changes
 
 @app.route('/index')
 def index():
@@ -260,6 +264,16 @@ def get_job_page(name=None):
 	job = [job for job in jobs if job['job_title'] == name]
 	job = job[0]
 	return render_template('job.html', jobsJson=jobs,  jobJson=job, cmpyJson=companies, langJson=languages, locJson=locations, skillsetJson=skillsets)
+
+@app.route('/company')
+def get_companies_page():
+	return render_template('companies.html',langJson=languages, cmpyJson=companies, locJson=locations)
+
+@app.route('/company/<name>')
+def get_company_page(name=None):
+	company = [company for company in companies if company['company_name'] == name]
+	company = company[0]
+	return render_template('company.html', cmpyJson = company, langJson=languages, cmpysJson=companies, locsJson=locations, jobJson=jobs, skillsetJson=skillsets)
 
 @app.route('/about')
 def get_about_page():
