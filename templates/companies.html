@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block head %}
+  {{super()}}
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../static/custom.css">
+{% endblock %}
+{% block navbar %}
+  {{super()}}
+  
+{% endblock %}
+{% block content %}
+
+<div class="container">
+  <div class="jumbotron vertical-center text-center" id="companies-jumbotron">
+    <div class="container content-box round">
+      <hr>
+      <h1>Companies</h1>
+      <h4>Search jobs by popular companies</h4>
+      <hr>
+    </div>
+  </div>
+  <div class="row text-center">
+    {% for cmpyDict in cmpyJson %}
+    <div class="col-md-3 vertical-center">
+      <a href="company/{{ cmpyDict.company_name }}">
+        <img class="centered-image" src="{{cmpyDict.company_image}}" style="max-height: 200px; max-width: 200px; height: 100%; width: 100%; margin: 20px; postion: relative">
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<hr>
+
+{% endblock %}
+{% block footer %}
+{{super()}}
+<script src="../static/js/bootstrap.min.js"></script>
+{% endblock %}
