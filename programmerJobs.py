@@ -186,9 +186,10 @@ def get_locations_page():
 	return render_template('locations.html', langJson=languages, cmpyJson=companies, locJson=locations)
 
 @app.route('/location/<name>')
-def get_location_page(name=None):
-	location = [location for location in locations if location['location_name'] == name]
-	location = location[0]
+def get_location_page(langId=None):
+	#location = [location for location in locations if location['location_name'] == name]
+	#location = location[0]
+	location = Location.query.get(langID)
 	return render_template('location.html', locJson = location, langJson=languages, cmpyJson=companies, locsJson=locations, jobJson=jobs, skillsetJson=skillsets)
 
 @app.route('/skillset/<name>')
