@@ -157,7 +157,7 @@ def get_jobs():
 @app.route('/api/job/<int:job_id>', methods=['GET'])
 def get_job(job_id):
 	job = Job.query.get(job_id)
-	if len(job) == 0:
+	if not job:
 		abort(404)
 	return jsonify(job.serialize())
 
@@ -170,7 +170,7 @@ def get_companies():
 def get_company(company_id):
 	company = Company.query.get(company_id)
 	Result = jsonify(company.serialize())
-	if not company == 0:
+	if not company:
 		abort(404)
 	return Result
 
@@ -246,6 +246,7 @@ def get_language_page(id=None):
 
 @app.route('/location')
 def get_locations_page():
+	locations = Location.query.all()
 	return render_template('locations.html', langJson=languages, cmpyJson=companies, locJson=locations)
 
 @app.route('/location/<name>')
