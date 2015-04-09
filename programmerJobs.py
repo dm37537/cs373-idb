@@ -190,6 +190,7 @@ def get_location(location_id):
 #Member
 @app.route('/api/member', methods=['GET'])
 def get_team_member():
+	member = ''
 	return jsonify(member)
 
 @app.route('/api/language', methods=['GET'])
@@ -200,7 +201,7 @@ def get_languages():
 @app.route('/api/language/<int:language_id>', methods=['GET'])
 def get_language(language_id):
 	language = Language.query.get(language_id)
-	langResult = jsonify(langResult = [language.serialize()])
+	langResult =jsonify(language.serialize())
 	if not language:
 		abort(404)
 	return langResult
