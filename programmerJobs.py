@@ -182,7 +182,7 @@ def get_language_page(id=None):
 def get_locations_page():
 	locations = Location.query.all()
 	companies = Company.query.all()
-	locations = Location.query.all()
+	languages = Language.query.all()
 	return render_template('locations.html', langJson=languages, cmpyJson=companies, locJson=locations)
 
 @app.route('/location/<int:id>')
@@ -236,10 +236,11 @@ def get_company_page(id=None):
 	companies = Company.query.all()
 	locations = Location.query.all()
 	skillsets = Skillset.query.all()
-	return render_template('company.html', cmpyJson = company,  cmpysJson=companies,locsJson=locations, langJson=languages, jobJson=jobs, skillsetJson=skillsets)
+	return render_template('company.html', cmpyJson = company, locsJson=locations, langJson=languages, jobJson=jobs, skillsetJson=skillsets)
 
 @app.route('/about')
 def get_about_page():
+	members = Member.query.all()
 	return render_template('about.html', memJson=members)
 
 @app.route('/modeldoc')
