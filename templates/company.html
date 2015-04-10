@@ -49,7 +49,7 @@
             <h2>
               {% set cmpyID = jobDict.company_id %}
               {% set cmpyID = cmpyID - 1 %}
-              <a href="../company/{{cmpyJson.company_name}}">{{cmpyJson.company_name}}</a>
+              <a href="../company/{{cmpyJson.company_id}}">{{cmpyJson.company_name}}</a>
               <small>
                 {% set locID = jobDict.location_id %}
                 {% set locID = locID - 1 %}
@@ -66,9 +66,9 @@
               <div class="col-md-6">
                 <h4>Required Skill(s)</h4>
                 <h5>
-                  {% set skillsetID = jobDict.skillsets[0].skillset_id - 1 %}
-                  <a href="/skillset/{{jobDict.skillsets[0].skillset_id}}">
-                    <button type="button" class="btn btn-default">{{jobDict.skillsets[0].skillset_name}}</button>
+                  {% set skillsetID = jobDict.skillsets[0].skillset_id - 1%}
+                  <a href="/skillset/{{skillsetJson[skillsetID]}.skillset_id}">
+                    <button type="button" class="btn btn-default">{{skillsetJson[skillsetID].skillset_name}}</button>
                   </a>
                 </h5>
               </div>
@@ -76,9 +76,9 @@
                 <h4>Required Language(s)</h4>
                 <h5>
                 {% set langID = jobDict.languages[0].language_id - 1 %}
-                  <a href="../language/{{jobDict.languages[0].language_name}}">
+                  <a href="../language/{{langJson[langID].language_id}}">
                     <button type="button" class="btn btn-default">
-                      {{jobDict.languages[0].language_name}}
+                      {{langJson[langID].language_name}}
                     </button>
                   </a>
                 </h5>
