@@ -165,20 +165,15 @@ def get_languages_page():
 	languages = Language.query.all()
 	return render_template('languages.html', langJson=languages)
 
-@app.route('/language/<id>')
+@app.route('/language/<int:id>')
 def get_language_page(id=None):
-	#name = name.replace(" ", "");
 	language = Language.query.get(id)
-	#need name redirection
-	#if(name == "C#") :
-	#	name = "Csharp"
-	#elif(name == "VisualBasic") :
-	#	name = "Visual Basic"
-	#elif(name == "VisualBasic.NET") :
-	#	name = "Visual Basic.NET"
-	# language = Language.query.filterBy('language_name' == name)
-	#language = [language for language in languages if language['language_name'] == name]
-	#language=language[0]
+	languages = Language.query.all()
+	jobs = Job.query.all()
+	companies = Company.query.all()
+	locations = Location.query.all()
+	skillsets = Skillset.query.all()
+	
 	return render_template('language.html', langJson=language, langsJson=languages, cmpyJson=companies, jobJson=jobs, locJson=locations, skillsetJson=skillsets)
 
 @app.route('/location')
@@ -186,21 +181,21 @@ def get_locations_page():
 	locations = Location.query.all()
 	return render_template('locations.html', langJson=languages, cmpyJson=companies, locJson=locations)
 
-@app.route('/location/<id>')
+@app.route('/location/<int:id>')
 def get_location_page(id=None):
 	#location = [location for location in locations if location['location_name'] == name]
 	#location = location[0]
 	location = Location.query.get(id)
 	return render_template('location.html', locJson = location, langJson=languages, cmpyJson=companies, locsJson=locations, jobJson=jobs, skillsetJson=skillsets)
 
-@app.route('/skillset/<id>')
+@app.route('/skillset/<int:id>')
 def get_skillset_page(id=None):
 	skillset = Skillset.query.get(id)
 	#skillset = [skillset for skillset in skillsets if skillset['skillset_name'] == name]
 	#skillset = skillset[0]
 	return render_template('skillset.html', skillsetJson=skillset, jobJson=jobs, locJson=locations, cmpyJson=companies, langJson=languages)
 
-@app.route('/job/<id>')
+@app.route('/job/<int:id>')
 def get_job_page(id=None):
 	job = Job.query.get(id)
 	#job = [job for job in jobs if job['job_title'] == name]
@@ -210,14 +205,15 @@ def get_job_page(id=None):
 @app.route('/company')
 def get_companies_page():
 	companies = Company.query.all()
-	return render_template('companies.html',langJson=languages, cmpyJson=companies, locJson=location)
+	return render_template('companies.html',cmpyJson=companies)
 
-@app.route('/company/<id>')
+@app.route('/company/<int:id>')
 def get_company_page(id=None):
 	company = Company.query.get(id)
+	jobs = Job.query.filter('company_id' == id)
 	#company = [company for company in companies if company['company_name'] == name]
 	#company = company[0]
-	return render_template('company.html', cmpyJson = company, langJson=languages, cmpysJson=companies, locsJson=locations, jobJson=jobs, skillsetJson=skillsets)
+	return render_template('company.html', cmpyJson = company, jobJson=jobs)
 
 @app.route('/about')
 def get_about_page():
