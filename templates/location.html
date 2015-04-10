@@ -23,9 +23,9 @@
             <!-- job panel starts -->
             {% set panelCounter = 0 %}
             {% for jobDict in jobJson %}
-              {% set jobID = jobDict.job_ID %}
-              {% set jobLocID = jobDict.location_ID %}
-              {% set locID = locJson.location_ID %}
+              {% set jobID = jobDict.job_id %}
+              {% set jobLocID = jobDict.location_id %}
+              {% set locID = locJson.location_id %}
               {% if jobLocID == locID %}
             <div class="panel panel-default">
               <div class="panel-heading">
@@ -43,13 +43,13 @@
             {% set panelCounter = panelCounter + 1 %}
                 <div class="panel-body">
                   <h2>
-                    {% set cmpyID = jobDict.company_ID %}
+                    {% set cmpyID = jobDict.company_id %}
                     {% set cmpyID = cmpyID - 1 %}
-                    <a href="../company/{{cmpyJson[cmpyID].company_name}}">{{cmpyJson[cmpyID].company_name}}</a>
+                    <a href="/company/{{cmpyJson[cmpyID].company_id}}">{{cmpyJson[cmpyID].company_name}}</a>
                     <small>
                       {% set locID = jobDict.location_ID %}
                       {% set locID = locID - 1 %}
-                      <a href="#">{{locsJson[locID].location_name}}</a>
+                      <a href="/location/{{locsJson[locID].location_id}}">{{locsJson[locID].location_name}}</a>
                     </small>
                   </h2>
                   <hr>
@@ -62,8 +62,8 @@
                     <div class="col-md-6">
                       <h4>Required Skill(s)</h4>
                       <h5>
-                        {% set skillsetID = jobDict.skillset_ID - 1 %}
-                        <a href="/skillset/{{skillsetJson[skillsetID].skillset_name}}">
+                        {% set skillsetID = jobDict.skillsets[0].skillset_id - 1 %}
+                        <a href="/skillset/{{skillsetJson[skillsetID].skillset_id}}">
                           <button type="button" class="btn btn-default">{{skillsetJson[skillsetID].skillset_name}}</button>
                         </a>
                       </h5>
@@ -71,8 +71,8 @@
                     <div class="col-md-6">
                       <h4>Required Language(s)</h4>
                       <h5>
-                        {% set langID = jobDict.language_ID - 1 %}
-                        <a href="../language/{{langJson[langID].language_name}}">
+                        {% set langID = jobDict.language_id - 1 %}
+                        <a href="/language/{{langJson[langID].language_id}}">
                           <button type="button" class="btn btn-default">
                             {{langJson[langID].language_name}}
                           </button>
@@ -81,7 +81,7 @@
                     </div>
                   </div>
                   <hr>
-                  <a href="../job/{{jobDict.job_title}}">
+                  <a href="/job/{{jobDict.job_id}}">
                     <button type="button" class="btn btn-default">Show More</button>
                   </a>
                 </div>

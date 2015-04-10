@@ -42,9 +42,9 @@
             <!-- job 1 -->
             {% set panelCounter = 0 %}
             {% for jobDict in jobJson %}
-              {% set jobID = jobDict.job_ID %}
-              {% set jobSkillsetID = jobDict.skillset_ID %}
-              {% set skillsetID = skillsetJson.skillset_ID %}
+              {% set jobID = jobDict.job_id %}
+              {% set jobSkillsetID = jobDict.skillsets[0].skillset_id %}
+              {% set skillsetID = skillsetJson.skillset_id %}
               <!-- find skillset -->
               {% if jobSkillsetID == skillsetID %}
                 <div class="panel panel-default">
@@ -63,13 +63,13 @@
                 {% set panelCounter = panelCounter + 1 %}
                     <div class="panel-body">
                       <h2>
-                        {% set cmpyID = jobDict.company_ID %}
+                        {% set cmpyID = jobDict.company_id %}
                         {% set cmpyID = cmpyID - 1 %}
-                        <a href="../company/{{cmpyJson[cmpyID].company_name}}">{{cmpyJson[cmpyID].company_name}}</a>
+                        <a href="/company/{{cmpyJson[cmpyID].company_id}}">{{cmpyJson[cmpyID].company_name}}</a>
                         <small>
-                          {% set locID = jobDict.location_ID %}
+                          {% set locID = jobDict.location_id %}
                           {% set locID = locID - 1 %}
-                          <a href="#">{{locJson[locID].location_name}}</a>
+                          <a href="/language/{{locJson[locID].location_id}}">{{locJson[locID].location_name}}</a>
                         </small>
                       </h2>
                       <hr>
@@ -78,13 +78,13 @@
                       <hr>
                       <h4>Required Skill(s)</h4>
                       <h5>
-                        {% set langID = jobDict.language_ID - 1 %}
-                        <a href="/language/{{langJson[langID].language_name}}">
+                        {% set langID = jobDict.language[0].language_id - 1 %}
+                        <a href="/language/{{langJson[langID].language_id}}">
                           <button type="button" class="btn btn-default">{{langJson[langID].language_name}}</button>
                         </a>
                       </h5>
                       <hr>
-                        <a href="../job/{{jobDict.job_title}}">
+                        <a href="/job/{{jobDict.job_id}}">
                           <button type="button" class="btn btn-default">Show More</button>
                         </a>
                       </div>
