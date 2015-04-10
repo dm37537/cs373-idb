@@ -210,9 +210,11 @@ def get_companies_page():
 @app.route('/company/<int:id>')
 def get_company_page(id=None):
 	company = Company.query.get(id)
-	jobs = Job.query.filter('company_id' == id)
-	#company = [company for company in companies if company['company_name'] == name]
-	#company = company[0]
+	languages = Language.query.all()
+	jobs = Job.query.all()
+	companies = Company.query.all()
+	locations = Location.query.all()
+	skillsets = Skillset.query.all()
 	return render_template('company.html', cmpyJson = company, jobJson=jobs)
 
 @app.route('/about')
