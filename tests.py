@@ -1,5 +1,5 @@
 import unittest
-from programmerJobs import app
+from programmerJobs import db, app, get_languages, get_language, get_companies, get_company, get_locations, get_location
 from models import Job, Company, Location, Language, Skillset
 
 import json
@@ -171,12 +171,11 @@ class LanguageApiTest(unittest.TestCase):
 
 	# testing the whole set of Language data.
 	def test_lang(self):
-		with self.app as a:
-			response = a.get(self.url + "language")
-			self.assertEqual(response.status_code, 200)
-			content = response.json()
-			# the whole dataset in the languages
-			temp = {{
+		response = programmerJobs.get_languages()
+		self.assertEqual(response.status_code, 200)
+		content = response.json()
+		# the whole dataset in the languages
+		temp = {{
   "languages": [
     {
       "language_description": "Muti platiform Language", 
@@ -264,7 +263,7 @@ class LanguageApiTest(unittest.TestCase):
 
 	# testing a request to an individual language data
 	def test_lang_id(self):
-		response = app.get(self.url + "language/1")
+		response = programmerJobs.get_language(self.url + "language/1")
 		self.assertEqual(response.status_code, 200)
 		content = response.json()
 		# the dataset of the language where id is 1
@@ -284,7 +283,7 @@ class LanguageApiTest(unittest.TestCase):
 
 	# testing the request when the data is not available
 	def test_lang_not_found(self):
-		response = app.get(self.url + "language/null")
+		response = programmerJobs.get_language(self.url + "language/null")
 		self.assertEqual(response.status_code, 404)
 
 
@@ -296,7 +295,7 @@ class CompanyApiTest(unittest.TestCase):
 
 	# testing the whole set of companies data.
 	def test_company(self):
-		response = app.get(self.url + "companies/")
+		response = get_companies()
 		self.assertEqual(response.status_code, 200)
 		content = response.json()
 		temp = {}# the whole dataset in the companies
@@ -304,7 +303,7 @@ class CompanyApiTest(unittest.TestCase):
 
 	# testing a request to an individual company data
 	def test_company_id(self):
-		response = app.get(self.url + "companies/1/")
+		response = get_company(self.url + "companies/1/")
 		self.assertEqual(response.status_code, 200)
 		content = response.json()
 		temp = {}# the dataset of the language where id is 1
@@ -312,7 +311,7 @@ class CompanyApiTest(unittest.TestCase):
 
 	# testing the request when the data is not available
 	def test_company_not_found(self):
-		response = app.get(self.url + "companies/null/")
+		response = get_company(self.url + "companies/null/")
 		self.assertEqual(response.status_code, 404)
 
 
@@ -324,7 +323,7 @@ class LocationApiTest(unittest.TestCase):
 
 	# testing the whole set of locations data.
 	def test_location(self):
-		response = app.get(self.url + "locations/")
+		response = get_locations()
 		self.assertEqual(response.status_code, 200)
 		content = response.json()
 		temp = {}# the whole dataset in the locations
@@ -332,7 +331,7 @@ class LocationApiTest(unittest.TestCase):
 
 	# testing a request to an individual location data
 	def test_location_id(self):
-		response = app.get(self.url + "locations/1/")
+		response = get_location(self.url + "locations/1/")
 		self.assertEqual(response.status_code, 200)
 		content = response.json()
 		temp = {}# the dataset of the language where id is 1
@@ -340,7 +339,7 @@ class LocationApiTest(unittest.TestCase):
 
 	# testing the request when the data is not available
 	def test_location_not_found(self):
-		response = app.get(self.url + "locations/null/")
+		response = get_location(self.url + "locations/null/")
 		self.assertEqual(response.status_code, 404)
 
 
