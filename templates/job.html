@@ -11,13 +11,13 @@
     <div class="container">
       <h1 class="text-center">{{jobJson.job_title}}</h1>
       <h3 class="text-center">
-        {% set jobCmpyID = jobJson.company_ID - 1 %}
-        <a href="../company/{{cmpyJson[jobCmpyID].company_name}}">
+        {% set jobCmpyID = jobJson.company_id - 1 %}
+        <a href="/company/{{cmpyJson[jobCmpyID].company_id}}">
           {{cmpyJson[jobCmpyID].company_name}}
         </a>
         //  
-        {% set jobLocID = jobJson.location_ID - 1 %}
-        <a href="../location/{{locJson[jobLocID].location_name}}">
+        {% set jobLocID = jobJson.location_id - 1 %}
+        <a href="/location/{{locJson[jobLocID].location_id}}">
           {{locJson[jobLocID].location_name}}
         </a>
       </h3>
@@ -38,16 +38,16 @@
       <div class="row">
         <div class="col-md-3">
           <h3 class="text-center">
-            {% set jobSkillsetID = jobJson.skillset_ID - 1 %}
-            <a href="../skillset/{{skillsetJson[jobSkillsetID].skillset_name}}">
+            {% set jobSkillsetID = jobJson.skillsets[0].skillset_id - 1 %}
+            <a href="/skillset/{{skillsetJson[jobSkillsetID].skillset_name}}">
               {{skillsetJson[jobSkillsetID].skillset_name}}
             </a>
           </h3>
           <div class="list-group">
             {% for simSkillsetJobDict in jobsJson %}
-              {% if simSkillsetJobDict.skillset_ID == jobSkillsetID + 1 %}
+              {% if simSkillsetJobDict.skillsets[0].skillset_id == jobSkillsetID + 1 %}
                 {% if simSkillsetJobDict.job_title != jobJson.job_title %}
-                  <a href="../job/{{simSkillsetJobDict.job_title}}" class="list-group-item">
+                  <a href="/job/{{simSkillsetJobDict.job_id}}" class="list-group-item">
                     {{simSkillsetJobDict.job_title}}
                   </a>
                 {% endif %}
@@ -57,16 +57,16 @@
         </div>
         <div class="col-md-3">
           <h3 class="text-center">
-            {% set jobLangID = jobJson.language_ID - 1 %}
-            <a href="../language/{{langJson[jobLangID].language_name}}">
+            {% set jobLangID = jobJson.languages[0].language_id - 1 %}
+            <a href="/language/{{langJson[jobLangID].language_id}}">
               {{langJson[jobLangID].language_name}}
             </a>
           </h3>
           <div class="list-group">
             {% for simLangJobDict in jobsJson %}
-              {% if simLangJobDict.language_ID == jobLangID + 1 %}
+              {% if simLangJobDict.languages[0].language_id == jobLangID + 1 %}
                 {% if simLangJobDict.job_title != jobJson.job_title %}
-                  <a href="../job/{{simLangJobDict.job_title}}" class="list-group-item">
+                  <a href="/job/{{simLangJobDict.job_id}}" class="list-group-item">
                     {{simLangJobDict.job_title}}
                   </a>
                 {% endif %}
@@ -76,16 +76,16 @@
         </div>
         <div class="col-md-3">
           <h3 class="text-center">
-            {% set jobCmpyID = jobJson.company_ID - 1 %}
-            <a href="../company/{{cmpyJson[jobCmpyID].company_name}}">
+            {% set jobCmpyID = jobJson.company_id - 1 %}
+            <a href="/company/{{cmpyJson[jobCmpyID].company_id}}">
               {{cmpyJson[jobCmpyID].company_name}}
             </a>
           </h3>
           <div class="list-group">
             {% for simCmpyJobDict in jobsJson %}
-              {% if simCmpyJobDict.company_ID == jobCmpyID + 1 %}
+              {% if simCmpyJobDict.company_id == jobCmpyID + 1 %}
                 {% if simCmpyJobDict.job_title != jobJson.job_title %}
-                  <a href="../job/{{simCmpyJobDict.job_title}}" class="list-group-item">
+                  <a href="/job/{{simCmpyJobDict.job_id}}" class="list-group-item">
                     {{simCmpyJobDict.job_title}}
                   </a>
                 {% endif %}
@@ -95,8 +95,8 @@
         </div>
         <div class="col-md-3">
           <h3 class="text-center">
-            {% set jobLocID = jobJson.location_ID - 1 %}
-            <a href="../location/{{locJson[jobLocID].location_name}}">
+            {% set jobLocID = jobJson.location_id - 1 %}
+            <a href="/location/{{locJson[jobLocID].location_id}}">
               {{locJson[jobLocID].location_name}}
             </a>
           </h3>
@@ -104,7 +104,7 @@
             {% for simLocJobDict in jobsJson %}
               {% if simLocJobDict.location_ID == jobLocID + 1 %}
                 {% if simLocJobDict.job_title != jobJson.job_title %}
-                  <a href="../job/{{simLocJobDict.job_title}}" class="list-group-item">
+                  <a href="/job/{{simLocJobDict.job_id}}" class="list-group-item">
                     {{simLocJobDict.job_title}}
                   </a>
                 {% endif %}
