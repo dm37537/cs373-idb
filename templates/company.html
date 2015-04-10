@@ -49,7 +49,7 @@
             <h2>
               {% set cmpyID = jobDict.company_id %}
               {% set cmpyID = cmpyID - 1 %}
-              <a href="/company/{{cmpyJson[cmpyID].company_id}}">{{cmpyJson.company_name}}</a>
+              <a href="/company/{{cmpyJson[cmpyID].company_id}}">{{cmpyJson[cmpyID].company_name}}</a>
               <small>
                 {% set locID = jobDict.location_id %}
                 {% set locID = locID - 1 %}
