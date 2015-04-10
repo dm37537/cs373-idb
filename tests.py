@@ -171,8 +171,7 @@ class LanguageApiTest(unittest.TestCase):
 
 	# testing the whole set of Language data.
 	def test_lang(self):
-		globsl url
-		response = urllib2.urlopen(url + 'language')
+		response = urllib2.urlopen('http://104.130.229.90:5000/api/language')
 		self.assertEqual(response.code, 200)
 		content = response.read()
 		# the whole dataset in the languages
@@ -181,7 +180,7 @@ class LanguageApiTest(unittest.TestCase):
 
 	# testing a request to an individual language data
 	def test_lang_id(self):
-		response = urllib2.urlopen(url + "language/1")
+		response = urllib2.urlopen('http://104.130.229.90:5000/api/language/1')
 		self.assertEqual(response.status_code, 200)
 		content = response.read()
 		# the dataset of the language where id is 1
@@ -190,7 +189,7 @@ class LanguageApiTest(unittest.TestCase):
 
 	# testing the request when the data is not available
 	def test_lang_not_found(self):
-		response = urllib2.urlopen(url + "language/9000")
+		response = urllib2.urlopen("http://104.130.229.90:5000/api/language/9000")
 		self.assertEqual(response.status_code, 404)
 
 
@@ -202,7 +201,7 @@ class CompanyApiTest(unittest.TestCase):
 
 	# testing the whole set of companies data.
 	def test_company(self):
-		response = urllib2.urlopen(url + 'companies')
+		response = urllib2.urlopen(url + 'company')
 		self.assertEqual(response.status_code, 200)
 		content = response.read()
 		temp = {}# the whole dataset in the companies
@@ -230,7 +229,7 @@ class LocationApiTest(unittest.TestCase):
 
 	# testing the whole set of locations data.
 	def test_location(self):
-		response = urllib2.urlopen(url + 'locations')
+		response = urllib2.urlopen(url + 'location')
 		self.assertEqual(response.status_code, 200)
 		content = response.read()
 		temp = {}# the whole dataset in the locations
