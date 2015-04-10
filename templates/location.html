@@ -47,7 +47,7 @@
                     {% set cmpyID = cmpyID - 1 %}
                     <a href="/company/{{cmpyJson[cmpyID].company_id}}">{{cmpyJson[cmpyID].company_name}}</a>
                     <small>
-                      {% set locID = jobDict.location_ID %}
+                      {% set locID = jobDict.location_id %}
                       {% set locID = locID - 1 %}
                       <a href="/location/{{locsJson[locID].location_id}}">{{locsJson[locID].location_name}}</a>
                     </small>
@@ -71,7 +71,7 @@
                     <div class="col-md-6">
                       <h4>Required Language(s)</h4>
                       <h5>
-                        {% set langID = jobDict.language_id - 1 %}
+                        {% set langID = jobDict.languages[0].language_id - 1 %}
                         <a href="/language/{{langJson[langID].language_id}}">
                           <button type="button" class="btn btn-default">
                             {{langJson[langID].language_name}}
