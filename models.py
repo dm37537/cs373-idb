@@ -36,7 +36,7 @@ class Job(db.Model):
 	languages = db.relationship('Language', secondary=job_languages, backref='job', lazy='dynamic')
 	skillsets = db.relationship('Skillset', secondary=job_skillsets, backref='job', lazy='dynamic')
 
-	def __init__(self, id, title, locationid, companyID, description, link):
+	def __init__(self, id, title, locationID, companyID, description, link):
 		self.job_id = id
 		self.job_title = title
 		self.location_id = locationID
@@ -113,11 +113,11 @@ class Language(db.Model):
 	language_description = db.Column(db.Text)
 	language_wiki_link = db.Column(db.Text)
 
-	def __init__(self, id, Language_Name, Language_Image,Language_Wiki_Description, Language_Description, language_Wiki_link):
+	def __init__(self, id, Language_Name, Language_Image,Language_Wiki_Description, Language_Description, Language_Wiki_Link):
 		self.language_id = id
 		self.language_name = Language_Name
 		self.language_image = Language_Image
-		sel.language_wiki_description = Language_Wiki_Description
+		self.language_wiki_description = Language_Wiki_Description
 		self.language_description = Language_Description
 		self.language_wiki_link = Language_Wiki_Link
 	
