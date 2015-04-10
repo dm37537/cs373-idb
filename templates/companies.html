@@ -21,7 +21,7 @@
     {% for cmpyDict in cmpyJson %}
     <div class="col-md-3 vertical-center">
       <a href="company/{{ cmpyDict.company_id }}">
-        <img class="centered-image" src="{{cmpyDict.company_image}}" style="max-height: 200px; max-width: 200px; height: 100%; width: 100%; margin: 30px; postion: relative">
+        <img class="centered-image" src="../static/{{cmpyDict.company_image}}" style="max-height: 200px; max-width: 200px; height: 100%; width: 100%; margin: 30px; postion: relative">
       </a>
     </div>
     {% endfor %}
