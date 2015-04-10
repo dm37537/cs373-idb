@@ -36,6 +36,7 @@ def populate_db():
 	#session.commit()
 
 # Loading JSON from files. To be replaced with database or model calls
+'''
 f = open('Job.json') 
 jobs = json.load(f)
 f.close()
@@ -59,6 +60,7 @@ f.close()
 f = open('Member.json')
 members = json.load(f)
 f.close()
+'''
 
 # The following are examples of different templates in action
 @app.route('/')
@@ -156,7 +158,11 @@ def get_skillset(skillset_id):
 	return jsonify(skillset.serialize())
 
 
-
+languages = Language.query.all()
+jobs = Job.query.all()
+companies = Company.query.all()
+locations = Location.query.all()
+skillsets = Skillset.query.all()
 
 
 #Dynamic pages
@@ -168,12 +174,6 @@ def get_languages_page():
 @app.route('/language/<int:id>')
 def get_language_page(id=None):
 	language = Language.query.get(id)
-	languages = Language.query.all()
-	jobs = Job.query.all()
-	companies = Company.query.all()
-	locations = Location.query.all()
-	skillsets = Skillset.query.all()
-	
 	return render_template('language.html', langJson=language, langsJson=languages, cmpyJson=companies, jobJson=jobs, locJson=locations, skillsetJson=skillsets)
 
 @app.route('/location')
@@ -210,11 +210,6 @@ def get_companies_page():
 @app.route('/company/<int:id>')
 def get_company_page(id=None):
 	company = Company.query.get(id)
-	languages = Language.query.all()
-	jobs = Job.query.all()
-	companies = Company.query.all()
-	locations = Location.query.all()
-	skillsets = Skillset.query.all()
 	return render_template('company.html', cmpyJson = company,  langJson=languages, jobJson=jobs, skillsetJson=skillsets)
 
 @app.route('/about')
