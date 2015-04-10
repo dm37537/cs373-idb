@@ -182,7 +182,7 @@ def get_language_page(id=None):
 def get_locations_page():
 	locations = Location.query.all()
 	companies = Company.query.all()
-	locations = Location.query.all()
+	languages = Language.query.all()
 	return render_template('locations.html', langJson=languages, cmpyJson=companies, locJson=locations)
 
 @app.route('/location/<int:id>')
