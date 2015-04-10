@@ -102,7 +102,7 @@
           </h3>
           <div class="list-group">
             {% for simLocJobDict in jobsJson %}
-              {% if simLocJobDict.location_ID == jobLocID + 1 %}
+              {% if simLocJobDict.location_id == jobLocID + 1 %}
                 {% if simLocJobDict.job_title != jobJson.job_title %}
                   <a href="/job/{{simLocJobDict.job_id}}" class="list-group-item">
                     {{simLocJobDict.job_title}}
