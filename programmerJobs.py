@@ -209,6 +209,7 @@ def get_job_page(id=None):
 
 @app.route('/company')
 def get_companies_page():
+	companies = Company.query.all()
 	return render_template('companies.html',langJson=languages, cmpyJson=companies, locJson=locations)
 
 @app.route('/company/<id>')
