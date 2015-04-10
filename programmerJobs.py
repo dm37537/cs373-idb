@@ -215,7 +215,7 @@ def get_company_page(id=None):
 	companies = Company.query.all()
 	locations = Location.query.all()
 	skillsets = Skillset.query.all()
-	return render_template('company.html', cmpyJson = company, jobJson=jobs)
+	return render_template('company.html', cmpyJson = company,  langJson=languages, jobJson=jobs, skillsetJson=skillsets)
 
 @app.route('/about')
 def get_about_page():
