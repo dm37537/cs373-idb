@@ -23,8 +23,6 @@ class DatabaseTestCase(unittest.TestCase):
 		db.add(content)
 		ad.commit(content)
 
-
-
 class ProgrammerJobsTestCase(unittest.TestCase):
 	
 	def testCreatingJob(self):
@@ -165,7 +163,6 @@ class ProgrammerJobsTestCase(unittest.TestCase):
 # change path in programmerjobs.py to 
 # 	return redirect('http://127.0.0.1:5000/index', code=302)
 
-
 # Test languages
 class LanguageApiTest(unittest.TestCase):
 
@@ -174,11 +171,12 @@ class LanguageApiTest(unittest.TestCase):
 
 	# testing the whole set of Language data.
 	def test_lang(self):
-		response = app.get(self.url + "language")
-		self.assertEqual(response.status_code, 200)
-		content = response.json()
-		# the whole dataset in the languages
-		temp = {{
+		with self.app as a:
+			response = a.get(self.url + "language")
+			self.assertEqual(response.status_code, 200)
+			content = response.json()
+			# the whole dataset in the languages
+			temp = {{
   "languages": [
     {
       "language_description": "Muti platiform Language", 
