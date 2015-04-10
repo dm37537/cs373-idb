@@ -238,6 +238,7 @@ def get_company_page(id=None):
 	skillsets = Skillset.query.all()
 	return render_template('company.html', cmpyJson=company, locsJson=locations, langJson=languages, jobJson=jobs, skillsetJson=skillsets)
 
+
 @app.route('/about')
 def get_about_page():
 	members = Member.query.all()
