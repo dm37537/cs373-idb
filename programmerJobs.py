@@ -186,33 +186,37 @@ def get_locations_page():
 	locations = Location.query.all()
 	return render_template('locations.html', langJson=languages, cmpyJson=companies, locJson=locations)
 
-@app.route('/location/<name>')
-def get_location_page(langId=None):
+@app.route('/location/<id>')
+def get_location_page(id=None):
 	#location = [location for location in locations if location['location_name'] == name]
 	#location = location[0]
-	location = Location.query.get(langID)
+	location = Location.query.get(id)
 	return render_template('location.html', locJson = location, langJson=languages, cmpyJson=companies, locsJson=locations, jobJson=jobs, skillsetJson=skillsets)
 
-@app.route('/skillset/<name>')
-def get_skillset_page(name=None):
-	skillset = [skillset for skillset in skillsets if skillset['skillset_name'] == name]
-	skillset = skillset[0]
+@app.route('/skillset/<id>')
+def get_skillset_page(id=None):
+	skillset = Skillset.query.get(id)
+	#skillset = [skillset for skillset in skillsets if skillset['skillset_name'] == name]
+	#skillset = skillset[0]
 	return render_template('skillset.html', skillsetJson=skillset, jobJson=jobs, locJson=locations, cmpyJson=companies, langJson=languages)
 
-@app.route('/job/<name>')
-def get_job_page(name=None):
-	job = [job for job in jobs if job['job_title'] == name]
-	job = job[0]
+@app.route('/job/<id>')
+def get_job_page(id=None):
+	job = Job.query.get(id)
+	#job = [job for job in jobs if job['job_title'] == name]
+	#job = job[0]
 	return render_template('job.html', jobsJson=jobs,  jobJson=job, cmpyJson=companies, langJson=languages, locJson=locations, skillsetJson=skillsets)
 
 @app.route('/company')
 def get_companies_page():
-	return render_template('companies.html',langJson=languages, cmpyJson=companies, locJson=locations)
+	companies = Company.query.all()
+	return render_template('companies.html',langJson=languages, cmpyJson=companies, locJson=location)
 
-@app.route('/company/<name>')
-def get_company_page(name=None):
-	company = [company for company in companies if company['company_name'] == name]
-	company = company[0]
+@app.route('/company/<id>')
+def get_company_page(id=None):
+	company = Company.query.get(id)
+	#company = [company for company in companies if company['company_name'] == name]
+	#company = company[0]
 	return render_template('company.html', cmpyJson = company, langJson=languages, cmpysJson=companies, locsJson=locations, jobJson=jobs, skillsetJson=skillsets)
 
 @app.route('/about')
