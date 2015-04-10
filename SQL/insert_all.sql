@@ -1,6 +1,6 @@
 INSERT INTO Company (company_description ,company_image ,company_ID ,company_site ,company_name ) VALUES ('Search engine' , 'images/company_images/google_logo.png' , 1 , 'www.google.com' , 'Google' );
 INSERT INTO Company (company_description ,company_image ,company_ID ,company_site ,company_name ) VALUES ('Database' , 'images/company_images/oracle_logo.jpg' , 2 , 'www.oracle.com' , 'Oracle' );
-INSERT INTO Company (company_description ,company_image ,company_ID ,company_site ,company_name ) VALUES ('Online shopping' , 'images/company_images/amazon_logo.png' , 3 , 'www.amazon.com' , 'Amazon' );
+INSERT INTO Company (company_description ,company_image ,company_ID ,company_site ,company_name ) VALUES ('Online shopping' , 'images/company_images/amazon_logo.jpeg' , 3 , 'www.amazon.com' , 'Amazon' );
 INSERT INTO Company (company_description ,company_image ,company_ID ,company_site ,company_name ) VALUES ('Social Media' , 'images/company_images/facebook_logo.png' , 4 , 'www.facebook.com' , 'Facebook' );
 INSERT INTO Company (company_description ,company_image ,company_ID ,company_site ,company_name ) VALUES ('Social Media' , 'images/company_images/twitter_logo.png' , 5 , 'www.twitter.com' , 'Twitter' );
 INSERT INTO Company (company_description ,company_image ,company_ID ,company_site ,company_name ) VALUES ('Online resume' , 'images/company_images/linkedin_logo.png' , 6 , 'www.linkedin.com' , 'LinkedIn' );

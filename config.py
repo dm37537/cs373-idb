@@ -5,7 +5,6 @@ class Config(object):
 	TESTING = False
 	CSRF_ENABLED = True
 	SECRET_KEY = 'this-really-needs-to-be-changed'
-	#SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 	SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://kvalle:redApple@localhost:5432/production'
 
 class ProductionConfig(Config):
