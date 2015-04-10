@@ -1,7 +1,7 @@
 import unittest
 from programmerJobs import db, app, get_languages, get_language, get_companies, get_company, get_locations, get_location
 from models import Job, Company, Location, Language, Skillset
-
+import urllib2
 import json
 import os
 
@@ -171,119 +171,26 @@ class LanguageApiTest(unittest.TestCase):
 
 	# testing the whole set of Language data.
 	def test_lang(self):
-		response = programmerJobs.get_languages()
-		self.assertEqual(response.status_code, 200)
-		content = response.json()
+		globsl url
+		response = urllib2.urlopen(url + 'language')
+		self.assertEqual(response.code, 200)
+		content = response.read()
 		# the whole dataset in the languages
-		temp = {{
-  "languages": [
-    {
-      "language_description": "Muti platiform Language", 
-      "language_id": 1, 
-      "language_image": "images/language_icon/java_icon.png", 
-      "language_name": "Java", 
-      "language_wiki_description": "Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers  write once, run anywhere  (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers. Java was originally developed by James Gosling at Sun Microsystems (which has since merged into Oracle Corporation) and released in 1995 as a core component of Sun Microsystems  Java platform. The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them.", 
-      "language_wiki_link": "http://en.wikipedia.org/wiki/Java_%28programming_language%29"
-    }, 
-    {
-      "language_description": "great Language", 
-      "language_id": 2, 
-      "language_image": "images/language_icon/cpp_icon.png", 
-      "language_name": "C++", 
-      "language_wiki_description": "C++ is a general-purpose programming language. It has imperative, object-oriented and generic programming features, while also providing the facilities for low-level memory manipulation.", 
-      "language_wiki_link": "http://en.wikipedia.org/wiki/C%2B%2B"
-    }, 
-    {
-      "language_description": "Web Language", 
-      "language_id": 3, 
-      "language_image": "images/language_icon/php_icon.png", 
-      "language_name": "PHP", 
-      "language_wiki_description": "PHP is a server-side scripting language designed for web development but also used as a general-purpose programming language. As of January 2013, PHP was installed on more than 240 million websites (39% of those sampled) and 2.1 million web servers. Originally created by Rasmus Lerdorf in 1994, the reference implementation of PHP (powered by the Zend Engine) is now produced by The PHP Group. While PHP originally stood for Personal Home Page, it now stands for PHP: Hypertext Preprocessor, which is a recursive backronym.", 
-      "language_wiki_link": "http://en.wikipedia.org/wiki/PHP"
-    }, 
-    {
-      "language_description": "simple Language", 
-      "language_id": 4, 
-      "language_image": "images/language_icon/python_icon.png", 
-      "language_name": "Python", 
-      "language_wiki_description": "Python is a widely used general-purpose, high-level programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java. The language provides constructs intended to enable clear programs on both a small and large scale.", 
-      "language_wiki_link": "http://en.wikipedia.org/wiki/Python_%28programming_language%29"
-    }, 
-    {
-      "language_description": "web Language", 
-      "language_id": 5, 
-      "language_image": "images/language_icon/javascript_icon.png", 
-      "language_name": "Javascript", 
-      "language_wiki_description": "JavaScript is a dynamic computer programming language. It is most commonly used as part of web browsers, whose implementations allow client-side scripts to interact with the user, control the browser, communicate asynchronously, and alter the document content that is displayed. It is also used in server-side network programming with runtime environments such as Node.js, game development and the creation of desktop and mobile applications. With the rise of the single-page web app and JavaScript-heavy sites, it is increasingly being used as a compile target for source-to-source compilers from both dynamic languages and static languages.", 
-      "language_wiki_link": "http://en.wikipedia.org/wiki/JavaScript"
-    }, 
-    {
-      "language_description": "Apple Language", 
-      "language_id": 6, 
-      "language_image": "images/language_icon/objective-c_icon.png", 
-      "language_name": "Objective-C", 
-      "language_wiki_description": "Objective-C is a general-purpose, object-oriented programming language that adds Smalltalk-style messaging to the C programming language. It is the main programming language used by Apple for the OS X and iOS operating systems, and their respective application programming interfaces (APIs), Cocoa and Cocoa Touch.", 
-      "language_wiki_link": "http://en.wikipedia.org/wiki/Objective-C"
-    }, 
-    {
-      "language_description": "Microsoft Language", 
-      "language_id": 7, 
-      "language_image": "images/language_icon/csharp_icon.png", 
-      "language_name": "CSharp", 
-      "language_wiki_description": "C# is a multi-paradigm programming language encompassing strong typing, imperative, declarative, functional, generic, object-oriented (class-based), and component-oriented programming disciplines. It was developed by Microsoft within its  NET initiative and later approved as a standard by Ecma (ECMA-334) and ISO (ISO/IEC 23270:2006). C# is one of the programming languages designed for the Common Language Infrastructure.", 
-      "language_wiki_link": "http://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
-    }, 
-    {
-      "language_description": "Microsoft Language", 
-      "language_id": 8, 
-      "language_image": "images/language_icon/vbnet_icon.png", 
-      "language_name": "Visual Basic.NET", 
-      "language_wiki_description": "Visual Basic  NET (VB.NET) is a multi-paradigm, high level programming language, implemented on the  NET Framework. Microsoft launched VB.NET in 2002 as the successor to its original Visual Basic language. Although the  NET portion was dropped in 2005, this article uses Visual Basic  NET to refer to all Visual Basic languages releases since 2002, in order to distinguish between them and the classic Visual Basic. Along with Visual C#, it is one of the two main languages targeting the  NET framework.", 
-      "language_wiki_link": "http://en.wikipedia.org/wiki/Visual_Basic_.NET"
-    }, 
-    {
-      "language_description": "Microsoft Language", 
-      "language_id": 9, 
-      "language_image": "images/language_icon/vb_icon.png", 
-      "language_name": "Visual Basic", 
-      "language_wiki_description": "Visual Basic is a third-generation event-driven programming language and integrated development environment (IDE) from Microsoft for its COM programming model first released in 1991. Microsoft intended Visual Basic to be relatively easy to learn and use. Visual Basic was derived from BASIC and enables the rapid application development (RAD) of graphical user interface (GUI) applications, access to databases using Data Access Objects, Remote Data Objects, or ActiveX Data Objects, and creation of ActiveX controls and objects.", 
-      "language_wiki_link": "http://en.wikipedia.org/wiki/Visual_Basic"
-    }, 
-    {
-      "language_description": "great Language", 
-      "language_id": 10, 
-      "language_image": "images/language_icon/c_icon.png", 
-      "language_name": "C", 
-      "language_wiki_description": "C is a general-purpose, imperative computer programming language. It supports structured programming, lexical variable scope and recursion, while a static type system prevents many unintended operations. By design, C provides constructs that map efficiently to typical machine instructions, and therefore it has found lasting use in applications that had formerly been coded in assembly language, including operating systems, as well as various application software for computers ranging from supercomputers to embedded systems.", 
-      "language_wiki_link": "http://en.wikipedia.org/wiki/C_(programming_language)"
-    }
-  ]
-}}
+		temp = {}
 		self.assertTrue(content == temp)
 
 	# testing a request to an individual language data
 	def test_lang_id(self):
-		response = programmerJobs.get_language(self.url + "language/1")
+		response = urllib2.urlopen(url + "language/1")
 		self.assertEqual(response.status_code, 200)
-		content = response.json()
+		content = response.read()
 		# the dataset of the language where id is 1
-		temp = {{
-  "langResult": [
-    {
-      "language_description": "Muti platiform Language", 
-      "language_id": 1, 
-      "language_image": "images/language_icon/java_icon.png", 
-      "language_name": "Java", 
-      "language_wiki_description": "Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers  write once, run anywhere  (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers. Java was originally developed by James Gosling at Sun Microsystems (which has since merged into Oracle Corporation) and released in 1995 as a core component of Sun Microsystems  Java platform. The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them.", 
-      "language_wiki_link": "http://en.wikipedia.org/wiki/Java_%28programming_language%29"
-    }
-  ]
-}}
+		temp = "null"
 		self.assertTrue(content == temp)
 
 	# testing the request when the data is not available
 	def test_lang_not_found(self):
-		response = programmerJobs.get_language(self.url + "language/null")
+		response = urllib2.urlopen(url + "language/9000")
 		self.assertEqual(response.status_code, 404)
 
 
@@ -295,23 +202,23 @@ class CompanyApiTest(unittest.TestCase):
 
 	# testing the whole set of companies data.
 	def test_company(self):
-		response = get_companies()
+		response = urllib2.urlopen(url + 'companies')
 		self.assertEqual(response.status_code, 200)
-		content = response.json()
+		content = response.read()
 		temp = {}# the whole dataset in the companies
 		self.assertTrue(content == temp)
 
 	# testing a request to an individual company data
 	def test_company_id(self):
-		response = get_company(self.url + "companies/1/")
+		response = urllib2.urlopen(url + 'company/1')
 		self.assertEqual(response.status_code, 200)
-		content = response.json()
+		content = response.read()
 		temp = {}# the dataset of the language where id is 1
 		self.assertTrue(content == temp)
 
 	# testing the request when the data is not available
 	def test_company_not_found(self):
-		response = get_company(self.url + "companies/null/")
+		response = urllib2.urlopen(url + 'company/9000')
 		self.assertEqual(response.status_code, 404)
 
 
@@ -323,23 +230,23 @@ class LocationApiTest(unittest.TestCase):
 
 	# testing the whole set of locations data.
 	def test_location(self):
-		response = get_locations()
+		response = urllib2.urlopen(url + 'locations')
 		self.assertEqual(response.status_code, 200)
-		content = response.json()
+		content = response.read()
 		temp = {}# the whole dataset in the locations
 		self.assertTrue(content == temp)
 
 	# testing a request to an individual location data
 	def test_location_id(self):
-		response = get_location(self.url + "locations/1/")
+		response = urllib2.urlopen(url + 'location/1')
 		self.assertEqual(response.status_code, 200)
-		content = response.json()
+		content = response.read()
 		temp = {}# the dataset of the language where id is 1
 		self.assertTrue(content == temp)
 
 	# testing the request when the data is not available
 	def test_location_not_found(self):
-		response = get_location(self.url + "locations/null/")
+		response = urllib2.urlopen(url + 'location/9000')
 		self.assertEqual(response.status_code, 404)
 
 
