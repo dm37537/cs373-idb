@@ -25,6 +25,7 @@ class Job(db.Model):
 	languages (Iterable) - Iterable of languages needed for job
 	"""
 	__tablename__ = 'job'
+	__searchable__ = ['job_description']
 	
 	job_id = db.Column(db.Integer, primary_key=True)
 	job_title = db.Column(db.Text)
