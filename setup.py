@@ -7,5 +7,6 @@ setup(
 	install_requires=[
 	'Flask',
 	'Flask-SQLAlchemy',
+	'flask_whooshalchemy'
 	]
 )

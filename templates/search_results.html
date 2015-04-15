@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block head %}
+	{{super()}}
+{% endblock %}
+{% block navbar %}
+	{{super()}}
+{% endblock %}
+{% block content %}
+
+<div class="container">
+	<div class="jumbotron vertical-center text-center" id="companies-jumbotron">
+		<div class="container content-box round">
+			<hr>
+			<h1>Companies</h1>
+			<h4>Search jobs by popular companies</h4>
+			<hr>
+		 </div>
+	</div>
+	<div class="row text-center">
+		{% for job in job_search_results %}
+		<div class="col-md-3 vertical-center">
+			<p>{{ job.job_title}}</p>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+<hr>
+{% endblock %}
+{% block footer %}
+	{{super()}}
+{% endblock %}
+~                 

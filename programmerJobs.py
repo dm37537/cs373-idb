@@ -3,7 +3,6 @@ import subprocess
 from flask import Flask, jsonify, abort, render_template, redirect, send_from_directory
 from flask.ext.sqlalchemy import SQLAlchemy
 import json
-#import tests
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
@@ -16,7 +15,6 @@ app.config.update(dict(
 	USERNAME = 'admin',
 	PASSWORD = 'default'
 ))
-#app.config.from_envvar('PROJECT_SETTINGS', silent=True)
 
 def init_db():
 	db.drop_all()
@@ -29,44 +27,11 @@ def populate_db():
 		session.execute(line)
 	f.close()
 	session.commit()
-	#f = open('SQL/job_data_insert.sql', 'r')
-	#for line in f:
-	#	session.execute(line)
-	#f.close()
-	#session.commit()
-
-# Loading JSON from files. To be replaced with database or model calls
-'''
-f = open('Job.json') 
-jobs = json.load(f)
-f.close()
-
-f = open('Company.json')
-companies = json.load(f)
-f.close()
-
-f = open('Location.json')
-locations = json.load(f)
-f.close()
-
-f = open('Language.json')
-languages = json.load(f)
-f.close()
-
-f = open('Skillset.json')
-skillsets = json.load(f)
-f.close()
-
-f = open('Member.json')
-members = json.load(f)
-f.close()
-'''
 
 # The following are examples of different templates in action
 @app.route('/')
 def root():
 	return redirect('http://104.130.229.90:5000/index', code=302)
-	#return redirect('http://127.0.0.1:5000/index', code=302)
 
 @app.route('/index')
 def index():
@@ -87,6 +52,11 @@ def result():
 	    outputStr = output.readlines()
 
 	return render_template('result.html', result=outputStr)
+
+@app.route('/search/<query>')
+def search(query):
+	job_search_results = Job.query.whoosh_search(query, limit=10)
+	return render_template('search_results.html', job_search_results=job_search_results)
 
 
 # API
@@ -126,13 +96,11 @@ def get_location(location_id):
 		abort(jsonify({"error": "Item does not exist"}))
 	return jsonify(location.serialize())
 	
-#Member
 @app.route('/api/member', methods=['GET'])
 def get_team_member():
 	member = Member.query.all()
 	return jsonify(Members = [memEle.serialize() for memEle in member])
 	
-
 @app.route('/api/language', methods=['GET'])
 def get_languages():
 	languages = Language.query.all()
@@ -237,7 +205,6 @@ def get_company_page(id=None):
 	locations = Location.query.all()
 	skillsets = Skillset.query.all()
 	return render_template('company.html', cmpyJson=company, cmpysJson = companies, locJson=locations, langJson=languages, jobJson=jobs, skillsetJson=skillsets)
-
 
 @app.route('/about')
 def get_about_page():
