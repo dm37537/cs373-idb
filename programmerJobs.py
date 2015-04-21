@@ -163,6 +163,14 @@ def get_freespirit(lst):
     '''
     return jsonify(shoppinglist=results)
 
+@app.route('/api/freespirit', methods=['GET'])
+def get_drinks():
+    drinks = json.load(open('drinks.json', 'r'))
+    ret = []
+    for drink_dic in drinks:
+        ret.append(drink_dic['name'])
+
+    return render_template('drinks.html', drinks_lst = ret)
 
 # Dynamic pages
 @app.route('/language')
