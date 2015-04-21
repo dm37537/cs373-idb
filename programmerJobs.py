@@ -6,13 +6,8 @@ from flask.ext.sqlalchemy import SQLAlchemy
 import json
 
 app = Flask(__name__)
-<<<<<<< HEAD
 app.config.from_object(os.environ['APP_SETTINGS'])
 #app.config['WHOOSH_BASE'] = "$VIRTUAL_ENV/lib/python2.7/site-packages"
-
-=======
-# app.config.from_object(os.environ['APP_SETTINGS'])
->>>>>>> de81cbcf3ef3975450c1b6ebfb162c515247e161
 db = SQLAlchemy(app)
 
 from models import *
@@ -65,29 +60,22 @@ def result():
 
     return render_template('result.html', result=outputStr)
 
-<<<<<<< HEAD
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-	query_string = request.query_string
-	query_split = query_string.split("=")
-	return render_template('searching.html', queryField=query_split[1])
+    query_string = request.query_string
+    query_split = query_string.split("=")
+    return render_template('searching.html', queryField=query_split[1])
 
 @app.route('/search/<query>')
 def get_search(query=None):
-	#job_search_results = Job.query.whoosh_search(query, limit=10)
-	#return render_template('search_results.html', job_search_results=job_search_results)
-	queryList = query.split("+")
-	whooshResult = Job.query.whoosh_search('software').all()
-	print(whooshResult)
-	print(len(whooshResult))
-	jobs = Job.query.all()
-	return render_template('search_results.html', jobJson=jobs, whooshResult=whooshResult, queryList=queryList)
-=======
-@app.route('/search/<query>')
-def search(query):
-    job_search_results = Job.query.whoosh_search(query, limit=10)
-    return render_template('search_results.html', job_search_results=job_search_results)
->>>>>>> de81cbcf3ef3975450c1b6ebfb162c515247e161
+    #job_search_results = Job.query.whoosh_search(query, limit=10)
+    #return render_template('search_results.html', job_search_results=job_search_results)
+    queryList = query.split("+")
+    whooshResult = Job.query.whoosh_search('software').all()
+    print(whooshResult)
+    print(len(whooshResult))
+    jobs = Job.query.all()
+    return render_template('search_results.html', jobJson=jobs, whooshResult=whooshResult, queryList=queryList)
 
 # API
 @app.route('/api/job', methods=['GET'])
@@ -296,7 +284,7 @@ def get_model_doc_page():
 
 @app.route('/drink')
 def get_drink_page():
-	return render_template('drink.html')
+    return render_template('drink.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
