@@ -8,11 +8,21 @@
 {% block content %}
 <div class="container">
 	<div class="row text-center">
-		{% for elem in drinks)lst %}
+		{% for elem in drinks_lst %}
 		<div class="col-md-3 vertical-center">
 			<p>{{ elem }}</p>
 		</div>
 		{% endfor %}
+
+
+		<form action="/api/freespirit" method=post>
+		{% for elem in drinks_lst %}
+	    <dl>  
+	      <dd><input type="checkbox" name='lst' value={{ elem }} >
+	      <dt>{{ elem }}
+	    </dl>
+	    {% endfor %}	
+	    </form>
 	</div>
 
 	<div class="row text-center">
