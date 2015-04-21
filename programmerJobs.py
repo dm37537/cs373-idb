@@ -6,7 +6,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 import json
 
 app = Flask(__name__)
-app.config.from_object(os.environ['APP_SETTINGS'])
+# app.config.from_object(os.environ['APP_SETTINGS'])
 # app.config['WHOOSH_BASE'] = "$VIRTUAL_ENV/lib/python2.7/site-packages"
 db = SQLAlchemy(app)
 
