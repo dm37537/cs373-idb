@@ -195,7 +195,7 @@ def get_freespirit():
     for rd in res_drink:
         print rd
     '''
-    return jsonify(shoppinglist=lst)
+    return jsonify(shoppinglist=results)
 
 
 @app.route('/api/freespirit', methods=['GET'])
