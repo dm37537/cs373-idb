@@ -14,10 +14,10 @@
 		<form action="/api/freespirit" method=post>
 		{% for elem in drinks_lst %}
 		<div class="col-md-3 vertical-center">
-		    <span><input type=checkbox name=lst value="{{ elem }}" >{{ elem }}</span>		    
+		    <p><input type=checkbox name=lst value="{{ elem }}" >{{ elem }}</p>		    
 		</div>
 	    {% endfor %}	
-	    <input class="btn btn-default" type='submit' name='submit' value='See my shopping list' >
+	    <input class="btn btn-default" style="position:fixed;" type='submit' name='submit' value='See my shopping list' >
 	    </form>
 	</div>
 
