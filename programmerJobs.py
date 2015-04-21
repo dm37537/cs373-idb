@@ -166,8 +166,7 @@ def get_skillset(skillset_id):
 def get_freespirit():
     drinks = json.load(open('drinks.json', 'r'))
     ingredients = json.load(open('ingredients.json', 'r'))
-    ar = request.args
-    lst = ar.getlist('lst')
+    lst = request.form.getlist("lst")
 
     get_ingre = {}
     results = []

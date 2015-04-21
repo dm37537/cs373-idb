@@ -14,7 +14,7 @@
 		<form action="/api/freespirit" method=post>
 		{% for elem in drinks_lst %}
 	    <dl>  
-	      <dd><input type="checkbox" name='lst' value={{ elem }} >
+	      <dd><input type=checkbox name=lst value="{{ elem }}" >
 	      <dd>{{ elem }}
 	    </dl>
 	    {% endfor %}	
