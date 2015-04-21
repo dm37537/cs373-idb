@@ -252,5 +252,9 @@ class CompanyApiTest(unittest.TestCase):
         self.assertEqual(response.status_code, 404)
 """
 
+
+class APITestCase(unittest.TestCase):
+    pass
+
 if __name__ == '__main__':
     unittest.main()

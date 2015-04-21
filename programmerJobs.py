@@ -5,7 +5,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 import json
 
 app = Flask(__name__)
-app.config.from_object(os.environ['APP_SETTINGS'])
+# app.config.from_object(os.environ['APP_SETTINGS'])
 db = SQLAlchemy(app)
 from models import *
 
@@ -128,7 +128,7 @@ def get_skillset(skillset_id):
 
 # use of others api
 @app.route('/api/freespirit', methods=['POST'])
-def get_skillset(lst):
+def get_freespirit(lst):
     drinks = json.load(open('drinks.json', 'r'))
     ingredients = json.load(open('ingredients.json', 'r'))
 
