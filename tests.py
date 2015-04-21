@@ -3,7 +3,8 @@ import socket
 default_timeout = 10
 socket.setdefaulttimeout(default_timeout)
 
-from programmerJobs import db, app, get_languages, get_language, get_companies, get_company, get_locations, get_location
+# from programmerJobs import db, app, get_languages, get_language, get_companies, get_company, get_locations, get_location
+from programmerJobs import *
 from models import Job, Company, Location, Language, Skillset
 import urllib2
 import json
@@ -303,35 +304,74 @@ class APITestCase(unittest.TestCase):
                 },
                 {
                     "company_id": 2,
-                    "job_description": "Design, develop, troubleshoot and debug software programs for databases, applications, tools, networks etc./n/nAs a member of the software engineering division, you will take an active role in the definition and evolution of standard practices and procedures. Define specifications for significant new projects and specify, design and develop software according to those specifications. You will perform professional software development tasks associated with the developing, designing and debugging of software applications or operating systems./n/nProvide leadership and expertise in the development of new products/services/processes, frequently operating at the leading edge of technology. Recommends and justifies major changes to existing products/services/processes. BS or MS degree or equivalent experience relevant to functional area. 8 more years of software engineering or related experience.",
+                    "job_description": "Design, develop, troubleshoot and debug software programs for databases, "
+                                       "applications, tools, networks etc./n/nAs a member of the software engineering "
+                                       "division, you will take an active role in the definition and evolution of "
+                                       "standard practices and procedures. Define specifications for significant new "
+                                       "projects and specify, design and develop software according to those "
+                                       "specifications. You will perform professional software development tasks "
+                                       "associated with the developing, designing and debugging of software "
+                                       "applications or operating systems./n/nProvide leadership and expertise in the "
+                                       "development of new products/services/processes, frequently operating at the "
+                                       "leading edge of technology. Recommends and justifies major changes to existing "
+                                       "products/services/processes. BS or MS degree or equivalent experience relevant "
+                                       "to functional area. 8 more years of software engineering or related "
+                                       "experience.",
                     "job_id": 3,
                     "job_title": "Software Developer 5",
                     "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=60564",
                     "location_id": 2
                 },
                 {
-                  "company_id": 2,
-                  "job_description": "Design, develop, troubleshoot and debug software programs for databases, applications, tools, networks etc./n/nAs a member of the software engineering division, you will assist in defining and developing software for tasks associated with the developing, debugging or designing of software applications or operating systems. Provide technical leadership to other software developers. Specify, design and implement modest changes to existing software architecture to meet changing needs./n/nDuties and tasks are varied and complex needing independent judgment. Fully competent in own area of expertise. May have project lead role and or supervise lower level personnel. BS or MS degree or equivalent experience relevant to functional area. 4 years of software engineering or related experience.",
-                  "job_id": 4,
-                  "job_title": "Software Developer 3",
-                  "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=46894",
-                  "location_id": 1
+                    "company_id": 2,
+                    "job_description": "Design, develop, troubleshoot and debug software programs for databases, "
+                                       "applications, tools, networks etc./n/nAs a member of the software engineering "
+                                       "division, you will assist in defining and developing software for tasks "
+                                       "associated with the developing, debugging or designing of software applications"
+                                       " or operating systems. Provide technical leadership to other software "
+                                       "developers. Specify, design and implement modest changes to existing software "
+                                       "architecture to meet changing needs./n/nDuties and tasks are varied and complex"
+                                       " needing independent judgment. Fully competent in own area of expertise. May "
+                                       "have project lead role and or supervise lower level personnel. BS or MS degree"
+                                       " or equivalent experience relevant to functional area. 4 years of software "
+                                       "engineering or related experience.",
+                    "job_id": 4,
+                    "job_title": "Software Developer 3",
+                    "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=46894",
+                    "location_id": 1
                 },
                 {
-                  "company_id": 1,
-                  "job_description": "Build custom front-ends (web and mobile), back-end services, and third-party integrations to automate business processes./nPropose, design, and implement business workflows to streamline asset management lifecycles./nMaintain strong development practices including technical design and writing clean, modular, well tested and self-sustaining code./nCollaborate with business analysts, program managers, end users and other internal teams to translate business requirements into technical solutions that work at Google scale./nIntegrate third-party products with Google s internal systems as well as support and upgrade implemented systems.",
-                  "job_id": 5,
-                  "job_title": "Application Developer, Corporate Asset Management Engineering",
-                  "link": "https://www.google.com/about/careers/search?src=Online/Job+Board/indeed&utm_source=indeed&utm_medium=jobaggr&utm_campaign=freeaggr#!t=jo&jid=94815001",
-                  "location_id": 5
+                    "company_id": 1,
+                    "job_description": "Build custom front-ends (web and mobile), back-end services, and third-party "
+                                       "integrations to automate business processes./nPropose, design, and implement "
+                                       "business workflows to streamline asset management lifecycles./nMaintain strong "
+                                       "development practices including technical design and writing clean, modular, "
+                                       "well tested and self-sustaining code./nCollaborate with business analysts, "
+                                       "program managers, end users and other internal teams to translate business "
+                                       "requirements into technical solutions that work at Google scale./nIntegrate "
+                                       "third-party products with Google s internal systems as well as support and "
+                                       "upgrade implemented systems.",
+                    "job_id": 5,
+                    "job_title": "Application Developer, Corporate Asset Management Engineering",
+                    "link": "https://www.google.com/about/careers/search?src=Online/Job+Board/indeed&utm_source=indeed&"
+                            "utm_medium=jobaggr&utm_campaign=freeaggr#!t=jo&jid=94815001",
+                    "location_id": 5
                 },
                 {
-                  "company_id": 1,
-                  "job_description": "Design, write and deliver software to improve the availability, scalability, latency, and efficiency of Google s services./nSolve problems relating to mission critical services and build automation to prevent problem recurrence; with the goal of automating response to all non-exceptional service conditions./nInfluence and create new designs, architectures, standards and methods for large-scale distributed systems./nEngage in service capacity planning and demand forecasting, software performance analysis and system tuning./nConduct periodic on call duties using a follow-the-sun model.",
-                  "job_id": 6,
-                  "job_title": "Systems Engineer, Site Reliability Engineering",
-                  "link": "https://www.google.com/about/careers/search?src=Online/Job+Board/indeed&utm_source=indeed&utm_medium=jobaggr&utm_campaign=freeaggr#!t=jo&jid=83835001",
-                  "location_id": 4
+                    "company_id": 1,
+                    "job_description": "Design, write and deliver software to improve the availability, scalability, "
+                                       "latency, and efficiency of Google s services./nSolve problems relating to "
+                                       "mission critical services and build automation to prevent problem recurrence; "
+                                       "with the goal of automating response to all non-exceptional service conditions."
+                                       "/nInfluence and create new designs, architectures, standards and methods for "
+                                       "large-scale distributed systems./nEngage in service capacity planning and "
+                                       "demand forecasting, software performance analysis and system tuning./nConduct "
+                                       "periodic on call duties using a follow-the-sun model.",
+                    "job_id": 6,
+                    "job_title": "Systems Engineer, Site Reliability Engineering",
+                    "link": "https://www.google.com/about/careers/search?src=Online/Job+Board/indeed&utm_source=indeed&"
+                            "utm_medium=jobaggr&utm_campaign=freeaggr#!t=jo&jid=83835001",
+                    "location_id": 4
                 },
                 {
                   "company_id": 3,
@@ -919,10 +959,26 @@ class APITestCase(unittest.TestCase):
                 }
             ]
         }
-        assert()
+        self.assertEqual(expected_result, get_jobs())
 
     def test_getting_single_job(self):
-        assert()
+        expected = {
+            "company_id": 2,
+            "job_description": "Design, configure, and implement our data systems and stream processing pipelines/nCode"
+                               " analytics jobs, web services, and other components/nWork with operations to build and "
+                               "configure maintainable, resource-efficient systems/nWork with data pipelines using "
+                               "Kafka, Cassandra, Spark/nLeverage Event processing technologies to deliver real time "
+                               "analytics features/nDevelop a cloud service that would be processing billions of events"
+                               " a day/nLeverage fast data pipelines for real time analytics on various Oracle SaaS "
+                               "applications/nContribute ideas for continually improving the team s productivity, job "
+                               "enjoyment, and code quality./nActively mentor junior developers to develop their "
+                               "technical expertise/nHave fun engineering software and scalable systems",
+            "job_id": 1,
+            "job_title": "Software Developer 4",
+            "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=90953",
+            "location_id": 3
+        }
+        self.assertEqual(expected, get_job(1))
 
 if __name__ == '__main__':
     unittest.main()
