@@ -24,17 +24,18 @@
     {% endif %}
 
     {% if ingredients_result %}
-	<div class="row text-left">
+
 		<br><br>
-		<div class="container content-box round">
+		<div class="container content-box round" style="text-align:center;">
 	      <hr>
 	      <h1>My Shopping List</h1>
 	      <hr>
 	    </div>
 		<br><br>
+	<div class="row text-left">
 		{% for elem in ingredients_result %}
 		<div class="col-md-3 vertical-left">
-			<p>{{ elem }}</p>
+			<h5>{{ elem }}</h5>
 		</div>
 		{% endfor %}
 	</div>
