@@ -126,6 +126,44 @@ def get_skillset(skillset_id):
 	return jsonify(skillset.serialize())
 
 
+#use of others api
+@app.route('/api/freespirit', methods=['POST'])
+def get_skillset(lst):
+	drinks = json.load(open('drinks.json', 'r'))
+	ingredients = json.load(open('ingredients.json', 'r'))
+
+	get_ingre = {}
+	res = []
+	for selection in lst:
+		for drink_dic in drinks:
+			if selection == drink_dic['name']:
+				get_ingre = drink_dic['ingredients']
+				for select in get_ingre.keys():
+					for ingredient_dic in ingredients:
+						if select == ingredient_dic['id']:
+							res.append(ingredient_dic['name'])
+
+	for s in res:
+		print s
+	'''
+	print ""
+	find_drink = True
+	res_drink = []
+
+	for drink_dic in drinks:
+		find_drink = True
+		for i in lst_ing:
+			if i not in drink_dic['ingredients'].keys():
+				find_drink = False
+		if find_drink:
+			res_drink.append(drink_dic['name'])
+
+	for rd in res_drink:
+		print rd
+	'''
+	return jsonify("shoppinglist" = res)
+
+
 
 
 
