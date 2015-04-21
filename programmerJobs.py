@@ -179,8 +179,6 @@ def get_freespirit():
                         if select == ingredient_dic['id']:
                             results.append(ingredient_dic['name'])
 
-    for s in results:
-        print s
     '''
     print ""
     find_drink = True
