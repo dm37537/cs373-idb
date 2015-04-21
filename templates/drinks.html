@@ -18,7 +18,7 @@
 		    <p><input type=checkbox name=lst value="{{ elem }}" >{{ elem }}</p>		    
 		</div>
 	    {% endfor %}	
-	    <input class="btn btn-default" style="position:fixed;" type='submit' name='submit' value='See my shopping list' >
+	    <input class="btn btn-large btn-primary" style="position:fixed;" type='submit' name='submit' value='See my shopping list' >
 	    </form>
 	</div>
     {% endif %}
@@ -35,7 +35,7 @@
 	<div class="row text-left">
 		{% for elem in ingredients_result %}
 		<div class="col-md-3 vertical-left">
-			<h5>{{ elem }}</h5>
+			<h4>{{ elem }}</h4>
 		</div>
 		{% endfor %}
 	</div>
