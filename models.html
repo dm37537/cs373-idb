@@ -1,485 +1,500 @@
-Help on module models:
 
-NAME
-    models
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module models</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
 
-FILE
-    /home/kvalle/cs373-idb/models.py
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>models</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/kvalle/cs373-idb/models.py">/home/kvalle/cs373-idb/models.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial">flask_sqlalchemy.Model(<a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="models.html#Company">Company</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Job">Job</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Language">Language</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Location">Location</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Member">Member</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Skillset">Skillset</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Company">class <strong>Company</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;is&nbsp;the&nbsp;<a href="#Company">Company</a>&nbsp;model&nbsp;and&nbsp;has&nbsp;the&nbsp;following&nbsp;attributes:<br>
+company_id&nbsp;(Integer)&nbsp;-&nbsp;Unique&nbsp;identifier<br>
+company_name&nbsp;(Text)&nbsp;-&nbsp;Name&nbsp;of&nbsp;the&nbsp;company<br>
+company_description&nbsp;(Text)&nbsp;-&nbsp;Description&nbsp;of&nbsp;the&nbsp;company&nbsp;<br>
+company_image&nbsp;(Text)&nbsp;-&nbsp;URL&nbsp;for&nbsp;company&nbsp;image<br>
+company_site&nbsp;(Text)&nbsp;-&nbsp;URL&nbsp;for&nbsp;company<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Company">Company</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Company-__init__"><strong>__init__</strong></a>(self, id, Company_Name, Company_description, Company_image, Company_site)</dt></dl>
 
-CLASSES
-    flask_sqlalchemy.Model(flask_sqlalchemy.Model)
-        Company
-        Job
-        Language
-        Location
-        Member
-        Skillset
-    
-    class Company(flask_sqlalchemy.Model)
-     |  This is the Company model and has the following attributes:
-     |  company_id (Integer) - Unique identifier
-     |  company_name (Text) - Name of the company
-     |  company_description (Text) - Description of the company 
-     |  company_image (Text) - URL for company image
-     |  company_site (Text) - URL for company
-     |  
-     |  Method resolution order:
-     |      Company
-     |      flask_sqlalchemy.Model
-     |      flask_sqlalchemy.Model
-     |      __builtin__.object
-     |  
-     |  Methods defined here:
-     |  
-     |  __init__(self, id, Company_Name, Company_description, Company_image, Company_site)
-     |  
-     |  __repr__(self)
-     |  
-     |  serialize(self)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data descriptors defined here:
-     |  
-     |  company_description
-     |  
-     |  company_id
-     |  
-     |  company_image
-     |  
-     |  company_name
-     |  
-     |  company_site
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes defined here:
-     |  
-     |  __mapper__ = <Mapper at 0x7f26f5addfd0; Company>
-     |  
-     |  __table__ = Table('company', MetaData(bind=None), Column('co...any_sit...
-     |  
-     |  __tablename__ = 'company'
-     |  
-     |  ----------------------------------------------------------------------
-     |  Methods inherited from flask_sqlalchemy.Model:
-     |  
-     |  query = <flask_sqlalchemy.BaseQuery object>
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes inherited from flask_sqlalchemy.Model:
-     |  
-     |  metadata = MetaData(bind=None)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data descriptors inherited from flask_sqlalchemy.Model:
-     |  
-     |  __dict__
-     |      dictionary for instance variables (if defined)
-     |  
-     |  __weakref__
-     |      list of weak references to the object (if defined)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes inherited from flask_sqlalchemy.Model:
-     |  
-     |  query_class = <class 'flask_sqlalchemy.BaseQuery'>
-     |      The default query object used for models, and exposed as
-     |      :attr:`~SQLAlchemy.Query`. This can be subclassed and
-     |      replaced for individual models by setting the :attr:`~Model.query_class`
-     |      attribute.  This is a subclass of a standard SQLAlchemy
-     |      :class:`~sqlalchemy.orm.query.Query` class and has all the methods of a
-     |      standard query as well.
-    
-    class Job(flask_sqlalchemy.Model)
-     |  This is the Job model and has the following attributes:
-     |  job_id (Integer) - A unique indentifier  
-     |  job_title (Text) - Job title
-     |  job_description (Text) - Job description
-     |  link (Text) - URL of the job posting on the company's website
-     |  locationid (Integer) - Identifier for the location of the job
-     |  companyid (Integer) - Identifer for the company
-     |  skillsets (Iterable) - Iterable of skillsets needed for job
-     |  languages (Iterable) - Iterable of languages needed for job
-     |  
-     |  Method resolution order:
-     |      Job
-     |      flask_sqlalchemy.Model
-     |      flask_sqlalchemy.Model
-     |      __builtin__.object
-     |  
-     |  Methods defined here:
-     |  
-     |  __init__(self, id, title, locationID, companyID, description, link)
-     |  
-     |  __repr__(self)
-     |  
-     |  serialize(self)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data descriptors defined here:
-     |  
-     |  company_id
-     |  
-     |  job_description
-     |  
-     |  job_id
-     |  
-     |  job_title
-     |  
-     |  languages
-     |  
-     |  link
-     |  
-     |  location_id
-     |  
-     |  skillsets
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes defined here:
-     |  
-     |  __mapper__ = <Mapper at 0x7f26f5acbdd0; Job>
-     |  
-     |  __table__ = Table('job', MetaData(bind=None), Column('job_id...'compan...
-     |  
-     |  __tablename__ = 'job'
-     |  
-     |  ----------------------------------------------------------------------
-     |  Methods inherited from flask_sqlalchemy.Model:
-     |  
-     |  query = <flask_sqlalchemy.BaseQuery object>
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes inherited from flask_sqlalchemy.Model:
-     |  
-     |  metadata = MetaData(bind=None)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data descriptors inherited from flask_sqlalchemy.Model:
-     |  
-     |  __dict__
-     |      dictionary for instance variables (if defined)
-     |  
-     |  __weakref__
-     |      list of weak references to the object (if defined)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes inherited from flask_sqlalchemy.Model:
-     |  
-     |  query_class = <class 'flask_sqlalchemy.BaseQuery'>
-     |      The default query object used for models, and exposed as
-     |      :attr:`~SQLAlchemy.Query`. This can be subclassed and
-     |      replaced for individual models by setting the :attr:`~Model.query_class`
-     |      attribute.  This is a subclass of a standard SQLAlchemy
-     |      :class:`~sqlalchemy.orm.query.Query` class and has all the methods of a
-     |      standard query as well.
-    
-    class Language(flask_sqlalchemy.Model)
-     |  This is the Language model and has the following attributes:
-     |  language_id (Integer) - Unique identifier
-     |  language_name (Text) - Name of the programming language
-     |  language_description (Text) - Description of the programming language
-     |  language_wiki_description (Text) - URL for the smaller image of the programming language
-     |  language_wiki_link (Text) - URL for the larger image of the programming language
-     |  
-     |  Method resolution order:
-     |      Language
-     |      flask_sqlalchemy.Model
-     |      flask_sqlalchemy.Model
-     |      __builtin__.object
-     |  
-     |  Methods defined here:
-     |  
-     |  __init__(self, id, Language_Name, Language_Image, Language_Wiki_Description, Language_Description, Language_Wiki_Link)
-     |  
-     |  __repr__(self)
-     |  
-     |  serialize(self)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data descriptors defined here:
-     |  
-     |  job
-     |  
-     |  language_description
-     |  
-     |  language_id
-     |  
-     |  language_image
-     |  
-     |  language_name
-     |  
-     |  language_wiki_description
-     |  
-     |  language_wiki_link
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes defined here:
-     |  
-     |  __mapper__ = <Mapper at 0x7f26f5aede90; Language>
-     |  
-     |  __table__ = Table('language', MetaData(bind=None), Column('l...ki_link...
-     |  
-     |  __tablename__ = 'language'
-     |  
-     |  ----------------------------------------------------------------------
-     |  Methods inherited from flask_sqlalchemy.Model:
-     |  
-     |  query = <flask_sqlalchemy.BaseQuery object>
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes inherited from flask_sqlalchemy.Model:
-     |  
-     |  metadata = MetaData(bind=None)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data descriptors inherited from flask_sqlalchemy.Model:
-     |  
-     |  __dict__
-     |      dictionary for instance variables (if defined)
-     |  
-     |  __weakref__
-     |      list of weak references to the object (if defined)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes inherited from flask_sqlalchemy.Model:
-     |  
-     |  query_class = <class 'flask_sqlalchemy.BaseQuery'>
-     |      The default query object used for models, and exposed as
-     |      :attr:`~SQLAlchemy.Query`. This can be subclassed and
-     |      replaced for individual models by setting the :attr:`~Model.query_class`
-     |      attribute.  This is a subclass of a standard SQLAlchemy
-     |      :class:`~sqlalchemy.orm.query.Query` class and has all the methods of a
-     |      standard query as well.
-    
-    class Location(flask_sqlalchemy.Model)
-     |  This is the Location model and has the following attributes:
-     |  location_id (Integer) - Unique Identifier
-     |  location_name (Text) - Name of the location
-     |  location_description (Text) - Description of the location
-     |  location_image (Text) - URL for the location image
-     |  
-     |  Method resolution order:
-     |      Location
-     |      flask_sqlalchemy.Model
-     |      flask_sqlalchemy.Model
-     |      __builtin__.object
-     |  
-     |  Methods defined here:
-     |  
-     |  __init__(self, id, Location, Location_description, Location_image)
-     |  
-     |  __repr__(self)
-     |  
-     |  serialize(self)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data descriptors defined here:
-     |  
-     |  location_description
-     |  
-     |  location_id
-     |  
-     |  location_image
-     |  
-     |  location_name
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes defined here:
-     |  
-     |  __mapper__ = <Mapper at 0x7f26f5a7ccd0; Location>
-     |  
-     |  __table__ = Table('location', MetaData(bind=None), Column('l...n_image...
-     |  
-     |  __tablename__ = 'location'
-     |  
-     |  ----------------------------------------------------------------------
-     |  Methods inherited from flask_sqlalchemy.Model:
-     |  
-     |  query = <flask_sqlalchemy.BaseQuery object>
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes inherited from flask_sqlalchemy.Model:
-     |  
-     |  metadata = MetaData(bind=None)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data descriptors inherited from flask_sqlalchemy.Model:
-     |  
-     |  __dict__
-     |      dictionary for instance variables (if defined)
-     |  
-     |  __weakref__
-     |      list of weak references to the object (if defined)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes inherited from flask_sqlalchemy.Model:
-     |  
-     |  query_class = <class 'flask_sqlalchemy.BaseQuery'>
-     |      The default query object used for models, and exposed as
-     |      :attr:`~SQLAlchemy.Query`. This can be subclassed and
-     |      replaced for individual models by setting the :attr:`~Model.query_class`
-     |      attribute.  This is a subclass of a standard SQLAlchemy
-     |      :class:`~sqlalchemy.orm.query.Query` class and has all the methods of a
-     |      standard query as well.
-    
-    class Member(flask_sqlalchemy.Model)
-     |  This is the Member model and has the following attributes:
-     |  member_id (Integer) - Unique identifier
-     |  member_name (Text) - Name of a member
-     |  member_bio (Text) - Biography for a member
-     |  member_major_responsibility (Text) - Major responsibity for a member
-     |  member_commit (Integer) - Number of commit 
-     |  member_issue (Integer) - Number of issue
-     |  member_unittest (Integer) - Number of unittest
-     |  member_image (Text) - Image directory
-     |  member_leader (Integer) - Number of leader
-     |  
-     |  Method resolution order:
-     |      Member
-     |      flask_sqlalchemy.Model
-     |      flask_sqlalchemy.Model
-     |      __builtin__.object
-     |  
-     |  Methods defined here:
-     |  
-     |  __init__(self, id, Member_name, Member_bio, Member_major_responsibilit, Member_commit, Member_issue, Member_unittest, Member_image, Member_leader)
-     |  
-     |  __repr__(self)
-     |  
-     |  serialize(self)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data descriptors defined here:
-     |  
-     |  member_bio
-     |  
-     |  member_commit
-     |  
-     |  member_id
-     |  
-     |  member_image
-     |  
-     |  member_issue
-     |  
-     |  member_leader
-     |  
-     |  member_major_responsibility
-     |  
-     |  member_name
-     |  
-     |  member_unittest
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes defined here:
-     |  
-     |  __mapper__ = <Mapper at 0x7f26f5a93c90; Member>
-     |  
-     |  __table__ = Table('member', MetaData(bind=None), Column('mem...leader'...
-     |  
-     |  __tablename__ = 'member'
-     |  
-     |  ----------------------------------------------------------------------
-     |  Methods inherited from flask_sqlalchemy.Model:
-     |  
-     |  query = <flask_sqlalchemy.BaseQuery object>
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes inherited from flask_sqlalchemy.Model:
-     |  
-     |  metadata = MetaData(bind=None)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data descriptors inherited from flask_sqlalchemy.Model:
-     |  
-     |  __dict__
-     |      dictionary for instance variables (if defined)
-     |  
-     |  __weakref__
-     |      list of weak references to the object (if defined)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes inherited from flask_sqlalchemy.Model:
-     |  
-     |  query_class = <class 'flask_sqlalchemy.BaseQuery'>
-     |      The default query object used for models, and exposed as
-     |      :attr:`~SQLAlchemy.Query`. This can be subclassed and
-     |      replaced for individual models by setting the :attr:`~Model.query_class`
-     |      attribute.  This is a subclass of a standard SQLAlchemy
-     |      :class:`~sqlalchemy.orm.query.Query` class and has all the methods of a
-     |      standard query as well.
-    
-    class Skillset(flask_sqlalchemy.Model)
-     |  This is the Skillset model and has the following attributes:
-     |  skillset_id (Integer)  - Unique identifier
-     |  skillset_name (Text) - Name of the skillset
-     |  skillset_description (Text) - Description of the skillset
-     |  
-     |  Method resolution order:
-     |      Skillset
-     |      flask_sqlalchemy.Model
-     |      flask_sqlalchemy.Model
-     |      __builtin__.object
-     |  
-     |  Methods defined here:
-     |  
-     |  __init__(self, id, Skillset, Skillset_description, Skillset_image, Skillset_wiki_description, Skillset_wiki_link)
-     |  
-     |  __repr__(self)
-     |  
-     |  serialize(self)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data descriptors defined here:
-     |  
-     |  job
-     |  
-     |  skillset_description
-     |  
-     |  skillset_id
-     |  
-     |  skillset_image
-     |  
-     |  skillset_name
-     |  
-     |  skillset_wiki_description
-     |  
-     |  skillset_wiki_link
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes defined here:
-     |  
-     |  __mapper__ = <Mapper at 0x7f26f5a89a90; Skillset>
-     |  
-     |  __table__ = Table('skillset', MetaData(bind=None), Column('s...ki_link...
-     |  
-     |  __tablename__ = 'skillset'
-     |  
-     |  ----------------------------------------------------------------------
-     |  Methods inherited from flask_sqlalchemy.Model:
-     |  
-     |  query = <flask_sqlalchemy.BaseQuery object>
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes inherited from flask_sqlalchemy.Model:
-     |  
-     |  metadata = MetaData(bind=None)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data descriptors inherited from flask_sqlalchemy.Model:
-     |  
-     |  __dict__
-     |      dictionary for instance variables (if defined)
-     |  
-     |  __weakref__
-     |      list of weak references to the object (if defined)
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data and other attributes inherited from flask_sqlalchemy.Model:
-     |  
-     |  query_class = <class 'flask_sqlalchemy.BaseQuery'>
-     |      The default query object used for models, and exposed as
-     |      :attr:`~SQLAlchemy.Query`. This can be subclassed and
-     |      replaced for individual models by setting the :attr:`~Model.query_class`
-     |      attribute.  This is a subclass of a standard SQLAlchemy
-     |      :class:`~sqlalchemy.orm.query.Query` class and has all the methods of a
-     |      standard query as well.
+<dl><dt><a name="Company-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
 
-DATA
-    db = <SQLAlchemy engine='postgresql+psycopg2://kvalle:redApple@localho...
-    job_languages = Table('job_require_language', MetaData(bind=None...id'...
-    job_skillsets = Table('job_require_skillset', MetaData(bind=None...id'...
+<dl><dt><a name="Company-serialize"><strong>serialize</strong></a>(self)</dt></dl>
 
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>company_description</strong></dt>
+</dl>
+<dl><dt><strong>company_id</strong></dt>
+</dl>
+<dl><dt><strong>company_image</strong></dt>
+</dl>
+<dl><dt><strong>company_name</strong></dt>
+</dl>
+<dl><dt><strong>company_site</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7fbc8d997fd0; Company&gt;</dl>
 
+<dl><dt><strong>__table__</strong> = Table('company', MetaData(bind=None), Column('co...any_site', Text(), table=&lt;company&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'company'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Job">class <strong>Job</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;is&nbsp;the&nbsp;<a href="#Job">Job</a>&nbsp;model&nbsp;and&nbsp;has&nbsp;the&nbsp;following&nbsp;attributes:<br>
+job_id&nbsp;(Integer)&nbsp;-&nbsp;A&nbsp;unique&nbsp;indentifier&nbsp;&nbsp;<br>
+job_title&nbsp;(Text)&nbsp;-&nbsp;<a href="#Job">Job</a>&nbsp;title<br>
+job_description&nbsp;(Text)&nbsp;-&nbsp;<a href="#Job">Job</a>&nbsp;description<br>
+link&nbsp;(Text)&nbsp;-&nbsp;URL&nbsp;of&nbsp;the&nbsp;job&nbsp;posting&nbsp;on&nbsp;the&nbsp;company's&nbsp;website<br>
+locationid&nbsp;(Integer)&nbsp;-&nbsp;Identifier&nbsp;for&nbsp;the&nbsp;location&nbsp;of&nbsp;the&nbsp;job<br>
+companyid&nbsp;(Integer)&nbsp;-&nbsp;Identifer&nbsp;for&nbsp;the&nbsp;company<br>
+skillsets&nbsp;(Iterable)&nbsp;-&nbsp;Iterable&nbsp;of&nbsp;skillsets&nbsp;needed&nbsp;for&nbsp;job<br>
+languages&nbsp;(Iterable)&nbsp;-&nbsp;Iterable&nbsp;of&nbsp;languages&nbsp;needed&nbsp;for&nbsp;job<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Job">Job</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Job-__init__"><strong>__init__</strong></a>(self, id, title, locationID, companyID, description, link)</dt></dl>
+
+<dl><dt><a name="Job-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Job-serialize"><strong>serialize</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>company_id</strong></dt>
+</dl>
+<dl><dt><strong>job_description</strong></dt>
+</dl>
+<dl><dt><strong>job_id</strong></dt>
+</dl>
+<dl><dt><strong>job_title</strong></dt>
+</dl>
+<dl><dt><strong>languages</strong></dt>
+</dl>
+<dl><dt><strong>link</strong></dt>
+</dl>
+<dl><dt><strong>location_id</strong></dt>
+</dl>
+<dl><dt><strong>skillsets</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7fbc8d985dd0; Job&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('job', MetaData(bind=None), Column('job_id...'company.company_id'), table=&lt;job&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'job'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Language">class <strong>Language</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;is&nbsp;the&nbsp;<a href="#Language">Language</a>&nbsp;model&nbsp;and&nbsp;has&nbsp;the&nbsp;following&nbsp;attributes:<br>
+language_id&nbsp;(Integer)&nbsp;-&nbsp;Unique&nbsp;identifier<br>
+language_name&nbsp;(Text)&nbsp;-&nbsp;Name&nbsp;of&nbsp;the&nbsp;programming&nbsp;language<br>
+language_description&nbsp;(Text)&nbsp;-&nbsp;Description&nbsp;of&nbsp;the&nbsp;programming&nbsp;language<br>
+language_wiki_description&nbsp;(Text)&nbsp;-&nbsp;URL&nbsp;for&nbsp;the&nbsp;smaller&nbsp;image&nbsp;of&nbsp;the&nbsp;programming&nbsp;language<br>
+language_wiki_link&nbsp;(Text)&nbsp;-&nbsp;URL&nbsp;for&nbsp;the&nbsp;larger&nbsp;image&nbsp;of&nbsp;the&nbsp;programming&nbsp;language<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Language">Language</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Language-__init__"><strong>__init__</strong></a>(self, id, Language_Name, Language_Image, Language_Wiki_Description, Language_Description, Language_Wiki_Link)</dt></dl>
+
+<dl><dt><a name="Language-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Language-serialize"><strong>serialize</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>job</strong></dt>
+</dl>
+<dl><dt><strong>language_description</strong></dt>
+</dl>
+<dl><dt><strong>language_id</strong></dt>
+</dl>
+<dl><dt><strong>language_image</strong></dt>
+</dl>
+<dl><dt><strong>language_name</strong></dt>
+</dl>
+<dl><dt><strong>language_wiki_description</strong></dt>
+</dl>
+<dl><dt><strong>language_wiki_link</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7fbc8d9a7e90; Language&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('language', MetaData(bind=None), Column('l...ki_link', Text(), table=&lt;language&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'language'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Location">class <strong>Location</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;is&nbsp;the&nbsp;<a href="#Location">Location</a>&nbsp;model&nbsp;and&nbsp;has&nbsp;the&nbsp;following&nbsp;attributes:<br>
+location_id&nbsp;(Integer)&nbsp;-&nbsp;Unique&nbsp;Identifier<br>
+location_name&nbsp;(Text)&nbsp;-&nbsp;Name&nbsp;of&nbsp;the&nbsp;location<br>
+location_description&nbsp;(Text)&nbsp;-&nbsp;Description&nbsp;of&nbsp;the&nbsp;location<br>
+location_image&nbsp;(Text)&nbsp;-&nbsp;URL&nbsp;for&nbsp;the&nbsp;location&nbsp;image<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Location">Location</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Location-__init__"><strong>__init__</strong></a>(self, id, Location, Location_description, Location_image)</dt></dl>
+
+<dl><dt><a name="Location-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Location-serialize"><strong>serialize</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>location_description</strong></dt>
+</dl>
+<dl><dt><strong>location_id</strong></dt>
+</dl>
+<dl><dt><strong>location_image</strong></dt>
+</dl>
+<dl><dt><strong>location_name</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7fbc8d936cd0; Location&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('location', MetaData(bind=None), Column('l...n_image', Text(), table=&lt;location&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'location'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Member">class <strong>Member</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;is&nbsp;the&nbsp;<a href="#Member">Member</a>&nbsp;model&nbsp;and&nbsp;has&nbsp;the&nbsp;following&nbsp;attributes:<br>
+member_id&nbsp;(Integer)&nbsp;-&nbsp;Unique&nbsp;identifier<br>
+member_name&nbsp;(Text)&nbsp;-&nbsp;Name&nbsp;of&nbsp;a&nbsp;member<br>
+member_bio&nbsp;(Text)&nbsp;-&nbsp;Biography&nbsp;for&nbsp;a&nbsp;member<br>
+member_major_responsibility&nbsp;(Text)&nbsp;-&nbsp;Major&nbsp;responsibity&nbsp;for&nbsp;a&nbsp;member<br>
+member_commit&nbsp;(Integer)&nbsp;-&nbsp;Number&nbsp;of&nbsp;commit&nbsp;<br>
+member_issue&nbsp;(Integer)&nbsp;-&nbsp;Number&nbsp;of&nbsp;issue<br>
+member_unittest&nbsp;(Integer)&nbsp;-&nbsp;Number&nbsp;of&nbsp;unittest<br>
+member_image&nbsp;(Text)&nbsp;-&nbsp;Image&nbsp;directory<br>
+member_leader&nbsp;(Integer)&nbsp;-&nbsp;Number&nbsp;of&nbsp;leader<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Member">Member</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Member-__init__"><strong>__init__</strong></a>(self, id, Member_name, Member_bio, Member_major_responsibilit, Member_commit, Member_issue, Member_unittest, Member_image, Member_leader)</dt></dl>
+
+<dl><dt><a name="Member-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Member-serialize"><strong>serialize</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>member_bio</strong></dt>
+</dl>
+<dl><dt><strong>member_commit</strong></dt>
+</dl>
+<dl><dt><strong>member_id</strong></dt>
+</dl>
+<dl><dt><strong>member_image</strong></dt>
+</dl>
+<dl><dt><strong>member_issue</strong></dt>
+</dl>
+<dl><dt><strong>member_leader</strong></dt>
+</dl>
+<dl><dt><strong>member_major_responsibility</strong></dt>
+</dl>
+<dl><dt><strong>member_name</strong></dt>
+</dl>
+<dl><dt><strong>member_unittest</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7fbc8d94dc90; Member&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('member', MetaData(bind=None), Column('mem...leader', Integer(), table=&lt;member&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'member'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Skillset">class <strong>Skillset</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;is&nbsp;the&nbsp;<a href="#Skillset">Skillset</a>&nbsp;model&nbsp;and&nbsp;has&nbsp;the&nbsp;following&nbsp;attributes:<br>
+skillset_id&nbsp;(Integer)&nbsp;&nbsp;-&nbsp;Unique&nbsp;identifier<br>
+skillset_name&nbsp;(Text)&nbsp;-&nbsp;Name&nbsp;of&nbsp;the&nbsp;skillset<br>
+skillset_description&nbsp;(Text)&nbsp;-&nbsp;Description&nbsp;of&nbsp;the&nbsp;skillset<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Skillset">Skillset</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Skillset-__init__"><strong>__init__</strong></a>(self, id, Skillset, Skillset_description, Skillset_image, Skillset_wiki_description, Skillset_wiki_link)</dt></dl>
+
+<dl><dt><a name="Skillset-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Skillset-serialize"><strong>serialize</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>job</strong></dt>
+</dl>
+<dl><dt><strong>skillset_description</strong></dt>
+</dl>
+<dl><dt><strong>skillset_id</strong></dt>
+</dl>
+<dl><dt><strong>skillset_image</strong></dt>
+</dl>
+<dl><dt><strong>skillset_name</strong></dt>
+</dl>
+<dl><dt><strong>skillset_wiki_description</strong></dt>
+</dl>
+<dl><dt><strong>skillset_wiki_link</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7fbc8d943a90; Skillset&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('skillset', MetaData(bind=None), Column('s...ki_link', Text(), table=&lt;skillset&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'skillset'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>db</strong> = &lt;SQLAlchemy engine='postgresql+psycopg2://kvalle:redApple@localhost:5432/production'&gt;<br>
+<strong>job_languages</strong> = Table('job_require_language', MetaData(bind=None...id'), table=&lt;job_require_language&gt;), schema=None)<br>
+<strong>job_skillsets</strong> = Table('job_require_skillset', MetaData(bind=None...id'), table=&lt;job_require_skillset&gt;), schema=None)</td></tr></table>
+</body></html>

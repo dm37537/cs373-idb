@@ -1,13 +1,19 @@
 import os
 import subprocess
-from flask import Flask, jsonify, abort, render_template, redirect, send_from_directory
+from flask import Flask, jsonify, abort, render_template, redirect, send_from_directory, request
 from flask.ext.sqlalchemy import SQLAlchemy
+#import flask.ext.whooshalchemy as whooshalchemy
 import json
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
+#app.config['WHOOSH_BASE'] = "$VIRTUAL_ENV/lib/python2.7/site-packages"
+
 db = SQLAlchemy(app)
+
 from models import *
+
+#whooshalchemy.whoosh_index(app, Job)
 
 app.config.update(dict(
 	DEBUG=True,
@@ -27,6 +33,7 @@ def populate_db():
 		session.execute(line)
 	f.close()
 	session.commit()
+
 
 # The following are examples of different templates in action
 @app.route('/')
@@ -53,11 +60,22 @@ def result():
 
 	return render_template('result.html', result=outputStr)
 
-@app.route('/search/<query>')
-def search(query):
-	job_search_results = Job.query.whoosh_search(query, limit=10)
-	return render_template('search_results.html', job_search_results=job_search_results)
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+	query_string = request.query_string
+	query_split = query_string.split("=")
+	return render_template('searching.html', queryField=query_split[1])
 
+@app.route('/search/<query>')
+def get_search(query=None):
+	#job_search_results = Job.query.whoosh_search(query, limit=10)
+	#return render_template('search_results.html', job_search_results=job_search_results)
+	queryList = query.split("+")
+	whooshResult = Job.query.whoosh_search('software').all()
+	print(whooshResult)
+	print(len(whooshResult))
+	jobs = Job.query.all()
+	return render_template('search_results.html', jobJson=jobs, whooshResult=whooshResult, queryList=queryList)
 
 # API
 @app.route('/api/job', methods=['GET'])
@@ -214,6 +232,10 @@ def get_about_page():
 @app.route('/modeldoc')
 def get_model_doc_page():
 	return send_from_directory('.', 'models.html')
+
+@app.route('/drink')
+def get_drink_page():
+	return render_template('drink.html')
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0')

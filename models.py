@@ -2,6 +2,10 @@ from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy.schema import ForeignKey
 from programmerJobs import db
+#import flask.ext.whooshalchemy as whooshalchemy
+#from programmerJobs import app
+import programmerJobs
+import flask.ext.whooshalchemy
 
 job_languages = db.Table('job_require_language',
 	db.Column('job_id', db.Integer, db.ForeignKey('job.job_id')),
@@ -25,7 +29,7 @@ class Job(db.Model):
 	languages (Iterable) - Iterable of languages needed for job
 	"""
 	__tablename__ = 'job'
-	__searchable__ = ['job_description']
+	__searchable__ = ['job_description', 'job_title']
 	
 	job_id = db.Column(db.Integer, primary_key=True)
 	job_title = db.Column(db.Text)
@@ -59,6 +63,8 @@ class Job(db.Model):
 	def __repr__(self):
 		return '<Job %r>' % self.job_title
 
+#flask.ext.whooshalchemy.whoosh_index(programmerJobs.app, Job)
+
 class Company(db.Model):
 	"""
 	This is the Company model and has the following attributes:
@@ -69,6 +75,7 @@ class Company(db.Model):
 	company_site (Text) - URL for company
 	"""
 	__tablename__ = 'company'
+	__searchable__ = ['company_name']
 	
 	company_id = db.Column(db.Integer, primary_key=True)
 	company_name = db.Column(db.Text)
@@ -106,6 +113,7 @@ class Language(db.Model):
 	language_wiki_link (Text) - URL for the larger image of the programming language
 	"""
 	__tablename__ = 'language'        
+	__searchable__ = ['language_name']
 
 	language_id = db.Column(db.Integer, primary_key=True)
 	language_name = db.Column(db.Text)
@@ -145,6 +153,7 @@ class Location(db.Model):
 	location_image (Text) - URL for the location image
 	"""
 	__tablename__ = 'location'
+	__searchable__ = ['location_name']
 
 	location_id = db.Column(db.Integer, primary_key=True)
 	location_name = db.Column(db.Text)
@@ -177,6 +186,7 @@ class Skillset(db.Model):
 	skillset_description (Text) - Description of the skillset
 	"""
 	__tablename__ = 'skillset'
+	__searchable__ = ['skillset_name']
 
 	skillset_id = db.Column(db.Integer, primary_key=True)
 	skillset_name = db.Column(db.Text)
@@ -261,3 +271,10 @@ class Member(db.Model):
 
 	def __repr__(self):
 		return '<Member %r>' % self.member_name
+
+#from programmerJobs import app
+flask.ext.whooshalchemy.whoosh_index(programmerJobs.app, Job)
+flask.ext.whooshalchemy.whoosh_index(programmerJobs.app, Company)
+flask.ext.whooshalchemy.whoosh_index(programmerJobs.app, Language)
+flask.ext.whooshalchemy.whoosh_index(programmerJobs.app, Location)
+flask.ext.whooshalchemy.whoosh_index(programmerJobs.app, Skillset)
