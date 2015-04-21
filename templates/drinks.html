@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block head %}
+  {{super()}}
+{% endblock %}
+{% block navbar %}
+  {{super()}}
+{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row text-center">
+		{% for elem in drinks)lst %}
+		<div class="col-md-3 vertical-center">
+			<p>{{ elem }}</p>
+		</div>
+		{% endfor %}
+	</div>
+
+	<div class="row text-center">
+		{% for elem in ingredients_result %}
+		<div class="col-md-3 vertical-center">
+			<p>{{ elem }}</p>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+<hr>
+{% endblock %}
+{% block footer %}
+  {{super()}}
+{% endblock %}
