@@ -10,6 +10,7 @@
 {% endblock %}
 {% block content %}
 <div class="container">
+	{% if drinks_lst %}
 	<div class="row text-center">
 		<form action="/api/freespirit" method=post>
 		{% for elem in drinks_lst %}
@@ -20,15 +21,23 @@
 	    <input class="btn btn-default" style="position:fixed;" type='submit' name='submit' value='See my shopping list' >
 	    </form>
 	</div>
+    {% endif %}
 
+    {% if ingredients_result %}
 	<div class="row text-center">
-		<h1>My shopping list</h1>
+		<div class="container content-box round">
+	      <hr>
+	      <h1>My Shopping List</h1>
+	      <hr>
+	    </div>
+		<br><br>
 		{% for elem in ingredients_result %}
 		<div class="col-md-3 vertical-center">
 			<p>{{ elem }}</p>
 		</div>
 		{% endfor %}
 	</div>
+	{% endif %}
 </div>
 
 {% endblock %}
