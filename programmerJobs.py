@@ -2,17 +2,17 @@ import os
 import subprocess
 from flask import Flask, jsonify, abort, render_template, redirect, send_from_directory, request
 from flask.ext.sqlalchemy import SQLAlchemy
-#import flask.ext.whooshalchemy as whooshalchemy
+# import flask.ext.whooshalchemy as whooshalchemy
 import json
 
 app = Flask(__name__)
-app.config.from_object(os.environ['APP_SETTINGS'])
-#app.config['WHOOSH_BASE'] = "$VIRTUAL_ENV/lib/python2.7/site-packages"
+# app.config.from_object(os.environ['APP_SETTINGS'])
+# app.config['WHOOSH_BASE'] = "$VIRTUAL_ENV/lib/python2.7/site-packages"
 db = SQLAlchemy(app)
 
 from models import *
 
-#whooshalchemy.whoosh_index(app, Job)
+# whooshalchemy.whoosh_index(app, Job)
 
 app.config.update(dict(
     DEBUG=True,
@@ -25,6 +25,7 @@ app.config.update(dict(
 def init_db():
     db.drop_all()
     db.create_all()
+
 
 def populate_db():
     session = db.create_scoped_session()
@@ -40,13 +41,16 @@ def populate_db():
 def root():
     return redirect('http://104.130.229.90:5000/index', code=302)
 
+
 @app.route('/index')
 def index():
     return render_template('index.html')
 
+
 @app.route('/tests')
 def test():
     return render_template('tests.html')
+
 
 @app.route('/result')
 def result():
@@ -60,16 +64,18 @@ def result():
 
     return render_template('result.html', result=outputStr)
 
+
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     query_string = request.query_string
     query_split = query_string.split("=")
     return render_template('searching.html', queryField=query_split[1])
 
+
 @app.route('/search/<query>')
 def get_search(query=None):
-    #job_search_results = Job.query.whoosh_search(query, limit=10)
-    #return render_template('search_results.html', job_search_results=job_search_results)
+    # job_search_results = Job.query.whoosh_search(query, limit=10)
+    # return render_template('search_results.html', job_search_results=job_search_results)
     queryList = query.split("+")
     whooshResult = Job.query.whoosh_search('software').all()
     print(whooshResult)
@@ -77,11 +83,13 @@ def get_search(query=None):
     jobs = Job.query.all()
     return render_template('search_results.html', jobJson=jobs, whooshResult=whooshResult, queryList=queryList)
 
+
 # API
 @app.route('/api/job', methods=['GET'])
 def get_jobs():
     jobs = Job.query.all()
-    return jsonify(Jobs = [job.serialize() for job in jobs])
+    return jsonify(Jobs=[job.serialize() for job in jobs])
+
 
 @app.route('/api/job/<int:job_id>', methods=['GET'])
 def get_job(job_id):
@@ -90,10 +98,12 @@ def get_job(job_id):
         abort(jsonify({"error": "Item does not exist"}))
     return jsonify(job.serialize())
 
+
 @app.route('/api/company', methods=['GET'])
 def get_companies():
     companies = Company.query.all()
-    return jsonify(Companies = [comEle.serialize() for comEle in companies])
+    return jsonify(Companies=[comEle.serialize() for comEle in companies])
+
 
 @app.route('/api/company/<int:company_id>', methods=['GET'])
 def get_company(company_id):
@@ -102,10 +112,12 @@ def get_company(company_id):
         abort(jsonify({"error": "Item does not exist"}))
     return jsonify(company.serialize())
 
+
 @app.route('/api/location', methods=['GET'])
 def get_locations():
     locations = Location.query.all()
     return jsonify(locations=[locEle.serialize() for locEle in locations])
+
 
 @app.route('/api/location/<int:location_id>', methods=['GET'])
 def get_location(location_id):
@@ -114,15 +126,18 @@ def get_location(location_id):
         abort(jsonify({"error": "Item does not exist"}))
     return jsonify(location.serialize())
 
+
 @app.route('/api/member', methods=['GET'])
 def get_team_member():
     member = Member.query.all()
     return jsonify(Members=[memEle.serialize() for memEle in member])
 
+
 @app.route('/api/language', methods=['GET'])
 def get_languages():
     languages = Language.query.all()
     return jsonify(languages=[langEle.serialize() for langEle in languages])
+
 
 @app.route('/api/language/<int:language_id>', methods=['GET'])
 def get_language(language_id):
@@ -131,15 +146,17 @@ def get_language(language_id):
         abort(jsonify({"error": "Item does not exist"}))
     return jsonify(language.serialize())
 
+
 @app.route('/api/skillset', methods=['GET'])
 def get_skillsets():
     skillsets = Skillset.query.all()
     return jsonify(Skillsets=[skillset.serialize() for skillset in skillsets])
 
+
 @app.route('/api/skillset/<int:skillset_id>', methods=['GET'])
 def get_skillset(skillset_id):
     skillset = Skillset.query.get(skillset_id)
-    if not skillset :
+    if not skillset:
         abort(jsonify({"error": "Item does not exist"}))
     return jsonify(skillset.serialize())
 
@@ -149,7 +166,7 @@ def get_skillset(skillset_id):
 def get_freespirit():
     drinks = json.load(open('drinks.json', 'r'))
     ingredients = json.load(open('ingredients.json', 'r'))
-    lst = request.form['lst']
+    lst = request.form.getlist("lst")
 
     get_ingre = {}
     results = []
@@ -162,8 +179,6 @@ def get_freespirit():
                         if select == ingredient_dic['id']:
                             results.append(ingredient_dic['name'])
 
-    for s in results:
-        print s
     '''
     print ""
     find_drink = True
@@ -180,7 +195,8 @@ def get_freespirit():
     for rd in res_drink:
         print rd
     '''
-    return jsonify(shoppinglist=results)
+    return render_template('drinks.html', ingredients_result=results)
+
 
 @app.route('/api/freespirit', methods=['GET'])
 def get_drinks():
@@ -189,13 +205,15 @@ def get_drinks():
     for drink_dic in drinks:
         ret.append(drink_dic['name'])
 
-    return render_template('drinks.html', drinks_lst = ret)
+    return render_template('drinks.html', drinks_lst=ret)
+
 
 # Dynamic pages
 @app.route('/language')
 def get_languages_page():
     languages = Language.query.all()
     return render_template('languages.html', langJson=languages)
+
 
 @app.route('/language/<int:id>')
 def get_language_page(id=None):
@@ -209,12 +227,14 @@ def get_language_page(id=None):
     return render_template('language.html', langJson=language, langsJson=languages, cmpyJson=companies, jobJson=jobs,
                            locJson=locations, skillsetJson=skillsets)
 
+
 @app.route('/location')
 def get_locations_page():
     locations = Location.query.all()
     companies = Company.query.all()
     languages = Language.query.all()
     return render_template('locations.html', langJson=languages, cmpyJson=companies, locJson=locations)
+
 
 @app.route('/location/<int:id>')
 def get_location_page(id=None):
@@ -226,8 +246,9 @@ def get_location_page(id=None):
     companies = Company.query.all()
     locations = Location.query.all()
     skillsets = Skillset.query.all()
-    return render_template('location.html', locJson = location, langJson=languages, cmpyJson=companies,
+    return render_template('location.html', locJson=location, langJson=languages, cmpyJson=companies,
                            locsJson=locations, jobJson=jobs, skillsetJson=skillsets)
+
 
 @app.route('/skillset/<int:id>')
 def get_skillset_page(id=None):
@@ -242,6 +263,7 @@ def get_skillset_page(id=None):
     return render_template('skillset.html', skillsetJson=skillset, jobJson=jobs, locJson=locations, cmpyJson=companies,
                            langJson=languages)
 
+
 @app.route('/job/<int:id>')
 def get_job_page(id=None):
     job = Job.query.get(id)
@@ -255,12 +277,14 @@ def get_job_page(id=None):
     return render_template('job.html', jobsJson=jobs,  jobJson=job, cmpyJson=companies, langJson=languages,
                            locJson=locations, skillsetJson=skillsets)
 
+
 @app.route('/company')
 def get_companies_page():
     companies = Company.query.all()
     companies = Company.query.all()
     locations = Location.query.all()
     return render_template('companies.html', cmpyJson=companies)
+
 
 @app.route('/company/<int:id>')
 def get_company_page(id=None):
@@ -270,17 +294,20 @@ def get_company_page(id=None):
     companies = Company.query.all()
     locations = Location.query.all()
     skillsets = Skillset.query.all()
-    return render_template('company.html', cmpyJson=company, cmpysJson = companies, locJson=locations,
+    return render_template('company.html', cmpyJson=company, cmpysJson=companies, locJson=locations,
                            langJson=languages, jobJson=jobs, skillsetJson=skillsets)
+
 
 @app.route('/about')
 def get_about_page():
     members = Member.query.all()
     return render_template('about.html', memJson=members)
 
+
 @app.route('/modeldoc')
 def get_model_doc_page():
     return send_from_directory('.', 'models.html')
+
 
 @app.route('/drink')
 def get_drink_page():

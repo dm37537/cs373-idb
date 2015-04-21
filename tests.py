@@ -3,11 +3,10 @@ import socket
 default_timeout = 10
 socket.setdefaulttimeout(default_timeout)
 
-from programmerJobs import db, app, get_languages, get_language, get_companies, get_company, get_locations, get_location
+from programmerJobs import *
 from models import Job, Company, Location, Language, Skillset
 import urllib2
 import json
-import os
 
 
 class DatabaseTestCase(unittest.TestCase):
@@ -124,7 +123,7 @@ class ProgrammerJobsTestCase(unittest.TestCase):
         assert language.language_description == 'large_sombrero.png'
 
     def testModifyingLanguage(self):
-        language = Language(1, 'Spanish', 'taco, burrito, ...', 'sombrero.png','large_sombrero.png', 'image.jpg')
+        language = Language(1, 'Spanish', 'taco, burrito, ...', 'sombrero.png', 'large_sombrero.png', 'image.jpg')
         language.language_name = 'French'
         language.language_description = 'Croissant'
         language.language_image_small = 'crepe.jpg'
@@ -163,99 +162,11 @@ class ProgrammerJobsTestCase(unittest.TestCase):
         skillset.skillset_description = 'ipad'
         assert skillset.skillset_name == 'IOS'
         assert skillset.skillset_description == 'ipad'
-"""
-# change path in programmerjobs.py to 
-#     return redirect('http://127.0.0.1:5000/index', code=302)
-
-# Test languages
-class LanguageApiTest(unittest.TestCase):
-
-    # assuming we add our api onto our server
-    url =  "http://104.130.229.90:5000/api/"
-
-    # testing the whole set of Language data.
-    def test_lang(self):
-        response = urllib2.urlopen('http://104.130.229.90:5000/api/language')
-        self.assertEqual(response.code, 200)
-        content = response.read()
-        # the whole dataset in the languages
-        temp = {}
-        self.assertTrue(content == temp)
-
-    # testing a request to an individual language data
-    def test_lang_id(self):
-        response = urllib2.urlopen('http://104.130.229.90:5000/api/language/1')
-        self.assertEqual(response.status_code, 200)
-        content = response.read()
-        # the dataset of the language where id is 1
-        temp = "null"
-        self.assertTrue(content == temp)
-
-    # testing the request when the data is not available
-    def test_lang_not_found(self):
-        response = urllib2.urlopen("http://104.130.229.90:5000/api/language/9000")
-        self.assertEqual(response.status_code, 404)
-
-
-# Test companies
-class CompanyApiTest(unittest.TestCase):
-    # assuming we add our api onto our server
-    url =  "http://104.130.229.90:5000/api/"
-
-    # testing the whole set of companies data.
-    def test_company(self):
-        response = urllib2.urlopen(url + 'company')
-        self.assertEqual(response.status_code, 200)
-        content = response.read()
-        temp = '{\n  "Companies": [\n    {\n      "company_description": "Search engine", \n      "company_id": 1, \n      "company_image": "images/company_images/google_logo.png", \n      "company_name": "Google", \n      "company_site": "www.google.com"\n    }, \n    {\n      "company_description": "Database", \n      "company_id": 2, \n      "company_image": "images/company_images/oracle_logo.jpg", \n      "company_name": "Oracle", \n      "company_site": "www.oracle.com"\n    }, \n    {\n      "company_description": "Online shopping", \n      "company_id": 3, \n      "company_image": "images/company_images/amazon_logo.jpeg", \n      "company_name": "Amazon", \n      "company_site": "www.amazon.com"\n    }, \n    {\n      "company_description": "Social Media", \n      "company_id": 4, \n      "company_image": "images/company_images/facebook_logo.png", \n      "company_name": "Facebook", \n      "company_site": "www.facebook.com"\n    }, \n    {\n      "company_description": "Social Media", \n      "company_id": 5, \n      "company_image": "images/company_images/twitter_logo.png", \n      "company_name": "Twitter", \n      "company_site": "www.twitter.com"\n    }, \n    {\n      "company_description": "Online resume", \n      "company_id": 6, \n      "company_image": "images/company_images/linkedin_logo.png", \n      "company_name": "LinkedIn", \n      "company_site": "www.linkedin.com"\n    }, \n    {\n      "company_description": "computer", \n      "company_id": 7, \n      "company_image": "images/company_images/ibm_logo.jpg", \n      "company_name": "IBM", \n      "company_site": "www.ibm.com"\n    }, \n    {\n      "company_description": "Cloud service", \n      "company_id": 8, \n      "company_image": "images/company_images/dropbox_logo.png", \n      "company_name": "Dropbox", \n      "company_site": "www.dropbox.com"\n    }, \n    {\n      "company_description": "Cloud server provider", \n      "company_id": 9, \n      "company_image": "images/company_images/rackspace_logo.png", \n      "company_name": "Rackspace", \n      "company_site": "www.rackspace.com"\n    }, \n    {\n      "company_description": "Online yellow page for jobs", \n      "company_id": 10, \n      "company_image": "images/company_images/indeed_logo.png", \n      "company_name": "Indeed", \n      "company_site": "www.indeed.com"\n    }\n  ]\n}'# the whole dataset in the companies
-        self.assertTrue(content == temp)
-
-    # testing a request to an individual company data
-    def test_company_id(self):
-        response = urllib2.urlopen(url + 'company/1')
-        self.assertEqual(response.status_code, 200)
-        content = response.read()
-        temp = '{\n  "company_description": "Search engine", \n  "company_id": 1, \n  "company_image": "images/company_images/google_logo.png", \n  "company_name": "Google", \n  "company_site": "www.google.com"\n}'# the dataset of the language where id is 1
-        self.assertTrue(content == temp)
-
-    # testing the request when the data is not available
-    def test_company_not_found(self):
-        response = urllib2.urlopen(url + 'company/9000')
-        self.assertEqual(response.status_code, 404)
-
-
-    # Test locations
-    class LocationApiTest(unittest.TestCase):
-
-    # assuming we add our api onto our server
-    url =  "http://104.130.229.90:5000/api/"
-
-    # testing the whole set of locations data.
-    def test_location(self):
-        response = urllib2.urlopen(url + 'location')
-        self.assertEqual(response.status_code, 200)
-        content = response.read()
-        temp = {}# the whole dataset in the locations
-        self.assertTrue(content == temp)
-
-    # testing a request to an individual location data
-    def test_location_id(self):
-        response = urllib2.urlopen(url + 'location/1')
-        self.assertEqual(response.status_code, 200)
-        content = response.read()
-        temp = {}# the dataset of the language where id is 1
-        self.assertTrue(content == temp)
-
-    # testing the request when the data is not available
-    def test_location_not_found(self):
-        response = urllib2.urlopen(url + 'location/9000')
-        self.assertEqual(response.status_code, 404)
-"""
 
 
 class APITestCase(unittest.TestCase):
     def test_getting_jobs(self):
-        expected_result = {
+        expected = {
             "Jobs": [
                 {
                     "company_id": 2,
@@ -303,35 +214,74 @@ class APITestCase(unittest.TestCase):
                 },
                 {
                     "company_id": 2,
-                    "job_description": "Design, develop, troubleshoot and debug software programs for databases, applications, tools, networks etc./n/nAs a member of the software engineering division, you will take an active role in the definition and evolution of standard practices and procedures. Define specifications for significant new projects and specify, design and develop software according to those specifications. You will perform professional software development tasks associated with the developing, designing and debugging of software applications or operating systems./n/nProvide leadership and expertise in the development of new products/services/processes, frequently operating at the leading edge of technology. Recommends and justifies major changes to existing products/services/processes. BS or MS degree or equivalent experience relevant to functional area. 8 more years of software engineering or related experience.",
+                    "job_description": "Design, develop, troubleshoot and debug software programs for databases, "
+                                       "applications, tools, networks etc./n/nAs a member of the software engineering "
+                                       "division, you will take an active role in the definition and evolution of "
+                                       "standard practices and procedures. Define specifications for significant new "
+                                       "projects and specify, design and develop software according to those "
+                                       "specifications. You will perform professional software development tasks "
+                                       "associated with the developing, designing and debugging of software "
+                                       "applications or operating systems./n/nProvide leadership and expertise in the "
+                                       "development of new products/services/processes, frequently operating at the "
+                                       "leading edge of technology. Recommends and justifies major changes to existing "
+                                       "products/services/processes. BS or MS degree or equivalent experience relevant "
+                                       "to functional area. 8 more years of software engineering or related "
+                                       "experience.",
                     "job_id": 3,
                     "job_title": "Software Developer 5",
                     "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=60564",
                     "location_id": 2
                 },
                 {
-                  "company_id": 2,
-                  "job_description": "Design, develop, troubleshoot and debug software programs for databases, applications, tools, networks etc./n/nAs a member of the software engineering division, you will assist in defining and developing software for tasks associated with the developing, debugging or designing of software applications or operating systems. Provide technical leadership to other software developers. Specify, design and implement modest changes to existing software architecture to meet changing needs./n/nDuties and tasks are varied and complex needing independent judgment. Fully competent in own area of expertise. May have project lead role and or supervise lower level personnel. BS or MS degree or equivalent experience relevant to functional area. 4 years of software engineering or related experience.",
-                  "job_id": 4,
-                  "job_title": "Software Developer 3",
-                  "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=46894",
-                  "location_id": 1
+                    "company_id": 2,
+                    "job_description": "Design, develop, troubleshoot and debug software programs for databases, "
+                                       "applications, tools, networks etc./n/nAs a member of the software engineering "
+                                       "division, you will assist in defining and developing software for tasks "
+                                       "associated with the developing, debugging or designing of software applications"
+                                       " or operating systems. Provide technical leadership to other software "
+                                       "developers. Specify, design and implement modest changes to existing software "
+                                       "architecture to meet changing needs./n/nDuties and tasks are varied and complex"
+                                       " needing independent judgment. Fully competent in own area of expertise. May "
+                                       "have project lead role and or supervise lower level personnel. BS or MS degree"
+                                       " or equivalent experience relevant to functional area. 4 years of software "
+                                       "engineering or related experience.",
+                    "job_id": 4,
+                    "job_title": "Software Developer 3",
+                    "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=46894",
+                    "location_id": 1
                 },
                 {
-                  "company_id": 1,
-                  "job_description": "Build custom front-ends (web and mobile), back-end services, and third-party integrations to automate business processes./nPropose, design, and implement business workflows to streamline asset management lifecycles./nMaintain strong development practices including technical design and writing clean, modular, well tested and self-sustaining code./nCollaborate with business analysts, program managers, end users and other internal teams to translate business requirements into technical solutions that work at Google scale./nIntegrate third-party products with Google s internal systems as well as support and upgrade implemented systems.",
-                  "job_id": 5,
-                  "job_title": "Application Developer, Corporate Asset Management Engineering",
-                  "link": "https://www.google.com/about/careers/search?src=Online/Job+Board/indeed&utm_source=indeed&utm_medium=jobaggr&utm_campaign=freeaggr#!t=jo&jid=94815001",
-                  "location_id": 5
+                    "company_id": 1,
+                    "job_description": "Build custom front-ends (web and mobile), back-end services, and third-party "
+                                       "integrations to automate business processes./nPropose, design, and implement "
+                                       "business workflows to streamline asset management lifecycles./nMaintain strong "
+                                       "development practices including technical design and writing clean, modular, "
+                                       "well tested and self-sustaining code./nCollaborate with business analysts, "
+                                       "program managers, end users and other internal teams to translate business "
+                                       "requirements into technical solutions that work at Google scale./nIntegrate "
+                                       "third-party products with Google s internal systems as well as support and "
+                                       "upgrade implemented systems.",
+                    "job_id": 5,
+                    "job_title": "Application Developer, Corporate Asset Management Engineering",
+                    "link": "https://www.google.com/about/careers/search?src=Online/Job+Board/indeed&utm_source=indeed&"
+                            "utm_medium=jobaggr&utm_campaign=freeaggr#!t=jo&jid=94815001",
+                    "location_id": 5
                 },
                 {
-                  "company_id": 1,
-                  "job_description": "Design, write and deliver software to improve the availability, scalability, latency, and efficiency of Google s services./nSolve problems relating to mission critical services and build automation to prevent problem recurrence; with the goal of automating response to all non-exceptional service conditions./nInfluence and create new designs, architectures, standards and methods for large-scale distributed systems./nEngage in service capacity planning and demand forecasting, software performance analysis and system tuning./nConduct periodic on call duties using a follow-the-sun model.",
-                  "job_id": 6,
-                  "job_title": "Systems Engineer, Site Reliability Engineering",
-                  "link": "https://www.google.com/about/careers/search?src=Online/Job+Board/indeed&utm_source=indeed&utm_medium=jobaggr&utm_campaign=freeaggr#!t=jo&jid=83835001",
-                  "location_id": 4
+                    "company_id": 1,
+                    "job_description": "Design, write and deliver software to improve the availability, scalability, "
+                                       "latency, and efficiency of Google s services./nSolve problems relating to "
+                                       "mission critical services and build automation to prevent problem recurrence; "
+                                       "with the goal of automating response to all non-exceptional service conditions."
+                                       "/nInfluence and create new designs, architectures, standards and methods for "
+                                       "large-scale distributed systems./nEngage in service capacity planning and "
+                                       "demand forecasting, software performance analysis and system tuning./nConduct "
+                                       "periodic on call duties using a follow-the-sun model.",
+                    "job_id": 6,
+                    "job_title": "Systems Engineer, Site Reliability Engineering",
+                    "link": "https://www.google.com/about/careers/search?src=Online/Job+Board/indeed&utm_source=indeed&"
+                            "utm_medium=jobaggr&utm_campaign=freeaggr#!t=jo&jid=83835001",
+                    "location_id": 4
                 },
                 {
                   "company_id": 3,
@@ -919,10 +869,145 @@ class APITestCase(unittest.TestCase):
                 }
             ]
         }
+        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/job").read())
+        self.assertEqual(expected, actual)
+
+    def test_getting_job(self):
+        expected = {
+            "company_id": 2,
+            "job_description": "Design, configure, and implement our data systems and stream processing pipelines/nCode"
+                               " analytics jobs, web services, and other components/nWork with operations to build and"
+                               " configure maintainable, resource-efficient systems/nWork with data pipelines using "
+                               "Kafka, Cassandra, Spark/nLeverage Event processing technologies to deliver real time "
+                               "analytics features/nDevelop a cloud service that would be processing billions of events"
+                               " a day/nLeverage fast data pipelines for real time analytics on various Oracle SaaS "
+                               "applications/nContribute ideas for continually improving the team s productivity, job "
+                               "enjoyment, and code quality./nActively mentor junior developers to develop their "
+                               "technical expertise/nHave fun engineering software and scalable systems",
+            "job_id": 1,
+            "job_title": "Software Developer 4",
+            "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=90953",
+            "location_id": 3
+        }
+        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/job/1").read())
+        self.assertEqual(expected, actual)
+
+    def test_getting_nonexistent_job(self):
+        expected = {"error": "Item does not exist"}
+        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/job/1123456789").read())
+        self.assertEqual(expected, actual)
+
+    def test_getting_companies(self):
+        expected = {
+  "Companies": [
+    {
+      "company_description": "Search engine",
+      "company_id": 1,
+      "company_image": "images/company_images/google_logo.png",
+      "company_name": "Google",
+      "company_site": "www.google.com"
+    },
+    {
+      "company_description": "Database",
+      "company_id": 2,
+      "company_image": "images/company_images/oracle_logo.jpg",
+      "company_name": "Oracle",
+      "company_site": "www.oracle.com"
+    },
+    {
+      "company_description": "Online shopping",
+      "company_id": 3,
+      "company_image": "images/company_images/amazon_logo.jpeg",
+      "company_name": "Amazon",
+      "company_site": "www.amazon.com"
+    },
+    {
+      "company_description": "Social Media",
+      "company_id": 4,
+      "company_image": "images/company_images/facebook_logo.png",
+      "company_name": "Facebook",
+      "company_site": "www.facebook.com"
+    },
+    {
+      "company_description": "Social Media",
+      "company_id": 5,
+      "company_image": "images/company_images/twitter_logo.png",
+      "company_name": "Twitter",
+      "company_site": "www.twitter.com"
+    },
+    {
+      "company_description": "Online resume",
+      "company_id": 6,
+      "company_image": "images/company_images/linkedin_logo.png",
+      "company_name": "LinkedIn",
+      "company_site": "www.linkedin.com"
+    },
+    {
+      "company_description": "computer",
+      "company_id": 7,
+      "company_image": "images/company_images/ibm_logo.jpg",
+      "company_name": "IBM",
+      "company_site": "www.ibm.com"
+    },
+    {
+      "company_description": "Cloud service",
+      "company_id": 8,
+      "company_image": "images/company_images/dropbox_logo.png",
+      "company_name": "Dropbox",
+      "company_site": "www.dropbox.com"
+    },
+    {
+      "company_description": "Cloud server provider",
+      "company_id": 9,
+      "company_image": "images/company_images/rackspace_logo.png",
+      "company_name": "Rackspace",
+      "company_site": "www.rackspace.com"
+    },
+    {
+      "company_description": "Online yellow page for jobs",
+      "company_id": 10,
+      "company_image": "images/company_images/indeed_logo.png",
+      "company_name": "Indeed",
+      "company_site": "www.indeed.com"
+    }
+  ]
+}
+        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/company").read())
+        self.assertEqual(expected, actual)
+
+    def test_getting_company(self):
         assert()
 
-    def test_getting_single_job(self):
+    def test_getting_nonexistent_company(self):
         assert()
+
+    def test_getting_languages(self):
+        assert()
+
+    def test_getting_language(self):
+        assert()
+
+    def test_getting_nonexistent_language(self):
+        assert()
+
+    def test_getting_locations(self):
+        assert()
+
+    def test_getting_location(self):
+        assert()
+
+    def test_getting_nonexistent_location(self):
+        assert()
+
+    def test_getting_skillsets(self):
+        assert()
+
+    def test_getting_skillset(self):
+        assert()
+
+    def test_getting_nonexistent_skillset(self):
+        assert()
+
 
 if __name__ == '__main__':
     unittest.main()
