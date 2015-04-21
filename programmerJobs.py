@@ -166,7 +166,8 @@ def get_skillset(skillset_id):
 def get_freespirit():
     drinks = json.load(open('drinks.json', 'r'))
     ingredients = json.load(open('ingredients.json', 'r'))
-    lst = request.form['lst']
+    ar = request.args
+    lst = ar.getlist('lst')
 
     get_ingre = {}
     results = []
@@ -197,7 +198,7 @@ def get_freespirit():
     for rd in res_drink:
         print rd
     '''
-    return jsonify(shoppinglist=results)
+    return jsonify(shoppinglist=lst)
 
 
 @app.route('/api/freespirit', methods=['GET'])
