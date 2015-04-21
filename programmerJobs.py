@@ -2,22 +2,17 @@ import os
 import subprocess
 from flask import Flask, jsonify, abort, render_template, redirect, send_from_directory, request
 from flask.ext.sqlalchemy import SQLAlchemy
-#import flask.ext.whooshalchemy as whooshalchemy
+# import flask.ext.whooshalchemy as whooshalchemy
 import json
 
 app = Flask(__name__)
-<<<<<<< HEAD
 app.config.from_object(os.environ['APP_SETTINGS'])
-#app.config['WHOOSH_BASE'] = "$VIRTUAL_ENV/lib/python2.7/site-packages"
-
-=======
-# app.config.from_object(os.environ['APP_SETTINGS'])
->>>>>>> de81cbcf3ef3975450c1b6ebfb162c515247e161
+# app.config['WHOOSH_BASE'] = "$VIRTUAL_ENV/lib/python2.7/site-packages"
 db = SQLAlchemy(app)
 
 from models import *
 
-#whooshalchemy.whoosh_index(app, Job)
+# whooshalchemy.whoosh_index(app, Job)
 
 app.config.update(dict(
     DEBUG=True,
@@ -30,6 +25,7 @@ app.config.update(dict(
 def init_db():
     db.drop_all()
     db.create_all()
+
 
 def populate_db():
     session = db.create_scoped_session()
@@ -45,13 +41,16 @@ def populate_db():
 def root():
     return redirect('http://104.130.229.90:5000/index', code=302)
 
+
 @app.route('/index')
 def index():
     return render_template('index.html')
 
+
 @app.route('/tests')
 def test():
     return render_template('tests.html')
+
 
 @app.route('/result')
 def result():
@@ -65,35 +64,32 @@ def result():
 
     return render_template('result.html', result=outputStr)
 
-<<<<<<< HEAD
+
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-	query_string = request.query_string
-	query_split = query_string.split("=")
-	return render_template('searching.html', queryField=query_split[1])
+    query_string = request.query_string
+    query_split = query_string.split("=")
+    return render_template('searching.html', queryField=query_split[1])
+
 
 @app.route('/search/<query>')
 def get_search(query=None):
-	#job_search_results = Job.query.whoosh_search(query, limit=10)
-	#return render_template('search_results.html', job_search_results=job_search_results)
-	queryList = query.split("+")
-	whooshResult = Job.query.whoosh_search('software').all()
-	print(whooshResult)
-	print(len(whooshResult))
-	jobs = Job.query.all()
-	return render_template('search_results.html', jobJson=jobs, whooshResult=whooshResult, queryList=queryList)
-=======
-@app.route('/search/<query>')
-def search(query):
-    job_search_results = Job.query.whoosh_search(query, limit=10)
-    return render_template('search_results.html', job_search_results=job_search_results)
->>>>>>> de81cbcf3ef3975450c1b6ebfb162c515247e161
+    # job_search_results = Job.query.whoosh_search(query, limit=10)
+    # return render_template('search_results.html', job_search_results=job_search_results)
+    queryList = query.split("+")
+    whooshResult = Job.query.whoosh_search('software').all()
+    print(whooshResult)
+    print(len(whooshResult))
+    jobs = Job.query.all()
+    return render_template('search_results.html', jobJson=jobs, whooshResult=whooshResult, queryList=queryList)
+
 
 # API
 @app.route('/api/job', methods=['GET'])
 def get_jobs():
     jobs = Job.query.all()
-    return jsonify(Jobs = [job.serialize() for job in jobs])
+    return jsonify(Jobs=[job.serialize() for job in jobs])
+
 
 @app.route('/api/job/<int:job_id>', methods=['GET'])
 def get_job(job_id):
@@ -101,6 +97,7 @@ def get_job(job_id):
     if not job:
         abort(jsonify({"error": "Item does not exist"}))
     return jsonify(job.serialize())
+
 
 @app.route('/api/company', methods=['GET'])
 def get_companies():
@@ -295,7 +292,7 @@ def get_model_doc_page():
 
 @app.route('/drink')
 def get_drink_page():
-	return render_template('drink.html')
+    return render_template('drink.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
