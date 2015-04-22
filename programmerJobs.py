@@ -310,6 +310,8 @@ def get_drinks():
 @app.route('/language')
 def get_languages_page():
     languages = Language.query.all()
+    if not languages:
+        abort(404)
     return render_template('languages.html', langJson=languages)
 
 
@@ -317,6 +319,8 @@ def get_languages_page():
 def get_language_page(id=None):
     language = Language.query.get(id)
     languages = Language.query.all()
+    if not languages:
+        abort(404)
     jobs = Job.query.all()
     companies = Company.query.all()
     locations = Location.query.all()
@@ -329,6 +333,8 @@ def get_language_page(id=None):
 @app.route('/location')
 def get_locations_page():
     locations = Location.query.all()
+    if not locations:
+        abort(404)
     companies = Company.query.all()
     languages = Language.query.all()
     return render_template('locations.html', langJson=languages, cmpyJson=companies, locJson=locations)
@@ -339,6 +345,8 @@ def get_location_page(id=None):
     # location = [location for location in locations if location['location_name'] == name]
     # location = location[0]
     location = Location.query.get(id)
+    if not location:
+        abort(404)
     languages = Language.query.all()
     jobs = Job.query.all()
     companies = Company.query.all()
@@ -351,6 +359,8 @@ def get_location_page(id=None):
 @app.route('/skillset/<int:id>')
 def get_skillset_page(id=None):
     skillset = Skillset.query.get(id)
+    if not skillset:
+        abort(404)
     languages = Language.query.all()
     jobs = Job.query.all()
     companies = Company.query.all()
@@ -365,6 +375,8 @@ def get_skillset_page(id=None):
 @app.route('/job/<int:id>')
 def get_job_page(id=None):
     job = Job.query.get(id)
+    if not job:
+        abort(404)
     languages = Language.query.all()
     jobs = Job.query.all()
     companies = Company.query.all()
@@ -380,6 +392,8 @@ def get_job_page(id=None):
 def get_companies_page():
     companies = Company.query.all()
     companies = Company.query.all()
+    if not companies:
+        abort(404)
     locations = Location.query.all()
     return render_template('companies.html', cmpyJson=companies)
 
@@ -387,6 +401,8 @@ def get_companies_page():
 @app.route('/company/<int:id>')
 def get_company_page(id=None):
     company = Company.query.get(id)
+    if not company:
+        abort(404)
     languages = Language.query.all()
     jobs = Job.query.all()
     companies = Company.query.all()
@@ -399,6 +415,8 @@ def get_company_page(id=None):
 @app.route('/about')
 def get_about_page():
     members = Member.query.all()
+    if not members:
+        abort(404)
     return render_template('about.html', memJson=members)
 
 
