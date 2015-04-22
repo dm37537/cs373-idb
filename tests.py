@@ -899,115 +899,367 @@ class APITestCase(unittest.TestCase):
 
     def test_getting_companies(self):
         expected = {
-  "Companies": [
-    {
-      "company_description": "Search engine",
-      "company_id": 1,
-      "company_image": "images/company_images/google_logo.png",
-      "company_name": "Google",
-      "company_site": "www.google.com"
-    },
-    {
-      "company_description": "Database",
-      "company_id": 2,
-      "company_image": "images/company_images/oracle_logo.jpg",
-      "company_name": "Oracle",
-      "company_site": "www.oracle.com"
-    },
-    {
-      "company_description": "Online shopping",
-      "company_id": 3,
-      "company_image": "images/company_images/amazon_logo.jpeg",
-      "company_name": "Amazon",
-      "company_site": "www.amazon.com"
-    },
-    {
-      "company_description": "Social Media",
-      "company_id": 4,
-      "company_image": "images/company_images/facebook_logo.png",
-      "company_name": "Facebook",
-      "company_site": "www.facebook.com"
-    },
-    {
-      "company_description": "Social Media",
-      "company_id": 5,
-      "company_image": "images/company_images/twitter_logo.png",
-      "company_name": "Twitter",
-      "company_site": "www.twitter.com"
-    },
-    {
-      "company_description": "Online resume",
-      "company_id": 6,
-      "company_image": "images/company_images/linkedin_logo.png",
-      "company_name": "LinkedIn",
-      "company_site": "www.linkedin.com"
-    },
-    {
-      "company_description": "computer",
-      "company_id": 7,
-      "company_image": "images/company_images/ibm_logo.jpg",
-      "company_name": "IBM",
-      "company_site": "www.ibm.com"
-    },
-    {
-      "company_description": "Cloud service",
-      "company_id": 8,
-      "company_image": "images/company_images/dropbox_logo.png",
-      "company_name": "Dropbox",
-      "company_site": "www.dropbox.com"
-    },
-    {
-      "company_description": "Cloud server provider",
-      "company_id": 9,
-      "company_image": "images/company_images/rackspace_logo.png",
-      "company_name": "Rackspace",
-      "company_site": "www.rackspace.com"
-    },
-    {
-      "company_description": "Online yellow page for jobs",
-      "company_id": 10,
-      "company_image": "images/company_images/indeed_logo.png",
-      "company_name": "Indeed",
-      "company_site": "www.indeed.com"
-    }
-  ]
-}
+            "Companies": [
+                {
+                    "company_description": "Search engine",
+                    "company_id": 1,
+                    "company_image": "images/company_images/google_logo.png",
+                    "company_name": "Google",
+                    "company_site": "www.google.com"
+                },
+                {
+                    "company_description": "Database",
+                    "company_id": 2,
+                    "company_image": "images/company_images/oracle_logo.jpg",
+                    "company_name": "Oracle",
+                    "company_site": "www.oracle.com"
+                },
+                {
+                    "company_description": "Online shopping",
+                    "company_id": 3,
+                    "company_image": "images/company_images/amazon_logo.jpeg",
+                    "company_name": "Amazon",
+                    "company_site": "www.amazon.com"
+                },
+                {
+                    "company_description": "Social Media",
+                    "company_id": 4,
+                    "company_image": "images/company_images/facebook_logo.png",
+                    "company_name": "Facebook",
+                    "company_site": "www.facebook.com"
+                },
+                {
+                    "company_description": "Social Media",
+                    "company_id": 5,
+                    "company_image": "images/company_images/twitter_logo.png",
+                    "company_name": "Twitter",
+                    "company_site": "www.twitter.com"
+                },
+                {
+                    "company_description": "Online resume",
+                    "company_id": 6,
+                    "company_image": "images/company_images/linkedin_logo.png",
+                    "company_name": "LinkedIn",
+                    "company_site": "www.linkedin.com"
+                },
+                {
+                    "company_description": "computer",
+                    "company_id": 7,
+                    "company_image": "images/company_images/ibm_logo.jpg",
+                    "company_name": "IBM",
+                    "company_site": "www.ibm.com"
+                },
+                {
+                    "company_description": "Cloud service",
+                    "company_id": 8,
+                    "company_image": "images/company_images/dropbox_logo.png",
+                    "company_name": "Dropbox",
+                    "company_site": "www.dropbox.com"
+                },
+                {
+                    "company_description": "Cloud server provider",
+                    "company_id": 9,
+                    "company_image": "images/company_images/rackspace_logo.png",
+                    "company_name": "Rackspace",
+                    "company_site": "www.rackspace.com"
+                },
+                {
+                    "company_description": "Online yellow page for jobs",
+                    "company_id": 10,
+                    "company_image": "images/company_images/indeed_logo.png",
+                    "company_name": "Indeed",
+                    "company_site": "www.indeed.com"
+                }
+            ]
+        }
         actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/company").read())
         self.assertEqual(expected, actual)
 
     def test_getting_company(self):
-        assert()
+        expected = {
+            "company_description": "Search engine",
+            "company_id": 1,
+            "company_image": "images/company_images/google_logo.png",
+            "company_name": "Google",
+            "company_site": "www.google.com"
+        }
+        actual = json.loads(urllib2.urlopen('http://104.130.229.90:5000/api/company/1').read())
+        self.assertEqual(expected, actual)
 
     def test_getting_nonexistent_company(self):
-        assert()
+        expected = {"error": "Item does not exist"}
+        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/company/1123456789").read())
+        self.assertEqual(expected, actual)
 
     def test_getting_languages(self):
-        assert()
+        expected = {
+  "languages": [
+    {
+      "language_description": "Muti platiform Language",
+      "language_id": 1,
+      "language_image": "images/language_icon/java_icon.png",
+      "language_name": "Java",
+      "language_wiki_description": "Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers  write once, run anywhere  (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers. Java was originally developed by James Gosling at Sun Microsystems (which has since merged into Oracle Corporation) and released in 1995 as a core component of Sun Microsystems  Java platform. The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them.",
+      "language_wiki_link": "http://en.wikipedia.org/wiki/Java_%28programming_language%29"
+    },
+    {
+      "language_description": "great Language",
+      "language_id": 2,
+      "language_image": "images/language_icon/cpp_icon.png",
+      "language_name": "C++",
+      "language_wiki_description": "C++ is a general-purpose programming language. It has imperative, object-oriented and generic programming features, while also providing the facilities for low-level memory manipulation.",
+      "language_wiki_link": "http://en.wikipedia.org/wiki/C%2B%2B"
+    },
+    {
+      "language_description": "Web Language",
+      "language_id": 3,
+      "language_image": "images/language_icon/php_icon.png",
+      "language_name": "PHP",
+      "language_wiki_description": "PHP is a server-side scripting language designed for web development but also used as a general-purpose programming language. As of January 2013, PHP was installed on more than 240 million websites (39% of those sampled) and 2.1 million web servers. Originally created by Rasmus Lerdorf in 1994, the reference implementation of PHP (powered by the Zend Engine) is now produced by The PHP Group. While PHP originally stood for Personal Home Page, it now stands for PHP: Hypertext Preprocessor, which is a recursive backronym.",
+      "language_wiki_link": "http://en.wikipedia.org/wiki/PHP"
+    },
+    {
+      "language_description": "simple Language",
+      "language_id": 4,
+      "language_image": "images/language_icon/python_icon.png",
+      "language_name": "Python",
+      "language_wiki_description": "Python is a widely used general-purpose, high-level programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java. The language provides constructs intended to enable clear programs on both a small and large scale.",
+      "language_wiki_link": "http://en.wikipedia.org/wiki/Python_%28programming_language%29"
+    },
+    {
+      "language_description": "web Language",
+      "language_id": 5,
+      "language_image": "images/language_icon/javascript_icon.png",
+      "language_name": "Javascript",
+      "language_wiki_description": "JavaScript is a dynamic computer programming language. It is most commonly used as part of web browsers, whose implementations allow client-side scripts to interact with the user, control the browser, communicate asynchronously, and alter the document content that is displayed. It is also used in server-side network programming with runtime environments such as Node.js, game development and the creation of desktop and mobile applications. With the rise of the single-page web app and JavaScript-heavy sites, it is increasingly being used as a compile target for source-to-source compilers from both dynamic languages and static languages.",
+      "language_wiki_link": "http://en.wikipedia.org/wiki/JavaScript"
+    },
+    {
+      "language_description": "Apple Language",
+      "language_id": 6,
+      "language_image": "images/language_icon/objective-c_icon.png",
+      "language_name": "Objective-C",
+      "language_wiki_description": "Objective-C is a general-purpose, object-oriented programming language that adds Smalltalk-style messaging to the C programming language. It is the main programming language used by Apple for the OS X and iOS operating systems, and their respective application programming interfaces (APIs), Cocoa and Cocoa Touch.",
+      "language_wiki_link": "http://en.wikipedia.org/wiki/Objective-C"
+    },
+    {
+      "language_description": "Microsoft Language",
+      "language_id": 7,
+      "language_image": "images/language_icon/csharp_icon.png",
+      "language_name": "CSharp",
+      "language_wiki_description": "C# is a multi-paradigm programming language encompassing strong typing, imperative, declarative, functional, generic, object-oriented (class-based), and component-oriented programming disciplines. It was developed by Microsoft within its  NET initiative and later approved as a standard by Ecma (ECMA-334) and ISO (ISO/IEC 23270:2006). C# is one of the programming languages designed for the Common Language Infrastructure.",
+      "language_wiki_link": "http://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
+    },
+    {
+      "language_description": "Microsoft Language",
+      "language_id": 8,
+      "language_image": "images/language_icon/vbnet_icon.png",
+      "language_name": "Visual Basic.NET",
+      "language_wiki_description": "Visual Basic  NET (VB.NET) is a multi-paradigm, high level programming language, implemented on the  NET Framework. Microsoft launched VB.NET in 2002 as the successor to its original Visual Basic language. Although the  NET portion was dropped in 2005, this article uses Visual Basic  NET to refer to all Visual Basic languages releases since 2002, in order to distinguish between them and the classic Visual Basic. Along with Visual C#, it is one of the two main languages targeting the  NET framework.",
+      "language_wiki_link": "http://en.wikipedia.org/wiki/Visual_Basic_.NET"
+    },
+    {
+      "language_description": "Microsoft Language",
+      "language_id": 9,
+      "language_image": "images/language_icon/vb_icon.png",
+      "language_name": "Visual Basic",
+      "language_wiki_description": "Visual Basic is a third-generation event-driven programming language and integrated development environment (IDE) from Microsoft for its COM programming model first released in 1991. Microsoft intended Visual Basic to be relatively easy to learn and use. Visual Basic was derived from BASIC and enables the rapid application development (RAD) of graphical user interface (GUI) applications, access to databases using Data Access Objects, Remote Data Objects, or ActiveX Data Objects, and creation of ActiveX controls and objects.",
+      "language_wiki_link": "http://en.wikipedia.org/wiki/Visual_Basic"
+    },
+    {
+      "language_description": "great Language",
+      "language_id": 10,
+      "language_image": "images/language_icon/c_icon.png",
+      "language_name": "C",
+      "language_wiki_description": "C is a general-purpose, imperative computer programming language. It supports structured programming, lexical variable scope and recursion, while a static type system prevents many unintended operations. By design, C provides constructs that map efficiently to typical machine instructions, and therefore it has found lasting use in applications that had formerly been coded in assembly language, including operating systems, as well as various application software for computers ranging from supercomputers to embedded systems.",
+      "language_wiki_link": "http://en.wikipedia.org/wiki/C_(programming_language)"
+    }
+  ]
+}
+        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/language").read())
+        self.assertEqual(expected, actual)
 
     def test_getting_language(self):
-        assert()
+        expected = {
+  "language_description": "Muti platiform Language",
+  "language_id": 1,
+  "language_image": "images/language_icon/java_icon.png",
+  "language_name": "Java",
+  "language_wiki_description": "Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers  write once, run anywhere  (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers. Java was originally developed by James Gosling at Sun Microsystems (which has since merged into Oracle Corporation) and released in 1995 as a core component of Sun Microsystems  Java platform. The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them.",
+  "language_wiki_link": "http://en.wikipedia.org/wiki/Java_%28programming_language%29"
+}
+        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/language/1").read())
+        self.assertEqual(expected, actual)
 
     def test_getting_nonexistent_language(self):
-        assert()
+        expected = {"error": "Item does not exist"}
+        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/language/1123456789").read())
+        self.assertEqual(expected, actual)
 
     def test_getting_locations(self):
-        assert()
+        expected = {
+  "locations": [
+    {
+      "location_description": "Austin is the capital of the US state of Texas and the seat of Travis County. Located in Central Texas, Austin is the 11th-most populous city in the United States and the fourth-most populous city in Texas.",
+      "location_id": 1,
+      "location_image": "static/images/location_icon/austin.jpg",
+      "location_name": "Austin, TX"
+    },
+    {
+      "location_description": "Seattle is a coastal seaport city and the seat of King County, in the U.S. state of Washington. With an estimated 652,405 residents as of 2013, Seattle is the largest city in both the State of Washington ...",
+      "location_id": 2,
+      "location_image": "static/images/location_icon/seattle.jpg",
+      "location_name": "Seattle, WA"
+    },
+    {
+      "location_description": "San Francisco, officially the City and County of San Francisco, is the cultural, commercial and financial center of Northern California.",
+      "location_id": 3,
+      "location_image": "static/images/location_icon/san_francisco.jpg",
+      "location_name": "San Francisco, CA"
+    },
+    {
+      "location_description": "Los Angeles, officially the City of Los Angeles, often known by its initials L.A., is a major city in California s Southern California region, approximately 342 miles south of San Francisco.",
+      "location_id": 4,
+      "location_image": "static/images/location_icon/los_anglos.jpg",
+      "location_name": "Los Angles, CA"
+    },
+    {
+      "location_description": "New York - often called New York City or the City of New York to distinguish it from the State of New York, of which it is a part - is the most populous city in the United States and the center of the ...",
+      "location_id": 5,
+      "location_image": "static/images/location_icon/new_york_city.jpg",
+      "location_name": "New York City, NY"
+    },
+    {
+      "location_description": "Boston is the capital and largest city of the Commonwealth of Massachusetts in the United States. Boston also serves as county seat of Suffolk County.",
+      "location_id": 6,
+      "location_image": "static/images/location_icon/boston.jpg",
+      "location_name": "Boston, MA"
+    },
+    {
+      "location_description": "Dallas is a major city in Texas and is the largest urban center of the fourth most populous metropolitan area in the United States. The city proper ranks ninth in the U.S. and third in Texas after Houston and San Antonio.",
+      "location_id": 7,
+      "location_image": "static/images/location_icon/dallas.jpg",
+      "location_name": "Dallas, TX"
+    },
+    {
+      "location_description": "San Jose is the third-largest city in California, the tenth-largest in the United States, and the county seat of Santa Clara County. San Jose is the largest city within the San Francisco Bay Area and the largest city in Northern California.",
+      "location_id": 8,
+      "location_image": "static/images/location_icon/san_jose.jpg",
+      "location_name": "San Jose, CA"
+    },
+    {
+      "location_description": "Mountain View is a city in Santa Clara County, in the Bay Area of California.",
+      "location_id": 9,
+      "location_image": "static/images/location_icon/mountain_view.jpg",
+      "location_name": "Mountain View, CA"
+    },
+    {
+      "location_description": "Menlo Park is an affluent city at the eastern edge of San Mateo County, in the San Francisco Bay Area of California, in the United States.",
+      "location_id": 10,
+      "location_image": "static/images/location_icon/menlo_park.jpg",
+      "location_name": "Menlo Park, CA"
+    }
+  ]
+}
+        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/location").read())
+        self.assertEqual(expected, actual)
 
     def test_getting_location(self):
-        assert()
+        expected = {
+  "location_description": "Austin is the capital of the US state of Texas and the seat of Travis County. Located in Central Texas, Austin is the 11th-most populous city in the United States and the fourth-most populous city in Texas.",
+  "location_id": 1,
+  "location_image": "static/images/location_icon/austin.jpg",
+  "location_name": "Austin, TX"
+}
+        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/location/1").read())
+        self.assertEqual(expected, actual)
 
     def test_getting_nonexistent_location(self):
-        assert()
+        expected = {"error": "Item does not exist"}
+        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/location/1123456789").read())
+        self.assertEqual(expected, actual)
 
     def test_getting_skillsets(self):
-        assert()
+        expected = {
+  "Skillsets": [
+    {
+      "skillset_description": "Spring, J2EE, Hibernate",
+      "skillset_id": 1,
+      "skillset_image": "static/images/skillset_icon/web_app_backend_icon.png",
+      "skillset_name": "Web app, Back-end",
+      "skillset_wiki_description": "A web application or web app is any software that runs in a web browser. It is created in a browser-supported programming language (such as the combination of JavaScript, HTML and CSS) and relies on a web browser to render the application.",
+      "skillset_wiki_link": "http://en.wikipedia.org/wiki/Front_and_back_ends"
+    },
+    {
+      "skillset_description": "Mobile computing, IOS, Andriod",
+      "skillset_id": 2,
+      "skillset_image": "static/images/skillset_icon/mobile_computing_icon.png",
+      "skillset_name": "Mobile computing",
+      "skillset_wiki_description": "Mobile computing is human computer interaction by which a computer is expected to be transported during normal usage. Mobile computing involves mobile communication, mobile hardware, and mobile software. Communication issues include ad hoc and infrastructure networks as well as communication properties, protocols, data formats and concrete technologies. Hardware includes mobile devices or device components. Mobile software deals with the characteristics and requirements of mobile applications.",
+      "skillset_wiki_link": "http://en.wikipedia.org/wiki/Mobile_computing"
+    },
+    {
+      "skillset_description": "Network administration, Cloud computing",
+      "skillset_id": 3,
+      "skillset_image": "static/images/skillset_icon/network_icon.png",
+      "skillset_name": "Network",
+      "skillset_wiki_description": "A computer network or data network is a telecommunications network which allows computers to exchange data. In computer networks, networked computing devices pass data to each other along data connections (network links). Data is transferred in the form of packets. The connections between nodes are established using either cable media or wireless media. The best-known computer network is the Internet.",
+      "skillset_wiki_link": "http://en.wikipedia.org/wiki/Computer_network"
+    },
+    {
+      "skillset_description": "Html, javascript, CSS",
+      "skillset_id": 4,
+      "skillset_image": "static/images/skillset_icon/web_frontend_icon.png",
+      "skillset_name": "Web Front-end",
+      "skillset_wiki_description": "In software engineering, the terms front end and back end are distinctions which refer to the separation of concerns between a presentation layer and a data access layer respectively. The front end is an interface between the user and the back end. The front and back ends may be distributed amongst one or more systems.",
+      "skillset_wiki_link": "http://en.wikipedia.org/wiki/Front_and_back_ends"
+    },
+    {
+      "skillset_description": "Hadoop, big data",
+      "skillset_id": 5,
+      "skillset_image": "static/images/skillset_icon/bigdata_icon.png",
+      "skillset_name": "Big data",
+      "skillset_wiki_description": "Big data is a broad term for data sets so large or complex that traditional data processing applications are inadequate. Challenges include analysis, capture, curation, search, sharing, storage, transfer, visualization, and information privacy.",
+      "skillset_wiki_link": "http://en.wikipedia.org/wiki/Big_data"
+    },
+    {
+      "skillset_description": "MySQL, NoSQL, MongoDB",
+      "skillset_id": 6,
+      "skillset_image": "static/images/skillset_icon/database_icon.png",
+      "skillset_name": "Database",
+      "skillset_wiki_description": "A database is an organized collection of data. The data is typically organized to model aspects of reality in a way that supports processes requiring information. For example, modelling the availability of rooms in hotels in a way that supports finding a hotel with vacancies.",
+      "skillset_wiki_link": "http://en.wikipedia.org/wiki/Database"
+    }
+  ]
+}
+        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/skillset").read())
+        self.assertEqual(expected, actual)
 
     def test_getting_skillset(self):
-        assert()
+        expected = {
+            "skillset_description": "Spring, J2EE, Hibernate",
+            "skillset_id": 1,
+            "skillset_image": "static/images/skillset_icon/web_app_backend_icon.png",
+            "skillset_name": "Web app, Back-end",
+            "skillset_wiki_description": "A web application or web app is any software that runs in a web browser. It is created in a browser-supported programming language (such as the combination of JavaScript, HTML and CSS) and relies on a web browser to render the application.",
+            "skillset_wiki_link": "http://en.wikipedia.org/wiki/Front_and_back_ends"
+        }
+        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/skillset/1").read())
+        self.assertEqual(expected, actual)
 
     def test_getting_nonexistent_skillset(self):
+        expected = {"error": "Item does not exist"}
+        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/skillset/1123456789").read())
+        self.assertEqual(expected, actual)
+
+    def test_getting_members(self):
         assert()
 
+    def test_getting_member(self):
+        assert()
+
+    def test_getting_nonexistent_member(self):
+        assert()
 
 if __name__ == '__main__':
     unittest.main()
