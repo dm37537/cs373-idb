@@ -347,7 +347,7 @@ def get_languages_page():
 def get_language_page(id=None):
     language = Language.query.get(id)
     languages = Language.query.all()
-    if not languages:
+    if not language:
         abort(404)
     jobs = Job.query.all()
     companies = Company.query.all()

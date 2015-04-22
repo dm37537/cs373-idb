@@ -165,25 +165,24 @@ class ProgrammerJobsTestCase(unittest.TestCase):
         assert skillset.skillset_description == 'ipad'
 
     def test_getting_nonexisting_job(self):
-        code = urllib2.urlopen('http://104.130.229.90:5000/job/12345678').code
-        # request = requests.get('http://104.130.229.90:5000/job/12345678').code()
-        self.assertEqual(code, 404)
+        req = requests.get('http://104.130.229.90:5000/job/12345678')
+        self.assertEqual(req.status_code, 404)
 
     def test_getting_nonexisting_company(self):
-        code = urllib2.urlopen('http://104.130.229.90:5000/company/12345678').code
-        self.assertEqual(code, 404)
+        req = requests.get('http://104.130.229.90:5000/company/12345678')
+        self.assertEqual(req.status_code, 404)
 
     def test_getting_nonexisting_language(self):
-        code = urllib2.urlopen('http://104.130.229.90:5000/language/12345678').code
-        self.assertEqual(code, 404)
+        req = requests.get('http://104.130.229.90:5000/language/12345678')
+        self.assertEqual(req.status_code, 404)
 
     def test_getting_nonexisting_location(self):
-        code = urllib2.urlopen('http://104.130.229.90:5000/location/12345678').code
-        self.assertEqual(code, 404)
+        req = requests.get('http://104.130.229.90:5000/location/12345678')
+        self.assertEqual(req.status_code, 404)
 
     def test_getting_nonexisting_skillset(self):
-        code = urllib2.urlopen('http://104.130.229.90:5000/skillset/12345678').code
-        self.assertEqual(code, 404)
+        req = requests.get('http://104.130.229.90:5000/skillset/12345678')
+        self.assertEqual(req.status_code, 404)
 
 
 class APITestCase(unittest.TestCase):
