@@ -1727,7 +1727,28 @@ class APITestCase(unittest.TestCase):
                 },
                 {
                     "company_id": 10,
-                    "job_description": "As a Software Engineer, Client Implementation - Mobile Apply you will take the unfriendly mobile apply process and turn it into a pleasant experience for job seekers. Responsibilities: You want to work with a wide variety of technologies and constantly learn new things You take pride in designing creative, simple solutions to challenging problems You are detail-oriented and have an outstanding work ethic You enjoy documenting and sharing knowledge with the team You have a strong sense of ownership for everything you build and want to see your work make a difference every day Take ownership of each client-specific implementation that you work on Communicate and collaborate with cross-functional teams Manage multiple priorities successfully Follow and drive development best practices for design, performance and scalability Improve and update internal processes, tools, and documentation in order to keep up with growing demand Requirements: Have a Bachelor s Degree in a related field Have 1-3 years of experience and proficiency in object-oriented programming (Java/C++). Be fluent in Javascript, HTML, CSS and XML Familiarity with scripting languages such as Python/Ruby is big plus Be familiar with browser automation frameworks (Selenium/PhantomJS/CasperJS) Have strong coding, problem solving, and design skills, and have both a broad and deep knowledge of data structures and algorithms Be comfortable working in a UNIX/Linux environment Communicate clearly with both technical and non-technical users Be detail oriented with strong organiz ational skills Thrive in a fast paced environment",
+                    "job_description": "As a Software Engineer, Client Implementation - Mobile Apply you will take the "
+                                       "unfriendly mobile apply process and turn it into a pleasant experience for job "
+                                       "seekers. Responsibilities: You want to work with a wide variety of technologies"
+                                       " and constantly learn new things You take pride in designing creative, simple "
+                                       "solutions to challenging problems You are detail-oriented and have an "
+                                       "outstanding work ethic You enjoy documenting and sharing knowledge with the "
+                                       "team You have a strong sense of ownership for everything you build and want to "
+                                       "see your work make a difference every day Take ownership of each "
+                                       "client-specific implementation that you work on Communicate and collaborate "
+                                       "with cross-functional teams Manage multiple priorities successfully Follow and "
+                                       "drive development best practices for design, performance and scalability "
+                                       "Improve and update internal processes, tools, and documentation in order to "
+                                       "keep up with growing demand Requirements: Have a Bachelor s Degree in a related"
+                                       " field Have 1-3 years of experience and proficiency in object-oriented "
+                                       "programming (Java/C++). Be fluent in Javascript, HTML, CSS and XML Familiarity "
+                                       "with scripting languages such as Python/Ruby is big plus Be familiar with "
+                                       "browser automation frameworks (Selenium/PhantomJS/CasperJS) Have strong coding,"
+                                       " problem solving, and design skills, and have both a broad and deep knowledge "
+                                       "of data structures and algorithms Be comfortable working in a UNIX/Linux "
+                                       "environment Communicate clearly with both technical and non-technical users Be "
+                                       "detail oriented with strong organiz ational skills Thrive in a fast paced "
+                                       "environment",
                     "job_id": 75,
                     "job_title": "Software Engineer, Client Implementation - Mobile Apply ",
                     "link": "http://www.indeed.com/viewjob?jk=097acafd3b9251cc&q=company%3Aindeed+developer&tk=19gsvnbu"
@@ -1820,7 +1841,7 @@ class APITestCase(unittest.TestCase):
                 }
             ]
         }
-        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/job").read())
+        actual = requests.get("http://104.130.229.90:5000/api/job").json()
         self.assertEqual(expected, actual)
 
     def test_getting_job(self):
@@ -1840,12 +1861,12 @@ class APITestCase(unittest.TestCase):
             "link": "https://oracle.taleo.net/careersection/2/jobdetail.ftl?job=90953",
             "location_id": 3
         }
-        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/job/1").read())
+        actual = requests.get("http://104.130.229.90:5000/api/job/1").json()
         self.assertEqual(expected, actual)
 
     def test_getting_nonexistent_job(self):
         expected = {"error": "Item does not exist"}
-        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/job/1123456789").read())
+        actual = requests.get("http://104.130.229.90:5000/api/job/1123456789").json()
         self.assertEqual(expected, actual)
 
     def test_getting_companies(self):
@@ -1923,7 +1944,7 @@ class APITestCase(unittest.TestCase):
                 }
             ]
         }
-        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/company").read())
+        actual = requests.get("http://104.130.229.90:5000/api/company").json()
         self.assertEqual(expected, actual)
 
     def test_getting_company(self):
@@ -1934,12 +1955,12 @@ class APITestCase(unittest.TestCase):
             "company_name": "Google",
             "company_site": "www.google.com"
         }
-        actual = json.loads(urllib2.urlopen('http://104.130.229.90:5000/api/company/1').read())
+        actual = requests.get('http://104.130.229.90:5000/api/company/1').json()
         self.assertEqual(expected, actual)
 
     def test_getting_nonexistent_company(self):
         expected = {"error": "Item does not exist"}
-        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/company/1123456789").read())
+        actual = requests.get("http://104.130.229.90:5000/api/company/1123456789").json()
         self.assertEqual(expected, actual)
 
     def test_getting_languages(self):
@@ -2095,7 +2116,7 @@ class APITestCase(unittest.TestCase):
                 }
             ]
         }
-        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/language").read())
+        actual = requests.get("http://104.130.229.90:5000/api/language").json()
         self.assertEqual(expected, actual)
 
     def test_getting_language(self):
@@ -2120,12 +2141,12 @@ class APITestCase(unittest.TestCase):
                                          "facilities than either of them.",
             "language_wiki_link": "http://en.wikipedia.org/wiki/Java_%28programming_language%29"
         }
-        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/language/1").read())
+        actual = requests.get("http://104.130.229.90:5000/api/language/1").json()
         self.assertEqual(expected, actual)
 
     def test_getting_nonexistent_language(self):
         expected = {"error": "Item does not exist"}
-        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/language/1123456789").read())
+        actual = requests.get("http://104.130.229.90:5000/api/language/1123456789").json()
         self.assertEqual(expected, actual)
 
     def test_getting_locations(self):
@@ -2212,7 +2233,7 @@ class APITestCase(unittest.TestCase):
                 }
             ]
         }
-        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/location").read())
+        actual = requests.get("http://104.130.229.90:5000/api/location").json()
         self.assertEqual(expected, actual)
 
     def test_getting_location(self):
@@ -2224,12 +2245,12 @@ class APITestCase(unittest.TestCase):
             "location_image": "static/images/location_icon/austin.jpg",
             "location_name": "Austin, TX"
         }
-        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/location/1").read())
+        actual = requests.get("http://104.130.229.90:5000/api/location/1").json()
         self.assertEqual(expected, actual)
 
     def test_getting_nonexistent_location(self):
         expected = {"error": "Item does not exist"}
-        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/location/1123456789").read())
+        actual = requests.get("http://104.130.229.90:5000/api/location/1123456789").json()
         self.assertEqual(expected, actual)
 
     def test_getting_skillsets(self):
@@ -2312,7 +2333,7 @@ class APITestCase(unittest.TestCase):
                 }
             ]
         }
-        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/skillset").read())
+        actual = requests.get("http://104.130.229.90:5000/api/skillset").json()
         self.assertEqual(expected, actual)
 
     def test_getting_skillset(self):
@@ -2327,12 +2348,12 @@ class APITestCase(unittest.TestCase):
                                          "render the application.",
             "skillset_wiki_link": "http://en.wikipedia.org/wiki/Front_and_back_ends"
         }
-        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/skillset/1").read())
+        actual = requests.get("http://104.130.229.90:5000/api/skillset/1").json()
         self.assertEqual(expected, actual)
 
     def test_getting_nonexistent_skillset(self):
         expected = {"error": "Item does not exist"}
-        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/skillset/1123456789").read())
+        actual = requests.get("http://104.130.229.90:5000/api/skillset/1123456789").json()
         self.assertEqual(expected, actual)
 
     def test_getting_members(self):
@@ -2405,17 +2426,8 @@ class APITestCase(unittest.TestCase):
                 }
             ]
         }
-        actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/member").read())
+        actual = requests.get('http://104.130.229.90:5000/api/member').json()
         self.assertEqual(expected, actual)
-
-    def test_getting_member(self):
-        pass
-
-    def test_getting_nonexistent_member(self):
-        pass
-        # expected = {"error": "Item does not exist"}
-        # actual = json.loads(urllib2.urlopen("http://104.130.229.90:5000/api/member/1123456789").read())
-        # self.assertEqual(expected, actual)
 
 if __name__ == '__main__':
     unittest.main()
