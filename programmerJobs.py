@@ -77,6 +77,13 @@ def get_search(query=None):
     # job_search_results = Job.query.whoosh_search(query, limit=10)
     # return render_template('search_results.html', job_search_results=job_search_results)
     queryList = query.split("+")
+    tempQuery = []
+    #make first character capital
+    for qEle in queryList :
+        tempQuery.append(qEle.title())
+    queryList = tempQuery
+    #remove duplicated element in list
+    queryList = list(set(queryList))
     whooshResult = Job.query.whoosh_search('software').all()
     print(whooshResult)
     print(len(whooshResult))
@@ -136,49 +143,70 @@ def get_search(query=None):
     print(queryCompanyList)
     print(querySkillsetList)
     print(queryLocationList)
- 
-    for singleJob in jobs :
-	matchLang = False
-	matchCmpy = False
-	matchSkill = False
-	matchLoc = False
-	for qLang in queryLanguageList :
-	    if qLang is not None :
-		if singleJob.languages[0].language_id == qLang.language_id:
-			matchLang = True
-	for qCmpy in queryCompanyList :
-	    if qCmpy is not None:
-		if singleJob.company_id == qCmpy.company_id :
-			matchCmpy = True
-	for qSkill in querySkillsetList :
-	    if qSkill is not None:
-		if singleJob.skillsets[0].skillset_id == qSkill.skillset_id:
-			matchSkill = True
-	for qLoc in queryLocationList :
-	    if qLoc is not None:
-		if singleJob.location_id == qLoc.location_id :
-			matchLoc = True
 
-	if(matchLang or matchCmpy or matchSkill or matchLoc):
+    langListLen = len(queryLanguageList)
+    cmpyListLen = len(queryCompanyList)
+    skillListLen = len(querySkillsetList)
+    locListLen = len(queryLocationList)
+ 
+    totalLen = langListLen + cmpyListLen + skillListLen + locListLen
+
+    if langListLen is 0 and cmpyListLen is 0 and skillListLen is 0 and locListLen is 0 :
+	orMatchList = []
+	andMatchList = []
+    else :
+	for singleJob in jobs :
+	    matchLang = False
+	    matchCmpy = False
+	    matchSkill = False
+	    matchLoc = False
+	    for qLang in queryLanguageList :
+		if qLang is not None :
+		    if singleJob.languages[0].language_id == qLang.language_id:
+			matchLang = True
+	    for qCmpy in queryCompanyList :
+		if qCmpy is not None:
+		    if singleJob.company_id == qCmpy.company_id :
+			matchCmpy = True
+	    for qSkill in querySkillsetList :
+		if qSkill is not None:
+		    if singleJob.skillsets[0].skillset_id == qSkill.skillset_id:
+			matchSkill = True
+	    for qLoc in queryLocationList :
+		if qLoc is not None:
+		    if singleJob.location_id == qLoc.location_id :
+			matchLoc = True
+	
+	    #for and match, some model list can be empty, which we need to set true to do 'and' search
+	
+	    if(matchLang or matchCmpy or matchSkill or matchLoc):
 		orMatchList.append(singleJob)
 
-	#for and match, some model list can be empty, which we need to set true to do 'and' search
-	if(len(queryLanguageList) == 0):
-		matchLang = True
-	if(len(queryCompanyList) == 0):
-		matchCmpy = True
-	if(len(querySkillsetList) == 0):
-		matchSkill = True
-	if(len(queryLocationList) == 0):
-		matchLoc = True
 
-	if(matchLang and matchCmpy and matchSkill and matchLoc):
-		andMatchList.append(singleJob)
+	    if langListLen is 0 and cmpyListLen is 0 and skillListLen is 0 and locListLen is 0 :
+		#if there is no model queried, then nothing
+		andMatchList = []
+	    else :
+		if(langListLen == 0):
+			matchLang = True
+		if(cmpyListLen == 0):
+			matchCmpy = True
+		if(skillListLen == 0):
+			matchSkill = True
+		if(locListLen == 0):
+			matchLoc = True
 
-	languages = Language.query.all()
-	locations = Location.query.all()
-	companies = Company.query.all()
-	skillsets = Skillset.query.all()
+		if(matchLang and matchCmpy and matchSkill and matchLoc):
+			andMatchList.append(singleJob)
+
+    languages = Language.query.all()
+    locations = Location.query.all()
+    companies = Company.query.all()
+    skillsets = Skillset.query.all()
+    
+    if totalLen is 1:
+	orMatchList =[]
+    
     return render_template('search_results.html', queryList=queryList, orMatchList=orMatchList, andMatchList=andMatchList, langJson=languages, locJson=locations, cmpyJson=companies, skillsetJson=skillsets)
 
 
