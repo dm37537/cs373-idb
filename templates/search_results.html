@@ -75,7 +75,7 @@
 	{% endfor %}
 	</h1></b>
 	</div>
-	<table id="myTable" class="table table-striped" >  
+	<table id="andTable" class="table table-striped" >  
 
           <thead>
             <tr>
@@ -84,31 +84,84 @@
               <th>Company</th>
               <th>Location</th>
               <th>Language</th>
+	      <th>Skillset</th>
             </tr>
           </thead>
           <tbody>
             {% set num = 1 %}
-            {% for jobDict in jobJson %}
+            {% for jobDict in andMatchList %}
             <tr>
               <td>{{num}}</td>
                 {% set num = num + 1 %}
-              <td><a href="/job/{{jobDict.job_id}}">{{jobDict.job_title}}</a></td>
-              <td>{{jobDict.company_id}}</td>
-              <td>{{jobDict.location_id}}</td>
-              <td>{{jobDict.languages[0].language_id}}</td>
+              <td>
+		<a href="/job/{{jobDict.job_id}}">
+			{{jobDict.job_title}}
+	        </a>
+	      </td>
+		{% set companyID = jobDict.company_id - 1 %}
+              <td><a href="/company/{{jobDict.company_id}}">{{cmpyJson[companyID].company_name}}</a></td>
+		{% set locationID = jobDict.location_id - 1 %}
+              <td><a href="/location/{{jobDict.location_id}}">{{locJson[locationID].location_name}}</a></td>
+		{% set languageID = jobDict.languages[0].language_id - 1 %}
+              <td><a href="/language/{{jobDict.languages[0].language_id}}">{{langJson[languageID].language_name}}</a></td>
+		{% set skillsetID = jobDict.skillsets[0].skillset_id - 1 %}
+	      <td><a href="/skillset/{{jobDict.skillsets[0].skillset_id}}">{{skillsetJson[skillsetID].skillset_name}}</a></td>
             </tr>
             {% endfor %}
           </tbody>
 
-        </table>  
+        </table> 
+	<br>
+	<hr>
+	<br>
+	<div class="text-center">
+	<b><h1>Search result for
+	{% set querySize = queryList|length - 1 %}
+	
+	{% for query in queryList %}
+		{{query}}
+		{% if querySize != 0 %}
+			or
+			{% set querySize = querySize - 1 %}
+		{% endif %}
+	{% endfor %}
+	</h1></b>
+	</div>
+	<table id="orTable" class="table table-striped" >  
+
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Job Position</th>
+              <th>Company</th>
+              <th>Location</th>
+              <th>Language</th>
+	      <th>Skillset</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% set num = 1 %}
+            {% for jobDict in orMatchList %}
+            <tr>
+              <td>{{num}}</td>
+                {% set num = num + 1 %}
+              <td><a href="/job/{{jobDict.job_id}}">{{jobDict.job_title}}</a></td>
+		{% set companyID = jobDict.company_id - 1 %}
+              <td><a href="/company/{{jobDict.company_id}}">{{cmpyJson[companyID].company_name}}</a></td>
+		{% set locationID = jobDict.location_id - 1 %}
+              <td><a href="/location/{{jobDict.location_id}}">{{locJson[locationID].location_name}}</a></td>
+		{% set languageID = jobDict.languages[0].language_id - 1 %}
+              <td><a href="/language/{{jobDict.languages[0].language_id}}">{{langJson[languageID].language_name}}</a></td>
+		{% set skillsetID = jobDict.skillsets[0].skillset_id - 1 %}
+	      <td><a href="/skillset/{{jobDict.skillsets[0].skillset_id}}">{{skillsetJson[skillsetID].skillset_name}}</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+
+        </table> 
       </div>
     </div>
   </div>
-	{{whooshResult}}
-	{{queryList}}
-	<br>
-	{{orMatchList}}
-	{{andMatchList}}
     <!-- Footer -->
     <div class="container">
       <div class="text pull-left">
@@ -118,7 +171,8 @@
   </body>
 <script>
 $(document).ready(function(){
-    $('#myTable').dataTable();
+    $('#andTable').dataTable();
+    $('#orTable').dataTable();
 });
 </script>
 

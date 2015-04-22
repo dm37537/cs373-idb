@@ -175,7 +175,11 @@ def get_search(query=None):
 	if(matchLang and matchCmpy and matchSkill and matchLoc):
 		andMatchList.append(singleJob)
 
-    return render_template('search_results.html', jobJson=jobs, whooshResult=whooshResult, queryList=queryList, orMatchList=orMatchList, andMatchList=andMatchList)
+	languages = Language.query.all()
+	locations = Location.query.all()
+	companies = Company.query.all()
+	skillsets = Skillset.query.all()
+    return render_template('search_results.html', queryList=queryList, orMatchList=orMatchList, andMatchList=andMatchList, langJson=languages, locJson=locations, cmpyJson=companies, skillsetJson=skillsets)
 
 
 # API
