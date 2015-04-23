@@ -21,7 +21,7 @@
     {% for skillsetDict in skillsetJson %}
     <div class="col-md-3 vertical-center">
       <a href="skillset/{{ skillsetDict.skillset_id }}">
-        <img class="centered-image circularize" src="../static/{{skillsetDict.skillset_image}}" style="max-height: 200px; max-width: 200px; height: 100%; width: 100%; margin: 30px; postion: relative">
+        <img class="centered-image circularize" src="../{{skillsetDict.skillset_image}}" style="max-height: 200px; max-width: 200px; height: 100%; width: 100%; margin: 30px; postion: relative">
       </a>
     </div>
     {% endfor %}
