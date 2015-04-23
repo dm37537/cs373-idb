@@ -97,6 +97,13 @@ img.company-logo {
 	background-attachment: fixed;
 }
 
+#skillset-jumbotron {
+	padding-top: 5%;
+	background-image: url("images/jumbotron/skillset_jumbotron.jpg");
+	background-size: cover;
+
+}
+
 #languages-jumbotron {
 	padding-top: 5%;
 	background-image: url("images/jumbotron/languages_jumbotron.png");
