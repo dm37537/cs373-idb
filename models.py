@@ -82,7 +82,7 @@ class Company(db.Model):
         self.company_site = site
 
     def serialize(self):
-        twitter_id = ''
+        twitter_id = '591372267679944704'
         # Google
         if self.company_id == 1: 
             twitter_id = '591372267679944704'
