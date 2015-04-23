@@ -159,7 +159,9 @@ def get_search(query=None):
         if len(queriedLoc) > 0:
             for locModel in queriedLoc:
                 locName = locModel.location_name.split(" ")
-		locName = [item.lower() for item in locName]
+		locName = [item.lower().replace(",","") for item in locName]
+		print("locName = " )
+		print(locName)
                 if queryWord in locName:
                     locQueryField.append(queryWord)
                     dirtyFlag = True
@@ -228,7 +230,7 @@ def get_search(query=None):
         # print("skillCounter = " + str(skillCounter))
         # print("locCounter = " + str(locCounter))
 
-        if jobTitleCounter is len(jobTitleQueryField) and langCounter is len(langQueryField) and cmpyCounter is len(cmpyQueryField) and skillCounter is len(skillQueryField) and locCounter is len(locQueryField) :
+        if jobTitleCounter is len(jobTitleQueryField) and langCounter is len(langQueryField) and cmpyCounter is len(cmpyQueryField) and skillCounter is len(skillQueryField) and locCounter >= 0 :
             #perfect match
             if len(badQueryField) == 0:
                 #if there is badquery, it won't find any perfect match
