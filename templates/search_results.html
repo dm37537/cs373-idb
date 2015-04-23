@@ -101,25 +101,45 @@
 		{% set companyID = jobDict.company_id - 1 %}
               <td>
 		<a href="/company/{{jobDict.company_id}}">
-		  {% set queryMatch = 0 %}
-		  {% for queryField in queryList %}
-		    {% if queryField in cmpyJson[companyID].company_name %}
-		      {% set queryMatch = queryMatch + 1 %}
-		    {% endif %}
-		  {% endfor %}
-		  {% if queryMatch == 1 %}
-			<b>{{cmpyJson[companyID].company_name}}</b>
-		  {% else %}
-			{{cmpyJson[companyID].company_name}}
-		  {% endif %}
+		{% if boldList[1] > 0 %}
+		<b>{{cmpyJson[companyID].company_name}}</b>
+		{% else %}
+		  {{cmpyJson[companyID].company_name}}
+		{% endif %}
+
 		</a>
 	      </td>
 		{% set locationID = jobDict.location_id - 1 %}
-              <td><a href="/location/{{jobDict.location_id}}">{{locJson[locationID].location_name}}</a></td>
+              <td>
+		<a href="/location/{{jobDict.location_id}}">
+		{% if boldList[3] > 0 %}
+		<b>{{locJson[locationID].location_name}}</b>
+		{% else %}
+		  {{locJson[locationID].location_name}}
+		{% endif %}
+		</a>
+	      </td>
 		{% set languageID = jobDict.languages[0].language_id - 1 %}
-              <td><a href="/language/{{jobDict.languages[0].language_id}}">{{langJson[languageID].language_name}}</a></td>
+              <td>
+		<a href="/language/{{jobDict.languages[0].language_id}}">
+		{% if boldList[0] > 0 %}
+		<b>{{langJson[languageID].language_name}}</b>
+		{% else %}
+		  {{langJson[languageID].language_name}}
+		{% endif %}
+
+		</a>
+	      </td>
 		{% set skillsetID = jobDict.skillsets[0].skillset_id - 1 %}
-	      <td><a href="/skillset/{{jobDict.skillsets[0].skillset_id}}">{{skillsetJson[skillsetID].skillset_name}}</a></td>
+	      <td>
+		<a href="/skillset/{{jobDict.skillsets[0].skillset_id}}">
+		{% if boldList[2] > 0 %}
+		<b>{{skillsetJson[skillsetID].skillset_name}}</b>
+		{% else %}
+		{{skillsetJson[skillsetID].skillset_name}}
+		{% endif %}
+		</a>
+	     </td>
             </tr>
             {% endfor %}
           </tbody>
