@@ -5,8 +5,6 @@ socket.setdefaulttimeout(default_timeout)
 
 from programmerJobs import *
 from models import Job, Company, Location, Language, Skillset
-import urllib2
-import json
 import requests
 
 
@@ -26,6 +24,13 @@ class DatabaseTestCase(unittest.TestCase):
     # 	content = (999,'a','as','asd','asdf')
     # 	db.add(content)
     # 	ad.commit(content)
+
+    # def test_create_job(self):
+    #     company = Company(company_id=1, name='Google', description='None', site='www.google.com', image='')
+    #     db.add(company)
+    #     db.commit()
+    #     query = Company.query.get(1)
+    #     self.assertEqual(company, query)
 
 
 class ProgrammerJobsTestCase(unittest.TestCase):
@@ -167,6 +172,7 @@ class ProgrammerJobsTestCase(unittest.TestCase):
     def test_getting_nonexisting_job(self):
         req = requests.get('http://104.130.229.90:5000/job/12345678')
         self.assertEqual(req.status_code, 404)
+        req.close()
 
     def test_getting_nonexisting_company(self):
         req = requests.get('http://104.130.229.90:5000/company/12345678')
