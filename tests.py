@@ -6,6 +6,7 @@ socket.setdefaulttimeout(default_timeout)
 from programmerJobs import *
 from models import Job, Company, Location, Language, Skillset
 import requests
+import testtools
 
 
 class DatabaseTestCase(unittest.TestCase):
@@ -1883,70 +1884,80 @@ class APITestCase(unittest.TestCase):
                     "company_id": 1,
                     "company_image": "images/company_images/google_logo.png",
                     "company_name": "Google",
-                    "company_site": "www.google.com"
+                    "company_site": "www.google.com",
+                    "twitter_id": "591372267679944704"
                 },
                 {
                     "company_description": "Database",
                     "company_id": 2,
                     "company_image": "images/company_images/oracle_logo.jpg",
                     "company_name": "Oracle",
-                    "company_site": "www.oracle.com"
+                    "company_site": "www.oracle.com",
+                    "twitter_id": "591370969584828416"
                 },
                 {
                     "company_description": "Online shopping",
                     "company_id": 3,
                     "company_image": "images/company_images/amazon_logo.jpeg",
                     "company_name": "Amazon",
-                    "company_site": "www.amazon.com"
+                    "company_site": "www.amazon.com",
+                    "twitter_id": "591372631082831872"
                 },
                 {
                     "company_description": "Social Media",
                     "company_id": 4,
                     "company_image": "images/company_images/facebook_logo.png",
                     "company_name": "Facebook",
-                    "company_site": "www.facebook.com"
+                    "company_site": "www.facebook.com",
+                    "twitter_id": "591372791414267904"
                 },
                 {
                     "company_description": "Social Media",
                     "company_id": 5,
                     "company_image": "images/company_images/twitter_logo.png",
                     "company_name": "Twitter",
-                    "company_site": "www.twitter.com"
+                    "company_site": "www.twitter.com",
+                    "twitter_id": "591372946406408192"
                 },
                 {
                     "company_description": "Online resume",
                     "company_id": 6,
                     "company_image": "images/company_images/linkedin_logo.png",
                     "company_name": "LinkedIn",
-                    "company_site": "www.linkedin.com"
+                    "company_site": "www.linkedin.com",
+                    "twitter_id": "591373056414650369"
                 },
                 {
                     "company_description": "computer",
                     "company_id": 7,
                     "company_image": "images/company_images/ibm_logo.jpg",
                     "company_name": "IBM",
-                    "company_site": "www.ibm.com"
+                    "company_site": "www.ibm.com",
+                    "twitter_id": "591373157191143424"
                 },
                 {
                     "company_description": "Cloud service",
                     "company_id": 8,
                     "company_image": "images/company_images/dropbox_logo.png",
                     "company_name": "Dropbox",
-                    "company_site": "www.dropbox.com"
+                    "company_site": "www.dropbox.com",
+                    "twitter_id": "591373287705354240"
                 },
                 {
                     "company_description": "Cloud server provider",
                     "company_id": 9,
                     "company_image": "images/company_images/rackspace_logo.png",
                     "company_name": "Rackspace",
-                    "company_site": "www.rackspace.com"
+                    "company_site": "www.rackspace.com",
+                    "twitter_id": "591373403317121024"
                 },
                 {
                     "company_description": "Online yellow page for jobs",
                     "company_id": 10,
                     "company_image": "images/company_images/indeed_logo.png",
                     "company_name": "Indeed",
-                    "company_site": "www.indeed.com"
+                    "company_site": "www.indeed.com",
+                    "twitter_id": "591370969584828416"
                 }
             ]
         }
@@ -1959,7 +1970,8 @@ class APITestCase(unittest.TestCase):
             "company_id": 1,
             "company_image": "images/company_images/google_logo.png",
             "company_name": "Google",
-            "company_site": "www.google.com"
+            "company_site": "www.google.com",
+            "twitter_id": "591372267679944704"
         }
         actual = requests.get('http://104.130.229.90:5000/api/company/1').json()
         self.assertEqual(expected, actual)
@@ -2436,4 +2448,13 @@ class APITestCase(unittest.TestCase):
         self.assertEqual(expected, actual)
 
 if __name__ == '__main__':
-    unittest.main()
+    suite = unittest.TestLoader().loadTestsFromTestCase(ProgrammerJobsTestCase)
+    concurrent_suite = testtools.ConcurrentStreamTestSuite(lambda: ((case, None) for case in suite))
+    concurrent_suite.run(testtools.StreamResult())
+    suite = unittest.TestLoader().loadTestsFromTestCase(APITestCase)
+    concurrent_suite = testtools.ConcurrentStreamTestSuite(lambda: ((case, None) for case in suite))
+    concurrent_suite.run(testtools.StreamResult())
+    suite = unittest.TestLoader().loadTestsFromTestCase(DatabaseTestCase)
+    concurrent_suite = testtools.ConcurrentStreamTestSuite(lambda: ((case, None) for case in suite))
+    concurrent_suite.run(testtools.StreamResult())
+    # unittest.main()

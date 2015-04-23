@@ -9,5 +9,6 @@ setup(
         'Flask-SQLAlchemy',
         'flask_whooshalchemy',
         'requests',
+        'testtools'
     ]
 )
