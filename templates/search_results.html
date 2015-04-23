@@ -95,8 +95,12 @@
                 {% set num = num + 1 %}
               <td>
 		<a href="/job/{{jobDict.job_id}}">
-			{{jobDict.job_title}}
-	        </a>
+	        {% if boldList[4] > 0 %}
+		<b>{{jobDict.job_title}}</b>
+		{% else %}
+		{{jobDict.job_title}}
+		{% endif %}
+		</a>
 	      </td>
 		{% set companyID = jobDict.company_id - 1 %}
               <td>

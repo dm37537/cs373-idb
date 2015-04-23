@@ -4,6 +4,7 @@ from flask import Flask, jsonify, abort, render_template, redirect, send_from_di
 from flask.ext.sqlalchemy import SQLAlchemy
 # import flask.ext.whooshalchemy as whooshalchemy
 import json
+import urllib
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
@@ -68,15 +69,24 @@ def result():
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     query_string = request.query_string
+    if query_string is None or query_string is "":
+        abort(404)
+    query_string = query_string.replace("+", "tempQueryDivider")
     query_split = query_string.split("=")
+    
     return render_template('searching.html', queryField=query_split[1])
 
 
 @app.route('/search/<query>')
 def get_search(query=None):
+    if query == None :
+        abort(404)
     # job_search_results = Job.query.whoosh_search(query, limit=10)
     # return render_template('search_results.html', job_search_results=job_search_results)
-    queryList = query.split("+")
+    print(query)
+    queryList = query.split("tempQueryDivider")
+    queryList = [urllib.unquote(queryItem) for queryItem in queryList]
+    print(queryList)
     tempQuery = []
     #make first character capital
     for qEle in queryList :
@@ -85,8 +95,8 @@ def get_search(query=None):
     #remove duplicated element in list
     queryList = list(set(queryList))
     whooshResult = Job.query.whoosh_search('software').all()
-    print(whooshResult)
-    print(len(whooshResult))
+    # print(whooshResult)
+    # print(len(whooshResult))
 
     #filter bad query, separate query for each model
     jobTitleQueryField = []
@@ -94,163 +104,287 @@ def get_search(query=None):
     cmpyQueryField = []
     skillQueryField = []
     locQueryField = []
+    badQueryField = []
+
+    dirtyFlag = False
 
     for queryWord in queryList:
-        queryWord = queryWord.title()
-        if len(Job.query.filter(Job.job_title.like("%"+queryWord+"%")).all()) > 0:
-            jobTitleQueryField.append(queryWord)
-        if len(Language.query.filter(Language.language_name.like("%"+queryWord+"%")).all()) > 0:
-            langQueryField.append(queryWord)
-        if len(Company.query.filter(Company.company_name.like("%"+queryWord+"%")).all()) > 0:
-            cmpyQueryField.append(queryWord)
-        if len(Skillset.query.filter(Skillset.skillset_name.like("%"+queryWord+"%")).all()) > 0:
-            skillQueryField.append(queryWord)
-        if len(Location.query.filter(Location.location_name.like("%"+queryWord+"%")).all()) > 0:
-            locQueryField.append(queryWord)
+        dirtyFlag = False
+	print("querying = " + queryWord)
+        queryWord = queryWord.lower()
+	print("query.lower() = " + queryWord)
+        queriedJobTitle = Job.query.filter(Job.job_title.ilike("%"+queryWord+"%")).all()
+        if len(queriedJobTitle) > 0:
+            for jobModel in queriedJobTitle :
+                jobTitle = jobModel.job_title.split(" ")
+		jobTitle = [item.lower() for item in jobTitle]
+                #look for perfect word match
+                if queryWord in jobTitle :
+                    jobTitleQueryField.append(queryWord)
+                    dirtyFlag = True
+                    break
+        queriedLang = Language.query.filter(Language.language_name.ilike("%"+queryWord+"%")).all()
+        if len(queriedLang) > 0:
+            for langModel in queriedLang:
+                langName = langModel.language_name.split(" ")
+		langName = [item.lower() for item in langName]
+		print(langName)
+                if queryWord in langName :
+                    langQueryField.append(queryWord)
+                    dirtyFlag = True
+                    break
+        queriedCmpy = Company.query.filter(Company.company_name.ilike("%"+queryWord+"%")).all()
+        if len(queriedCmpy) > 0:
+            for cmpyModel in queriedCmpy:
+                cmpyName = cmpyModel.company_name.split(" ")
+                cmpyName = [item.lower() for item in cmpyName]
+		print(cmpyName)
+                if queryWord in cmpyName :
+                    cmpyQueryField.append(queryWord)
+                    dirtyFlag = True
+                    break
+        queriedSkill = Skillset.query.filter(Skillset.skillset_name.ilike("%"+queryWord+"%")).all()
+        if len(queriedSkill) > 0:
+            for skillModel in queriedSkill:
+                skillsetName = skillModel.skillset_name.split(" ")
+		skillsetName = [item.lower() for item in skillsetName]
+                if queryWord in skillset_name:
+                    skillQueryField.append(queryWord)
+                    dirtyFlag = True
+                    break
+        queriedLoc = Location.query.filter(Location.location_name.ilike("%"+queryWord+"%")).all()
+        if len(queriedLoc) > 0:
+            for locModel in queriedLoc:
+                locName = locModel.location_name.split(" ")
+		locName = [item.lower() for item in locName]
+                if queryWord in locName:
+                    locQueryField.append(queryWord)
+                    dirtyFlag = True
+                    break
+        if not dirtyFlag:
+            badQueryField.append(queryWord)
 
-    print(jobTitleQueryField)
-    print(langQueryField)
-    print(cmpyQueryField)
-    print(skillQueryField)
-    print(locQueryField)
+    # print("job query field = ")
+    # print(jobTitleQueryField)
+    # print("lang query field = ")
+    # print(langQueryField)
+    # print("company query field = ")
+    # print(cmpyQueryField)
+    # print("skillset query field = ")
+    # print(skillQueryField)
+    # print("location query field = ")
+    # print(locQueryField)
+    # print("bad query field = ")
+    # print(badQueryField)
 
-    #iterating through 
-    queryJobTitleList = []
-    queryLanguageList = []
-    queryCompanyList = []
-    querySkillsetList = []
-    queryLocationList = []
-    for queryWord in queryList:
-       queryWord = queryWord.title()
-       print("querying: " + queryWord)
+    # print("jobTitleCounter = " + str(len(jobTitleQueryField)))
+    # print("langCounter = " + str(len(langQueryField)))
+    # print("cmpyCounter = " + str(len(cmpyQueryField)))
+    # print("skillCounter = " + str(len(skillQueryField)))
+    # print("locCounter = " + str(len(locQueryField)))
+
+    # #iterating through 
+    # queryJobTitleList = []
+    # queryLanguageList = []
+    # queryCompanyList = []
+    # querySkillsetList = []
+    # queryLocationList = []
+    # for queryWord in queryList:
+    #    queryWord = queryWord.title()
+    #    print("querying: " + queryWord)
     
-    queriedJobTitle = list(set(Job.query.filter(Job.job_title.like("%"+queryWord+"%")).all()))
-    if len(queriedJobTitle) > 0:
-        queryJobTitleList = queriedJobTitle
+    # queriedJobTitle = list(set(Job.query.filter(Job.job_title.like("%"+queryWord+"%")).all()))
+    # if len(queriedJobTitle) > 0:
+    #     queryJobTitleList = queriedJobTitle
 
-    #queriedLang = db.session.query(Language).filter(Language.language_name == queryWord).first()
-    queriedLang = Language.query.filter(Language.language_name.like("%"+queryWord+"%")).first()
-    if queriedLang is not None:
-        queryLanguageList.append(queriedLang)
+    # #queriedLang = db.session.query(Language).filter(Language.language_name == queryWord).first()
+    # queriedLang = Language.query.filter(Language.language_name.like("%"+queryWord+"%")).first()
+    # if queriedLang is not None:
+    #     queryLanguageList.append(queriedLang)
 
-    #queryLanguageList.append(db.session.query(Language).filter(Language.language_name == queryWord).first())
-    #queriedCmpy = db.session.query(Company).filter(Company.company_name == queryWord).first()
-    queriedCmpy = Company.query.filter(Company.company_name.like("%"+queryWord+"%")).first()
-    if queriedCmpy is not None:
-        queryCompanyList.append(queriedCmpy)
-    #queryCompanyList.append(db.session.query(Company).filter(Company.company_name == queryWord).first())
-    #queriedSkill = db.session.query(Skillset).filter(Skillset.skillset_name == queryWord).first()
+    # #queryLanguageList.append(db.session.query(Language).filter(Language.language_name == queryWord).first())
+    # #queriedCmpy = db.session.query(Company).filter(Company.company_name == queryWord).first()
+    # queriedCmpy = Company.query.filter(Company.company_name.like("%"+queryWord+"%")).first()
+    # if queriedCmpy is not None:
+    #     queryCompanyList.append(queriedCmpy)
+    # #queryCompanyList.append(db.session.query(Company).filter(Company.company_name == queryWord).first())
+    # #queriedSkill = db.session.query(Skillset).filter(Skillset.skillset_name == queryWord).first()
 
-    queriedSkill = Skillset.query.filter(Skillset.skillset_name.like("%"+queryWord+"%")).first()
-    if queriedSkill is not None:
-        querySkillsetList.append(queriedSkill)
-    #querySkillsetList.append(db.session.query(Skillset).filter(Skillset.skillset_name == queryWord).first())
-    #queriedLoc = db.session.query(Location).filter(Location.location_name == queryWord).first()
+    # queriedSkill = Skillset.query.filter(Skillset.skillset_name.like("%"+queryWord+"%")).first()
+    # if queriedSkill is not None:
+    #     querySkillsetList.append(queriedSkill)
+    # #querySkillsetList.append(db.session.query(Skillset).filter(Skillset.skillset_name == queryWord).first())
+    # #queriedLoc = db.session.query(Location).filter(Location.location_name == queryWord).first()
 
-    queriedLoc = Location.query.filter(Location.location_name.like("%"+queryWord+"%")).first()
-    if queriedLoc is not None:
-        queryLocationList.append(queriedLoc)
-    #queryLocationList.append(db.session.query(Location).filter(Location.location_name == queryWord).first())
+    # queriedLoc = Location.query.filter(Location.location_name.like("%"+queryWord+"%")).first()
+    # if queriedLoc is not None:
+    #     queryLocationList.append(queriedLoc)
+    # #queryLocationList.append(db.session.query(Location).filter(Location.location_name == queryWord).first())
 
     jobs = Job.query.all()
-    
-    matchJobTitle = False
-    matchLang = False
-    matchCmpy = False
-    matchSkill = False
-    matchLoc = False
+    languages = Language.query.all()
+    # print(type(languages))
+    locations = Location.query.all()
+    companies = Company.query.all()
+    skillsets = Skillset.query.all()
 
     andMatchList = []
     orMatchList = []
 
-    print(queryLanguageList)
-    print(queryCompanyList)
-    print(querySkillsetList)
-    print(queryLocationList)
+    for jobDict in jobs :
+        jobTitleCounter = 0
+        if len(jobTitleQueryField) > 0:
+            #if it has element
+            for queryWord in jobTitleQueryField :
+                if queryWord in jobDict.job_title.lower() :
+                    jobTitleCounter += 1
 
-    jobTitleListLen = len(queryJobTitleList)
-    langListLen = len(queryLanguageList)
-    cmpyListLen = len(queryCompanyList)
-    skillListLen = len(querySkillsetList)
-    locListLen = len(queryLocationList)
+        langCounter = 0
+        if len(langQueryField) > 0:
+            for queryWord in langQueryField :
+                langID = jobDict.languages[0].language_id
+                langModel = languages[langID -1]
+                if queryWord == langModel.language_name.lower() :
+                    langCounter += 1
+
+        cmpyCounter = 0
+        if len(cmpyQueryField) > 0:
+            for queryWord in cmpyQueryField :
+                cmpyId = jobDict.company_id
+                cmpyModel = companies[cmpyId - 1]
+                if queryWord in cmpyModel.company_name.lower() :
+                    cmpyCounter += 1
+
+        skillCounter = 0
+        if len(skillQueryField) > 0:
+            for queryWord in skillQueryField :
+                skillId = jobDict.skillsets[0].skillset_id
+                skillModel = skillsets[skillId - 1]
+                if queryWord in skillModel.skillset_name.lower() :
+                    skillCounter += 1
+
+        locCounter = 0
+        if len(locQueryField) > 0:
+            for queryWord in locQueryField :
+                locId = jobDict.location_id
+                locModel = locations[locId - 1]
+                if queryWord in locModel.location_name.lower() :
+                    locCounter += 1
+
+        # print("jobTitleCounter = " + str(jobTitleCounter))
+        # print("langCounter = " + str(langCounter))
+        # print("cmpyCounter = " + str(cmpyCounter))
+        # print("skillCounter = " + str(skillCounter))
+        # print("locCounter = " + str(locCounter))
+
+        if jobTitleCounter is len(jobTitleQueryField) and langCounter is len(langQueryField) and cmpyCounter is len(cmpyQueryField) and skillCounter is len(skillQueryField) and locCounter is len(locQueryField) :
+            #perfect match
+            if len(badQueryField) == 0:
+                #if there is badquery, it won't find any perfect match
+                andMatchList.append(jobDict)
+        if jobTitleCounter > 0 or langCounter > 0 or cmpyCounter > 0 or skillCounter > 0 or locCounter > 0 :
+            orMatchList.append(jobDict)
+
+    # print("andMatch = ")
+    # print(andMatchList)
+    # print("orMatch = ")
+    # print(orMatchList)
+
+    # matchJobTitle = False
+    # matchLang = False
+    # matchCmpy = False
+    # matchSkill = False
+    # matchLoc = False
+
+    # print(queryLanguageList)
+    # print(queryCompanyList)
+    # print(querySkillsetList)
+    # print(queryLocationList)
+
+    jobTitleListLen = len(jobTitleQueryField)
+    langListLen = len(langQueryField)
+    cmpyListLen = len(cmpyQueryField)
+    skillListLen = len(skillQueryField)
+    locListLen = len(locQueryField)
  
-    totalLen = langListLen + cmpyListLen + skillListLen + locListLen + jobTitleListLen
+    # totalLen = langListLen + cmpyListLen + skillListLen + locListLen + jobTitleListLen
     boldList = [langListLen, cmpyListLen, skillListLen, locListLen, jobTitleListLen]
+    # print(boldList)
 
-    if langListLen is 0 and cmpyListLen is 0 and skillListLen is 0 and locListLen is 0 and jobTitleListLen is 0:
-        orMatchList = []
-        andMatchList = []
-    else :
-        for singleJob in jobs :
-            matchLang = False
-            matchCmpy = False
-            matchSkill = False
-            matchLoc = False
-            matchJobTitle = False
+    # if langListLen is 0 and cmpyListLen is 0 and skillListLen is 0 and locListLen is 0 and jobTitleListLen is 0:
+    #     orMatchList = []
+    #     andMatchList = []
+    # else :
+    #     for singleJob in jobs :
+    #         matchLang = False
+    #         matchCmpy = False
+    #         matchSkill = False
+    #         matchLoc = False
+    #         matchJobTitle = False
 
-            jobTitleCounter = 0
-            langCounter = 0
-            cmpyCounter = 0
-            locCounter = 0
-            skillCounter = 0
+    #         jobTitleCounter = 0
+    #         langCounter = 0
+    #         cmpyCounter = 0
+    #         locCounter = 0
+    #         skillCounter = 0
 
 
-            for qJobTitle in queryJobTitleList:
-                if qJobTitle is not None:
-                    if singleJob.job_title == qJobTitle.job_title or qJobTitle.job_title in singleJob.job_title:
-                        matchJobTitle = True
-                        jobTitleCounter+=1
-                        print(singleJob.job_title)
-                        print("counter  = " + str(jobTitleCounter))
-            for qLang in queryLanguageList :
-                if qLang is not None :
-                    if singleJob.languages[0].language_id == qLang.language_id or qLang.language_name in singleJob.languages[0].language_name :
-                        matchLang = True
-            for qCmpy in queryCompanyList :
-                if qCmpy is not None:
-                    if singleJob.company_id == qCmpy.company_id :
-                        matchCmpy = True
-            for qSkill in querySkillsetList :
-                if qSkill is not None:
-                    if singleJob.skillsets[0].skillset_id == qSkill.skillset_id:
-                        matchSkill = True
-            for qLoc in queryLocationList :
-                if qLoc is not None:
-                    if singleJob.location_id == qLoc.location_id :
-                        matchLoc = True
+    #         for qJobTitle in queryJobTitleList:
+    #             if qJobTitle is not None:
+    #                 if singleJob.job_title == qJobTitle.job_title or qJobTitle.job_title in singleJob.job_title:
+    #                     matchJobTitle = True
+    #                     jobTitleCounter+=1
+    #                     print(singleJob.job_title)
+    #                     print("counter  = " + str(jobTitleCounter))
+    #         for qLang in queryLanguageList :
+    #             if qLang is not None :
+    #                 if singleJob.languages[0].language_id == qLang.language_id or qLang.language_name in singleJob.languages[0].language_name :
+    #                     matchLang = True
+    #         for qCmpy in queryCompanyList :
+    #             if qCmpy is not None:
+    #                 if singleJob.company_id == qCmpy.company_id :
+    #                     matchCmpy = True
+    #         for qSkill in querySkillsetList :
+    #             if qSkill is not None:
+    #                 if singleJob.skillsets[0].skillset_id == qSkill.skillset_id:
+    #                     matchSkill = True
+    #         for qLoc in queryLocationList :
+    #             if qLoc is not None:
+    #                 if singleJob.location_id == qLoc.location_id :
+    #                     matchLoc = True
         
-            #for and match, some model list can be empty, which we need to set true to do 'and' search
+    #         #for and match, some model list can be empty, which we need to set true to do 'and' search
         
-            if(matchJobTitle or matchLang or matchCmpy or matchSkill or matchLoc):
-                orMatchList.append(singleJob)
+    #         if(matchJobTitle or matchLang or matchCmpy or matchSkill or matchLoc):
+    #             orMatchList.append(singleJob)
 
 
-            if jobTitleListLen is 0 and langListLen is 0 and cmpyListLen is 0 and skillListLen is 0 and locListLen is 0 :
-            #if there is no model queried, then nothing
-                andMatchList = []
-            else :
-                if(jobTitleListLen == 0):
-                    matchJobTitle = True
-                if(langListLen == 0):
-                    matchLang = True
-                if(cmpyListLen == 0):
-                    matchCmpy = True
-                if(skillListLen == 0):
-                    matchSkill = True
-                if(locListLen == 0):
-                    matchLoc = True
+    #         if jobTitleListLen is 0 and langListLen is 0 and cmpyListLen is 0 and skillListLen is 0 and locListLen is 0 :
+    #         #if there is no model queried, then nothing
+    #             andMatchList = []
+    #         else :
+    #             if(jobTitleListLen == 0):
+    #                 matchJobTitle = True
+    #             if(langListLen == 0):
+    #                 matchLang = True
+    #             if(cmpyListLen == 0):
+    #                 matchCmpy = True
+    #             if(skillListLen == 0):
+    #                 matchSkill = True
+    #             if(locListLen == 0):
+    #                 matchLoc = True
 
-            if(jobTitleCounter is jobTitleListLen and matchLang and matchCmpy and matchSkill and matchLoc):
-            #if(matchJobTitle and matchLang and matchCmpy and matchSkill and matchLoc):
-                andMatchList.append(singleJob)
+    #         if(jobTitleCounter is jobTitleListLen and matchLang and matchCmpy and matchSkill and matchLoc):
+    #         #if(matchJobTitle and matchLang and matchCmpy and matchSkill and matchLoc):
+    #             andMatchList.append(singleJob)
 
     languages = Language.query.all()
     locations = Location.query.all()
     companies = Company.query.all()
     skillsets = Skillset.query.all()
     
-    if totalLen is 1:
-        orMatchList =[]
+    # if totalLen is 1:
+    #     orMatchList =[]
     
     return render_template('search_results.html', queryList=queryList, orMatchList=orMatchList, andMatchList=andMatchList, boldList=boldList, langJson=languages, locJson=locations, cmpyJson=companies, skillsetJson=skillsets)
 
