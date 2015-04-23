@@ -120,7 +120,7 @@ def get_search(query=None):
         if len(queriedJobTitle) > 0:
             for jobModel in queriedJobTitle :
                 jobTitle = jobModel.job_title.split(" ")
-		jobTitle = [item.lower() for item in jobTitle]
+		jobTitle = [item.lower().replace(",", "") for item in jobTitle]
                 #look for perfect word match
                 if queryWord in jobTitle :
                     jobTitleQueryField.append(queryWord)
@@ -172,7 +172,6 @@ def get_search(query=None):
 
     jobs = Job.query.all()
     languages = Language.query.all()
-    # print(type(languages))
     locations = Location.query.all()
     companies = Company.query.all()
     skillsets = Skillset.query.all()
@@ -230,13 +229,21 @@ def get_search(query=None):
         # print("cmpyCounter = " + str(cmpyCounter))
         # print("skillCounter = " + str(skillCounter))
         # print("locCounter = " + str(locCounter))
-
-        if jobTitleCounter is len(jobTitleQueryField) and langCounter is len(langQueryField) and cmpyCounter is len(cmpyQueryField) and skillCounter is len(skillQueryField) and locCounter >= 0 :
+        if langCounter is len(langQueryField) and cmpyCounter is len(cmpyQueryField) and skillCounter is len(skillQueryField) and locCounter is len(locQueryField) :
             #perfect match
             if len(badQueryField) == 0:
-                #if there is badquery, it won't find any perfect match
-                andMatchList.append(jobDict)
-        #if jobTitleCounter > 0 or langCounter > 0 or cmpyCounter > 0 or skillCounter > 0 or locCounter > 0 :
+                #if there is badquery, it won't find any perfect matchi
+		#if there was keyword for job title
+		if len(jobTitleQueryField) > 0:
+		    #if there was a at least one match
+		    if jobTitleCounter > 0:
+			#add on match list
+			andMatchList.append(jobDict) 
+		else:
+		    #else if there were no job query, still add and Match
+		    andMatchList.append(jobDict)
+	
+	#if jobTitleCounter > 0 or langCounter > 0 or cmpyCounter > 0 or skillCounter > 0 or locCounter > 0 :
          #   orMatchList.append(jobDict)
 	
 	if jobTitleCounter > 0:
@@ -254,10 +261,24 @@ def get_search(query=None):
     for andMatchJob in andMatchList:
 	if andMatchJob in orJobTitleMatchList:
 	    orJobTitleMatchList.remove(andMatchJob)
-   
+  	if andMatchJob in orCmpyMatchList:
+	    orCmpyMatchList.remove(andMatchJob)
+	if andMatchJob in orLocMatchList:
+	    orLocMatchList.remove(andMatchJob)
+	if andMatchJob in orLangMatchList:
+	    orLangMatchList.remove(andMatchJob)
+	if andMatchJob in orSkillMatchList:
+	    orSkillMatchList.remove(andMatchJob)	 
+
     for orJobTitleMatchJob in orJobTitleMatchList:
 	if orJobTitleMatchJob in orCmpyMatchList:
 	    orCmpyMatchList.remove(orJobTitleMatchJob)
+	if orJobTitleMatchJob in orLocMatchList:
+	    orLocMatchList.remove(orJobTitleMatchJob)
+	if orJobTitleMatchJob in orLangMatchList:
+	    orLangMatchList.remove(orJobTitleMatchJob)
+	if orJobTitleMatchJob in orSkillMatchList:
+	    orSkillMatchList.remove(orJobTitleMatchJob)	
 
     for orCmpyMatchJob in orCmpyMatchList:
 	if orCmpyMatchJob in orLocMatchList:
@@ -270,6 +291,7 @@ def get_search(query=None):
     for orLangMatchJob in orLangMatchList:
 	if orLangMatchJob in orSkillMatchList:
 	    orSkillMatchList.remove(orLangMatchJob)
+
 
     # print("andMatch = ")
     # print(andMatchList)
