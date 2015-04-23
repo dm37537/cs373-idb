@@ -1,7 +1,7 @@
 from sqlalchemy.schema import ForeignKey
 from programmerJobs import db
-#import flask.ext.whooshalchemy as whooshalchemy
-#from programmerJobs import app
+# import flask.ext.whooshalchemy as whooshalchemy
+# from programmerJobs import app
 import programmerJobs
 import flask.ext.whooshalchemy
 

@@ -5,8 +5,6 @@ socket.setdefaulttimeout(default_timeout)
 
 from programmerJobs import *
 from models import Job, Company, Location, Language, Skillset
-import urllib2
-import json
 import requests
 
 
@@ -26,6 +24,13 @@ class DatabaseTestCase(unittest.TestCase):
     # 	content = (999,'a','as','asd','asdf')
     # 	db.add(content)
     # 	ad.commit(content)
+
+    # def test_create_job(self):
+    #     company = Company(company_id=1, name='Google', description='None', site='www.google.com', image='')
+    #     db.add(company)
+    #     db.commit()
+    #     query = Company.query.get(1)
+    #     self.assertEqual(company, query)
 
 
 class ProgrammerJobsTestCase(unittest.TestCase):
@@ -184,7 +189,7 @@ class ProgrammerJobsTestCase(unittest.TestCase):
         req = requests.get('http://104.130.229.90:5000/skillset/12345678')
         self.assertEqual(req.status_code, 404)
 
-
+"""
 class APITestCase(unittest.TestCase):
     def test_getting_jobs(self):
         expected = {
@@ -2428,6 +2433,6 @@ class APITestCase(unittest.TestCase):
         }
         actual = requests.get('http://104.130.229.90:5000/api/member').json()
         self.assertEqual(expected, actual)
-
+"""
 if __name__ == '__main__':
     unittest.main()
