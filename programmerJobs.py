@@ -52,7 +52,7 @@ def test():
 @app.route('/result')
 def result():
     # change to following to absolute paths of files on local machine
-    call('/home/kvalle/.virtualenvs/virtualEnvironment/bin/python /home/kvalle/cs373-idb/tests.py > '
+    call('/usr/bin/python /home/kvalle/cs373-idb/tests.py > '
          'testresult.txt 2>&1', shell=True)
     # with open('testresult.txt', 'w') as output:
     #     p = Popen(['python', 'tests.py'], stderr=output)
