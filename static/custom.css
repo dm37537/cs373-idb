@@ -37,7 +37,7 @@ img.centered-image {
 	color: rgba(248, 248, 255, 0.7);
 }
 
-.company-logo {
+img.company-logo {
 	max-width: 100px;
 	max-height: 100px;
 }
@@ -95,6 +95,13 @@ img.centered-image {
 	background-position: 50% 60%;
 	height: 100%;
 	background-attachment: fixed;
+}
+
+#skillset-jumbotron {
+	padding-top: 5%;
+	background-image: url("images/jumbotron/skillset_jumbotron.jpg");
+	background-size: cover;
+
 }
 
 #languages-jumbotron {
