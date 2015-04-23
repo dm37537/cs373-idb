@@ -562,6 +562,13 @@ def get_location_page(id=None):
     return render_template('location.html', locJson=location, langJson=languages, cmpyJson=companies,
                            locsJson=locations, jobJson=jobs, skillsetJson=skillsets)
 
+@app.route('/skillset')
+def get_skillsets_page():
+    locations = Location.query.all()
+    companies = Company.query.all()
+    languages = Language.query.all()
+    skillsets = Skillset.query.all()
+    return render_template('skillsets.html', langJson=languages, cmpyJson=companies, locJson=locations, skillsetJson=skillsets)
 
 @app.route('/skillset/<int:id>')
 def get_skillset_page(id=None):

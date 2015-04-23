@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block head %}
+  {{super()}}
+{% endblock %}
+{% block navbar %}
+  {{super()}}
+  
+{% endblock %}
+{% block content %}
+
+<div class="container">
+  <div class="jumbotron vertical-center text-center" id="companies-jumbotron">
+    <div class="container content-box round">
+      <hr>
+      <h1>Skillsets</h1>
+      <h4>Search jobs by popular skillsets</h4>
+      <hr>
+    </div>
+  </div>
+  <div class="row text-center">
+    {% for skillsetDict in skillsetJson %}
+    <div class="col-md-3 vertical-center">
+      <a href="skillset/{{ skillsetDict.skillset_id }}">
+        <img class="centered-image circularize" src="../static/{{skillsetDict.skillset_image}}" style="max-height: 200px; max-width: 200px; height: 100%; width: 100%; margin: 30px; postion: relative">
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<hr>
+
+{% endblock %}
+{% block footer %}
+{{super()}}
+{% endblock %}
