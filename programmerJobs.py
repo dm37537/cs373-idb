@@ -443,10 +443,10 @@ def get_freespirit():
 
 @app.route('/api/freespirit', methods=['GET'])
 def get_drinks():
-    drinks = json.load(open('drinks.json', 'r'))
+    drinks = requests.get("http://freespirits.me/api/drinks/").json()
     ret = []
-    for drink_dic in drinks:
-        ret.append(drink_dic['name'])
+    for drink_key in drinks.keys():
+        ret.append(drinks[drink_key])
 
     return render_template('drinks.html', drinks_lst=ret)
 
