@@ -2,18 +2,14 @@ import os
 from subprocess import call
 from flask import Flask, jsonify, abort, render_template, redirect, send_from_directory, request
 from flask.ext.sqlalchemy import SQLAlchemy
-# import flask.ext.whooshalchemy as whooshalchemy
 import json
 import urllib
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
-# app.config['WHOOSH_BASE'] = "$VIRTUAL_ENV/lib/python2.7/site-packages"
 db = SQLAlchemy(app)
 
 from models import *
-
-# whooshalchemy.whoosh_index(app, Job)
 
 app.config.update(dict(
     DEBUG=True,
@@ -41,6 +37,7 @@ def populate_db():
 @app.route('/')
 def root():
     return redirect('http://104.130.229.90:5000/index', code=302)
+
 
 @app.route('/index')
 def index():
@@ -463,9 +460,9 @@ def get_languages_page():
     return render_template('languages.html', langJson=languages)
 
 
-@app.route('/language/<int:id>')
-def get_language_page(id=None):
-    language = Language.query.get(id)
+@app.route('/language/<language_id>')
+def get_language_page(language_id=None):
+    language = Language.query.get(language_id)
     languages = Language.query.all()
     if not language:
         abort(404)
@@ -488,11 +485,11 @@ def get_locations_page():
     return render_template('locations.html', langJson=languages, cmpyJson=companies, locJson=locations)
 
 
-@app.route('/location/<int:id>')
-def get_location_page(id=None):
+@app.route('/location/<location_id>')
+def get_location_page(location_id=None):
     # location = [location for location in locations if location['location_name'] == name]
     # location = location[0]
-    location = Location.query.get(id)
+    location = Location.query.get(location_id)
     if not location:
         abort(404)
     languages = Language.query.all()
@@ -503,33 +500,36 @@ def get_location_page(id=None):
     return render_template('location.html', locJson=location, langJson=languages, cmpyJson=companies,
                            locsJson=locations, jobJson=jobs, skillsetJson=skillsets)
 
+
 @app.route('/skillset')
 def get_skillsets_page():
     locations = Location.query.all()
     companies = Company.query.all()
     languages = Language.query.all()
     skillsets = Skillset.query.all()
-    return render_template('skillsets.html', langJson=languages, cmpyJson=companies, locJson=locations, skillsetJson=skillsets)
+    return render_template('skillsets.html', langJson=languages, cmpyJson=companies, locJson=locations,
+                           skillsetJson=skillsets)
 
-@app.route('/skillset/<int:id>')
-def get_skillset_page(id=None):
-    skillset = Skillset.query.get(id)
+
+@app.route('/skillset/<skillset_id>')
+def get_skillset_page(skillset_id=None):
+    skillset = Skillset.query.get(skillset_id)
     if not skillset:
         abort(404)
     languages = Language.query.all()
     jobs = Job.query.all()
     companies = Company.query.all()
     locations = Location.query.all()
-    skillsets = Skillset.query.all()
+    # skillsets = Skillset.query.all()
     # skillset = [skillset for skillset in skillsets if skillset['skillset_name'] == name]
     # skillset = skillset[0]
     return render_template('skillset.html', skillsetJson=skillset, jobJson=jobs, locJson=locations, cmpyJson=companies,
                            langJson=languages)
 
 
-@app.route('/job/<int:id>')
-def get_job_page(id=None):
-    job = Job.query.get(id)
+@app.route('/job/<job_id>')
+def get_job_page(job_id=None):
+    job = Job.query.get(job_id)
     if not job:
         abort(404)
     languages = Language.query.all()
@@ -546,16 +546,15 @@ def get_job_page(id=None):
 @app.route('/company')
 def get_companies_page():
     companies = Company.query.all()
-    companies = Company.query.all()
     if not companies:
         abort(404)
-    locations = Location.query.all()
+    # locations = Location.query.all()
     return render_template('companies.html', cmpyJson=companies)
 
 
-@app.route('/company/<int:id>')
-def get_company_page(id=None):
-    company = Company.query.get(id)
+@app.route('/company/<company_id>')
+def get_company_page(company_id=None):
+    company = Company.query.get(company_id)
     if not company:
         abort(404)
     languages = Language.query.all()
