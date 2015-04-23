@@ -82,12 +82,45 @@ class Company(db.Model):
         self.company_site = site
 
     def serialize(self):
+        twitter_id = ''
+        # Google
+        if self.company_id == 1 
+            twitter_id = '591372267679944704'
+        # Oracle
+        elif self.company_id == 2
+            twitter_id = '591370969584828416'
+        # Amazon
+        elif self.company_id == 3
+            twitter_id = '591372631082831872'
+        # Facebook
+        elif self.company_id == 4
+            twitter_id = '591372791414267904'
+        # Twitter
+        elif self.company_id == 5
+            twitter_id = '591372946406408192'
+        # LinkedIn
+        elif self.company_id == 6
+            twitter_id = '591373056414650369'
+        # IBM
+        elif self.company_id == 7
+            twitter_id = '591373157191143424'
+        # Dropbox
+        elif self.company_id == 8
+            twitter_id = '591373287705354240'
+        # Rackspace
+        elif self.company_id == 9
+            twitter_id = '591373403317121024'
+        # Indeed
+        elif self.company_id == 10
+            twitter_id = '591370969584828416'
+            
         return {
             'company_id': self.company_id,
             'company_name': self.company_name,
             'company_image': self.company_image,
             'company_description': self.company_description,
-            'company_site': self.company_site
+            'company_site': self.company_site,
+            'twitter_id': twitter_id
             }
 
     def __repr__(self):
