@@ -21,7 +21,7 @@
     <p>{{cmpyJson.company_description}}</p>
     <hr>
 
-    <a class="twitter-timeline" href="https://twitter.com/{{cmpyJson.company_name}}" data-widget-id="{{cmpyJson.twitter_id}}">
+    <a class="twitter-timeline" href="https://twitter.com/{{cmpyJson.company_name}}" data-widget-id="588118993526980610">
       Tweets by @{{cmpyJson.company_name}}
     </a>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
@@ -101,9 +101,9 @@
               <script type="text/javascript">
                 var geocoder;
                 var map;
-                var address ="{{cmpyJson[jobCmpyID].company_name}}";
+                var address ="{{cmpysJson[cmpyID].company_name}}";
                 address += " company, ";
-                address += "{{locJson[jobLocID].location_name}}";
+                address += "{{locJson[locID].location_name}}";
                 function initialize() {
                   geocoder = new google.maps.Geocoder();
                   var latlng = new google.maps.LatLng(-34.397, 150.644);
