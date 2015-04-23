@@ -94,7 +94,7 @@ def get_search(query=None):
     queryList = tempQuery
     #remove duplicated element in list
     queryList = list(set(queryList))
-    whooshResult = Job.query.whoosh_search('software').all()
+    #whooshResult = Job.query.whoosh_search('software').all()
     # print(whooshResult)
     # print(len(whooshResult))
 
