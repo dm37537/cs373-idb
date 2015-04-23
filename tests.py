@@ -169,10 +169,11 @@ class ProgrammerJobsTestCase(unittest.TestCase):
         assert skillset.skillset_name == 'IOS'
         assert skillset.skillset_description == 'ipad'
 
-    # def test_getting_nonexisting_job(self):
-    #     req = requests.get('http://104.130.229.90:5000/job/12345678')
-    #     self.assertEqual(req.status_code, 404)
-    #
+    def test_getting_nonexisting_job(self):
+        req = requests.get('http://104.130.229.90:5000/job/12345678')
+        self.assertEqual(req.status_code, 404)
+        req.close()
+
     # def test_getting_nonexisting_company(self):
     #     req = requests.get('http://104.130.229.90:5000/company/12345678')
     #     self.assertEqual(req.status_code, 404)
