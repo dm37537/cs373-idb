@@ -1,5 +1,5 @@
 import os
-import subprocess
+from subprocess import call
 from flask import Flask, jsonify, abort, render_template, redirect, send_from_directory, request
 from flask.ext.sqlalchemy import SQLAlchemy
 # import flask.ext.whooshalchemy as whooshalchemy
@@ -42,7 +42,6 @@ def populate_db():
 def root():
     return redirect('http://104.130.229.90:5000/index', code=302)
 
-
 @app.route('/index')
 def index():
     return render_template('index.html')
@@ -55,15 +54,17 @@ def test():
 
 @app.route('/result')
 def result():
-    with open('testresult.txt', 'w') as output:
-        p = subprocess.Popen(['python', 'tests.py'], stderr=output)
-        p.communicate()[0]
-    output.close()
-
+    # change to following to absolute paths of files on local machine
+    call('/home/kvalle/.virtualenvs/virtualEnvironment/bin/python /home/kvalle/cs373-idb/tests.py > '
+         'testresult.txt 2>&1', shell=True)
+    # with open('testresult.txt', 'w') as output:
+    #     p = Popen(['python', 'tests.py'], stderr=output)
+    #     p.communicate()[0]
+    # output.close()
     with open('testresult.txt', 'r') as output:
-        outputStr = output.readlines()
+        output_str = output.readlines()
 
-    return render_template('result.html', result=outputStr)
+    return render_template('result.html', result=output_str)
 
 
 @app.route('/search', methods=['GET', 'POST'])

@@ -174,23 +174,23 @@ class ProgrammerJobsTestCase(unittest.TestCase):
         self.assertEqual(req.status_code, 404)
         req.close()
 
-    # def test_getting_nonexisting_company(self):
-    #     req = requests.get('http://104.130.229.90:5000/company/12345678')
-    #     self.assertEqual(req.status_code, 404)
-    #
-    # def test_getting_nonexisting_language(self):
-    #     req = requests.get('http://104.130.229.90:5000/language/12345678')
-    #     self.assertEqual(req.status_code, 404)
-    #
-    # def test_getting_nonexisting_location(self):
-    #     req = requests.get('http://104.130.229.90:5000/location/12345678')
-    #     self.assertEqual(req.status_code, 404)
-    #
-    # def test_getting_nonexisting_skillset(self):
-    #     req = requests.get('http://104.130.229.90:5000/skillset/12345678')
-    #     self.assertEqual(req.status_code, 404)
+    def test_getting_nonexisting_company(self):
+        req = requests.get('http://104.130.229.90:5000/company/12345678')
+        self.assertEqual(req.status_code, 404)
 
-"""
+    def test_getting_nonexisting_language(self):
+        req = requests.get('http://104.130.229.90:5000/language/12345678')
+        self.assertEqual(req.status_code, 404)
+
+    def test_getting_nonexisting_location(self):
+        req = requests.get('http://104.130.229.90:5000/location/12345678')
+        self.assertEqual(req.status_code, 404)
+
+    def test_getting_nonexisting_skillset(self):
+        req = requests.get('http://104.130.229.90:5000/skillset/12345678')
+        self.assertEqual(req.status_code, 404)
+
+
 class APITestCase(unittest.TestCase):
     def test_getting_jobs(self):
         expected = {
@@ -2434,6 +2434,6 @@ class APITestCase(unittest.TestCase):
         }
         actual = requests.get('http://104.130.229.90:5000/api/member').json()
         self.assertEqual(expected, actual)
-"""
+
 if __name__ == '__main__':
     unittest.main()
