@@ -407,20 +407,23 @@ def get_skillset(skillset_id):
 # use of others api
 @app.route('/api/freespirit', methods=['POST'])
 def get_freespirit():
-    drinks = json.load(open('drinks.json', 'r'))
-    ingredients = json.load(open('ingredients.json', 'r'))
+    #drinks = json.load(open('drinks.json', 'r'))
+    #ingredients = json.load(open('ingredients.json', 'r'))
+    drinks = requests.get("http://freespirits.me/api/drinks/").json()
+    ingredients = requests.get("http://freespirits.me/api/ingredients/").json()
+
     lst = request.form.getlist("lst")
 
     get_ingre = {}
     results = []
     for selection in lst:
-        for drink_dic in drinks:
-            if selection == drink_dic['name']:
-                get_ingre = drink_dic['ingredients']
-                for select in get_ingre.keys():
-                    for ingredient_dic in ingredients:
-                        if select == ingredient_dic['id']:
-                            results.append(ingredient_dic['name'])
+        for drink_key in drinks.keys():
+            if selection == drinks[drink_key]:
+                drink_id = drink_key
+                the_drink = requests.get("http://freespirits.me/api/drinks/"+drink_id).json()
+                get_ingre = the_drink['ingredients']
+                for select in get_ingre:
+                    results.append(select)
 
     '''
     print ""
