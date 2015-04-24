@@ -70,33 +70,38 @@ class ProgrammerJobsTestCase(unittest.TestCase):
         assert job.link == 'www.google.com'
 
     def testCreatingCompany(self):
-        company = Company(1, 'elgooG', 'enigne hcraeS', 'gpj.elgooG', 'www.elgoog.com')
+        company = Company(1, 'elgooG', 'enigne hcraeS', 'gpj.elgooG', 'www.elgoog.com', 'tweet')
         assert company.company_name == 'elgooG'
         assert company.company_description == 'enigne hcraeS'
         assert company.company_image == 'gpj.elgooG'
         assert company.company_site == 'www.elgoog.com'
+        assert company.twitter_id == 'tweet'
 
     def testModifyingCompany(self):
-        company = Company(1, 'elgooG', 'enigne hcraeS', 'gpj.elgooG', 'www.elgoog.com')
+        company = Company(1, 'elgooG', 'enigne hcraeS', 'gpj.elgooG', 'www.elgoog.com', 'tweet')
         company.company_name = 'bing'
         company.company_description = 'not google'
         company.company_image = 'bell.png'
         company.company_site = 'www.bing.com'
+        company.twitter_id = 'quack'
         assert company.company_name == 'bing'
         assert company.company_description == 'not google'
         assert company.company_image == 'bell.png'
         assert company.company_site == 'www.bing.com'
+        assert company.twitter_id == 'quack'
 
     def testModifyingCompany2(self):
-        company = Company(1, 'elgooG', 'enigne hcraeS', 'gpj.elgooG', 'www.elgoog.com')
+        company = Company(1, 'elgooG', 'enigne hcraeS', 'gpj.elgooG', 'www.elgoog.com', 'tweet')
         company.company_name = 'facebook'
         company.company_description = 'social network'
         company.company_image = 'blue.png'
         company.company_site = 'www.facebook.com'
+        company.twitter_id = 'woof'
         assert company.company_name == 'facebook'
         assert company.company_description == 'social network'
         assert company.company_image == 'blue.png'
         assert company.company_site == 'www.facebook.com'
+        assert company.twitter_id == 'woof'
 
     def testCreatingLocation(self):
         location = Location(1, 'Austin, TX', 'Live music capital of the world', 'austin.jpg')

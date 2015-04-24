@@ -73,46 +73,48 @@ class Company(db.Model):
     company_description = db.Column(db.Text)
     company_image = db.Column(db.Text)
     company_site = db.Column(db.Text)
+    twitter_id = db.Column(db.Text)
 
-    def __init__(self, company_id, name, description, image, site):
+    def __init__(self, company_id, name, description, image, site, twitter_id):
         self.company_id = company_id
         self.company_name = name
         self.company_description = description
         self.company_image = image
         self.company_site = site
+        self.twitter_id = twitter_id
 
     def serialize(self):
-        twitter_id = '591372267679944704'
-        # Google
-        if self.company_id == 1: 
-            twitter_id = '591372267679944704'
-        # Oracle
-        elif self.company_id == 2:
-            twitter_id = '591370969584828416'
-        # Amazon
-        elif self.company_id == 3:
-            twitter_id = '591372631082831872'
-        # Facebook
-        elif self.company_id == 4:
-            twitter_id = '591372791414267904'
-        # Twitter
-        elif self.company_id == 5:
-            twitter_id = '591372946406408192'
-        # LinkedIn
-        elif self.company_id == 6:
-            twitter_id = '591373056414650369'
-        # IBM
-        elif self.company_id == 7:
-            twitter_id = '591373157191143424'
-        # Dropbox
-        elif self.company_id == 8:
-            twitter_id = '591373287705354240'
-        # Rackspace
-        elif self.company_id == 9:
-            twitter_id = '591373403317121024'
-        # Indeed
-        elif self.company_id == 10:
-            twitter_id = '591370969584828416'
+        # twitter_id = '591372267679944704'
+        # # Google
+        # if self.company_id == 1:
+        #     twitter_id = '591372267679944704'
+        # # Oracle
+        # elif self.company_id == 2:
+        #     twitter_id = '591370969584828416'
+        # # Amazon
+        # elif self.company_id == 3:
+        #     twitter_id = '591372631082831872'
+        # # Facebook
+        # elif self.company_id == 4:
+        #     twitter_id = '591372791414267904'
+        # # Twitter
+        # elif self.company_id == 5:
+        #     twitter_id = '591372946406408192'
+        # # LinkedIn
+        # elif self.company_id == 6:
+        #     twitter_id = '591373056414650369'
+        # # IBM
+        # elif self.company_id == 7:
+        #     twitter_id = '591373157191143424'
+        # # Dropbox
+        # elif self.company_id == 8:
+        #     twitter_id = '591373287705354240'
+        # # Rackspace
+        # elif self.company_id == 9:
+        #     twitter_id = '591373403317121024'
+        # # Indeed
+        # elif self.company_id == 10:
+        #     twitter_id = '591370969584828416'
             
         return {
             'company_id': self.company_id,
@@ -120,7 +122,7 @@ class Company(db.Model):
             'company_image': self.company_image,
             'company_description': self.company_description,
             'company_site': self.company_site,
-            'twitter_id': twitter_id
+            'twitter_id': self.twitter_id
             }
 
     def __repr__(self):
