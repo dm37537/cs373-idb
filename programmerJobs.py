@@ -3,6 +3,7 @@ from subprocess import call
 from flask import Flask, jsonify, abort, render_template, redirect, send_from_directory, request
 from flask.ext.sqlalchemy import SQLAlchemy
 import json
+import requests
 import urllib
 
 app = Flask(__name__)
@@ -52,7 +53,7 @@ def test():
 @app.route('/result')
 def result():
     # change to following to absolute paths of files on local machine
-    call('/usr/bin/python /home/kvalle/cs373-idb/tests.py > '
+    call('/home/kvalle/.virtualenvs/virtualEnvironment/bin/python /home/kvalle/cs373-idb/tests.py > '
          'testresult.txt 2>&1', shell=True)
     # with open('testresult.txt', 'w') as output:
     #     p = Popen(['python', 'tests.py'], stderr=output)
@@ -409,8 +410,8 @@ def get_skillset(skillset_id):
 def get_freespirit():
     #drinks = json.load(open('drinks.json', 'r'))
     #ingredients = json.load(open('ingredients.json', 'r'))
-    drinks = request.get("http://freespirits.me/api/drinks/").json()
-    ingredients = request.get("http://freespirits.me/api/ingredients/").json()
+    drinks = requests.get("http://freespirits.me/api/drinks/").json()
+    ingredients = requests.get("http://freespirits.me/api/ingredients/").json()
 
     lst = request.form.getlist("lst")
 
@@ -420,10 +421,12 @@ def get_freespirit():
         for drink_key in drinks.keys():
             if selection == drinks[drink_key]:
                 drink_id = drink_key
-                the_drink = request.get("http://freespirits.me/api/drinks/"+drink_id).json()
+                the_drink = requests.get("http://freespirits.me/api/drinks/"+drink_id).json()
                 get_ingre = the_drink['ingredients']
-                for select in get_ingre:
-                    results.append(select)
+                get_usage = the_drink['quantities']
+                assert(len(get_ingre) == len(get_usage))
+                for i in range(0, len(get_ingre)):
+                    results.append(get_ingre[i] + " (" + get_usage[i] + ")")
 
     '''
     print ""
@@ -446,7 +449,7 @@ def get_freespirit():
 
 @app.route('/api/freespirit', methods=['GET'])
 def get_drinks():
-    drinks = request.get("http://freespirits.me/api/drinks/").json()
+    drinks = requests.get("http://freespirits.me/api/drinks/").json()
     ret = []
     for drink_key in drinks.keys():
         ret.append(drinks[drink_key])
