@@ -423,8 +423,10 @@ def get_freespirit():
                 drink_id = drink_key
                 the_drink = requests.get("http://freespirits.me/api/drinks/"+drink_id).json()
                 get_ingre = the_drink['ingredients']
-                for select in get_ingre:
-                    results.append(select)
+                get_usage = the_drink['quantities']
+                assert(len(get_ingre) == len(get_usage))
+                for i in range(0, len(get_ingre)):
+                    results.append(get_ingre[i] + " " + get_usage[i])
 
     '''
     print ""
