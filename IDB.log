@@ -1,3 +1,761 @@
+commit 3879df200fbcade21ab83b2766a374364737298c
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Fri Apr 24 02:47:19 2015 +0000
+
+    final commit for phase three
+
+commit 993c6e395e7d9f0dcf9a64212ac78b235d273173
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Fri Apr 24 02:13:33 2015 +0000
+
+     noooo
+
+commit 832881ae6741de3351c2860b12b426ce05222792
+Author: Da Meng <dameng@utexas.edu>
+Date:   Thu Apr 23 20:52:42 2015 -0500
+
+    edit test number
+
+commit de48448462fcb1bbffe53f0ee566fb2f12091cdb
+Merge: fb29a98 cbb89be
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Thu Apr 23 20:43:03 2015 -0500
+
+    Merge branch 'master' of https://github.com/dm37537/cs373-idb
+
+commit fb29a98039b1e6c3ca1adedb602d7c683feaa99c
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Thu Apr 23 20:42:53 2015 -0500
+
+    hopefully fixed responsiveness
+
+commit cbb89beef823cc7d564008a69c5dec805448ee3d
+Author: o0tomato0o <o0tomato0o@hotmail.com>
+Date:   Thu Apr 23 20:12:49 2015 -0500
+
+    location.png upload.
+
+commit 252974c3dceabab7773b3eb596b7573da72262c4
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 19:44:07 2015 -0500
+
+    Different version of python
+
+commit 8545065f13cec80bc543b7b72b697247d3354915
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 19:24:45 2015 -0500
+
+    might have made mistake
+
+commit 76e7d84277875f72166dbebf5719b91634dc303b
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 19:21:34 2015 -0500
+
+    adding twitter_id to company
+
+commit 2e2e57f64da7205b07414bdcea7096b704a54ef5
+Author: Da Meng <dameng@utexas.edu>
+Date:   Thu Apr 23 19:11:33 2015 -0500
+
+    parenthesises
+
+commit cf9bf636328576c7ca485cf44de820e6c709a011
+Author: Da Meng <dameng@utexas.edu>
+Date:   Thu Apr 23 19:10:22 2015 -0500
+
+    add usage
+
+commit a7ece7bb884fbaf0c9974257d4e3ef7fdd1c814a
+Merge: 35b50bf 0fc513b
+Author: Da Meng <dameng@utexas.edu>
+Date:   Thu Apr 23 19:03:29 2015 -0500
+
+    Merge branch 'master' of https://github.com/dm37537/cs373-idb
+
+commit 0fc513bcec00938d240133faf00b27f9824050c4
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Fri Apr 24 00:03:33 2015 +0000
+
+    update commit number
+
+commit 35b50bf013ab09ff547d3ce91baeb54837b593ba
+Author: Da Meng <dameng@utexas.edu>
+Date:   Thu Apr 23 19:03:04 2015 -0500
+
+    requests`
+
+commit 0edab1213c75ca0d41e76978c616de84ed79a27b
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Fri Apr 24 00:00:53 2015 +0000
+
+    update issue number
+
+commit c0fd2edda116747fb2fb1b9f9c0cef21b7c482ff
+Merge: e02010e c6abdbd
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Thu Apr 23 18:57:42 2015 -0500
+
+    Merge branch 'master' of https://github.com/dm37537/cs373-idb
+
+commit e02010ea286f4fe02d61ab6d3706845fa0cb2050
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Thu Apr 23 18:57:34 2015 -0500
+
+    temp change; twitter feed should be google's each time
+
+commit c6abdbd9842e5f0bbc8193a5f95e328e6ffa166d
+Merge: 4bc892a 0670cc4
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 23:54:10 2015 +0000
+
+    Merge branch 'master' of https://github.com/dm37537/cs373-idb
+
+commit 4bc892ada789885306e2fa24595eef6680f0d950
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 23:53:59 2015 +0000
+
+    updated, removed new line char
+
+commit 0670cc4f7ac8edf232d9157037c30dd2e4295cc3
+Merge: 22a54ae 233e643
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Thu Apr 23 18:50:18 2015 -0500
+
+    Merge branch 'master' of https://github.com/dm37537/cs373-idb
+
+commit 22a54ae1d5fc28968bd37c27114ba5d23cd09a56
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Thu Apr 23 18:50:06 2015 -0500
+
+    added search bar on index page
+
+commit 233e643af46d1e300f0da1ff32fe5355290e2967
+Author: Da Meng <dameng@utexas.edu>
+Date:   Thu Apr 23 18:47:16 2015 -0500
+
+    request
+
+commit c81d8819dc406196b7a1e0a55f4efa9f1542a1a0
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 18:46:04 2015 -0500
+
+    Multithreading tests hopefully
+
+commit af9f0e352d3d51084c60cec40eb21d6e57e6bb88
+Author: Da Meng <dameng@utexas.edu>
+Date:   Thu Apr 23 18:39:27 2015 -0500
+
+    modify drinks method
+
+commit 32b5ef8762e5cc1fabd0ddee75ec0b54b31f265c
+Merge: e019882 e3b41c8
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 23:30:42 2015 +0000
+
+    Merge branch 'master' of https://github.com/dm37537/cs373-idb
+
+commit e019882c65b50d01c0bb8bff562ccd6f4a842a31
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 23:30:34 2015 +0000
+
+    added br on top
+
+commit e3b41c82d21b331dbc8c6ba2911b88ae3dd381e2
+Author: Da Meng <dameng@utexas.edu>
+Date:   Thu Apr 23 18:28:55 2015 -0500
+
+    edit drinks
+
+commit 3bb056bf604abb7a264c7c6e79d84ec7eef080e7
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 23:27:49 2015 +0000
+
+    added map
+
+commit b3fa101c6efa741a078dc389687ca189fb2a8674
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Thu Apr 23 18:24:45 2015 -0500
+
+    fixing skillset image paths
+
+commit 7e456c8cf63a4c5e5ad749baf84e4b4c6bc500f3
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Thu Apr 23 18:14:03 2015 -0500
+
+    circularized skillset logos again
+
+commit da186597f5433790f8cdc5d3b90ddb06eabeb09a
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Thu Apr 23 18:09:24 2015 -0500
+
+    changed twitter id inside company.html
+
+commit fd131c516916e2689e12cb9e4531251476cf92ad
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 23:06:23 2015 +0000
+
+    yolo
+
+commit 60766426205bb60e54cc5d6011fe8d8de814a9ad
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 23:05:51 2015 +0000
+
+    fixed syntax
+
+commit 47badb447d5e9999c757f03713c327955a20ad79
+Merge: 6b671dd 98b718c
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 23:04:03 2015 +0000
+
+    Merge branch 'master' of https://github.com/dm37537/cs373-idb
+
+commit 6b671dd99bbe54f45e1ace23c46e87c383e6aace
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 23:03:54 2015 +0000
+
+    commented our whoosh
+
+commit 98b718ca8dc697e469070c3dceb5018053045cd0
+Merge: ea5135b 7ee0ec5
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Thu Apr 23 18:03:28 2015 -0500
+
+    Merge branch 'master' of https://github.com/dm37537/cs373-idb
+
+commit ea5135bb0a9f9c8babca626b42c7d7c2bad6bb0c
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Thu Apr 23 18:03:21 2015 -0500
+
+    fixing twitter feed
+
+commit 7ee0ec5989707831a692bfc4bc204cfa5284636c
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 18:00:25 2015 -0500
+
+    Testing change to test page
+
+commit d5fe3cd45ed28e7dff7124cfc1336be557e527fd
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 22:58:57 2015 +0000
+
+    removed whoosh_index folder
+
+commit ff4614dd8c36c10ca360feaba6e048ab9f4ee8bc
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 17:57:15 2015 -0500
+
+    Remove whoosh from programmerJobs
+
+commit e5c097781dde4055d3a2dfed4173615827d09aee
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 17:54:01 2015 -0500
+
+    Remove whoosh from models
+
+commit 41df5623a0b04c6268471eb3a0ec4e6d3a23b676
+Author: o0tomato0o <o0tomato0o@hotmail.com>
+Date:   Thu Apr 23 17:46:53 2015 -0500
+
+    hopefully this will only add maps.
+
+commit e7e192d13e532a2e1a0e3407d72ad365f4418b1a
+Merge: 7fcd579 6cd5c83
+Author: o0tomato0o <o0tomato0o@hotmail.com>
+Date:   Thu Apr 23 17:45:12 2015 -0500
+
+    Merge branch 'master' of https://github.com/dm37537/cs373-idb
+
+commit 7fcd579ba23d7cf80d1ff7e37e981a98295a4833
+Author: o0tomato0o <o0tomato0o@hotmail.com>
+Date:   Thu Apr 23 17:43:12 2015 -0500
+
+    map on job and company.
+
+commit 6cd5c8318ced5d37a52dc5fc78b4b1e14f4af836
+Author: bsy6766 <bsy6766@gmail.com>
+Date:   Thu Apr 23 17:40:01 2015 -0500
+
+    adding figure
+
+commit 2bced11251b1df03e8bc9765cddfe4351a017304
+Merge: 2ce6b37 16523b1
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Thu Apr 23 17:32:44 2015 -0500
+
+    fixed merge issue
+
+commit 2ce6b37ff22710d3b6225249ea55c00f906cd2b2
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Thu Apr 23 17:31:37 2015 -0500
+
+    uncircularized icons, changed jumbotron image, added skillset name
+
+commit 16523b1ab15d997c3ed7265cb055cdc547182faf
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 22:29:59 2015 +0000
+
+    modified. hope this doesn't break. yolo
+
+commit 7f6a577154127b3ef9fc0d48427d57402a3c5c24
+Merge: 25c06b1 cb6eadf
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 22:28:30 2015 +0000
+
+    Merge branch 'master' of https://github.com/dm37537/cs373-idb
+
+commit 25c06b1c16a438ba33f5b8062758f33a88fba48f
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 22:28:16 2015 +0000
+
+    almost done with searching. try it!
+
+commit cb6eadfae35cab48d38757ab4f5724172d17219a
+Merge: b35780a 4c64dc2
+Author: o0tomato0o <o0tomato0o@hotmail.com>
+Date:   Thu Apr 23 17:22:14 2015 -0500
+
+    Merge branch 'master' of https://github.com/dm37537/cs373-idb
+
+commit b35780a77eea9375ca4f869cd67cc4e80504690e
+Author: o0tomato0o <o0tomato0o@hotmail.com>
+Date:   Thu Apr 23 17:21:48 2015 -0500
+
+    new job page image uploaded.
+
+commit 4c64dc22a109eff18033c88fdb6c58d3eb9e7697
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 17:21:15 2015 -0500
+
+    Possible fix to test page
+
+commit e9de95b48d4f144810cdc72ab70587048f6b79b0
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 15:59:08 2015 -0500
+
+    Testing closing a connection
+
+commit 38dce8c46b907045fc9ad83d9efd763654bd827c
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 20:53:39 2015 +0000
+
+    fixed image link
+
+commit 687a10baf840aec858bdae25ddc7a573313c7bc1
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 20:25:54 2015 +0000
+
+    fixed bold, still have duplicates
+
+commit ed5e84708f7051e6e32c9414ad36296c22054f03
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 20:10:54 2015 +0000
+
+    fixing and enhancing search
+
+commit 5fca88c82e234b84667dd229a5964e876a8f4f8b
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 12:48:11 2015 -0500
+
+    missed some tests
+
+commit edc545741c2c5aebd362e7a089b9965c20b92188
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 12:46:51 2015 -0500
+
+    Commented API tests
+
+commit cc753894fc42cee40414adaa6c89089ade6dbc03
+Merge: 5d16123 69c339b
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 07:03:46 2015 +0000
+
+    Merge branch 'master' of https://github.com/dm37537/cs373-idb
+
+commit 5d16123f5c9192f3a788f753b12ed80bf8dabf2e
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 07:03:19 2015 +0000
+
+    search algo v2.0 - still nasty!
+
+commit 30707495c29b63d6c3caa6646328185aa6f5cd29
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Thu Apr 23 00:11:38 2015 -0500
+
+    fixing company logo to be circular
+
+commit 69c339b9d8107fd38ac9792c56916a659e9565f9
+Merge: 56f865a e203572
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Thu Apr 23 00:05:24 2015 -0500
+
+    Merge branch 'master' of https://github.com/dm37537/cs373-idb
+
+commit 56f865ab757036bc189be6b618026965d4b10d7b
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Thu Apr 23 00:05:15 2015 -0500
+
+    adding skillset
+
+commit e203572d278d3e47c21df036ed7a57da289f9768
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 04:22:53 2015 +0000
+
+    fixing search result
+
+commit e09169e4d443daf6cecb8cdac493b21d8bdb1747
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 02:12:41 2015 +0000
+
+    hopefully nothing has changed on company.html.
+
+commit 8e013a1757ec10c29fd0384370019ff38c7ec914
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Thu Apr 23 02:09:47 2015 +0000
+
+    google maps added to each job pages.
+
+commit 6f85a4c1b8592bac2fe94a1d7337f57a261d11c5
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Wed Apr 22 18:37:26 2015 -0500
+
+    Switched tests from urllib to requests
+
+commit 7acb7ed6dfd0ae1cc348cd428b7565d36510551f
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Wed Apr 22 18:22:48 2015 -0500
+
+    Oops, extra 's'
+
+commit 1e4a17c3355fa0273ea7e44f9ee6131c70cced55
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Wed Apr 22 17:24:27 2015 +0000
+
+    forgot to push
+
+commit 2e587278224e15addb5ab3f346a098a48e0b5173
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Wed Apr 22 15:59:44 2015 +0000
+
+    fixing search algorithm...pewpew
+
+commit add549de1ff21efdb853c932952eda58716f8b70
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Wed Apr 22 10:45:01 2015 -0500
+
+    Added error logic to 404 when objects don't exist
+
+commit 46ad35e51902388d9894674e27a016628f031d28
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Wed Apr 22 03:36:52 2015 -0500
+
+    Made API tests readable
+
+commit 6fa72f6d7339341271afce1d3b3d3e81265d50e4
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Wed Apr 22 00:34:05 2015 +0000
+
+    added search feature...
+
+commit c63a55577ebc3a254e854d6c405bb49b762e820e
+Merge: c46c14e 1e80cd4
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Wed Apr 22 00:07:17 2015 +0000
+
+    Merge branch 'master' of https://github.com/dm37537/cs373-idb
+
+commit 1e80cd4b389567f595d2b0de5c2e4884faff9a4f
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Tue Apr 21 19:06:55 2015 -0500
+
+    Accidentally commented a line
+
+commit 16ef5facb11986997f34acd0795821f6f72558b3
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Tue Apr 21 19:03:16 2015 -0500
+
+    Finished writing tests-ish. Look bad
+
+commit c46c14e00cbd27c54ad2e25607ff37551fcf851f
+Merge: 1f26d06 73cb4b3
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Wed Apr 22 00:01:09 2015 +0000
+
+    Merge branch 'master' of https://github.com/dm37537/cs373-idb
+
+commit 1f26d06563b0e99d3d8d0fe473459b66a90ef9b2
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Wed Apr 22 00:01:05 2015 +0000
+
+    Please don't mess up
+
+commit 73cb4b3d8802a9de9f1e463778dd1d9548845d47
+Merge: 6fb0f60 2028255
+Author: o0tomato0o <o0tomato0o@hotmail.com>
+Date:   Tue Apr 21 18:40:51 2015 -0500
+
+    Merge branch 'master' of https://github.com/dm37537/cs373-idb
+
+commit 6fb0f60b1b0e46a53153c36fae910699c2b19c10
+Author: o0tomato0o <o0tomato0o@hotmail.com>
+Date:   Tue Apr 21 18:39:36 2015 -0500
+
+    testing google map on company pages.
+
+commit 2028255c64ab30567311ba87b3f0e8be3efcdd81
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Tue Apr 21 18:31:57 2015 -0500
+
+    Starting to write tests
+
+commit a980f0769e9de4946aaa9850649db5902a102d26
+Author: Da Meng <dameng@utexas.edu>
+Date:   Tue Apr 21 18:09:39 2015 -0500
+
+    modify nav
+
+commit d0fec592b40aaf88d12639b25821f88ccf78f180
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Tue Apr 21 23:08:41 2015 +0000
+
+    modified style
+
+commit 3f48ff26072487605eb8e026d33ad7b47bff6bea
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Tue Apr 21 23:03:30 2015 +0000
+
+    drinks style
+
+commit 37442818c73499fb67d001e6fa9915f21b812c6e
+Author: Da Meng <dameng@utexas.edu>
+Date:   Tue Apr 21 17:58:53 2015 -0500
+
+    left
+
+commit 21cc5acda01708b41ef86f5d1707272f02e5a763
+Author: Da Meng <dameng@utexas.edu>
+Date:   Tue Apr 21 17:57:29 2015 -0500
+
+    new line
+
+commit 3122fd6c65d988d6773a16c650305ea5fdbf8e05
+Author: Da Meng <dameng@utexas.edu>
+Date:   Tue Apr 21 17:56:06 2015 -0500
+
+    change style
+
+commit ee9560ca278009cacf2f418badcb752bf737e5e0
+Author: Da Meng <dameng@utexas.edu>
+Date:   Tue Apr 21 17:51:42 2015 -0500
+
+    edit shopping list view
+
+commit bc19d2d212b38c55ca5792bbb1c2b9fdcb7818d1
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Tue Apr 21 22:49:43 2015 +0000
+
+    edited dirnks
+
+commit ccd4fff741cfa08efd2414de8fa1b872b2643159
+Author: Da Meng <dameng@utexas.edu>
+Date:   Tue Apr 21 17:45:00 2015 -0500
+
+    3 per row
+
+commit e17832c22d9c3e03c0b4eb57a42ae56838240d62
+Author: Da Meng <dameng@utexas.edu>
+Date:   Tue Apr 21 17:42:44 2015 -0500
+
+    5 per row
+
+commit 4adf5e0ef6dbab8e9b23659c126b7e5e19c8272c
+Author: Da Meng <dameng@utexas.edu>
+Date:   Tue Apr 21 17:39:57 2015 -0500
+
+    post try again
+
+commit b3e1e5e3a1ad5e620eeda1809955a6a6dc71b77a
+Author: Da Meng <dameng@utexas.edu>
+Date:   Tue Apr 21 17:39:11 2015 -0500
+
+    delete print
+
+commit 182a6964d6b00b7ba4de05247940a7c51c0b107e
+Author: Da Meng <dameng@utexas.edu>
+Date:   Tue Apr 21 17:38:05 2015 -0500
+
+    post try
+
+commit aea1ccd0a763de4483b2f7379536094f8a52f734
+Author: Da Meng <dameng@utexas.edu>
+Date:   Tue Apr 21 17:33:28 2015 -0500
+
+    drinks submit
+
+commit a3e692e79aece65e80e963f4aed978cd2cd7e5aa
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Tue Apr 21 17:30:17 2015 -0500
+
+    Need to test tests on server
+
+commit 6727fec6450809e4747ef780e1e6cd40327e1976
+Author: Da Meng <dameng@utexas.edu>
+Date:   Tue Apr 21 17:29:28 2015 -0500
+
+    edit drinks
+
+commit 5e83bbcce6aa9f7e0d097cae781de4d7be508d8f
+Author: Da Meng <dameng@utexas.edu>
+Date:   Tue Apr 21 17:26:55 2015 -0500
+
+    edit drinks
+
+commit ec27a044822eda77f9170b0655a2a3ac50b11375
+Merge: b24af80 6dcdf92
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Tue Apr 21 22:23:12 2015 +0000
+
+    Merge branch 'master' of https://github.com/dm37537/cs373-idb
+
+commit b24af804a9e63d343fcacbbb56856574efad61d1
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Tue Apr 21 22:23:01 2015 +0000
+
+    nav
+
+commit 6dcdf92d18c8d6215a7fcf8a255c1c71cf2c534b
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Tue Apr 21 17:20:03 2015 -0500
+
+    cleaning code
+
+commit 28e58e78f4d10c6b6acd759567c87130d8532411
+Author: Da Meng <dameng@utexas.edu>
+Date:   Tue Apr 21 17:20:00 2015 -0500
+
+    comment out
+
+commit ab351a2b2846b04c22b731b39a6542080d91f5c7
+Author: Da Meng <dameng@utexas.edu>
+Date:   Tue Apr 21 17:18:23 2015 -0500
+
+    edit drinks
+
+commit eacd6005e1d5f7910c9c97d82a7fc3dfae413bcc
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Tue Apr 21 17:15:33 2015 -0500
+
+    Fixed programmerJobs.py merge conflict again
+
+commit 02fd6c5bc3326d0915877a23117f936eb4b5d039
+Author: Da Meng <dameng@utexas.edu>
+Date:   Tue Apr 21 17:12:38 2015 -0500
+
+    post method
+
+commit 79e120cfcc649a4df952e17c9792b4101aed533d
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Tue Apr 21 17:08:04 2015 -0500
+
+    Fixed programmerJobs.py merge conflict
+
+commit a70245252033e788acd1ea4a2dce6e70996fda04
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Tue Apr 21 17:07:46 2015 -0500
+
+    Fixed programmerJobs.py merge conflict
+
+commit 430d5cb0b5c5a341c5c1f71dbb4a0ba590e54a97
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Tue Apr 21 17:03:10 2015 -0500
+
+    Fixed models.py merge conflict
+
+commit 09e8cd8cb20d03d1011a24e75cd8971ba0bc8993
+Merge: 60445c2 de81cbc
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Tue Apr 21 21:53:25 2015 +0000
+
+    merge
+
+commit 60445c272803aaaaeb2a67f1cb11fc9999bf053e
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Tue Apr 21 21:48:33 2015 +0000
+
+    commit
+
+commit de81cbcf3ef3975450c1b6ebfb162c515247e161
+Author: Da Meng <dameng@utexas.edu>
+Date:   Tue Apr 21 16:45:14 2015 -0500
+
+    add drinks template
+
+commit 9642bd4b9bb8a5b446912f7c9c831ef5c056c4ef
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Tue Apr 21 16:40:21 2015 -0500
+
+    Fixed method name overwriting and cleaned up code
+
+commit 28b70ad20bc9b8ff5fdf07489d868d4732d741a8
+Author: valle <kevinosvaldovalle@gmail.com>
+Date:   Tue Apr 21 16:14:11 2015 -0500
+
+    Fixed jsonify error in programmerJobs
+
+commit d64da818ba42b2d60e30c79a3fdbef10f8b2febc
+Author: Da Meng <dameng@utexas.edu>
+Date:   Mon Apr 20 22:17:28 2015 -0500
+
+    use of others api logic
+
+commit 607a466133bdf8e2c96566bf27cff94dcc686337
+Author: Da Meng <dameng@utexas.edu>
+Date:   Sat Apr 18 22:50:11 2015 -0500
+
+    presentation ppt
+
+commit 66db1c58120197a7e22ad39e7a2d9a6f94cec07b
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Wed Apr 15 02:25:36 2015 -0500
+
+    updated index page to make it look nicer
+
+commit 933d135d79f428595c03db75a056ef7dbe6dd3c4
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Tue Apr 14 20:09:04 2015 -0500
+
+    removed pillar
+
+commit cd50d1ddc5ea3e63ec04c475fe62c2d8e0273889
+Merge: 220eb9e 11f9059
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Tue Apr 14 19:13:44 2015 -0500
+
+    Merge branch 'master' of https://github.com/dm37537/cs373-idb
+
+commit 220eb9e0f50c3a03ca04e524878fa002ab83841c
+Author: Samuel Park <sparkhee@gmail.com>
+Date:   Tue Apr 14 19:13:24 2015 -0500
+
+    added twitter timeline feed
+
+commit 11f905952986f3b2cc5661d22fe126eb07e7ca62
+Author: Kevin-Valle <kvalle@cs.utexas.edu>
+Date:   Tue Apr 14 18:04:56 2015 -0500
+
+    fixed search test page
+
+commit 206e2438a5132c04f403de87c8184f72ef7545f5
+Author: Kevin-Valle <kvalle@cs.utexas.edu>
+Date:   Tue Apr 14 18:01:36 2015 -0500
+
+    Added search backend configuration
+
+commit 9f90e3ac764e49483f619db02917c2ece3c03d98
+Author: Kevin Valle <kevinosvaldovalle@gmail.com>
+Date:   Fri Apr 10 02:51:38 2015 +0000
+
+    final commit
+
 commit 280630f3506883af31f68989d2088b768e41945b
 Author: Kevin Valle <kevinosvaldovalle@gmail.com>
 Date:   Fri Apr 10 02:50:03 2015 +0000
