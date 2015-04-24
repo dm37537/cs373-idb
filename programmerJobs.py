@@ -3,6 +3,7 @@ from subprocess import call
 from flask import Flask, jsonify, abort, render_template, redirect, send_from_directory, request
 from flask.ext.sqlalchemy import SQLAlchemy
 import json
+import requests
 import urllib
 
 app = Flask(__name__)
@@ -409,8 +410,8 @@ def get_skillset(skillset_id):
 def get_freespirit():
     #drinks = json.load(open('drinks.json', 'r'))
     #ingredients = json.load(open('ingredients.json', 'r'))
-    drinks = request.get("http://freespirits.me/api/drinks/").json()
-    ingredients = request.get("http://freespirits.me/api/ingredients/").json()
+    drinks = requests.get("http://freespirits.me/api/drinks/").json()
+    ingredients = requests.get("http://freespirits.me/api/ingredients/").json()
 
     lst = request.form.getlist("lst")
 
@@ -420,7 +421,7 @@ def get_freespirit():
         for drink_key in drinks.keys():
             if selection == drinks[drink_key]:
                 drink_id = drink_key
-                the_drink = request.get("http://freespirits.me/api/drinks/"+drink_id).json()
+                the_drink = requests.get("http://freespirits.me/api/drinks/"+drink_id).json()
                 get_ingre = the_drink['ingredients']
                 for select in get_ingre:
                     results.append(select)
@@ -446,7 +447,7 @@ def get_freespirit():
 
 @app.route('/api/freespirit', methods=['GET'])
 def get_drinks():
-    drinks = request.get("http://freespirits.me/api/drinks/").json()
+    drinks = requests.get("http://freespirits.me/api/drinks/").json()
     ret = []
     for drink_key in drinks.keys():
         ret.append(drinks[drink_key])
