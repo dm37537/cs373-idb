@@ -41,7 +41,7 @@
 <td colspan=2><tt>This&nbsp;is&nbsp;the&nbsp;<a href="#Company">Company</a>&nbsp;model&nbsp;and&nbsp;has&nbsp;the&nbsp;following&nbsp;attributes:<br>
 company_id&nbsp;(Integer)&nbsp;-&nbsp;Unique&nbsp;identifier<br>
 company_name&nbsp;(Text)&nbsp;-&nbsp;Name&nbsp;of&nbsp;the&nbsp;company<br>
-company_description&nbsp;(Text)&nbsp;-&nbsp;Description&nbsp;of&nbsp;the&nbsp;company&nbsp;<br>
+company_description&nbsp;(Text)&nbsp;-&nbsp;Description&nbsp;of&nbsp;the&nbsp;company<br>
 company_image&nbsp;(Text)&nbsp;-&nbsp;URL&nbsp;for&nbsp;company&nbsp;image<br>
 company_site&nbsp;(Text)&nbsp;-&nbsp;URL&nbsp;for&nbsp;company<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
@@ -53,7 +53,7 @@ company_site&nbsp;(Text)&nbsp;-&nbsp;URL&nbsp;for&nbsp;company<br>&nbsp;</tt></t
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="Company-__init__"><strong>__init__</strong></a>(self, id, Company_Name, Company_description, Company_image, Company_site)</dt></dl>
+<dl><dt><a name="Company-__init__"><strong>__init__</strong></a>(self, company_id, name, description, image, site, twitter_id)</dt></dl>
 
 <dl><dt><a name="Company-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
 
@@ -71,11 +71,13 @@ Data descriptors defined here:<br>
 </dl>
 <dl><dt><strong>company_site</strong></dt>
 </dl>
+<dl><dt><strong>twitter_id</strong></dt>
+</dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7fbc8d997fd0; Company&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f9c25bc5f90; Company&gt;</dl>
 
-<dl><dt><strong>__table__</strong> = Table('company', MetaData(bind=None), Column('co...any_site', Text(), table=&lt;company&gt;), schema=None)</dl>
+<dl><dt><strong>__table__</strong> = Table('company', MetaData(bind=None), Column('co...itter_id', Text(), table=&lt;company&gt;), schema=None)</dl>
 
 <dl><dt><strong>__tablename__</strong> = 'company'</dl>
 
@@ -111,7 +113,7 @@ standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
 <td colspan=2><tt>This&nbsp;is&nbsp;the&nbsp;<a href="#Job">Job</a>&nbsp;model&nbsp;and&nbsp;has&nbsp;the&nbsp;following&nbsp;attributes:<br>
-job_id&nbsp;(Integer)&nbsp;-&nbsp;A&nbsp;unique&nbsp;indentifier&nbsp;&nbsp;<br>
+job_id&nbsp;(Integer)&nbsp;-&nbsp;A&nbsp;unique&nbsp;indentifier<br>
 job_title&nbsp;(Text)&nbsp;-&nbsp;<a href="#Job">Job</a>&nbsp;title<br>
 job_description&nbsp;(Text)&nbsp;-&nbsp;<a href="#Job">Job</a>&nbsp;description<br>
 link&nbsp;(Text)&nbsp;-&nbsp;URL&nbsp;of&nbsp;the&nbsp;job&nbsp;posting&nbsp;on&nbsp;the&nbsp;company's&nbsp;website<br>
@@ -128,7 +130,7 @@ languages&nbsp;(Iterable)&nbsp;-&nbsp;Iterable&nbsp;of&nbsp;languages&nbsp;neede
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="Job-__init__"><strong>__init__</strong></a>(self, id, title, locationID, companyID, description, link)</dt></dl>
+<dl><dt><a name="Job-__init__"><strong>__init__</strong></a>(self, job_id, title, location_id, company_id, description, link)</dt></dl>
 
 <dl><dt><a name="Job-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
 
@@ -154,7 +156,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7fbc8d985dd0; Job&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f9c25bb1cd0; Job&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('job', MetaData(bind=None), Column('job_id...'company.company_id'), table=&lt;job&gt;), schema=None)</dl>
 
@@ -206,7 +208,7 @@ language_wiki_link&nbsp;(Text)&nbsp;-&nbsp;URL&nbsp;for&nbsp;the&nbsp;larger&nbs
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="Language-__init__"><strong>__init__</strong></a>(self, id, Language_Name, Language_Image, Language_Wiki_Description, Language_Description, Language_Wiki_Link)</dt></dl>
+<dl><dt><a name="Language-__init__"><strong>__init__</strong></a>(self, language_id, name, image, wiki_description, description, wiki_link)</dt></dl>
 
 <dl><dt><a name="Language-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
 
@@ -230,7 +232,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7fbc8d9a7e90; Language&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f9c25bd6f50; Language&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('language', MetaData(bind=None), Column('l...ki_link', Text(), table=&lt;language&gt;), schema=None)</dl>
 
@@ -281,7 +283,7 @@ location_image&nbsp;(Text)&nbsp;-&nbsp;URL&nbsp;for&nbsp;the&nbsp;location&nbsp;
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="Location-__init__"><strong>__init__</strong></a>(self, id, Location, Location_description, Location_image)</dt></dl>
+<dl><dt><a name="Location-__init__"><strong>__init__</strong></a>(self, location_id, name, description, image)</dt></dl>
 
 <dl><dt><a name="Location-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
 
@@ -299,7 +301,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7fbc8d936cd0; Location&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f9c25be4d90; Location&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('location', MetaData(bind=None), Column('l...n_image', Text(), table=&lt;location&gt;), schema=None)</dl>
 
@@ -341,7 +343,7 @@ member_id&nbsp;(Integer)&nbsp;-&nbsp;Unique&nbsp;identifier<br>
 member_name&nbsp;(Text)&nbsp;-&nbsp;Name&nbsp;of&nbsp;a&nbsp;member<br>
 member_bio&nbsp;(Text)&nbsp;-&nbsp;Biography&nbsp;for&nbsp;a&nbsp;member<br>
 member_major_responsibility&nbsp;(Text)&nbsp;-&nbsp;Major&nbsp;responsibity&nbsp;for&nbsp;a&nbsp;member<br>
-member_commit&nbsp;(Integer)&nbsp;-&nbsp;Number&nbsp;of&nbsp;commit&nbsp;<br>
+member_commit&nbsp;(Integer)&nbsp;-&nbsp;Number&nbsp;of&nbsp;commit<br>
 member_issue&nbsp;(Integer)&nbsp;-&nbsp;Number&nbsp;of&nbsp;issue<br>
 member_unittest&nbsp;(Integer)&nbsp;-&nbsp;Number&nbsp;of&nbsp;unittest<br>
 member_image&nbsp;(Text)&nbsp;-&nbsp;Image&nbsp;directory<br>
@@ -355,7 +357,7 @@ member_leader&nbsp;(Integer)&nbsp;-&nbsp;Number&nbsp;of&nbsp;leader<br>&nbsp;</t
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="Member-__init__"><strong>__init__</strong></a>(self, id, Member_name, Member_bio, Member_major_responsibilit, Member_commit, Member_issue, Member_unittest, Member_image, Member_leader)</dt></dl>
+<dl><dt><a name="Member-__init__"><strong>__init__</strong></a>(self, member_id, name, bio, major_responsibility, commits, issues, unit_tests, image, leader)</dt></dl>
 
 <dl><dt><a name="Member-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
 
@@ -383,7 +385,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7fbc8d94dc90; Member&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f9c25b7dd50; Member&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('member', MetaData(bind=None), Column('mem...leader', Integer(), table=&lt;member&gt;), schema=None)</dl>
 
@@ -433,7 +435,7 @@ skillset_description&nbsp;(Text)&nbsp;-&nbsp;Description&nbsp;of&nbsp;the&nbsp;s
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="Skillset-__init__"><strong>__init__</strong></a>(self, id, Skillset, Skillset_description, Skillset_image, Skillset_wiki_description, Skillset_wiki_link)</dt></dl>
+<dl><dt><a name="Skillset-__init__"><strong>__init__</strong></a>(self, skillset_id, name, description, image, wiki_description, wiki_link)</dt></dl>
 
 <dl><dt><a name="Skillset-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
 
@@ -457,7 +459,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7fbc8d943a90; Skillset&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f9c25b73b50; Skillset&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('skillset', MetaData(bind=None), Column('s...ki_link', Text(), table=&lt;skillset&gt;), schema=None)</dl>
 

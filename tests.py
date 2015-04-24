@@ -3,12 +3,13 @@ import socket
 default_timeout = 10
 socket.setdefaulttimeout(default_timeout)
 
-from programmerJobs import *
-from models import Job, Company, Location, Language, Skillset
+#from programmerJobs import *
+#from models import Job, Company, Location, Language, Skillset
+from models import *
 import requests
 import testtools
 
-
+'''
 class DatabaseTestCase(unittest.TestCase):
     def setUp(self):
         app.config['TESTING'] = True
@@ -32,7 +33,7 @@ class DatabaseTestCase(unittest.TestCase):
     #     db.commit()
     #     query = Company.query.get(1)
     #     self.assertEqual(company, query)
-
+'''
 
 class ProgrammerJobsTestCase(unittest.TestCase):
     def testCreatingJob(self):
@@ -2378,80 +2379,13 @@ class APITestCase(unittest.TestCase):
         expected = {"error": "Item does not exist"}
         actual = requests.get("http://104.130.229.90:5000/api/skillset/1123456789").json()
         self.assertEqual(expected, actual)
-
-    def test_getting_members(self):
-        expected = {
-            "Members": [
-                {
-                    "member_bio": "BS in Computer Science. \\nExpected to graduate Dec 2015. \\nLanguage: Java, C++, "
-                                  "PHP, SQL, Python.",
-                    "member_commit": 78,
-                    "member_id": 1,
-                    "member_image": "static/images/member/Da_Meng.jpg",
-                    "member_issue": 9,
-                    "member_leader": 1,
-                    "member_major_responsibility": "First team leader, assigning work to each team member, \\nhelping "
-                                                   "communication within the team, collecting data, designing pages.",
-                    "member_name": "Da Meng",
-                    "member_unittest": 0
-                },
-                {
-                    "member_bio": "Computer Science major, Korean minor.\\nGraduating on May 2015. \\nFluent in Java, "
-                                  "C, Python, SQL.",
-                    "member_commit": 15,
-                    "member_id": 2,
-                    "member_image": "static/images/member/Jin_Ho_Kim.jpg",
-                    "member_issue": 5,
-                    "member_leader": 0,
-                    "member_major_responsibility": "Apiary Contribution, data entry, etc.",
-                    "member_name": "Jin Ho Kim",
-                    "member_unittest": 24
-                },
-                {
-                    "member_bio": "Second team leader.\\nThird year University of Texas student pursuing \\nBachelor of"
-                                  " Science degrees in Computer Science and Pure Mathematics. \\nExpected to graduate "
-                                  "in August 2015. \\nFavorite Language is Python.",
-                    "member_commit": 50,
-                    "member_id": 3,
-                    "member_image": "static/images/member/Kevin_Valle.jpg",
-                    "member_issue": 25,
-                    "member_leader": 2,
-                    "member_major_responsibility": "First team leader, assigning work to each team member, \\nhelping "
-                                                   "communication within the team, collecting data, designing pages.",
-                    "member_name": "Kevin Valle",
-                    "member_unittest": 15
-                },
-                {
-                    "member_bio": "BSA in Computer Science with a Business Foundations Certificate. \\nExpected to "
-                                  "graduate May 2015. \\nLanguage: Java, C, C#, Python, SQL",
-                    "member_commit": 77,
-                    "member_id": 4,
-                    "member_image": "static/images/member/Chan_Hee_Park.jpg",
-                    "member_issue": 11,
-                    "member_leader": 0,
-                    "member_major_responsibility": "Front-end development (HTML, CSS, JavaScript) \\nwith usage of "
-                                                   "Twitter Bootstrap",
-                    "member_name": "Chan Hee Park",
-                    "member_unittest": 0
-                },
-                {
-                    "member_bio": "Computer Science Major with CS Game Development Certificate. \\nExpected to graduate"
-                                  " Dec. 2015. \\nSkill: C++, OpenGL, Java, Python.",
-                    "member_commit": 115,
-                    "member_id": 5,
-                    "member_image": "static/images/member/Seung_Youp_Baek.png",
-                    "member_issue": 19,
-                    "member_leader": 0,
-                    "member_major_responsibility": "Front end development.\\nStatic/dynamic page with HTML, CSS, "
-                                                   "Bootstrap, and Javascript.\\nApiary, etc.",
-                    "member_name": "Seung Youp Baek",
-                    "member_unittest": 0
-                }
-            ]
-        }
+'''
+    def test_getting_memberssself)_
+        self.maxDiff = None
+	expected =  
         actual = requests.get('http://104.130.229.90:5000/api/member').json()
         self.assertEqual(expected, actual)
-
+'''
 if __name__ == '__main__':
     #suite = unittest.TestLoader().loadTestsFromTestCase(ProgrammerJobsTestCase)
     #concurrent_suite = testtools.ConcurrentStreamTestSuite(lambda: ((case, None) for case in suite))
@@ -2462,5 +2396,5 @@ if __name__ == '__main__':
     #suite = unittest.TestLoader().loadTestsFromTestCase(DatabaseTestCase)
     #concurrent_suite = testtools.ConcurrentStreamTestSuite(lambda: ((case, None) for case in suite))
     #concurrent_suite.run(testtools.StreamResult())
-    main(warnings='ignore')
-    # unittest.main()
+    #main(warnings='ignore')
+     unittest.main()

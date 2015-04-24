@@ -7,7 +7,7 @@ import requests
 import urllib
 from unittest import TextTestRunner, makeSuite
 from io import BytesIO
-import tests
+#from tests import *
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
@@ -64,15 +64,15 @@ def result():
     # output.close()
     #with open('testresult.txt', 'r') as output:
     #    output_str = output.readlines()
-    stream = BytesIO()
-    runner = TextTestRunner(stream=stream, verbosity=2)
+    #stream = BytesIO()
+    #runner = TextTestRunner(stream=stream, verbosity=2)
     #suite = makeSuite(tests.APITestCase)
-    suite = makeSuite(tests.ProgrammerJobsTestCase)
-    result = runner.run(suite)
-    output = stream.getvalue()
-    split = output.split('\n')
-    return render_template('result.html', result=split)
-
+    #suite = makeSuite(tests.ProgrammerJobsTestCase)
+    #result = runner.run(suite)
+    #output = stream.getvalue()
+    #split = output.split('\n')
+    #return render_template('result.html', result=split)
+    return render_template('result.html')
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
