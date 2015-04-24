@@ -426,7 +426,7 @@ def get_freespirit():
                 get_usage = the_drink['quantities']
                 assert(len(get_ingre) == len(get_usage))
                 for i in range(0, len(get_ingre)):
-                    results.append(get_ingre[i] + " " + get_usage[i])
+                    results.append(get_ingre[i] + " (" + get_usage[i] + ")")
 
     '''
     print ""
