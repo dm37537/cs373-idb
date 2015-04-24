@@ -5,6 +5,9 @@ from flask.ext.sqlalchemy import SQLAlchemy
 import json
 import requests
 import urllib
+from unittest import TextTestRunner, makeSuite
+from io import BytesIO
+import tests
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
@@ -53,16 +56,22 @@ def test():
 @app.route('/result')
 def result():
     # change to following to absolute paths of files on local machine
-    call('/home/kvalle/.virtualenvs/virtualEnvironment/bin/python /home/kvalle/cs373-idb/tests.py > '
-         'testresult.txt 2>&1', shell=True)
+    #call('/home/kvalle/.virtualenvs/virtualEnvironment/bin/python /home/kvalle/cs373-idb/tests.py > '
+     #    'testresult.txt 2>&1', shell=True)
     # with open('testresult.txt', 'w') as output:
     #     p = Popen(['python', 'tests.py'], stderr=output)
     #     p.communicate()[0]
     # output.close()
-    with open('testresult.txt', 'r') as output:
-        output_str = output.readlines()
-
-    return render_template('result.html', result=output_str)
+    #with open('testresult.txt', 'r') as output:
+    #    output_str = output.readlines()
+    stream = BytesIO()
+    runner = TextTestRunner(stream=stream, verbosity=2)
+    #suite = makeSuite(tests.APITestCase)
+    suite = makeSuite(tests.ProgrammerJobsTestCase)
+    result = runner.run(suite)
+    output = stream.getvalue()
+    split = output.split('\n')
+    return render_template('result.html', result=split)
 
 
 @app.route('/search', methods=['GET', 'POST'])
