@@ -2379,13 +2379,71 @@ class APITestCase(unittest.TestCase):
         expected = {"error": "Item does not exist"}
         actual = requests.get("http://104.130.229.90:5000/api/skillset/1123456789").json()
         self.assertEqual(expected, actual)
-'''
-    def test_getting_memberssself)_
+
+    def test_getting_memberssself(self):
         self.maxDiff = None
-	expected =  
+	expected = {
+  "Members": [
+    {
+      "member_bio": "BS in Computer Science. Expected to graduate Dec 2015. Language: Java, C++, PHP, SQL, Python.", 
+      "member_commit": 100, 
+      "member_id": 1, 
+      "member_image": "static/images/member/Da_Meng.jpg", 
+      "member_issue": 21, 
+      "member_leader": 1, 
+      "member_major_responsibility": "First team leader, assigning work to each team member, helping communication within the team, collecting data, designing pages.", 
+      "member_name": "Da Meng", 
+      "member_unittest": 5
+    }, 
+    {
+      "member_bio": "Computer Science major, Korean minor. Graduating on May 2015. Fluent in Java, C, Python, SQL.", 
+      "member_commit": 19, 
+      "member_id": 2, 
+      "member_image": "static/images/member/Jin_Ho_Kim.jpg", 
+      "member_issue": 8, 
+      "member_leader": 3, 
+      "member_major_responsibility": "Third team leader, assigning work to each team member, Apiary Contribution, data entry, google map, etc.", 
+      "member_name": "Jin Ho Kim", 
+      "member_unittest": 10
+    }, 
+    {
+      "member_bio": "Second team leader. Third year University of Texas student pursuing Bachelor of Science degrees in Computer Science and Pure Mathematics. Expected to graduate in August 2015. Favorite Language is Python.", 
+      "member_commit": 101, 
+      "member_id": 3, 
+      "member_image": "static/images/member/Kevin_Valle.jpg", 
+      "member_issue": 27, 
+      "member_leader": 2, 
+      "member_major_responsibility": "First team leader, assigning work to each team member, helping communication within the team, collecting data, designing pages.", 
+      "member_name": "Kevin Valle", 
+      "member_unittest": 15
+    }, 
+    {
+      "member_bio": "BSA in Computer Science with a Business Foundations Certificate. Expected to graduate May 2015. Language: Java, C, C#, Python, SQL", 
+      "member_commit": 89, 
+      "member_id": 4, 
+      "member_image": "static/images/member/Chan_Hee_Park.jpg", 
+      "member_issue": 18, 
+      "member_leader": 0, 
+      "member_major_responsibility": "Front-end development (HTML, CSS, JavaScript) \\nwith usage of Twitter Bootstrap", 
+      "member_name": "Chan Hee Park", 
+      "member_unittest": 6
+    }, 
+    {
+      "member_bio": "Computer Science Major with CS Game Development Certificate. Expected to graduate Dec. 2015. Skill: C++, OpenGL, Java, Python.", 
+      "member_commit": 117, 
+      "member_id": 5, 
+      "member_image": "static/images/member/Seung_Youp_Baek.png", 
+      "member_issue": 22, 
+      "member_leader": 0, 
+      "member_major_responsibility": "Front end development. Static/dynamic page with HTML, CSS, Bootstrap, and Javascript. Apiary, Search etc.", 
+      "member_name": "Seung Youp Baek", 
+      "member_unittest": 5
+    }
+  ]
+} 
         actual = requests.get('http://104.130.229.90:5000/api/member').json()
         self.assertEqual(expected, actual)
-'''
+
 if __name__ == '__main__':
     #suite = unittest.TestLoader().loadTestsFromTestCase(ProgrammerJobsTestCase)
     #concurrent_suite = testtools.ConcurrentStreamTestSuite(lambda: ((case, None) for case in suite))

@@ -1,5 +1,5 @@
 import os
-from subprocess import call
+import subprocess
 from flask import Flask, jsonify, abort, render_template, redirect, send_from_directory, request
 from flask.ext.sqlalchemy import SQLAlchemy
 import json
@@ -8,6 +8,7 @@ import urllib
 from unittest import TextTestRunner, makeSuite
 from io import BytesIO
 #from tests import *
+from time import sleep
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
@@ -40,7 +41,7 @@ def populate_db():
 # The following are examples of different templates in action
 @app.route('/')
 def root():
-    return redirect('http://104.130.229.90:5000/index', code=302)
+    return redirect('http://www.programmerjob.net/index', code=302)
 
 
 @app.route('/index')
@@ -58,12 +59,16 @@ def result():
     # change to following to absolute paths of files on local machine
     #call('/home/kvalle/.virtualenvs/virtualEnvironment/bin/python /home/kvalle/cs373-idb/tests.py > '
      #    'testresult.txt 2>&1', shell=True)
-    # with open('testresult.txt', 'w') as output:
-    #     p = Popen(['python', 'tests.py'], stderr=output)
-    #     p.communicate()[0]
-    # output.close()
-    #with open('testresult.txt', 'r') as output:
-    #    output_str = output.readlines()
+    #with open('tests.out', 'w') as output:
+        #p = subprocess.Popen(['python', 'tests.py'], stderr=output)
+	#p = subprocess.Popen('python tests.py > tests.out 2>&1', shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+	#p.wait()
+        #sleep(1)
+	#p.communicate()[0]
+	#p.wait()
+    #output.close()
+    with open('tests.out', 'r') as output:
+        output_str = output.readlines()
     #stream = BytesIO()
     #runner = TextTestRunner(stream=stream, verbosity=2)
     #suite = makeSuite(tests.APITestCase)
@@ -71,8 +76,9 @@ def result():
     #result = runner.run(suite)
     #output = stream.getvalue()
     #split = output.split('\n')
-    #return render_template('result.html', result=split)
-    return render_template('result.html')
+    #split_output_str = output_str.split('\n')
+    return render_template('result.html', result=output_str)
+    #return render_template('result.html')
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
